@@ -1,0 +1,24 @@
+# GATE: WEIGHTS_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# whisper-large-v3-turbo — YALNIZCA LoRA (r=16). docs/ml/egitim-altyapisi.md §8'in bellek
+# zarfı: tek RTX 5090 (32 GB) üzerinde tam ince ayar sığmaz, bu yüzden taban ağırlıklar
+# dondurulur ve yalnızca LoRA adaptörleri eğitilir; batch 16 + grad_accum 2 ile etkin toplu
+# boy 32'de tutulur (whisper_small_ft ile karşılaştırılabilir kalsın diye).
+#
+# Bu, raporlanan model adayıdır; whisper_small_ft ise ilk/temel hattır.
+#
+# BAĞIMLILIK NOTU: LoRA'yı `peft` uygular ve bu ortamda peft KURULU DEĞİLDİR. Şema alanı
+# taşır ve doğrular; uygulama aicls.ml.whisper_ft'in sorumluluğundadır ve peft yokken tipli
+# bir hata vermelidir. 8-bit optimizer (bitsandbytes) Windows'ta kullanılmaz.
+_base_: ./whisper_small_ft.yaml
+run:
+  name: asr_whisper_large_v3_turbo_lora
+  tags: [asr, whisper_large_v3_turbo, lora]
+  notes: "large-v3-turbo + LoRA r=16; raporlanan model adayı."
+data:
+  batch_size: 16 # §8 bellek zarfı
+model:
+  base_dir: ${AICLS_MODELS_ROOT}/pretrained/whisper-large-v3-turbo # yerel dizin
+  lora: {enabled: true, r: 16, alpha: 32, dropout: 0.05, targets: [q_proj, v_proj]}
+optim: {name: adamw, lr: 1.0e-4, weight_decay: 0.0, betas: [0.9, 0.999], scheduler: cosine, warmup_steps: 200}
+train: {epochs: null, max_steps: 4000, grad_accum: 2, amp: bf16, grad_clip: 1.0, eval_every: 500, ckpt_every: 500, log_every: 25, early_stop_patience: 4, allow_dirty: false}

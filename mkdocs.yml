@@ -1,0 +1,167 @@
+# MkDocs site (ADR-0009): Material theme in Turkish, strict build, mkdocstrings for the code
+# reference, macros reading reports/metrics/latest.json so report pages never hand-type numbers.
+site_name: AI-CLS Teknik Dokümantasyonu
+site_description: "TÜBİTAK 1001 125E748 — Temel Analiz öğretimi için yapay zeka destekli etkileşimli platform"
+site_author: "AI-CLS dijital ekibi"
+site_url: "https://ai-cls.github.io/ai-cls/"
+repo_name: ai-cls
+docs_dir: docs
+site_dir: site
+strict: true
+use_directory_urls: true
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+
+theme:
+  name: material
+  language: tr
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Koyu temaya geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Açık temaya geç
+  font: false # no Google Fonts fetch; system fonts
+
+plugins:
+  - search:
+      lang: tr
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+            show_root_heading: true
+            members_order: source
+            separate_signature: true
+            merge_init_into_class: true
+  - macros:
+      # Metric values for report pages: {{ metrics.ocr.cer }} etc. (ADR-0009, ADR-0015).
+      # Pages that use macros must opt in with `render_macros: true` in their front matter,
+      # because prose pages quote literal `{{ metrics.<kind>.<metric> }}` examples.
+      include_yaml:
+        - metrics: reports/metrics/latest.json
+      render_by_default: false
+      on_error_fail: true
+      on_undefined: strict
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - def_list
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css
+
+extra:
+  project_id: "125E748"
+  generator: false
+
+nav:
+  - Başlangıç: index.md
+  - Mimari:
+      - Genel bakış: mimari/genel-bakis.md
+      - Modüller: mimari/moduller.md
+      - API: mimari/api.md
+      - Veri modeli: mimari/veri-modeli.md
+      - LaTeX ayrıştırıcı: mimari/latex-ayristirici.md
+      - Metin→komut katmanı: mimari/metin-komut-katmani.md
+  - ML:
+      - Eğitim altyapısı: ml/egitim-altyapisi.md
+      - Eğitim el kitabı: ml/egitim-el-kitabi.md
+      - Değerlendirme: ml/degerlendirme.md
+      - Veri yönetimi: ml/veri-yonetimi.md
+      - Ses ve yerel LLM değerlendirmesi: ml/ses-ve-llm-degerlendirmesi.md
+  - Geliştirme:
+      - İş akışı: gelistirme/is-akisi.md
+      - Kurulum: gelistirme/kurulum.md
+      - Test stratejisi: gelistirme/test-stratejisi.md
+      - Onay defteri: gelistirme/onay-defteri.md
+  - Güvenlik ve gizlilik: guvenlik-gizlilik.md
+  - Raporlama:
+      - İP eşlestirme: raporlama/ip-eslestirme.md
+  - Deneme alanı: deneme-alani.md
+  - Kararlar (ADR):
+      - Dizin ve süreç: adr/README.md
+      - "0000 Şablon": adr/0000-sablon.md
+      - "0001 Web çatısı: FastAPI": adr/0001-web-catisi-fastapi.md
+      - "0002 Tek depo, katmanlı paketler": adr/0002-monorepo-katmanli-paketler.md
+      - "0003 SQLite dev, MySQL prod": adr/0003-veritabani-sqlite-dev-mysql-prod.md
+      - "0004 LaTeX ayrıştırıcı: Lark dilbilgisi": adr/0004-latex-ayristirici-lark-dilbilgisi.md
+      - "0005 Metin→komut katmanı (İP-4)": adr/0005-metin-komut-katmani-ip4.md
+      - "0006 ML altyapısı: PyTorch + HF": adr/0006-ml-altyapisi-pytorch-hf-yapilandirma.md
+      - "0007 Deney takibi": adr/0007-deney-takibi-jsonl-mlflow-manifest.md
+      - "0008 Veri yönetimi": adr/0008-veri-yonetimi-manifest-onedrive-disi.md
+      - "0009 Dokümantasyon: MkDocs (Türkçe)": adr/0009-dokumantasyon-mkdocs-turkce.md
+      - "0010 Test stratejisi": adr/0010-test-stratejisi.md
+      - "0011 Windows/OneDrive ortamı": adr/0011-windows-onedrive-gelistirme-ortami.md
+      - "0012 Onay kapıları": adr/0012-onay-kapilari.md
+      - "0013 El yazısı girdi biçimi": adr/0013-el-yazisi-girdi-bicimi.md
+      - "0014 Gecikme mimarisi: WebSocket": adr/0014-gecikme-mimarisi-websocket.md
+      - "0015 Dondurulmuş metrik tanımları": adr/0015-metrik-tanimlari-dondurulmus.md
+      - "0016 CAS yürütme sandbox": adr/0016-cas-yurutme-sandbox.md
+      - "0017 Ses girdi biçimi: WAV": adr/0017-ses-girdi-bicimi-wav.md
+      - "0018 Çalışma zamanı topolojisi": adr/0018-calisma-zamani-topolojisi.md
+      - "0019 Kitap bilgi grafiği": adr/0019-kitap-bilgi-grafigi-iliskisel-depolama.md
+      - "0020 GPU ortamı: WSL2 + nvidia-docker": adr/0020-gpu-calisma-ortami-wsl-nvidia-docker.md

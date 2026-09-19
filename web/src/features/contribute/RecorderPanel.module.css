@@ -1,0 +1,67 @@
+/* The record → check → upload panel. */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.explain {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.permission {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.duration {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.pending {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warn-bg);
+}
+
+.pendingTitle {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.concerns {
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.concerns li + li {
+  margin-top: var(--space-2);
+}
+
+.notice {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+}

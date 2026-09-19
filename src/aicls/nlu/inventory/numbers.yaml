@@ -1,0 +1,61 @@
+# AI-CLS — Türkçe sayı sözcükleri (docs/mimari/metin-komut-katmani.md §3).
+# `aicls.nlu.numbers` bu kaynağı okur; normalizasyon sırasında bitişik sayı sözcüğü dizileri
+# tek bir rakam belirtecine indirgenir ("yüz yirmi üç" -> "123", "iki buçuk" -> "2.5").
+# Sıra sayıları rakama çevrilmez; ORDER yuvası bunları ayrıca okur ("ikinci türev" -> order=2).
+version: "1.0"
+
+units:
+  "sıfır": 0
+  "bir": 1
+  "iki": 2
+  "üç": 3
+  "dört": 4
+  "beş": 5
+  "altı": 6
+  "yedi": 7
+  "sekiz": 8
+  "dokuz": 9
+
+tens:
+  "on": 10
+  "yirmi": 20
+  "otuz": 30
+  "kırk": 40
+  "elli": 50
+  "altmış": 60
+  "yetmiş": 70
+  "seksen": 80
+  "doksan": 90
+
+# Çarpan sözcükleri: kendinden önceki grubu çarpar ("iki yüz" -> 200, "üç bin" -> 3000).
+scales:
+  "yüz": 100
+  "bin": 1000
+  "milyon": 1000000
+  "milyar": 1000000000
+
+# Kesir sözcükleri: sayının sonuna eklenir ("iki buçuk" -> 2.5); tek başına da geçerlidir.
+fractions:
+  "buçuk": 0.5
+  "yarım": 0.5
+  "çeyrek": 0.25
+
+# Ondalık ayırıcı: "iki virgül beş" -> 2.5.
+decimal_markers:
+  - virgül
+
+# Sıra sayıları (ORDER yuvası). "2." biçimi normalizasyonda "2" olur ve aynı yuvaya düşer.
+ordinals:
+  "birinci": 1
+  "ilk": 1
+  "ikinci": 2
+  "üçüncü": 3
+  "dördüncü": 4
+  "beşinci": 5
+  "altıncı": 6
+  "yedinci": 7
+  "sekizinci": 8
+  "dokuzuncu": 9
+  "onuncu": 10
+  "onbirinci": 11
+  "onikinci": 12

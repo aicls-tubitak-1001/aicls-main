@@ -1,0 +1,1327 @@
+# datasets/curriculum/cards/denklem_esitsizlik.yaml
+# 60 kart. Alt konular: acilim, birinci_derece_denklem, carpanlara_ayirma, ikinci_derece_denklem, sadelestirme, ustel_logaritmik_denklem.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: denklem_esitsizlik-0001
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 1 = 0
+  command:
+    op: solve
+    equation: x^{2} - 1 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-1, 1\right\}
+    srepr: FiniteSet(Integer(-1), Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0002
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $x^{2} - 4 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: x^{2} - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2, 2\right\}
+    srepr: FiniteSet(Integer(-2), Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0003
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 9 = 0
+  command:
+    op: solve
+    equation: x^{2} - 9 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-3, 3\right\}
+    srepr: FiniteSet(Integer(-3), Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0004
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 16 = 0
+  command:
+    op: solve
+    equation: x^{2} - 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-4, 4\right\}
+    srepr: FiniteSet(Integer(-4), Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0005
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 25 = 0
+  command:
+    op: solve
+    equation: x^{2} - 25 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-5, 5\right\}
+    srepr: FiniteSet(Integer(-5), Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0006
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 36 = 0
+  command:
+    op: solve
+    equation: x^{2} - 36 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-6, 6\right\}
+    srepr: FiniteSet(Integer(-6), Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0007
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 49 = 0
+  command:
+    op: solve
+    equation: x^{2} - 49 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-7, 7\right\}
+    srepr: FiniteSet(Integer(-7), Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0008
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 64 = 0
+  command:
+    op: solve
+    equation: x^{2} - 64 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-8, 8\right\}
+    srepr: FiniteSet(Integer(-8), Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0009
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 81 = 0
+  command:
+    op: solve
+    equation: x^{2} - 81 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-9, 9\right\}
+    srepr: FiniteSet(Integer(-9), Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0010
+  topic: denklem_esitsizlik
+  subtopic: ikinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 100 = 0
+  command:
+    op: solve
+    equation: x^{2} - 100 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-10, 10\right\}
+    srepr: FiniteSet(Integer(-10), Integer(10))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^2 - a^2 = 0 denkleminin gerçel kökleri -a ve a'dır.
+- id: denklem_esitsizlik-0011
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x + 1 = 0
+  command:
+    op: solve
+    equation: 2x + 1 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{1}{2}\right\}
+    srepr: FiniteSet(Rational(-1, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0012
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 3x - 6 = 0
+  command:
+    op: solve
+    equation: 3x - 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{2\right\}
+    srepr: FiniteSet(Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0013
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 4x + 2 = 0
+  command:
+    op: solve
+    equation: 4x + 2 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{1}{2}\right\}
+    srepr: FiniteSet(Rational(-1, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0014
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 5x + 10 = 0
+  command:
+    op: solve
+    equation: 5x + 10 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2\right\}
+    srepr: FiniteSet(Integer(-2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0015
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 6x + 3 = 0
+  command:
+    op: solve
+    equation: 6x + 3 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{1}{2}\right\}
+    srepr: FiniteSet(Rational(-1, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0016
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 7x - 7 = 0
+  command:
+    op: solve
+    equation: 7x - 7 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0017
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 8x + 4 = 0
+  command:
+    op: solve
+    equation: 8x + 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{1}{2}\right\}
+    srepr: FiniteSet(Rational(-1, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0018
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 9x + 6 = 0
+  command:
+    op: solve
+    equation: 9x + 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{2}{3}\right\}
+    srepr: FiniteSet(Rational(-2, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0019
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $3x + 12 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: 3x + 12 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-4\right\}
+    srepr: FiniteSet(Integer(-4))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0020
+  topic: denklem_esitsizlik
+  subtopic: birinci_derece_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 5x - 5 = 0
+  command:
+    op: solve
+    equation: 5x - 5 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ax + b = 0 denkleminin kokü x = -b/a'dır.
+- id: denklem_esitsizlik-0021
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 1
+  command:
+    op: factor
+    expr: x^{2} - 1
+  expected:
+    latex: \left(x - 1\right) \cdot \left(x + 1\right)
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-1)), Add(Symbol('x', real=True), Integer(1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kare farkı özdeşliği: x^2 - a^2 = (x - a)(x + a).'
+- id: denklem_esitsizlik-0022
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 4
+  command:
+    op: factor
+    expr: x^{2} - 4
+  expected:
+    latex: \left(x - 2\right) \cdot \left(x + 2\right)
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-2)), Add(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kare farkı özdeşliği: x^2 - a^2 = (x - a)(x + a).'
+- id: denklem_esitsizlik-0023
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 9
+  command:
+    op: factor
+    expr: x^{2} - 9
+  expected:
+    latex: \left(x - 3\right) \cdot \left(x + 3\right)
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-3)), Add(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kare farkı özdeşliği: x^2 - a^2 = (x - a)(x + a).'
+- id: denklem_esitsizlik-0024
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 16
+  command:
+    op: factor
+    expr: x^{2} - 16
+  expected:
+    latex: \left(x - 4\right) \cdot \left(x + 4\right)
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-4)), Add(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kare farkı özdeşliği: x^2 - a^2 = (x - a)(x + a).'
+- id: denklem_esitsizlik-0025
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 25
+  command:
+    op: factor
+    expr: x^{2} - 25
+  expected:
+    latex: \left(x - 5\right) \cdot \left(x + 5\right)
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-5)), Add(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kare farkı özdeşliği: x^2 - a^2 = (x - a)(x + a).'
+- id: denklem_esitsizlik-0026
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x + 1
+  command:
+    op: factor
+    expr: x^{2} + 2x + 1
+  expected:
+    latex: \left(x + 1\right)^{2}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(1)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Tam kare özdeşliği: x^2 + 2ax + a^2 = (x + a)^2.'
+- id: denklem_esitsizlik-0027
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 4x + 4
+  command:
+    op: factor
+    expr: x^{2} + 4x + 4
+  expected:
+    latex: \left(x + 2\right)^{2}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(2)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Tam kare özdeşliği: x^2 + 2ax + a^2 = (x + a)^2.'
+- id: denklem_esitsizlik-0028
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 6x + 9
+  command:
+    op: factor
+    expr: x^{2} + 6x + 9
+  expected:
+    latex: \left(x + 3\right)^{2}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(3)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Tam kare özdeşliği: x^2 + 2ax + a^2 = (x + a)^2.'
+- id: denklem_esitsizlik-0029
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 8x + 16
+  command:
+    op: factor
+    expr: x^{2} + 8x + 16
+  expected:
+    latex: \left(x + 4\right)^{2}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(4)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Tam kare özdeşliği: x^2 + 2ax + a^2 = (x + a)^2.'
+- id: denklem_esitsizlik-0030
+  topic: denklem_esitsizlik
+  subtopic: carpanlara_ayirma
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 10x + 25
+  command:
+    op: factor
+    expr: x^{2} + 10x + 25
+  expected:
+    latex: \left(x + 5\right)^{2}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(5)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/carpan_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Tam kare özdeşliği: x^2 + 2ax + a^2 = (x + a)^2.'
+- id: denklem_esitsizlik-0031
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 1\right)^{2}
+  command:
+    op: expand
+    expr: \left(x + 1\right)^{2}
+  expected:
+    latex: x^{2} + 2 \cdot x + 1
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(2), Symbol('x', real=True)), Integer(1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)^2 = x^2 + 2ax + a^2.
+- id: denklem_esitsizlik-0032
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 2\right)^{2}
+  command:
+    op: expand
+    expr: \left(x + 2\right)^{2}
+  expected:
+    latex: x^{2} + 4 \cdot x + 4
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(4), Symbol('x', real=True)), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)^2 = x^2 + 2ax + a^2.
+- id: denklem_esitsizlik-0033
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 3\right)^{2}
+  command:
+    op: expand
+    expr: \left(x + 3\right)^{2}
+  expected:
+    latex: x^{2} + 6 \cdot x + 9
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(6), Symbol('x', real=True)), Integer(9))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)^2 = x^2 + 2ax + a^2.
+- id: denklem_esitsizlik-0034
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 4\right)^{2}
+  command:
+    op: expand
+    expr: \left(x + 4\right)^{2}
+  expected:
+    latex: x^{2} + 8 \cdot x + 16
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(8), Symbol('x', real=True)), Integer(16))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)^2 = x^2 + 2ax + a^2.
+- id: denklem_esitsizlik-0035
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 5\right)^{2}
+  command:
+    op: expand
+    expr: \left(x + 5\right)^{2}
+  expected:
+    latex: x^{2} + 10 \cdot x + 25
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(10), Symbol('x', real=True)), Integer(25))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_tam_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)^2 = x^2 + 2ax + a^2.
+- id: denklem_esitsizlik-0036
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\left(x + 1\right)\left(x - 2\right)$ ifadesinin açılımını yaz
+  command:
+    op: expand
+    expr: \left(x + 1\right)\left(x - 2\right)
+  expected:
+    latex: x^{2} - x - 2
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(-1), Symbol('x', real=True)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_iki_terim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)(x - b) = x^2 + (a - b)x - ab.
+- id: denklem_esitsizlik-0037
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 2\right)\left(x - 3\right)
+  command:
+    op: expand
+    expr: \left(x + 2\right)\left(x - 3\right)
+  expected:
+    latex: x^{2} - x - 6
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(-1), Symbol('x', real=True)), Integer(-6))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_iki_terim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)(x - b) = x^2 + (a - b)x - ab.
+- id: denklem_esitsizlik-0038
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 3\right)\left(x - 1\right)
+  command:
+    op: expand
+    expr: \left(x + 3\right)\left(x - 1\right)
+  expected:
+    latex: x^{2} + 2 \cdot x - 3
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(2), Symbol('x', real=True)), Integer(-3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_iki_terim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)(x - b) = x^2 + (a - b)x - ab.
+- id: denklem_esitsizlik-0039
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 4\right)\left(x - 5\right)
+  command:
+    op: expand
+    expr: \left(x + 4\right)\left(x - 5\right)
+  expected:
+    latex: x^{2} - x - 20
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(-1), Symbol('x', real=True)), Integer(-20))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_iki_terim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)(x - b) = x^2 + (a - b)x - ab.
+- id: denklem_esitsizlik-0040
+  topic: denklem_esitsizlik
+  subtopic: acilim
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \left(x + 5\right)\left(x - 2\right)
+  command:
+    op: expand
+    expr: \left(x + 5\right)\left(x - 2\right)
+  expected:
+    latex: x^{2} + 3 \cdot x - 10
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Mul(Integer(3), Symbol('x', real=True)), Integer(-10))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/acilim_iki_terim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x + a)(x - b) = x^2 + (a - b)x - ab.
+- id: denklem_esitsizlik-0041
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{x^{2} - 1}{x - 1}
+  command:
+    op: simplify
+    expr: \frac{x^{2} - 1}{x - 1}
+  expected:
+    latex: x + 1
+    srepr: Add(Symbol('x', real=True), Integer(1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/sadelestirme_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Ortak çarpan sadeleştirilirse (x^2 - a^2)/(x - a) = x + a olur.
+- id: denklem_esitsizlik-0042
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{x^{2} - 4}{x - 2}
+  command:
+    op: simplify
+    expr: \frac{x^{2} - 4}{x - 2}
+  expected:
+    latex: x + 2
+    srepr: Add(Symbol('x', real=True), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/sadelestirme_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Ortak çarpan sadeleştirilirse (x^2 - a^2)/(x - a) = x + a olur.
+- id: denklem_esitsizlik-0043
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{x^{2} - 9}{x - 3}
+  command:
+    op: simplify
+    expr: \frac{x^{2} - 9}{x - 3}
+  expected:
+    latex: x + 3
+    srepr: Add(Symbol('x', real=True), Integer(3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/sadelestirme_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Ortak çarpan sadeleştirilirse (x^2 - a^2)/(x - a) = x + a olur.
+- id: denklem_esitsizlik-0044
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{x^{2} - 16}{x - 4}
+  command:
+    op: simplify
+    expr: \frac{x^{2} - 16}{x - 4}
+  expected:
+    latex: x + 4
+    srepr: Add(Symbol('x', real=True), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/sadelestirme_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Ortak çarpan sadeleştirilirse (x^2 - a^2)/(x - a) = x + a olur.
+- id: denklem_esitsizlik-0045
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{x^{2} - 25}{x - 5}
+  command:
+    op: simplify
+    expr: \frac{x^{2} - 25}{x - 5}
+  expected:
+    latex: x + 5
+    srepr: Add(Symbol('x', real=True), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/sadelestirme_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Ortak çarpan sadeleştirilirse (x^2 - a^2)/(x - a) = x + a olur.
+- id: denklem_esitsizlik-0046
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \sin^{2}(x) + \cos^{2}(x)
+  command:
+    op: simplify
+    expr: \sin^{2}(x) + \cos^{2}(x)
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/pisagor_ozdesligi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Pisagor özdeşliği: a sin^2 x + a cos^2 x = a.'
+- id: denklem_esitsizlik-0047
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2\sin^{2}(x) + 2\cos^{2}(x)
+  command:
+    op: simplify
+    expr: 2\sin^{2}(x) + 2\cos^{2}(x)
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/pisagor_ozdesligi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Pisagor özdeşliği: a sin^2 x + a cos^2 x = a.'
+- id: denklem_esitsizlik-0048
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3\sin^{2}(x) + 3\cos^{2}(x)
+  command:
+    op: simplify
+    expr: 3\sin^{2}(x) + 3\cos^{2}(x)
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/pisagor_ozdesligi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Pisagor özdeşliği: a sin^2 x + a cos^2 x = a.'
+- id: denklem_esitsizlik-0049
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4\sin^{2}(x) + 4\cos^{2}(x)
+  command:
+    op: simplify
+    expr: 4\sin^{2}(x) + 4\cos^{2}(x)
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/pisagor_ozdesligi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Pisagor özdeşliği: a sin^2 x + a cos^2 x = a.'
+- id: denklem_esitsizlik-0050
+  topic: denklem_esitsizlik
+  subtopic: sadelestirme
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: 5\sin^{2}(x) + 5\cos^{2}(x)
+  command:
+    op: simplify
+    expr: 5\sin^{2}(x) + 5\cos^{2}(x)
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:denklem/pisagor_ozdesligi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Pisagor özdeşliği: a sin^2 x + a cos^2 x = a.'
+- id: denklem_esitsizlik-0051
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: e^{x} = 2
+  command:
+    op: solve
+    equation: e^{x} = 2
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\ln{\left(2 \right)}\right\}
+    srepr: FiniteSet(log(Integer(2)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^x = a denkleminin çözümü x = ln a'dır.
+- id: denklem_esitsizlik-0052
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: e^{x} = 3
+  command:
+    op: solve
+    equation: e^{x} = 3
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\ln{\left(3 \right)}\right\}
+    srepr: FiniteSet(log(Integer(3)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^x = a denkleminin çözümü x = ln a'dır.
+- id: denklem_esitsizlik-0053
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $e^{x} = 4$ denklemini çöz
+  command:
+    op: solve
+    equation: e^{x} = 4
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\ln{\left(4 \right)}\right\}
+    srepr: FiniteSet(log(Integer(4)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^x = a denkleminin çözümü x = ln a'dır.
+- id: denklem_esitsizlik-0054
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: e^{x} = 5
+  command:
+    op: solve
+    equation: e^{x} = 5
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\ln{\left(5 \right)}\right\}
+    srepr: FiniteSet(log(Integer(5)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^x = a denkleminin çözümü x = ln a'dır.
+- id: denklem_esitsizlik-0055
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: e^{x} = 6
+  command:
+    op: solve
+    equation: e^{x} = 6
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\ln{\left(6 \right)}\right\}
+    srepr: FiniteSet(log(Integer(6)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^x = a denkleminin çözümü x = ln a'dır.
+- id: denklem_esitsizlik-0056
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \ln(x) = 1
+  command:
+    op: solve
+    equation: \ln(x) = 1
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{e\right\}
+    srepr: FiniteSet(E)
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/logaritmik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln x = a denkleminin çözümü x = e^a'dır.
+- id: denklem_esitsizlik-0057
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \ln(x) = 2
+  command:
+    op: solve
+    equation: \ln(x) = 2
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{e^{2}\right\}
+    srepr: FiniteSet(exp(Integer(2)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/logaritmik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln x = a denkleminin çözümü x = e^a'dır.
+- id: denklem_esitsizlik-0058
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \ln(x) = 3
+  command:
+    op: solve
+    equation: \ln(x) = 3
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{e^{3}\right\}
+    srepr: FiniteSet(exp(Integer(3)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/logaritmik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln x = a denkleminin çözümü x = e^a'dır.
+- id: denklem_esitsizlik-0059
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \ln(x) = 4
+  command:
+    op: solve
+    equation: \ln(x) = 4
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{e^{4}\right\}
+    srepr: FiniteSet(exp(Integer(4)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/logaritmik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln x = a denkleminin çözümü x = e^a'dır.
+- id: denklem_esitsizlik-0060
+  topic: denklem_esitsizlik
+  subtopic: ustel_logaritmik_denklem
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \ln(x) = 5
+  command:
+    op: solve
+    equation: \ln(x) = 5
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{e^{5}\right\}
+    srepr: FiniteSet(exp(Integer(5)))
+  checker: set
+  checker_args: {}
+  source: sablon:denklem/logaritmik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln x = a denkleminin çözümü x = e^a'dır.

@@ -1,0 +1,52 @@
+{
+  "breakdown": {
+    "clarifications": 0,
+    "failures": [
+      {
+        "gold": "",
+        "id": "rs-kapsam_disi_matematik-01",
+        "predicted": "book_fetch",
+        "text": "logaritma x fonksiyonunun tanım kümesini söyle"
+      }
+    ],
+    "matched": 327,
+    "no_matches": 24,
+    "slot_counts_strict": {
+      "fn": 0,
+      "fp": 315,
+      "tp": 379
+    }
+  },
+  "ci95": {
+    "intent_accuracy": [
+      0.9914529914529915,
+      1.0
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:bc4a60ac1665c0044f751a03cf56406ca3b61c0fac54cf034896c39b31d81a74",
+  "dataset_version": "nlu-commands-2026.09",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": "C:/Users/cagri/OneDrive/Masaüstü/fırat/PROJE/ABDULLAH_HOCA_1001/ai-cls/reports/metrics/nlu_commands_worst.jsonl",
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "nlu",
+  "metrics": {
+    "clarification_rate": 0.0,
+    "command_exact": 0.9971509971509972,
+    "intent_accuracy": 0.9971509971509972,
+    "no_match_rate": 0.06837606837606838,
+    "slot_f1": 0.7064305684995341,
+    "slot_f1_declared_only": 1.0
+  },
+  "model_sha256": null,
+  "model_version": null,
+  "n": 351,
+  "name": "nlu_commands",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:12Z"
+}

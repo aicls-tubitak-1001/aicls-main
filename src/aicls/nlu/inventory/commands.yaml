@@ -1,0 +1,613 @@
+# AI-CLS — Komut Envanteri v1 (docs/mimari/metin-komut-katmani.md §2, ADR-0005)
+#
+# 17 niyet. Bu dosya paket kaynağıdır (`importlib.resources`), kurulu wheel içinde de bulunur ve
+# `aicls.nlu.inventory.schema.Inventory` tarafından yükleme anında doğrulanır.
+#
+# Desen sözdizimi (bkz. aicls/nlu/patterns.py):
+#   {yuva}      yakalama; {yuva}? isteğe bağlı
+#   kelime      düz belirteç — ardından gelen TEK ek belirteci kendiliğinden hoş görülür
+#   (a|b)?      isteğe bağlı seçenek kümesi
+#   <GEN> <DAT> <ABL> <ANY>   ek aileleri (aicls.core.turkish.TR_SUFFIXES)
+#   <OBJ> <ORD> <DIR>        sözcük sınıfları (ifade/fonksiyon…, sıra sayıları, yön sözcükleri)
+#
+# Örnekler yalnızca belge değildir: `Inventory.validate_examples()` her birini yeniden çözer ve
+# `datasets/nlu/commands_test.jsonl` bunlarla tohumlanır (test_inventory_every_example_...).
+version: "1.0"
+
+defaults:
+  var: x
+  min_score: 0.55
+  margin: 0.15
+  max_candidates: 3
+  weights:
+    pattern: 0.45
+    keyword: 0.35
+    coverage: 0.20
+    conflict: 0.15
+    slots: 0.20
+    slots_missing: 0.40
+  ambiguous_question_tr: "Komutu tam ayırt edemedim. Şunlardan hangisini kastettiniz?"
+  suggestions_tr:
+    - "x karenin türevini al"
+    - "sıfırdan bire kadar x karenin integralini hesapla"
+    - "x sonsuza giderken bir bölü x'in limiti"
+    - "x kare eksi dört ifadesini çarpanlarına ayır"
+    - "türev tanımını getir"
+
+slot_types:
+  EXPR: {kind: latex_expr}
+  VAR: {kind: symbol}
+  BOUNDS: {kind: pair, of: EXPR}
+  POINT: {kind: expr_or_infty}
+  DIRECTION: {kind: enum, values: ["+", "-", "+-"]}
+  ORDER: {kind: int}
+  UNIT_TYPE:
+    kind: enum
+    values: [Definition, Theorem, Lemma, Corollary, Proof, Example, Exercise, Figure, Table, Remark, Section]
+  QUERY: {kind: text}
+
+intents:
+  # ==========================================================================================
+  - id: differentiate
+    kind: cas
+    cas_op: diff
+    label_tr: "türev alma"
+    priority: 12
+    tags: [core, calculus]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+      order: {type: ORDER, default: 1, fill: scan, scan_key: order}
+    keywords: {türev: 3, diferansiyel: 2, eğim: 1, mertebe: 1}
+    patterns:
+      # <NUM> önce gelir: rakamla söylenen mertebe ("iki mertebeden") tembel {expr} yakalamasının
+      # içine düşerse hem ifade bozulur hem de üs ile mertebe aynı sayıyı paylaşır (KNOWN_ISSUES 1).
+      - "{expr} <OBJ>? <NUM> (mertebe|derece) türev (al|hesapla|bul|çıkar)?"
+      - "<NUM> (mertebe|derece) türev (al|hesapla|bul|çıkar)?"
+      - "{expr} <OBJ>? <ORD>? (mertebe|derece)? türev (al|hesapla|bul|çıkar)?"
+      - "{expr} <OBJ>? {var} <DAT>? göre <ORD>? (mertebe|derece)? türev (al|hesapla|bul)?"
+      - "türev (al|hesapla|bul|çıkar)"
+      - "<ORD> (mertebe|derece)? türev (al|hesapla|bul)?"
+      # Mertebe cümlenin başında da söylenir: "ikinci mertebeden x karenin türevini al".
+      - "<ORD> (mertebe|derece)? {expr} <OBJ>? türev (al|hesapla|bul|çıkar)?"
+      - "{expr} <OBJ>? diferansiyel (al|hesapla)?"
+    clarify_tr:
+      expr: "Hangi ifadenin türevini alayım?"
+      var: "Hangi değişkene göre türev alayım?"
+    # Her differentiate örneği `order` bildirir: bildirilmeyen ama çözülen yuvayı görmezden gelen
+    # eski slot_f1 tanımı, üssü mertebe sanan hatayı (KNOWN_ISSUES 1) ölçüme hiç yansıtmıyordu.
+    examples:
+      - {text: "x karenin türevini al", slots: {expr: "x^{2}", var: x, order: 1}}
+      - {text: "sinüs x'in ikinci türevi", slots: {expr: "\\sin\\left(x\\right)", order: 2, var: x}}
+      - {text: "türevini al", context: {last_latex: "x^{3}"}, slots: {expr: "x^{3}", order: 1, var: x}}
+      - {text: "x kare artı iki x ifadesinin türevini hesapla", slots: {expr: "x^{2} + 2 x", order: 1, var: x}}
+      - {text: "e üzeri x fonksiyonunun türevini bul", slots: {expr: "e^{x}", order: 1, var: x}}
+      - {text: "kosinüs x fonksiyonunun türevini bul", slots: {expr: "\\cos\\left(x\\right)", order: 1, var: x}}
+      - {text: "x küp eksi üç x ifadesinin x'e göre türevini al", slots: {expr: "x^{3} - 3 x", var: x, order: 1}}
+      - {text: "üçüncü mertebeden türevini al", context: {last_latex: "x^{5}"}, slots: {expr: "x^{5}", order: 3, var: x}}
+      - {text: "logaritma x'in türevini hesapla", slots: {expr: "\\log\\left(x\\right)", order: 1, var: x}}
+      - {text: "bir bölü x fonksiyonunun türevi", slots: {expr: "\\frac{1}{x}", order: 1, var: x}}
+      - {text: "karekök x ifadesinin türevini al", slots: {expr: "\\sqrt{x}", order: 1, var: x}}
+      - {text: "iki x üzeri üç ifadesinin türevini bul", slots: {expr: "2 x^{3}", order: 1, var: x}}
+      # KNOWN_ISSUES 1 gerileme ailesi: üs sayısı ASLA mertebe olamaz.
+      - {text: "x üzeri üçün türevini al", slots: {expr: "x^{3}", var: x, order: 1}, tags: [regression_order]}
+      - {text: "x üzeri beşin türevini al", slots: {expr: "x^{5}", var: x, order: 1}, tags: [regression_order]}
+      - {text: "x üzeri üç türevini al", slots: {expr: "x^{3}", var: x, order: 1}, tags: [regression_order]}
+      - {text: "x üzeri üç ifadesinin türevini al", slots: {expr: "x^{3}", var: x, order: 1}, tags: [regression_order]}
+      - {text: "x üzeri üçün ikinci türevini al", slots: {expr: "x^{3}", var: x, order: 2}, tags: [regression_order]}
+      - {text: "x küpünün ikinci türevini al", slots: {expr: "x^{3}", var: x, order: 2}, tags: [regression_order]}
+      - {text: "x üzeri dördün türevini hesapla", slots: {expr: "x^{4}", var: x, order: 1}, tags: [regression_order]}
+      - {text: "x üzeri üçün iki mertebeden türevini al", slots: {expr: "x^{3}", var: x, order: 2}, tags: [regression_order]}
+
+  # ==========================================================================================
+  - id: integrate_indefinite
+    kind: cas
+    cas_op: integrate
+    label_tr: "belirsiz integral alma"
+    priority: 10
+    tags: [core, calculus]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+    keywords: {integral: 3, belirsiz: 2, ilkel: 2}
+    patterns:
+      - "{expr} <OBJ>? belirsiz integral (al|hesapla|bul)?"
+      - "{expr} <OBJ>? integral (al|hesapla|bul)?"
+      - "{expr} <OBJ>? {var} <DAT>? göre integral (al|hesapla|bul)?"
+      - "integral (al|hesapla|bul)"
+      - "{expr} <OBJ>? ilkel <ANY>? (bul|hesapla)?"
+    clarify_tr:
+      expr: "Hangi ifadenin integralini alayım?"
+      var: "Hangi değişkene göre integral alayım?"
+    examples:
+      - {text: "x karenin integralini al", slots: {expr: "x^{2}", var: x}}
+      - {text: "sinüs x'in integralini hesapla", slots: {expr: "\\sin\\left(x\\right)", var: x}}
+      - {text: "integralini al", context: {last_latex: "x^{2} + 1"}, slots: {expr: "x^{2} + 1", var: x}}
+      - {text: "e üzeri x fonksiyonunun belirsiz integralini bul", slots: {expr: "e^{x}", var: x}}
+      - {text: "iki x artı üç ifadesinin integralini al", slots: {expr: "2 x + 3", var: x}}
+      - {text: "kosinüs x'in integralini bul", slots: {expr: "\\cos\\left(x\\right)", var: x}}
+      - {text: "bir bölü x fonksiyonunun integralini hesapla", slots: {expr: "\\frac{1}{x}", var: x}}
+      - {text: "x küp ifadesinin x'e göre integralini al", slots: {expr: "x^{3}", var: x}}
+      - {text: "karekök x'in belirsiz integralini hesapla", slots: {expr: "\\sqrt{x}", var: x}}
+      - {text: "x kare artı iki x eksi bir ifadesinin integralini bul", slots: {expr: "x^{2} + 2 x - 1", var: x}}
+      - {text: "ln x'in integralini al", slots: {expr: "\\ln\\left(x\\right)", var: x}}
+      # KNOWN_ISSUES 1 gerileme ailesi: mertebe düzeltmesi türev dışına taşmamalıdır.
+      - {text: "x üzeri üçün integralini al", slots: {expr: "x^{3}", var: x}, tags: [regression_order]}
+
+  # ==========================================================================================
+  - id: integrate_definite
+    kind: cas
+    cas_op: integrate
+    label_tr: "belirli integral alma"
+    priority: 16
+    tags: [core, calculus]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+      lower: {type: BOUNDS, required: true}
+      upper: {type: BOUNDS, required: true}
+    keywords: {integral: 3, kadar: 2, belirli: 2, arası: 2}
+    patterns:
+      - "{lower} <ABL> {upper} <DAT> kadar {expr} <OBJ>? integral (al|hesapla|bul)?"
+      - "{lower} <ABL> {upper} <DAT> {expr} <OBJ>? integral (al|hesapla|bul)?"
+      - "{lower} <ABL> {upper} <DAT> kadar integral (al|hesapla|bul)?"
+      - "{expr} <OBJ>? integral <ANY>? {lower} <ABL> {upper} <DAT> (kadar)? (al|hesapla|bul)?"
+      - "{expr} <OBJ>? belirli integral {lower} <ABL> {upper} <DAT> (kadar)?"
+    clarify_tr:
+      expr: "Hangi ifadenin belirli integralini alayım?"
+      var: "Hangi değişkene göre integral alayım?"
+      lower: "Alt sınır nedir?"
+      upper: "Üst sınır nedir?"
+    examples:
+      - {text: "sıfırdan bire kadar x karenin integralini hesapla", slots: {expr: "x^{2}", lower: "0", upper: "1", var: x}}
+      - {text: "sıfırdan bire kadar x kare integralini hesapla", slots: {expr: "x^{2}", lower: "0", upper: "1", var: x}}
+      - {text: "birden üçe kadar iki x integralini al", slots: {expr: "2 x", lower: "1", upper: "3", var: x}}
+      - {text: "sıfırdan pi'ye kadar sinüs x integralini hesapla", slots: {expr: "\\sin\\left(x\\right)", lower: "0", upper: "\\pi", var: x}}
+      - {text: "eksi birden bire kadar x küp integralini bul", slots: {expr: "x^{3}", lower: "-1", upper: "1", var: x}}
+      - {text: "sıfırdan sonsuza kadar e üzeri eksi x integralini hesapla", slots: {expr: "e^{-x}", lower: "0", upper: "\\infty", var: x}}
+      - {text: "birden ikiye kadar bir bölü x integralini al", slots: {expr: "\\frac{1}{x}", lower: "1", upper: "2", var: x}}
+      - {text: "sıfırdan bire kadar x kare artı bir ifadesinin integralini hesapla", slots: {expr: "x^{2} + 1", lower: "0", upper: "1", var: x}}
+      - {text: "ikiden dörde kadar x integralini bul", slots: {expr: "x", lower: "2", upper: "4", var: x}}
+      - {text: "sıfırdan bire kadar integralini al", context: {last_latex: "x^{2}"}, slots: {expr: "x^{2}", lower: "0", upper: "1", var: x}}
+      - {text: "eksi sonsuzdan sonsuza kadar e üzeri eksi x kare integralini hesapla", slots: {expr: "e^{-x^{2}}", lower: "-\\infty", upper: "\\infty", var: x}}
+      - {text: "sıfırdan iki pi'ye kadar kosinüs x integralini al", slots: {expr: "\\cos\\left(x\\right)", lower: "0", upper: "2 \\pi", var: x}}
+
+  # ==========================================================================================
+  - id: limit
+    kind: cas
+    cas_op: limit
+    label_tr: "limit hesaplama"
+    priority: 16
+    tags: [core, calculus]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+      point: {type: POINT, required: true}
+      direction: {type: DIRECTION, default: "+-", fill: scan, scan_key: direction}
+    keywords: {limit: 3, giderken: 2, yaklaşırken: 2}
+    patterns:
+      - "{var} {point} <DAT> <DIR>? (taraf|yön)? (giderken|yaklaşırken|yaklaşan) {expr} <OBJ>? limit (al|hesapla|bul)?"
+      - "limit {var} {point} <DAT> <DIR>? (taraf|yön)? (giderken|yaklaşırken|yaklaşan) {expr}"
+      - "{expr} <OBJ>? limit {var} {point} <DAT> <DIR>? (taraf|yön)? (giderken|yaklaşırken|yaklaşan)"
+      - "{var} {point} <DAT> <DIR>? (taraf|yön)? (giderken|yaklaşırken|yaklaşan) limit (al|hesapla|bul)?"
+    clarify_tr:
+      expr: "Hangi ifadenin limitini alayım?"
+      point: "Değişken hangi noktaya gidiyor?"
+      var: "Hangi değişken için limit alayım?"
+    examples:
+      - {text: "x sonsuza giderken bir bölü x'in limiti", slots: {expr: "\\frac{1}{x}", var: x, point: "\\infty", direction: "+-"}}
+      - {text: "limit x sıfıra giderken sinüs x bölü x", slots: {expr: "\\frac{\\sin\\left(x\\right)}{x}", point: "0", direction: "+-", var: x}}
+      - {text: "x sıfıra sağdan yaklaşırken bir bölü x'in limitini bul", slots: {expr: "\\frac{1}{x}", point: "0", direction: "+", var: x}}
+      - {text: "x sıfıra soldan yaklaşırken bir bölü x'in limiti", slots: {expr: "\\frac{1}{x}", point: "0", direction: "-", var: x}}
+      - {text: "x ikiye giderken x kare artı bir ifadesinin limiti", slots: {expr: "x^{2} + 1", point: "2", direction: "+-", var: x}}
+      - {text: "x sonsuza giderken x kare bölü x küp limitini hesapla", slots: {expr: "\\frac{x^{2}}{x^{3}}", point: "\\infty", direction: "+-", var: x}}
+      - {text: "limit x bire giderken x kare eksi bir", slots: {expr: "x^{2} - 1", point: "1", direction: "+-", var: x}}
+      - {text: "x eksi sonsuza giderken e üzeri x'in limiti", slots: {expr: "e^{x}", point: "-\\infty", direction: "+-", var: x}}
+      - {text: "x sıfıra giderken sinüs x bölü x limitini al", slots: {expr: "\\frac{\\sin\\left(x\\right)}{x}", point: "0", direction: "+-", var: x}}
+      - {text: "x pi'ye giderken sinüs x'in limitini bul", slots: {expr: "\\sin\\left(x\\right)", point: "\\pi", direction: "+-", var: x}}
+      - {text: "x üçe giderken iki x artı bir ifadesinin limitini hesapla", slots: {expr: "2 x + 1", point: "3", direction: "+-", var: x}}
+      - {text: "x sıfıra sağdan yaklaşırken logaritma x'in limiti", slots: {expr: "\\log\\left(x\\right)", point: "0", direction: "+", var: x}}
+      - {text: "x sıfıra giderken x üzeri üçün limitini bul", slots: {expr: "x^{3}", point: "0", direction: "+-", var: x}, tags: [regression_order]}
+
+  # ==========================================================================================
+  - id: solve
+    kind: cas
+    cas_op: solve
+    label_tr: "denklem çözme"
+    priority: 12
+    tags: [core, algebra]
+    slots:
+      equation: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+    keywords: {çöz: 3, denklem: 2, kök: 2}
+    patterns:
+      - "{equation} <OBJ>? çöz"
+      - "{equation} <OBJ>? {var} <DAT>? göre çöz"
+      - "{equation} <OBJ>? kök <ANY>? (bul|hesapla|göster)?"
+      - "çöz {equation}"
+      - "(denklem|eşitlik) <ANY>? çöz"
+    clarify_tr:
+      equation: "Hangi denklemi çözeyim?"
+      var: "Hangi değişkene göre çözeyim?"
+    examples:
+      - {text: "üç x artı beş eşittir on denklemini çöz", slots: {equation: "3 x + 5 = 10", var: x}}
+      - {text: "x kare eksi dört eşittir sıfır denklemini çöz", slots: {equation: "x^{2} - 4 = 0", var: x}}
+      - {text: "x kare eksi dokuz ifadesinin köklerini bul", slots: {equation: "x^{2} - 9", var: x}}
+      - {text: "iki x eksi altı eşittir sıfır denklemini çöz", slots: {equation: "2 x - 6 = 0", var: x}}
+      - {text: "x kare artı üç x artı iki eşittir sıfır denklemini çöz", slots: {equation: "x^{2} + 3 x + 2 = 0", var: x}}
+      - {text: "sinüs x eşittir sıfır denklemini çöz", slots: {equation: "\\sin\\left(x\\right) = 0", var: x}}
+      - {text: "x kare artı iki x artı bir ifadesinin köklerini hesapla", slots: {equation: "x^{2} + 2 x + 1", var: x}}
+      - {text: "denklemi çöz", context: {last_latex: "x^{2} - 4 = 0"}, slots: {equation: "x^{2} - 4 = 0", var: x}}
+      - {text: "e üzeri x eşittir bir denklemini çöz", slots: {equation: "e^{x} = 1", var: x}}
+      - {text: "x küp eksi x eşittir sıfır denklemini çöz", slots: {equation: "x^{3} - x = 0", var: x}}
+      - {text: "üç x eksi dokuz eşittir sıfır denklemini x'e göre çöz", slots: {equation: "3 x - 9 = 0", var: x}}
+      - {text: "x kare eşittir dokuz denklemini çöz", slots: {equation: "x^{2} = 9", var: x}}
+      - {text: "x üzeri üç eşittir sekiz denklemini çöz", slots: {equation: "x^{3} = 8", var: x}, tags: [regression_order]}
+
+  # ==========================================================================================
+  - id: simplify
+    kind: cas
+    cas_op: simplify
+    label_tr: "sadeleştirme"
+    priority: 8
+    tags: [core, algebra]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+    keywords: {sadeleştir: 3, düzenle: 2, basit: 2}
+    patterns:
+      - "{expr} <OBJ>? sadeleştir"
+      - "sadeleştir"
+      - "{expr} <OBJ>? (basit|sade) (hale)? (getir|yaz)"
+      - "<OBJ> <ANY>? sadeleştir"
+    clarify_tr:
+      expr: "Hangi ifadeyi sadeleştireyim?"
+    examples:
+      - {text: "x kare artı iki x ifadesini sadeleştir", slots: {expr: "x^{2} + 2 x"}}
+      - {text: "sadeleştir", context: {last_latex: "\\frac{x^{2}}{x}"}, slots: {expr: "\\frac{x^{2}}{x}"}}
+      - {text: "x kare bölü x ifadesini sadeleştir", slots: {expr: "\\frac{x^{2}}{x}"}}
+      - {text: "sinüs x artı kosinüs x ifadesini sadeleştir", slots: {expr: "\\sin\\left(x\\right) + \\cos\\left(x\\right)"}}
+      - {text: "üç x artı iki x ifadesini sadeleştir", slots: {expr: "3 x + 2 x"}}
+      - {text: "x kare artı x kare ifadesini sadeleştir", slots: {expr: "x^{2} + x^{2}"}}
+      - {text: "bir bölü x artı bir bölü x ifadesini sadeleştir", slots: {expr: "\\frac{1}{x} + \\frac{1}{x}"}}
+      - {text: "x kare çarpı x ifadesini sadeleştir", slots: {expr: "x^{2} x"}}
+      - {text: "logaritma x artı logaritma x ifadesini sadeleştir", slots: {expr: "\\log\\left(x\\right) + \\log\\left(x\\right)"}}
+      - {text: "ifadeyi sadeleştir", context: {last_latex: "x^{2} + x^{2}"}, slots: {expr: "x^{2} + x^{2}"}}
+      - {text: "iki x artı üç x ifadesini sadeleştir", slots: {expr: "2 x + 3 x"}}
+
+  # ==========================================================================================
+  - id: expand
+    kind: cas
+    cas_op: expand
+    label_tr: "parantez açma (dağıtma)"
+    priority: 8
+    tags: [algebra]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+    keywords: {genişlet: 3, dağıt: 2, açılım: 2, parantez: 2}
+    patterns:
+      - "{expr} <OBJ>? genişlet"
+      - "{expr} <OBJ>? (dağıt|aç)"
+      - "{expr} <OBJ>? açılım <ANY>? (yap|hesapla|bul)?"
+      - "genişlet"
+      - "parantez <ANY>? (aç|dağıt)"
+    clarify_tr:
+      expr: "Hangi ifadeyi açayım?"
+    examples:
+      - {text: "parantez aç x artı bir parantez kapa kare ifadesini genişlet", slots: {expr: "\\left(x + 1\\right)^{2}"}}
+      - {text: "parantez aç x artı iki parantez kapa çarpı parantez aç x eksi iki parantez kapa ifadesini genişlet", slots: {expr: "\\left(x + 2\\right) \\left(x - 2\\right)"}}
+      - {text: "genişlet", context: {last_latex: "\\left(x + 1\\right)^{2}"}, slots: {expr: "\\left(x + 1\\right)^{2}"}}
+      - {text: "parantez aç x artı bir parantez kapa küp ifadesini genişlet", slots: {expr: "\\left(x + 1\\right)^{3}"}}
+      - {text: "parantez aç iki x artı üç parantez kapa kare ifadesini genişlet", slots: {expr: "\\left(2 x + 3\\right)^{2}"}}
+      - {text: "parantez aç x eksi bir parantez kapa kare ifadesini dağıt", slots: {expr: "\\left(x - 1\\right)^{2}"}}
+      - {text: "parantez aç x artı y parantez kapa kare ifadesini genişlet", slots: {expr: "\\left(x + y\\right)^{2}"}}
+      - {text: "parantez aç x artı bir parantez kapa çarpı x ifadesini dağıt", slots: {expr: "\\left(x + 1\\right) x"}}
+      - {text: "parantezleri aç", context: {last_latex: "\\left(x + 1\\right)^{2}"}, slots: {expr: "\\left(x + 1\\right)^{2}"}}
+      - {text: "parantez aç x artı üç parantez kapa kare ifadesini genişlet", slots: {expr: "\\left(x + 3\\right)^{2}"}}
+      - {text: "parantez aç iki x eksi bir parantez kapa kare ifadesini genişlet", slots: {expr: "\\left(2 x - 1\\right)^{2}"}}
+
+  # ==========================================================================================
+  - id: factor
+    kind: cas
+    cas_op: factor
+    label_tr: "çarpanlara ayırma"
+    priority: 10
+    tags: [core, algebra]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+    keywords: {çarpan: 3, ayır: 2, faktör: 2}
+    patterns:
+      - "{expr} <OBJ>? çarpan <ANY>? ayır"
+      - "{expr} <OBJ>? çarpan <ANY>? (bul|hesapla|göster)?"
+      - "çarpan <ANY>? ayır"
+      - "{expr} <OBJ>? faktör <ANY>? (ayır|bul)?"
+    clarify_tr:
+      expr: "Hangi ifadeyi çarpanlarına ayırayım?"
+    examples:
+      - {text: "x kare eksi dört ifadesini çarpanlarına ayır", slots: {expr: "x^{2} - 4"}}
+      - {text: "x kare eksi bir ifadesini çarpanlarına ayır", slots: {expr: "x^{2} - 1"}}
+      - {text: "çarpanlarına ayır", context: {last_latex: "x^{2} - 9"}, slots: {expr: "x^{2} - 9"}}
+      - {text: "x kare artı iki x artı bir ifadesini çarpanlarına ayır", slots: {expr: "x^{2} + 2 x + 1"}}
+      - {text: "x küp eksi x ifadesini çarpanlarına ayır", slots: {expr: "x^{3} - x"}}
+      - {text: "iki x kare eksi sekiz ifadesini çarpanlarına ayır", slots: {expr: "2 x^{2} - 8"}}
+      - {text: "x kare eksi beş x artı altı ifadesini çarpanlarına ayır", slots: {expr: "x^{2} - 5 x + 6"}}
+      - {text: "x kare eksi dokuz ifadesinin çarpanlarını bul", slots: {expr: "x^{2} - 9"}}
+      - {text: "x kare artı beş x artı altı ifadesini çarpanlara ayır", slots: {expr: "x^{2} + 5 x + 6"}}
+      - {text: "x üzeri dört eksi bir ifadesini çarpanlarına ayır", slots: {expr: "x^{4} - 1"}}
+      - {text: "iki x kare artı dört x ifadesini çarpanlarına ayır", slots: {expr: "2 x^{2} + 4 x"}}
+
+  # ==========================================================================================
+  - id: series
+    kind: cas
+    cas_op: series
+    label_tr: "seri (Taylor) açılımı"
+    priority: 8
+    tags: [calculus]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+      point: {type: POINT, default: "0"}
+      order: {type: ORDER, default: 6, fill: scan, scan_key: order}
+    keywords: {seri: 3, taylor: 3, maclaurin: 3, açılım: 2, civar: 2}
+    patterns:
+      - "{expr} <OBJ>? <NUM> (mertebe|derece) (seri|taylor|maclaurin) açılım <ANY>? (yap|hesapla|bul)?"
+      - "{expr} <OBJ>? {point} civar <ANY>? <ORD>? (mertebe|derece)? (seri|taylor|maclaurin) açılım <ANY>? (yap|hesapla|bul)?"
+      - "{expr} <OBJ>? <ORD>? (mertebe|derece)? (seri|taylor|maclaurin) açılım <ANY>? (yap|hesapla|bul)?"
+      - "(seri|taylor|maclaurin) açılım <ANY>? (yap|hesapla|bul)?"
+      - "{expr} <OBJ>? açılım <ANY>? (yap|hesapla|bul)?"
+    clarify_tr:
+      expr: "Hangi ifadenin seri açılımını yapayım?"
+      var: "Hangi değişken için seri açayım?"
+      point: "Hangi nokta civarında açayım?"
+    examples:
+      - {text: "sinüs x'in sıfır civarında seri açılımını yap", slots: {expr: "\\sin\\left(x\\right)", point: "0", order: 6, var: x}}
+      - {text: "e üzeri x fonksiyonunun seri açılımını hesapla", slots: {expr: "e^{x}", point: "0", order: 6, var: x}}
+      - {text: "kosinüs x'in maclaurin açılımını bul", slots: {expr: "\\cos\\left(x\\right)", point: "0", order: 6, var: x}}
+      - {text: "seri açılımını yap", context: {last_latex: "e^{x}"}, slots: {expr: "e^{x}", point: "0", order: 6, var: x}}
+      - {text: "bir bölü x fonksiyonunun bir civarında taylor açılımını yap", slots: {expr: "\\frac{1}{x}", point: "1", order: 6, var: x}}
+      - {text: "sinüs x'in beşinci mertebeden seri açılımını hesapla", slots: {expr: "\\sin\\left(x\\right)", order: 5, point: "0", var: x}}
+      - {text: "ln x fonksiyonunun bir civarında seri açılımını bul", slots: {expr: "\\ln\\left(x\\right)", point: "1", order: 6, var: x}}
+      - {text: "e üzeri x'in sıfır civarında taylor açılımını yap", slots: {expr: "e^{x}", point: "0", order: 6, var: x}}
+      - {text: "kosinüs x fonksiyonunun seri açılımını yap", slots: {expr: "\\cos\\left(x\\right)", point: "0", order: 6, var: x}}
+      - {text: "tanjant x'in sıfır civarında seri açılımını hesapla", slots: {expr: "\\tan\\left(x\\right)", point: "0", order: 6, var: x}}
+      - {text: "x kare artı bir ifadesinin seri açılımını bul", slots: {expr: "x^{2} + 1", point: "0", order: 6, var: x}}
+
+  # ==========================================================================================
+  - id: evaluate_at
+    kind: cas
+    cas_op: evaluate
+    label_tr: "bir noktadaki değeri hesaplama"
+    priority: 14
+    tags: [core, algebra]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+      value: {type: POINT, required: true}
+    keywords: {değer: 3, yerine: 2, koy: 2}
+    patterns:
+      - "{var} eşittir {value} için {expr} <OBJ>? değer <ANY>? (hesapla|bul|göster)?"
+      - "{expr} <OBJ>? {var} eşittir {value} için değer <ANY>? (hesapla|bul|göster)?"
+      - "{var} yerine {value} (koy|yaz)"
+      - "{var} eşittir {value} için değer <ANY>? (hesapla|bul|göster)?"
+    clarify_tr:
+      expr: "Hangi ifadenin değerini hesaplayayım?"
+      var: "Hangi değişkene değer atayayım?"
+      value: "Değişkenin değeri nedir?"
+    examples:
+      - {text: "x eşittir iki için x kare artı bir ifadesinin değerini hesapla", slots: {expr: "x^{2} + 1", var: x, value: "2"}}
+      - {text: "x eşittir üç için x kare değerini bul", slots: {expr: "x^{2}", value: "3", var: x}}
+      - {text: "x yerine iki koy", context: {last_latex: "x^{2} + 1"}, slots: {expr: "x^{2} + 1", value: "2", var: x}}
+      - {text: "x eşittir sıfır için sinüs x değerini hesapla", slots: {expr: "\\sin\\left(x\\right)", value: "0", var: x}}
+      - {text: "x eşittir bir için e üzeri x ifadesinin değerini bul", slots: {expr: "e^{x}", value: "1", var: x}}
+      - {text: "x eşittir iki için üç x artı bir değerini hesapla", slots: {expr: "3 x + 1", value: "2", var: x}}
+      - {text: "x eşittir dört için karekök x değerini bul", slots: {expr: "\\sqrt{x}", value: "4", var: x}}
+      - {text: "x eşittir pi için sinüs x değerini hesapla", slots: {expr: "\\sin\\left(x\\right)", value: "\\pi", var: x}}
+      - {text: "x eşittir beş için iki x eksi üç ifadesinin değerini bul", slots: {expr: "2 x - 3", value: "5", var: x}}
+      - {text: "x yerine üç yaz", context: {last_latex: "x^{2}"}, slots: {expr: "x^{2}", value: "3", var: x}}
+      - {text: "x eşittir on için x kare değerini hesapla", slots: {expr: "x^{2}", value: "10", var: x}}
+
+  # ==========================================================================================
+  - id: plot
+    kind: cas
+    cas_op: plot
+    label_tr: "grafik çizme"
+    priority: 12
+    tags: [core, visual]
+    slots:
+      expr: {type: EXPR, required: true, from_context: last_latex}
+      var: {type: VAR, required: true, default: x, from_context: active_var}
+    keywords: {grafik: 3, çiz: 3, eğri: 2}
+    patterns:
+      - "{expr} <OBJ>? grafik <ANY>? (çiz|göster|getir)?"
+      - "grafik <ANY>? (çiz|göster|getir)"
+      - "{expr} <OBJ>? çiz"
+      - "{expr} <OBJ>? eğri <ANY>? (çiz|göster)?"
+    clarify_tr:
+      expr: "Hangi fonksiyonun grafiğini çizeyim?"
+      var: "Hangi değişkene göre çizeyim?"
+    examples:
+      - {text: "iki x üzeri üç fonksiyonunun grafiğini çiz", slots: {expr: "2 x^{3}", var: x}}
+      - {text: "x karenin grafiğini çiz", slots: {expr: "x^{2}", var: x}}
+      - {text: "grafiğini çiz", context: {last_latex: "\\sin\\left(x\\right)"}, slots: {expr: "\\sin\\left(x\\right)", var: x}}
+      - {text: "sinüs x'in grafiğini göster", slots: {expr: "\\sin\\left(x\\right)", var: x}}
+      - {text: "e üzeri x fonksiyonunun grafiğini çiz", slots: {expr: "e^{x}", var: x}}
+      - {text: "bir bölü x fonksiyonunun grafiğini çiz", slots: {expr: "\\frac{1}{x}", var: x}}
+      - {text: "x küp eksi x ifadesinin grafiğini çiz", slots: {expr: "x^{3} - x", var: x}}
+      - {text: "kosinüs x'in grafiğini çizdir", slots: {expr: "\\cos\\left(x\\right)", var: x}}
+      - {text: "logaritma x fonksiyonunun grafiğini göster", slots: {expr: "\\log\\left(x\\right)", var: x}}
+      - {text: "x kare artı bir ifadesinin grafiğini çiz", slots: {expr: "x^{2} + 1", var: x}}
+      - {text: "karekök x'in grafiğini çiz", slots: {expr: "\\sqrt{x}", var: x}}
+      - {text: "x üzeri üçün grafiğini çiz", slots: {expr: "x^{3}", var: x}, tags: [regression_order]}
+
+  # ==========================================================================================
+  - id: book_fetch
+    kind: book
+    label_tr: "kitaptan içerik getirme"
+    priority: 14
+    tags: [core, book]
+    slots:
+      unit_type: {type: UNIT_TYPE, fill: scan, scan_key: unit_type}
+      query: {type: QUERY, required: true}
+    keywords: {tanım: 3, teorem: 3, örnek: 3, lemma: 3, şekil: 3, tablo: 3, alıştırma: 3, getir: 2, göster: 2, kitap: 2, sonuç: 2, kanıt: 2}
+    patterns:
+      - "{query} (tanım|teorem|lemma|önerme|sonuç|kanıt|ispat|şekil|tablo|alıştırma|örnek|bölüm) <ANY>? (ekran)? (getir|göster|aç|bul)"
+      - "(tanım|teorem|lemma|önerme|sonuç|kanıt|ispat|şekil|tablo|alıştırma|örnek|bölüm) {query} <ANY>? (ekran)? (getir|göster|aç|bul)"
+      - "{query} (tanım|teorem|lemma|önerme|sonuç|kanıt|ispat|şekil|tablo|alıştırma|örnek|bölüm) <ANY>?"
+      - "kitap <ANY>? {query} (tanım|teorem|örnek) <ANY>? (getir|göster|aç)"
+    clarify_tr:
+      query: "Kitaptan hangi içeriği getireyim?"
+    examples:
+      - {text: "türev tanımını getir", slots: {unit_type: Definition, query: "türev"}}
+      - {text: "ortalama değer teoremini göster", slots: {unit_type: Theorem, query: "ortalama değer"}}
+      - {text: "örnek 2.7'yi ekrana getir", slots: {unit_type: Example, query: "2.7"}}
+      - {text: "limit tanımını göster", slots: {unit_type: Definition, query: "limit"}}
+      - {text: "süreklilik tanımını getir", slots: {unit_type: Definition, query: "süreklilik"}}
+      - {text: "rolle teoremini getir", slots: {unit_type: Theorem, query: "rolle"}}
+      - {text: "zincir kuralı teoremini göster", slots: {unit_type: Theorem, query: "zincir kuralı"}}
+      - {text: "belirli integral tanımını getir", slots: {unit_type: Definition, query: "belirli integral"}}
+      - {text: "türev tanımını ekrana getir", slots: {unit_type: Definition, query: "türev"}}
+      - {text: "alıştırma 3.1'i göster", slots: {unit_type: Exercise, query: "3.1"}}
+      - {text: "şekil 2.3'ü ekrana getir", slots: {unit_type: Figure, query: "2.3"}}
+      - {text: "integral tanımını göster", slots: {unit_type: Definition, query: "integral"}}
+
+  # ==========================================================================================
+  - id: book_search
+    kind: book
+    label_tr: "kitapta arama"
+    priority: 12
+    tags: [book]
+    slots:
+      query: {type: QUERY, required: true}
+    keywords: {ara: 3, kitap: 2, tara: 2}
+    patterns:
+      - "kitap <ANY>? {query} (ara|arat|tara)"
+      - "{query} kitap <ANY>? (ara|arat|tara)"
+      - "kitap <ANY>? (ara|arat|tara) {query}"
+    clarify_tr:
+      query: "Kitapta neyi arayayım?"
+    examples:
+      - {text: "kitapta türev ara", slots: {query: "türev"}}
+      - {text: "kitapta limit ara", slots: {query: "limit"}}
+      - {text: "kitapta integral ara", slots: {query: "integral"}}
+      - {text: "kitapta süreklilik ara", slots: {query: "süreklilik"}}
+      - {text: "kitapta ortalama değer ara", slots: {query: "ortalama değer"}}
+      - {text: "kitapta zincir kuralı ara", slots: {query: "zincir kuralı"}}
+      - {text: "kitapta seri ara", slots: {query: "seri"}}
+      - {text: "kitapta belirli integral ara", slots: {query: "belirli integral"}}
+      - {text: "kitapta rolle teoremini ara", slots: {query: "rolle teorem"}}
+      - {text: "kitapta maclaurin serisi ara", slots: {query: "maclaurin seri"}}
+      - {text: "kitaptan türev ara", slots: {query: "türev"}}
+
+  # ==========================================================================================
+  - id: ui_clear
+    kind: ui
+    ui_action: clear
+    label_tr: "tahtayı temizleme"
+    priority: 10
+    tags: [core, ui]
+    slots: {}
+    keywords: {temizle: 3, sil: 2, tahta: 2, boşalt: 2}
+    patterns:
+      - "(tahta|ekran|çalışma) <ANY>? temizle"
+      - "temizle"
+      - "(tahta|ekran|çalışma) <ANY>? (sil|boşalt)"
+      - "(sil|boşalt)"
+    clarify_tr: {}
+    examples:
+      - {text: "tahtayı temizle"}
+      - {text: "temizle"}
+      - {text: "ekranı temizle"}
+      - {text: "tahtayı sil"}
+      - {text: "ekranı sil"}
+      - {text: "çalışmayı temizle"}
+      - {text: "ekranı temizle lütfen"}
+      - {text: "tahtayı boşalt"}
+      - {text: "ekranı boşalt"}
+      - {text: "tahtayı temizle bakalım"}
+      - {text: "tahtayı sil lütfen"}
+
+  # ==========================================================================================
+  - id: ui_undo
+    kind: ui
+    ui_action: undo
+    label_tr: "son işlemi geri alma"
+    priority: 10
+    tags: [core, ui]
+    slots: {}
+    keywords: {geri: 3, iptal: 2, son: 1}
+    patterns:
+      - "geri al"
+      - "geri"
+      - "son <ANY>? (işlem|adım|komut) <ANY>? geri al"
+      - "son <ANY>? (işlem|adım|komut) <ANY>? iptal (et)?"
+      - "iptal (et)?"
+    clarify_tr: {}
+    examples:
+      - {text: "geri al"}
+      - {text: "geri"}
+      - {text: "son işlemi geri al"}
+      - {text: "son komutu geri al"}
+      - {text: "iptal et"}
+      - {text: "son adımı geri al"}
+      - {text: "geri al lütfen"}
+      - {text: "iptal"}
+      - {text: "son işlemi iptal et"}
+      - {text: "geri al bakalım"}
+      - {text: "son komutu iptal et"}
+
+  # ==========================================================================================
+  - id: ui_repeat_last
+    kind: ui
+    ui_action: repeat_last
+    label_tr: "son komutu tekrarlama"
+    priority: 10
+    tags: [ui]
+    slots: {}
+    keywords: {tekrar: 3, yine: 2, aynı: 1}
+    patterns:
+      - "tekrar (et|çalıştır)?"
+      - "son <ANY>? (komut|işlem) <ANY>? tekrar (et|çalıştır)?"
+      - "aynı <ANY>? (komut|işlem) <ANY>? tekrar (et|çalıştır)?"
+      - "yine (aynı)? (yap|çalıştır)"
+    clarify_tr: {}
+    examples:
+      - {text: "tekrar"}
+      - {text: "tekrar et"}
+      - {text: "son komutu tekrar et"}
+      - {text: "son işlemi tekrar et"}
+      - {text: "tekrarla"}
+      - {text: "yine aynı yap"}
+      - {text: "aynı komutu tekrar et"}
+      - {text: "son komutu tekrarla"}
+      - {text: "tekrar et lütfen"}
+      - {text: "son işlemi tekrarla"}
+      - {text: "tekrar çalıştır"}
+
+  # ==========================================================================================
+  - id: ui_export
+    kind: ui
+    ui_action: export
+    label_tr: "sonucu kaydetme / dışa aktarma"
+    priority: 10
+    tags: [ui]
+    slots: {}
+    keywords: {kaydet: 3, aktar: 3, indir: 2, dışa: 2}
+    patterns:
+      - "kaydet"
+      - "(sonuç|çalışma|ekran|tahta) <ANY>? kaydet"
+      - "dışa aktar"
+      - "(sonuç|çalışma|ekran|tahta) <ANY>? dışa aktar"
+      - "indir"
+      - "(sonuç|çalışma|ekran|tahta) <ANY>? indir"
+    clarify_tr: {}
+    examples:
+      - {text: "kaydet"}
+      - {text: "sonucu kaydet"}
+      - {text: "çalışmayı kaydet"}
+      - {text: "dışa aktar"}
+      - {text: "sonucu dışa aktar"}
+      - {text: "çalışmayı dışa aktar"}
+      - {text: "indir"}
+      - {text: "sonucu indir"}
+      - {text: "ekranı kaydet"}
+      - {text: "tahtayı kaydet"}
+      - {text: "kaydet lütfen"}

@@ -1,0 +1,3301 @@
+# datasets/curriculum/cards/turev_uygulamalari.yaml
+# 144 kart. Alt konular: artan_azalan, hiz_ivme, ikinci_turev_bukeylik, kritik_noktalar, l_hospital, optimizasyon, ortalama_deger_teoremi, teget_egimi.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: turev_uygulamalari-0001
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 3 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 3 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-1, 1\right\}
+    srepr: FiniteSet(Integer(-1), Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0002
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 12 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 12 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2, 2\right\}
+    srepr: FiniteSet(Integer(-2), Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0003
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $3x^{2} - 27 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: 3x^{2} - 27 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-3, 3\right\}
+    srepr: FiniteSet(Integer(-3), Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0004
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 48 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 48 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-4, 4\right\}
+    srepr: FiniteSet(Integer(-4), Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0005
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 75 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 75 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-5, 5\right\}
+    srepr: FiniteSet(Integer(-5), Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0006
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 108 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 108 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-6, 6\right\}
+    srepr: FiniteSet(Integer(-6), Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0007
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 147 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 147 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-7, 7\right\}
+    srepr: FiniteSet(Integer(-7), Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0008
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 192 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 192 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-8, 8\right\}
+    srepr: FiniteSet(Integer(-8), Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0009
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3x^{2} - 243 = 0
+  command:
+    op: solve
+    equation: 3x^{2} - 243 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-9, 9\right\}
+    srepr: FiniteSet(Integer(-9), Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 - 3a^2 x için f'(x) = 3x^2 - 3a^2; kritik noktalar x = -a ve x = a.
+- id: turev_uygulamalari-0010
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 2 = 0
+  command:
+    op: solve
+    equation: 2x - 2 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0011
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 4 = 0
+  command:
+    op: solve
+    equation: 2x - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{2\right\}
+    srepr: FiniteSet(Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0012
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 6 = 0
+  command:
+    op: solve
+    equation: 2x - 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{3\right\}
+    srepr: FiniteSet(Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0013
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 8 = 0
+  command:
+    op: solve
+    equation: 2x - 8 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{4\right\}
+    srepr: FiniteSet(Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0014
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 10 = 0
+  command:
+    op: solve
+    equation: 2x - 10 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{5\right\}
+    srepr: FiniteSet(Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0015
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 12 = 0
+  command:
+    op: solve
+    equation: 2x - 12 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{6\right\}
+    srepr: FiniteSet(Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0016
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 14 = 0
+  command:
+    op: solve
+    equation: 2x - 14 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{7\right\}
+    srepr: FiniteSet(Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0017
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 16 = 0
+  command:
+    op: solve
+    equation: 2x - 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{8\right\}
+    srepr: FiniteSet(Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0018
+  topic: turev_uygulamalari
+  subtopic: kritik_noktalar
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 18 = 0
+  command:
+    op: solve
+    equation: 2x - 18 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{9\right\}
+    srepr: FiniteSet(Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/kritik_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 - 2ax için f'(x) = 2x - 2a; tek kritik nokta x = a.
+- id: turev_uygulamalari-0019
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2x - 1
+  command:
+    op: evaluate
+    expr: 2x - 1
+    subs:
+      x: '0'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0020
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $2x - 1$ ifadesinin değerini hesapla
+  command:
+    op: evaluate
+    expr: 2x - 1
+    subs:
+      x: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0021
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2x - 1
+  command:
+    op: evaluate
+    expr: 2x - 1
+    subs:
+      x: '2'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0022
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2x + 4
+  command:
+    op: evaluate
+    expr: 2x + 4
+    subs:
+      x: '0'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0023
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2x + 4
+  command:
+    op: evaluate
+    expr: 2x + 4
+    subs:
+      x: '1'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0024
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2x + 4
+  command:
+    op: evaluate
+    expr: 2x + 4
+    subs:
+      x: '2'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0025
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x - 1
+  command:
+    op: evaluate
+    expr: 4x - 1
+    subs:
+      x: '0'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0026
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x - 1
+  command:
+    op: evaluate
+    expr: 4x - 1
+    subs:
+      x: '1'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0027
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x - 1
+  command:
+    op: evaluate
+    expr: 4x - 1
+    subs:
+      x: '2'
+  expected:
+    latex: '7'
+    srepr: Integer(7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0028
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x + 4
+  command:
+    op: evaluate
+    expr: 4x + 4
+    subs:
+      x: '0'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0029
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x + 4
+  command:
+    op: evaluate
+    expr: 4x + 4
+    subs:
+      x: '1'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0030
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4x + 4
+  command:
+    op: evaluate
+    expr: 4x + 4
+    subs:
+      x: '2'
+  expected:
+    latex: '12'
+    srepr: Integer(12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0031
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x - 1
+  command:
+    op: evaluate
+    expr: 6x - 1
+    subs:
+      x: '0'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0032
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x - 1
+  command:
+    op: evaluate
+    expr: 6x - 1
+    subs:
+      x: '1'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0033
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x - 1
+  command:
+    op: evaluate
+    expr: 6x - 1
+    subs:
+      x: '2'
+  expected:
+    latex: '11'
+    srepr: Integer(11)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0034
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 4
+  command:
+    op: evaluate
+    expr: 6x + 4
+    subs:
+      x: '0'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0035
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 4
+  command:
+    op: evaluate
+    expr: 6x + 4
+    subs:
+      x: '1'
+  expected:
+    latex: '10'
+    srepr: Integer(10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0036
+  topic: turev_uygulamalari
+  subtopic: teget_egimi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 4
+  command:
+    op: evaluate
+    expr: 6x + 4
+    subs:
+      x: '2'
+  expected:
+    latex: '16'
+    srepr: Integer(16)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/teget_egimi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = a x^2 + b x için f'(x) = 2ax + b; teğet eğimi f'(x0) değeridir.
+- id: turev_uygulamalari-0037
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $x^{2} - 1 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: x^{2} - 1 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-1, 1\right\}
+    srepr: FiniteSet(Integer(-1), Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0038
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 4 = 0
+  command:
+    op: solve
+    equation: x^{2} - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2, 2\right\}
+    srepr: FiniteSet(Integer(-2), Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0039
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 9 = 0
+  command:
+    op: solve
+    equation: x^{2} - 9 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-3, 3\right\}
+    srepr: FiniteSet(Integer(-3), Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0040
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 16 = 0
+  command:
+    op: solve
+    equation: x^{2} - 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-4, 4\right\}
+    srepr: FiniteSet(Integer(-4), Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0041
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 25 = 0
+  command:
+    op: solve
+    equation: x^{2} - 25 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-5, 5\right\}
+    srepr: FiniteSet(Integer(-5), Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0042
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 36 = 0
+  command:
+    op: solve
+    equation: x^{2} - 36 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-6, 6\right\}
+    srepr: FiniteSet(Integer(-6), Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0043
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 49 = 0
+  command:
+    op: solve
+    equation: x^{2} - 49 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-7, 7\right\}
+    srepr: FiniteSet(Integer(-7), Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0044
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 64 = 0
+  command:
+    op: solve
+    equation: x^{2} - 64 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-8, 8\right\}
+    srepr: FiniteSet(Integer(-8), Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0045
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{2} - 81 = 0
+  command:
+    op: solve
+    equation: x^{2} - 81 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-9, 9\right\}
+    srepr: FiniteSet(Integer(-9), Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_kubik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3/3 - k^2 x için f'(x) = x^2 - k^2; işaret değişim noktaları -k ve k.
+- id: turev_uygulamalari-0046
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 1 = 0
+  command:
+    op: solve
+    equation: 2x - 1 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{1}{2}\right\}
+    srepr: FiniteSet(Rational(1, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0047
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 2 = 0
+  command:
+    op: solve
+    equation: 2x - 2 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0048
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 3 = 0
+  command:
+    op: solve
+    equation: 2x - 3 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{3}{2}\right\}
+    srepr: FiniteSet(Rational(3, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0049
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 4 = 0
+  command:
+    op: solve
+    equation: 2x - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{2\right\}
+    srepr: FiniteSet(Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0050
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 5 = 0
+  command:
+    op: solve
+    equation: 2x - 5 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{5}{2}\right\}
+    srepr: FiniteSet(Rational(5, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0051
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 6 = 0
+  command:
+    op: solve
+    equation: 2x - 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{3\right\}
+    srepr: FiniteSet(Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0052
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 7 = 0
+  command:
+    op: solve
+    equation: 2x - 7 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{7}{2}\right\}
+    srepr: FiniteSet(Rational(7, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0053
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x - 8 = 0
+  command:
+    op: solve
+    equation: 2x - 8 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{4\right\}
+    srepr: FiniteSet(Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0054
+  topic: turev_uygulamalari
+  subtopic: artan_azalan
+  chapter_ref: aicls:bolum-3
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $2x - 9 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: 2x - 9 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{9}{2}\right\}
+    srepr: FiniteSet(Rational(9, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/artan_azalan_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'(x) = 2x - a sıfırdan önce azalan, sonra artandır.
+- id: turev_uygulamalari-0055
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 2 = 0
+  command:
+    op: solve
+    equation: 6x + 2 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{1}{3}\right\}
+    srepr: FiniteSet(Rational(-1, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0056
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 4 = 0
+  command:
+    op: solve
+    equation: 6x + 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{2}{3}\right\}
+    srepr: FiniteSet(Rational(-2, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0057
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 6 = 0
+  command:
+    op: solve
+    equation: 6x + 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-1\right\}
+    srepr: FiniteSet(Integer(-1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0058
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 8 = 0
+  command:
+    op: solve
+    equation: 6x + 8 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{4}{3}\right\}
+    srepr: FiniteSet(Rational(-4, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0059
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 10 = 0
+  command:
+    op: solve
+    equation: 6x + 10 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{5}{3}\right\}
+    srepr: FiniteSet(Rational(-5, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0060
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 12 = 0
+  command:
+    op: solve
+    equation: 6x + 12 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2\right\}
+    srepr: FiniteSet(Integer(-2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0061
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 14 = 0
+  command:
+    op: solve
+    equation: 6x + 14 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{7}{3}\right\}
+    srepr: FiniteSet(Rational(-7, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0062
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 16 = 0
+  command:
+    op: solve
+    equation: 6x + 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{- \frac{8}{3}\right\}
+    srepr: FiniteSet(Rational(-8, 3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0063
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6x + 18 = 0
+  command:
+    op: solve
+    equation: 6x + 18 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-3\right\}
+    srepr: FiniteSet(Integer(-3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/donum_noktasi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^3 + a x^2 için f''(x) = 6x + 2a; dönüm noktası x = -a/3.
+- id: turev_uygulamalari-0064
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 2
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0065
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 2x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 2x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 4
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0066
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 3x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 3x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 6
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(6))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0067
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 4x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 4x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 8
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(8))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0068
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 5x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 5x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 10
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(10))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0069
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 6x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 6x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 12
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(12))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0070
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 7x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 7x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 14
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(14))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0071
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d^{2}}{dx^{2}} \left(x^{3} + 8x^{2}\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: x^{3} + 8x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 16
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(16))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0072
+  topic: turev_uygulamalari
+  subtopic: ikinci_turev_bukeylik
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3} + 9x^{2}\right)
+  command:
+    op: diff
+    expr: x^{3} + 9x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x + 18
+    srepr: Add(Mul(Integer(6), Symbol('x', real=True)), Integer(18))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ikinci_turev
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bükeylik ikinci türevin işaretiyle belirlenir: f''''(x) = 6x + 2a.'
+- id: turev_uygulamalari-0073
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 2 - 2x = 0
+  command:
+    op: solve
+    equation: 2 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0074
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 3 - 2x = 0
+  command:
+    op: solve
+    equation: 3 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{3}{2}\right\}
+    srepr: FiniteSet(Rational(3, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0075
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 4 - 2x = 0
+  command:
+    op: solve
+    equation: 4 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{2\right\}
+    srepr: FiniteSet(Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0076
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 5 - 2x = 0
+  command:
+    op: solve
+    equation: 5 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{5}{2}\right\}
+    srepr: FiniteSet(Rational(5, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0077
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 6 - 2x = 0
+  command:
+    op: solve
+    equation: 6 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{3\right\}
+    srepr: FiniteSet(Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0078
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 7 - 2x = 0
+  command:
+    op: solve
+    equation: 7 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{7}{2}\right\}
+    srepr: FiniteSet(Rational(7, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0079
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 8 - 2x = 0
+  command:
+    op: solve
+    equation: 8 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{4\right\}
+    srepr: FiniteSet(Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0080
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 9 - 2x = 0
+  command:
+    op: solve
+    equation: 9 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{\frac{9}{2}\right\}
+    srepr: FiniteSet(Rational(9, 2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0081
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: 10 - 2x = 0
+  command:
+    op: solve
+    equation: 10 - 2x = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{5\right\}
+    srepr: FiniteSet(Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/dikdortgen_alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Çevresi 2a olan dikdörtgenin alanı A(x) = x(a - x); A'(x) = a - 2x = 0 için x = a/2.
+- id: turev_uygulamalari-0082
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 1 = 0
+  command:
+    op: solve
+    equation: x^{2} - 1 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-1, 1\right\}
+    srepr: FiniteSet(Integer(-1), Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0083
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 4 = 0
+  command:
+    op: solve
+    equation: x^{2} - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-2, 2\right\}
+    srepr: FiniteSet(Integer(-2), Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0084
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 9 = 0
+  command:
+    op: solve
+    equation: x^{2} - 9 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-3, 3\right\}
+    srepr: FiniteSet(Integer(-3), Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0085
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 16 = 0
+  command:
+    op: solve
+    equation: x^{2} - 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-4, 4\right\}
+    srepr: FiniteSet(Integer(-4), Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0086
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 25 = 0
+  command:
+    op: solve
+    equation: x^{2} - 25 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-5, 5\right\}
+    srepr: FiniteSet(Integer(-5), Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0087
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 36 = 0
+  command:
+    op: solve
+    equation: x^{2} - 36 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-6, 6\right\}
+    srepr: FiniteSet(Integer(-6), Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0088
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $x^{2} - 49 = 0$ denklemini çöz
+  command:
+    op: solve
+    equation: x^{2} - 49 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-7, 7\right\}
+    srepr: FiniteSet(Integer(-7), Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0089
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 64 = 0
+  command:
+    op: solve
+    equation: x^{2} - 64 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-8, 8\right\}
+    srepr: FiniteSet(Integer(-8), Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0090
+  topic: turev_uygulamalari
+  subtopic: optimizasyon
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: x^{2} - 81 = 0
+  command:
+    op: solve
+    equation: x^{2} - 81 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{-9, 9\right\}
+    srepr: FiniteSet(Integer(-9), Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/toplam_minimum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x + k^2/x için f'(x) = 1 - k^2/x^2 = 0, yani x^2 = k^2.
+- id: turev_uygulamalari-0091
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(t^{2} + 3t\right)
+  command:
+    op: diff
+    expr: t^{2} + 3t
+    var: t
+    order: 1
+  expected:
+    latex: 2 \cdot t + 3
+    srepr: Add(Mul(Integer(2), Symbol('t', real=True)), Integer(3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0092
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(2t^{2} - t\right)
+  command:
+    op: diff
+    expr: 2t^{2} - t
+    var: t
+    order: 1
+  expected:
+    latex: 4 \cdot t - 1
+    srepr: Add(Mul(Integer(4), Symbol('t', real=True)), Integer(-1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0093
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(3t^{2} + 4t\right)
+  command:
+    op: diff
+    expr: 3t^{2} + 4t
+    var: t
+    order: 1
+  expected:
+    latex: 6 \cdot t + 4
+    srepr: Add(Mul(Integer(6), Symbol('t', real=True)), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0094
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(4t^{2} + 0t\right)
+  command:
+    op: diff
+    expr: 4t^{2} + 0t
+    var: t
+    order: 1
+  expected:
+    latex: 8 \cdot t
+    srepr: Mul(Integer(8), Symbol('t', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0095
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(5t^{2} + 2t\right)
+  command:
+    op: diff
+    expr: 5t^{2} + 2t
+    var: t
+    order: 1
+  expected:
+    latex: 10 \cdot t + 2
+    srepr: Add(Mul(Integer(10), Symbol('t', real=True)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0096
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(2t^{2} + 7t\right)
+  command:
+    op: diff
+    expr: 2t^{2} + 7t
+    var: t
+    order: 1
+  expected:
+    latex: 4 \cdot t + 7
+    srepr: Add(Mul(Integer(4), Symbol('t', real=True)), Integer(7))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0097
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(6t^{2} - 3t\right)
+  command:
+    op: diff
+    expr: 6t^{2} - 3t
+    var: t
+    order: 1
+  expected:
+    latex: 12 \cdot t - 3
+    srepr: Add(Mul(Integer(12), Symbol('t', real=True)), Integer(-3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0098
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(7t^{2} + t\right)
+  command:
+    op: diff
+    expr: 7t^{2} + t
+    var: t
+    order: 1
+  expected:
+    latex: 14 \cdot t + 1
+    srepr: Add(Mul(Integer(14), Symbol('t', real=True)), Integer(1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0099
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dt} \left(3t^{2} + 9t\right)
+  command:
+    op: diff
+    expr: 3t^{2} + 9t
+    var: t
+    order: 1
+  expected:
+    latex: 6 \cdot t + 9
+    srepr: Add(Mul(Integer(6), Symbol('t', real=True)), Integer(9))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/hiz
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Konum s(t) = a t^2 + b t için hız v(t) = s'(t) = 2at + b.
+- id: turev_uygulamalari-0100
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(t^{2} + 3t\right)
+  command:
+    op: diff
+    expr: t^{2} + 3t
+    var: t
+    order: 2
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0101
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(2t^{2} - t\right)
+  command:
+    op: diff
+    expr: 2t^{2} - t
+    var: t
+    order: 2
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0102
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(3t^{2} + 4t\right)
+  command:
+    op: diff
+    expr: 3t^{2} + 4t
+    var: t
+    order: 2
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0103
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(4t^{2} + 0t\right)
+  command:
+    op: diff
+    expr: 4t^{2} + 0t
+    var: t
+    order: 2
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0104
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(5t^{2} + 2t\right)
+  command:
+    op: diff
+    expr: 5t^{2} + 2t
+    var: t
+    order: 2
+  expected:
+    latex: '10'
+    srepr: Integer(10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0105
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d^{2}}{dt^{2}} \left(2t^{2} + 7t\right)$ ifadesinin t değişkenine göre türevini al
+  command:
+    op: diff
+    expr: 2t^{2} + 7t
+    var: t
+    order: 2
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0106
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(6t^{2} - 3t\right)
+  command:
+    op: diff
+    expr: 6t^{2} - 3t
+    var: t
+    order: 2
+  expected:
+    latex: '12'
+    srepr: Integer(12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0107
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(7t^{2} + t\right)
+  command:
+    op: diff
+    expr: 7t^{2} + t
+    var: t
+    order: 2
+  expected:
+    latex: '14'
+    srepr: Integer(14)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0108
+  topic: turev_uygulamalari
+  subtopic: hiz_ivme
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dt^{2}} \left(3t^{2} + 9t\right)
+  command:
+    op: diff
+    expr: 3t^{2} + 9t
+    var: t
+    order: 2
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ivme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'İvme konumun ikinci türevidir: a(t) = s''''(t) = 2a.'
+- id: turev_uygulamalari-0109
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0110
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{2x} - 1}{3x}
+  command:
+    op: limit
+    expr: \frac{e^{2x} - 1}{3x}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{2}{3}
+    srepr: Rational(2, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0111
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{3x} - 1}{2x}
+  command:
+    op: limit
+    expr: \frac{e^{3x} - 1}{2x}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0112
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{4x} - 1}{5x}
+  command:
+    op: limit
+    expr: \frac{e^{4x} - 1}{5x}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{4}{5}
+    srepr: Rational(4, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0113
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{5x} - 1}{2x}
+  command:
+    op: limit
+    expr: \frac{e^{5x} - 1}{2x}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{5}{2}
+    srepr: Rational(5, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0114
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{6x} - 1}{7x}
+  command:
+    op: limit
+    expr: \frac{e^{6x} - 1}{7x}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{6}{7}
+    srepr: Rational(6, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 0/0 belirsizliği L'Hospital kuralıyla a e^{ax}/b -> a/b olur.
+- id: turev_uygulamalari-0115
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(x)}{x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0116
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(2x)}{3x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(2x)}{3x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{2}{3}
+    srepr: Rational(2, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0117
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(3x)}{2x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(3x)}{2x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{9}{4}
+    srepr: Rational(9, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0118
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(4x)}{5x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(4x)}{5x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{8}{5}
+    srepr: Rational(8, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0119
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(5x)}{2x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(5x)}{2x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{25}{4}
+    srepr: Rational(25, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0120
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(6x)}{7x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(6x)}{7x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{18}{7}
+    srepr: Rational(18, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_trig
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: L'Hospital iki kez uygulanırsa (1 - cos(ax))/(b x^2) -> a^2/(2b).
+- id: turev_uygulamalari-0121
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to \infty} \frac{\ln(x)}{x}
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0122
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\lim_{x \to \infty} \frac{\ln(x)}{x^{2}}$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x^{2}}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0123
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to \infty} \frac{\ln(x)}{x^{3}}
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x^{3}}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0124
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to \infty} \frac{\ln(x)}{x^{4}}
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x^{4}}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0125
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to \infty} \frac{\ln(x)}{x^{5}}
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x^{5}}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0126
+  topic: turev_uygulamalari
+  subtopic: l_hospital
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to \infty} \frac{\ln(x)}{x^{6}}
+  command:
+    op: limit
+    expr: \frac{\ln(x)}{x^{6}}
+    var: x
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/lhospital_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'oo/oo belirsizliği: L''Hospital ile 1/(a x^a) -> 0.'
+- id: turev_uygulamalari-0127
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 2 = 0
+  command:
+    op: solve
+    equation: 2x - 2 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{1\right\}
+    srepr: FiniteSet(Integer(1))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0128
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 4 = 0
+  command:
+    op: solve
+    equation: 2x - 4 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{2\right\}
+    srepr: FiniteSet(Integer(2))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0129
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 6 = 0
+  command:
+    op: solve
+    equation: 2x - 6 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{3\right\}
+    srepr: FiniteSet(Integer(3))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0130
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 8 = 0
+  command:
+    op: solve
+    equation: 2x - 8 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{4\right\}
+    srepr: FiniteSet(Integer(4))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0131
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 10 = 0
+  command:
+    op: solve
+    equation: 2x - 10 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{5\right\}
+    srepr: FiniteSet(Integer(5))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0132
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 12 = 0
+  command:
+    op: solve
+    equation: 2x - 12 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{6\right\}
+    srepr: FiniteSet(Integer(6))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0133
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 14 = 0
+  command:
+    op: solve
+    equation: 2x - 14 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{7\right\}
+    srepr: FiniteSet(Integer(7))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0134
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 16 = 0
+  command:
+    op: solve
+    equation: 2x - 16 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{8\right\}
+    srepr: FiniteSet(Integer(8))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0135
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 3
+  input:
+    kind: latex
+    value: 2x - 18 = 0
+  command:
+    op: solve
+    equation: 2x - 18 = 0
+    var: x
+    domain: reals
+  expected:
+    latex: \left\{9\right\}
+    srepr: FiniteSet(Integer(9))
+  checker: set
+  checker_args: {}
+  source: sablon:uygulama/odt_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2, [0, 2a] aralığında ortalama eğim 2a; f'(c) = 2c = 2a için c = a.
+- id: turev_uygulamalari-0136
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{9 - 1}{3 - 1}
+  command:
+    op: simplify
+    expr: \frac{9 - 1}{3 - 1}
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0137
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{16 - 4}{4 - 2}
+  command:
+    op: simplify
+    expr: \frac{16 - 4}{4 - 2}
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0138
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{25 - 9}{5 - 3}
+  command:
+    op: simplify
+    expr: \frac{25 - 9}{5 - 3}
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0139
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{36 - 16}{6 - 4}$ ifadesini sadeleştir
+  command:
+    op: simplify
+    expr: \frac{36 - 16}{6 - 4}
+  expected:
+    latex: '10'
+    srepr: Integer(10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0140
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{49 - 25}{7 - 5}
+  command:
+    op: simplify
+    expr: \frac{49 - 25}{7 - 5}
+  expected:
+    latex: '12'
+    srepr: Integer(12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0141
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{64 - 36}{8 - 6}
+  command:
+    op: simplify
+    expr: \frac{64 - 36}{8 - 6}
+  expected:
+    latex: '14'
+    srepr: Integer(14)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0142
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{81 - 49}{9 - 7}
+  command:
+    op: simplify
+    expr: \frac{81 - 49}{9 - 7}
+  expected:
+    latex: '16'
+    srepr: Integer(16)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0143
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{100 - 64}{10 - 8}
+  command:
+    op: simplify
+    expr: \frac{100 - 64}{10 - 8}
+  expected:
+    latex: '18'
+    srepr: Integer(18)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.
+- id: turev_uygulamalari-0144
+  topic: turev_uygulamalari
+  subtopic: ortalama_deger_teoremi
+  chapter_ref: aicls:bolum-3
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{121 - 81}{11 - 9}
+  command:
+    op: simplify
+    expr: \frac{121 - 81}{11 - 9}
+  expected:
+    latex: '20'
+    srepr: Integer(20)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama/ortalama_degisim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(x) = x^2 için [a, b] aralığındaki ortalama değişim oranı a + b'dir.

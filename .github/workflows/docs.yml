@@ -1,0 +1,70 @@
+# Docs (ADR-0009): strict build on every PR touching docs; publish to (private) GitHub Pages
+# from main. The workstation copy is pulled by deploy/ scripts, not pushed from here.
+name: docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "reports/metrics/latest.json"
+      - "src/aicls/**/*.py"
+  pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "reports/metrics/latest.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUTF8: "1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install docs toolchain
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "mkdocs-material>=9.5,<10" "mkdocstrings[python]>=0.26,<2" "mkdocs-macros-plugin>=1.2,<2"
+          python -m pip install --no-deps -e .
+      - name: Docs map check
+        run: python tools/check_docs_map.py
+      - name: Build (strict)
+        run: python -m mkdocs build --strict
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    # Publishing needs GitHub Pages switched on in the repository settings (Settings > Pages >
+    # Source: GitHub Actions); without it actions/deploy-pages fails with 404 on every push to
+    # main, which is what happened on the first day the repository had a remote (2026-09-09).
+    # Pages on a private repository is public on the Free plan, so turning it on is the
+    # owner's call: set the repository variable DOCS_PAGES_ENABLED=true once Pages is enabled.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.DOCS_PAGES_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

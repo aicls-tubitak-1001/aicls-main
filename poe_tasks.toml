@@ -1,0 +1,140 @@
+# poethepoet task file (ADR-0011). Run `poe <task>` from the ACTIVATED venv: poe resolves
+# `python` from PATH (its "simple" executor), so an unactivated `...\Scripts\poe.exe ci`
+# would run the tasks with the system interpreter and fail ("No module named ruff").
+# Without activation use the explicit executor:
+#     poe -e virtualenv -X location=C:\Users\cagri\.venvs\ai-cls ci
+# The executor is left on `auto` on purpose: the venv lives outside the repository (OneDrive)
+# and its path differs per machine/CI. Every task is shell-independent (Windows + Linux).
+#
+# There are NO gated tasks in this file (ADR-0012): dataset download, weight download,
+# CUDA install and training run only via their explicit scripts with --i-have-approval.
+# `tests/unit/test_scaffold.py::test_poe_tasks_contain_no_gated_commands` enforces this.
+
+[env]
+# Make the src layout importable for tools that are not pytest (import-linter, alembic).
+PYTHONPATH = "src"
+PYTHONUTF8 = "1"
+
+[tasks.env-check]
+help = "Check venv location, OneDrive paths, data root, git config, JWT secret"
+cmd = "python scripts/check_env.py"
+
+[tasks.lint]
+help = "ruff check + ruff format --check"
+sequence = ["python -m ruff check .", "python -m ruff format --check ."]
+default_item_type = "cmd"
+
+[tasks.fmt]
+help = "Auto-fix with ruff and format"
+sequence = ["python -m ruff check . --fix", "python -m ruff format ."]
+default_item_type = "cmd"
+
+[tasks.type]
+help = "mypy on src (strict for core/latex2sympy/mathengine/nlu/eval)"
+cmd = "python -m mypy src"
+
+[tasks.imports]
+help = "import-linter layer + forbidden contracts (ADR-0002)"
+cmd = "lint-imports"
+
+[tasks.gates]
+help = "Static approval-gate scan + raw SQL lint"
+sequence = ["python tools/check_gates.py", "python tools/lint_no_raw_sql.py"]
+default_item_type = "cmd"
+
+[tasks.test]
+help = "PR test selection (no gpu/data/mysql/slow/browser) with coverage XML"
+cmd = "python -m pytest -m \"not gpu and not data and not mysql and not slow and not browser\" -n auto --cov=aicls --cov-report=xml --cov-report=term-missing:skip-covered --timeout=60"
+
+[tasks.test-fast]
+help = "Unit tests only, stop at first failure"
+cmd = "python -m pytest tests/unit -m unit -x -q"
+
+[tasks.test-linux]
+# Windows-only development is how the sandbox shipped a memory cap that killed every worker on
+# Linux and how two path assertions became tautologies there. This task is the standing check.
+# No GitHub workflow: the container needs the workstation's WSL2 + nvidia-docker, which no
+# hosted runner has. Forward pytest arguments after `--`.
+help = "Run the suite on Linux, inside the CUDA container (scripts/gpu/aicls-gpu.sh, ADR-0020)"
+cmd = "python scripts/run_linux_suite.py"
+
+[tasks.test-all]
+help = "Everything that runs on CPU without real data (includes slow/perf/e2e)"
+cmd = "python -m pytest -m \"not gpu and not data and not mysql and not browser\" -n auto --cov=aicls --cov-report=xml --timeout=600"
+
+[tasks.cov]
+help = "Coverage HTML report + tier gate"
+sequence = [
+  "python -m pytest -m \"not gpu and not data and not mysql and not slow and not browser\" --cov=aicls --cov-report=html --cov-report=xml --timeout=60",
+  "python scripts/coverage_gate.py coverage.xml",
+]
+default_item_type = "cmd"
+
+[tasks.coverage-gate]
+help = "Enforce per-package coverage tiers on an existing coverage.xml"
+cmd = "python scripts/coverage_gate.py coverage.xml"
+
+[tasks.docs-map]
+help = "Verify docs/raporlama/ip-eslestirme.md artefact paths"
+cmd = "python tools/check_docs_map.py"
+
+[tasks.ci]
+# Mirrors .github/workflows/ci.yml. The `db` (alembic head + tests/integration/db) and
+# `report-check` steps join this sequence when src/aicls/db and `aicls report` land (Faz 1).
+help = "Local mirror of the CI job order"
+sequence = [
+  "lint",
+  "type",
+  "imports",
+  "gates",
+  "test",
+  "coverage-gate",
+  "openapi",
+  "docs-map",
+  "docs-build",
+]
+default_item_type = "ref"
+
+[tasks.dev]
+help = "FastAPI dev server with reload on :8000"
+cmd = "python -m uvicorn aicls.api.app:create_app --factory --reload --port 8000"
+
+[tasks.docs]
+help = "MkDocs live server on :8001"
+cmd = "python -m mkdocs serve -a 127.0.0.1:8001"
+
+[tasks.docs-build]
+help = "MkDocs strict build (broken links fail)"
+cmd = "python -m mkdocs build --strict"
+
+[tasks.db-upgrade]
+help = "Alembic upgrade head (SQLite dev DB from AICLS_DB_URL)"
+cmd = "python -m alembic upgrade head"
+
+[tasks.db-revision]
+help = "Alembic autogenerate revision: poe db-revision -- -m \"message\""
+cmd = "python -m alembic revision --autogenerate"
+
+[tasks.openapi]
+help = "Export docs/api/openapi.json from the FastAPI app (no-op if api not built yet)"
+cmd = "python scripts/export_openapi.py"
+
+[tasks.eval]
+help = "Run an evaluation kind: poe eval -- cas"
+cmd = "python -m aicls.cli.main eval"
+
+[tasks.report-check]
+help = "Verify promoted metric files (git ancestry, fingerprint); no-op until reports exist"
+cmd = "python -m aicls.cli.main report check"
+
+[tasks.fixtures]
+help = "Regenerate deterministic synthetic fixtures (seed 1234)"
+cmd = "python scripts/make_synthetic_fixtures.py"
+
+[tasks.new-adr]
+help = "Create docs/adr/NNNN-<slug>.md from the template: poe new-adr -- <slug>"
+cmd = "python scripts/new_adr.py"
+
+[tasks.new-exp]
+help = "Create experiments/YYYY-MM-DD-<slug>/ from the template: poe new-exp -- <slug>"
+cmd = "python scripts/new_experiment.py"

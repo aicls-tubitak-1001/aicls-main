@@ -1,0 +1,29 @@
+# GATE: WEIGHTS_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# ASR ölçüm koşusu — docs/ml/egitim-altyapisi.md §8. Kapı açıldıktan sonra ASR ailesinin ilk
+# kapılı eylemi:
+#
+#     aicls profile --config training/configs/asr/profile.yaml --steps 200 --i-have-approval
+#
+# 200 adımda steps_per_s, tepe VRAM ve dataloader bekleme yüzdesi ölçülür. Bu belge hiçbir
+# yerde elle yazılmış epoch süresi vermez; bütçe bu ölçümden türetilir.
+#
+# Ölçülen iş yükü whisper_small_ft'tir (tam ince ayar, batch 32 x 30 s bf16). LoRA hattının
+# ayrı bir profiline ihtiyaç duyulursa bu dosya `_base_: ./whisper_large_v3_turbo_lora.yaml`
+# ile kopyalanır, kısaltma bloğu aynen kalır.
+_base_: ./whisper_small_ft.yaml
+run:
+  name: asr_profile
+  tags: [asr, whisper_small, profile]
+  notes: "200 adımlık verim/VRAM ölçümü; bu koşudan WER raporlanmaz."
+train:
+  epochs: null
+  max_steps: 200
+  eval_every: 100000
+  ckpt_every: 100000
+  log_every: 10
+  early_stop_patience: null
+eval: {beam: 1, max_n_val: 1, metrics: [loss]} # profilde generate çağrılmaz
+tracking: {backend: jsonl, mlflow_uri: null, experiment: profile}
+# Bkz. ocr/profile.yaml: "hiç tutma" ifade edilebilir değil, son kontrol noktası her zaman yazılır.
+checkpoint: {keep_last: 1, keep_best: 0, metric: val_loss, mode: min}

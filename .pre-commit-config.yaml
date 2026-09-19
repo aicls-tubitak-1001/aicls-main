@@ -1,0 +1,93 @@
+# pre-commit hooks (docs/gelistirme/is-akisi.md §6). Install: `pre-commit install --hook-type commit-msg --hook-type pre-push`.
+# Versions are pinned; bump in a `chore(ci)` PR. No hook downloads data or weights.
+minimum_pre_commit_version: "4.0.0"
+default_language_version:
+  python: python3.11
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.4
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        files: ^src/
+        args: [--config-file=pyproject.toml]
+        additional_dependencies:
+          - pydantic>=2.12,<3
+          - pydantic-settings>=2.6,<3
+          - sqlalchemy>=2.0.36,<3
+          - types-PyYAML
+          - types-requests
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+        exclude: ^(mkdocs\.yml|deploy/.*\.ya?ml)$ # mkdocs uses python-specific tags
+      - id: check-json
+        exclude: ^\.vscode/ # VS Code settings allow comments
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: detect-private-key
+      - id: check-merge-conflict
+      - id: check-case-conflict
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.6.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args:
+          [
+            --strict,
+            feat,
+            fix,
+            docs,
+            test,
+            refactor,
+            perf,
+            chore,
+            ci,
+            build,
+            exp,
+          ]
+
+  - repo: local
+    hooks:
+      - id: lint-no-raw-sql
+        name: no raw SQL outside migrations
+        entry: python tools/lint_no_raw_sql.py
+        language: system
+        types: [python]
+        files: ^src/
+      - id: check-no-large-files
+        name: repository size guard (1 MB; datasets/ and docs/assets/ up to 5 MB)
+        entry: python scripts/check_no_large_files.py
+        language: system
+        pass_filenames: true
+      - id: check-gates
+        name: static approval-gate scan
+        entry: python tools/check_gates.py
+        language: system
+        pass_filenames: false
+        files: ^(src|training)/
+      - id: pytest-unit-pre-push
+        name: unit tests before push
+        entry: python -m pytest tests/unit -x -q -m unit -p no:cacheprovider
+        language: system
+        pass_filenames: false
+        stages: [pre-push]

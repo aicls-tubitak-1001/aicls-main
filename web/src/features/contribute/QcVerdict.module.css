@@ -1,0 +1,94 @@
+/* Quality verdict: a calm panel, not an alarm. */
+
+.verdict {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+}
+
+.accepted {
+  border-color: var(--color-ok-border);
+  background: var(--color-ok-bg);
+}
+
+.rejected {
+  border-color: var(--color-warn-border);
+  background: var(--color-warn-bg);
+}
+
+.headline {
+  margin: 0;
+}
+
+.hint {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.reasons {
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+.reasons li + li {
+  margin-top: var(--space-2);
+}
+
+.details summary {
+  min-height: var(--tap-target-min);
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.details summary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: start;
+  font-variant-numeric: tabular-nums;
+}
+
+.table thead th {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.delete {
+  align-self: flex-start;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.delete:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

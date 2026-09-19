@@ -1,0 +1,103 @@
+/* Consent screen: a readable column, a scrollable text box, and band-only demographics. */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.intro {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+/*
+ * The consent text itself. It is capped in height so the page stays navigable, but it is a
+ * focusable region: a keyboard user can scroll it, and a screen reader announces it by name.
+ */
+.consentText {
+  max-height: 22rem;
+  overflow-y: auto;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  white-space: pre-wrap;
+}
+
+.consentText:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.metaRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.metaRow dt {
+  font-weight: 600;
+}
+
+.metaRow dd {
+  margin: 0;
+}
+
+.hash {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-4);
+}
+
+/* The accept row is a real label, so the whole sentence is a hit target for a pen. */
+.accept {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-height: var(--tap-target-min);
+  padding: var(--space-2) 0;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  cursor: pointer;
+}
+
+.accept input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-accent);
+  flex: none;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

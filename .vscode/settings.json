@@ -1,0 +1,44 @@
+{
+  "python.defaultInterpreterPath": "C:\\Users\\AICLS\\.venvs\\ai-cls\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.extraPaths": ["src"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests", "-p", "no:cacheprovider"],
+  "mypy-type-checker.args": ["--config-file=pyproject.toml"],
+  "ruff.configuration": "pyproject.toml",
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/.pytest_cache": true,
+    "**/.hypothesis": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/site/**": true,
+    "**/htmlcov/**": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
+    }
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "yaml.schemas": {},
+  "search.exclude": {
+    "**/site": true,
+    "**/htmlcov": true,
+    "**/node_modules": true
+  }
+}

@@ -1,0 +1,94 @@
+/*
+ * Shared table styling for the guide.
+ *
+ * Every table in the guide is a real `<table>` with a `<caption>` and scoped headers, wrapped in a
+ * container that scrolls on its own: the page itself must never scroll sideways, and a lecturer
+ * comparing rows on a board needs the header row to stay meaningful when the table is narrow.
+ */
+
+.wrap {
+  margin-block: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.caption {
+  caption-side: top;
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  vertical-align: top;
+  border-block-start: 1px solid var(--color-border);
+}
+
+.table thead th {
+  border-block-start: none;
+  background: var(--color-surface-muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.table tbody th {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.numeric {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  overflow-wrap: anywhere;
+}
+
+/* A key cap: the visual is decorative, the text inside carries the meaning. */
+.kbd {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-block-end-width: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+@media print {
+  .wrap {
+    overflow: visible;
+    break-inside: auto;
+  }
+
+  .table thead th {
+    background: none;
+  }
+
+  .table thead {
+    display: table-header-group;
+  }
+
+  .table tr {
+    break-inside: avoid;
+  }
+}

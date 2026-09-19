@@ -1,0 +1,125 @@
+# AI-CLS data & weights catalog — DESCRIPTIVE ONLY (ADR-0008, ADR-0012).
+#
+# This file documents what a dataset or a checkpoint IS: where it comes from, what it costs in
+# bytes, under which licence it may be used and which approval gate its download sits behind.
+# It contains no download code and this package contains none either: the gated scripts
+# (training/scripts/download_mathwriting.py, training/scripts/download_weights.py) read these
+# entries, print them and only then — after `require_gate` has accepted the flag, the environment
+# variable and the ledger row — fetch anything.
+#
+# `sha256` stays null until a gated download has actually happened; it is then filled in from the
+# produced manifest.json so later verifications are exact.
+schema_version: 1
+
+datasets:
+  mathwriting:
+    kind: dataset
+    version: mathwriting-2024.09
+    title: MathWriting (Google Research)
+    source: google-research
+    url: https://storage.googleapis.com/mathwriting_data/mathwriting-2024.tgz  # gate-ok: descriptive catalog entry, no fetch code (ADR-0012)
+    license: CC-BY-NC-SA-4.0
+    expected_bytes: 3096141721          # 2,88 GiB gzip'li tar; açılınca ~20 GB
+    sha256: f1977f120b0efa8abf715ac544b0596b213b099133da99b5e64f946730929269
+    gate: DATASET_DOWNLOAD
+    citation: >-
+      Gervais, P., Fadeeva, A., Maksai, A. (2024). MathWriting: A Dataset For Handwritten
+      Mathematical Expression Recognition.
+    splits: [train, valid, test, symbols, synthetic]
+    format: InkML (gzip'li tar arşivi, ~630 bin küçük dosya)
+    notes_tr: >-
+      ~230 bin gerçek + ~400 bin sentetik ifade ve sembol alt kümesi; resmi bölmeler korunur.
+      LİSANS KISITI: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0).
+      "NonCommercial" bu veriyle eğitilen modelin ticari kullanımını, "ShareAlike" ise türev
+      çalışmanın aynı lisansla dağıtılmasını kapsar; patent/ticarileşme aşaması planlanıyorsa bu
+      veri kümesiyle eğitilmiş ağırlıklar o aşamaya doğrudan taşınamaz — hukuki görüş alınmadan
+      ticari bir sürümde kullanılmamalıdır. Atıf (Gervais ve ark., 2024) zorunludur.
+      `url`, `expected_bytes` ve lisans 2026-09-08'de resmi depo (google-research/mathwriting)
+      ve HEAD isteğiyle doğrulandı. `sha256` aynı gün onay kapısından geçen indirmeden alındı
+      (3.096.141.721 bayt, beklenen boyutla birebir); bundan sonraki her doğrulama bu özete karşı
+      yapılır, yani arşivin sessizce değişmesi fark edilir.
+
+  mathwriting_excerpt:
+    kind: dataset
+    version: mathwriting-2024.09-excerpt
+    title: MathWriting resmi örneklem (excerpt)
+    source: google-research
+    url: https://storage.googleapis.com/mathwriting_data/mathwriting-2024-excerpt.tgz  # gate-ok: descriptive catalog entry, no fetch code (ADR-0012)
+    license: CC-BY-NC-SA-4.0
+    expected_bytes: 1620634             # 1,55 MiB — tüm hattı kanıtlamaya yeten resmi örneklem
+    sha256: cba038def001480a89962b25cb20a60df4c4145e94c86ef9d2af65f192cb82bc
+    gate: DATASET_DOWNLOAD
+    citation: >-
+      Gervais, P., Fadeeva, A., Maksai, A. (2024). MathWriting: A Dataset For Handwritten
+      Mathematical Expression Recognition (official excerpt archive).
+    splits: [train, valid, test, symbols, synthetic]
+    format: InkML (gzip'li tar arşivi)
+    notes_tr: >-
+      Tam arşivin resmi 1,5 MB'lık örneklemi; aynı dizin düzenini (train/valid/test/symbols/
+      synthetic) ve aynı lisansı (CC BY-NC-SA 4.0, ticari kullanım yasak) taşır. Kapı açıldığında
+      ÖNCE bu indirilir: indirme, parçalama, sözlük ve değerlendirme hattının tamamı 3 GB ve
+      saatler harcanmadan uçtan uca kanıtlanır (`download_mathwriting.py --excerpt`).
+
+  audio_commands:
+    kind: dataset
+    version: aicls-tr-speech-2027.02
+    title: AI-CLS Türkçe matematik komut korpusu (özgün)
+    source: internal
+    url: null
+    license: internal
+    expected_bytes: 6227020800          # 50 saat 16 kHz PCM16 ≈ 5,8 GiB
+    sha256: null
+    gate: null
+    citation: "AI-CLS (125E748) veri toplama sekmesi; rıza ve etik kurul süreci dışarıdadır."
+    splits: [train, valid, test]
+    format: WAV 16 kHz PCM16 + manifest.jsonl
+    notes_tr: >-
+      Depo içinde üretilir (İP-3, "Model Gelişimine Katkıda Bulun"); indirme kapısı yoktur,
+      erişimi rıza sürümü ve KVKK kuralları belirler. Dışa aktarım yalnızca takma ad taşır.
+
+weights:
+  whisper-small:
+    kind: weights
+    version: whisper-small
+    title: OpenAI Whisper small
+    source: openai
+    url: null
+    license: MIT
+    expected_bytes: 483000000
+    sha256: null
+    gate: WEIGHTS_DOWNLOAD
+    citation: "Radford et al. (2022). Robust Speech Recognition via Large-Scale Weak Supervision."
+    notes_tr: >-
+      Yerel dizine indirilir (`AICLS_MODELS_ROOT/pretrained/whisper-small`); kod hiçbir yerde
+      hub kimliği kullanmaz, `from_pretrained` yalnızca yerel yol alır.
+
+  whisper-large-v3-turbo:
+    kind: weights
+    version: whisper-large-v3-turbo
+    title: OpenAI Whisper large-v3-turbo
+    source: openai
+    url: null
+    license: MIT
+    expected_bytes: 1622467428
+    sha256: 542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1
+    gate: WEIGHTS_DOWNLOAD
+    citation: "Radford et al. (2022). Robust Speech Recognition via Large-Scale Weak Supervision."
+    notes_tr: >-
+      LoRA (r=16) ile ince ayar; raporlanan ASR modeli adayı. 2026-09-08'de onay kapısından
+      geçirilerek indirildi: 27 dosya, 1.622.467.428 bayt, dizin parmak izi
+      sha256:f38440a97f9048e6eafefa91d862353750b4b3a3dfbabd64e989d6dceb2c92b4; buradaki `sha256`
+      alanı `model.safetensors` dosyasınındır. LİSANS MIT — MathWriting'in CC BY-NC-SA'sının
+      aksine ticari aşamaya taşınabilir; ASR tarafında lisans engeli yoktur.
+
+  wav2vec2-xls-r-300m:
+    kind: weights
+    version: wav2vec2-xls-r-300m
+    title: Meta Wav2Vec2 XLS-R 300m
+    source: facebook
+    url: null
+    license: Apache-2.0
+    expected_bytes: 1260000000
+    sha256: null
+    gate: WEIGHTS_DOWNLOAD
+    citation: "Babu et al. (2021). XLS-R: Self-supervised Cross-lingual Speech Representation Learning."
+    notes_tr: İP-3 risk planındaki "ensemble" B planı için kayıtta tutulur.

@@ -1,0 +1,19 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.wav binary
+*.pt binary
+*.safetensors binary
+*.inkml text eol=lf
+*.jsonl text eol=lf
+*.jsonld text eol=lf
+*.ttl text eol=lf
+*.ps1 text eol=lf
+*.ckpt binary
+*.pth binary
+*.npz binary
+*.mp3 binary
+*.ogg binary
+*.pdf binary
+*.ico binary
+*.woff2 binary

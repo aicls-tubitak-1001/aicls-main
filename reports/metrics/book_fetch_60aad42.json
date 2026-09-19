@@ -1,0 +1,106 @@
+{
+  "breakdown": {
+    "by_kind": {
+      "ascii": {
+        "n": 6.0,
+        "rate": 1.0,
+        "top1": 6.0
+      },
+      "authored_alias": {
+        "n": 2.0,
+        "rate": 1.0,
+        "top1": 2.0
+      },
+      "bare": {
+        "n": 17.0,
+        "rate": 1.0,
+        "top1": 17.0
+      },
+      "command": {
+        "n": 5.0,
+        "rate": 1.0,
+        "top1": 5.0
+      },
+      "head_noun": {
+        "n": 4.0,
+        "rate": 1.0,
+        "top1": 4.0
+      },
+      "no_type": {
+        "n": 2.0,
+        "rate": 1.0,
+        "top1": 2.0
+      },
+      "partial": {
+        "n": 1.0,
+        "rate": 1.0,
+        "top1": 1.0
+      },
+      "question": {
+        "n": 3.0,
+        "rate": 1.0,
+        "top1": 3.0
+      },
+      "section": {
+        "n": 2.0,
+        "rate": 1.0,
+        "top1": 2.0
+      },
+      "suffix_acc": {
+        "n": 16.0,
+        "rate": 1.0,
+        "top1": 16.0
+      },
+      "suffix_gen": {
+        "n": 9.0,
+        "rate": 1.0,
+        "top1": 9.0
+      },
+      "synonym": {
+        "n": 1.0,
+        "rate": 1.0,
+        "top1": 1.0
+      },
+      "title": {
+        "n": 3.0,
+        "rate": 1.0,
+        "top1": 3.0
+      },
+      "typo": {
+        "n": 1.0,
+        "rate": 1.0,
+        "top1": 1.0
+      }
+    },
+    "misses": []
+  },
+  "ci95": {
+    "fetch_top1": [
+      1.0,
+      1.0
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:168e60b283d99255e758a03fa59d61d40457a44636e8b7daca34e87b098076d9",
+  "dataset_version": "book-fetch-2026.09",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": null,
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "book",
+  "metrics": {
+    "fetch_top1": 1.0,
+    "fetch_top3": 1.0,
+    "tagging_coverage": 1.0
+  },
+  "model_sha256": null,
+  "model_version": null,
+  "n": 72,
+  "name": "book_fetch",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:16Z"
+}

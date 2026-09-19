@@ -1,0 +1,2426 @@
+# datasets/curriculum/cards/diziler_seriler.yaml
+# 100 kart. Alt konular: dizi_limiti, geometrik_seri, kuvvet_toplamlari, taylor_maclaurin, teleskopik_seri, yakinsaklik_testleri.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: diziler_seriler-0001
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{n + 1}{2n - 3}
+  command:
+    op: limit
+    expr: \frac{n + 1}{2n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0002
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{3n + 1}{4n - 3}
+  command:
+    op: limit
+    expr: \frac{3n + 1}{4n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{3}{4}
+    srepr: Rational(3, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0003
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{5n + 1}{2n - 3}
+  command:
+    op: limit
+    expr: \frac{5n + 1}{2n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{5}{2}
+    srepr: Rational(5, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0004
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{2n + 1}{7n - 3}
+  command:
+    op: limit
+    expr: \frac{2n + 1}{7n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{2}{7}
+    srepr: Rational(2, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0005
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{9n + 1}{3n - 3}
+  command:
+    op: limit
+    expr: \frac{9n + 1}{3n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0006
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{4n + 1}{5n - 3}
+  command:
+    op: limit
+    expr: \frac{4n + 1}{5n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{4}{5}
+    srepr: Rational(4, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0007
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{7n + 1}{2n - 3}
+  command:
+    op: limit
+    expr: \frac{7n + 1}{2n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{7}{2}
+    srepr: Rational(7, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0008
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{6n + 1}{4n - 3}
+  command:
+    op: limit
+    expr: \frac{6n + 1}{4n - 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_birinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: a_n = (an + 1)/(cn - 3) dizisinin limiti a/c'dir.
+- id: diziler_seriler-0009
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{n^{2} + n}{2n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{n^{2} + n}{2n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0010
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{3n^{2} + n}{4n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{3n^{2} + n}{4n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{3}{4}
+    srepr: Rational(3, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0011
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{5n^{2} + n}{2n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{5n^{2} + n}{2n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{5}{2}
+    srepr: Rational(5, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0012
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{2n^{2} + n}{7n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{2n^{2} + n}{7n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{2}{7}
+    srepr: Rational(2, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0013
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{9n^{2} + n}{3n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{9n^{2} + n}{3n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0014
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{4n^{2} + n}{5n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{4n^{2} + n}{5n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{4}{5}
+    srepr: Rational(4, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0015
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{7n^{2} + n}{2n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{7n^{2} + n}{2n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{7}{2}
+    srepr: Rational(7, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0016
+  topic: diziler_seriler
+  subtopic: dizi_limiti
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{6n^{2} + n}{4n^{2} + 1}
+  command:
+    op: limit
+    expr: \frac{6n^{2} + n}{4n^{2} + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/dizi_ikinci_derece
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay ve payda aynı dereceden olduğundan limit baş katsayıların oranıdır.
+- id: diziler_seriler-0017
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\lim_{n \to \infty} \left(2 - \frac{2}{2^{n}}\right)$ limitini hesapla
+  command:
+    op: limit
+    expr: 2 - \frac{2}{2^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0018
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{3}{2} - \frac{3}{2 \cdot 3^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{3}{2} - \frac{3}{2 \cdot 3^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0019
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{4}{3} - \frac{4}{3 \cdot 4^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{4}{3} - \frac{4}{3 \cdot 4^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{4}{3}
+    srepr: Rational(4, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0020
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{5}{4} - \frac{5}{4 \cdot 5^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{5}{4} - \frac{5}{4 \cdot 5^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{5}{4}
+    srepr: Rational(5, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0021
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(4 - \frac{4}{2^{n}}\right)
+  command:
+    op: limit
+    expr: 4 - \frac{4}{2^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0022
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(3 - \frac{3}{3^{n}}\right)
+  command:
+    op: limit
+    expr: 3 - \frac{3}{3^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0023
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{8}{3} - \frac{8}{3 \cdot 4^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{8}{3} - \frac{8}{3 \cdot 4^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{8}{3}
+    srepr: Rational(8, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0024
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{5}{2} - \frac{5}{2 \cdot 5^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{5}{2} - \frac{5}{2 \cdot 5^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{5}{2}
+    srepr: Rational(5, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0025
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(6 - \frac{6}{2^{n}}\right)
+  command:
+    op: limit
+    expr: 6 - \frac{6}{2^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0026
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{9}{2} - \frac{9}{2 \cdot 3^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{9}{2} - \frac{9}{2 \cdot 3^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{9}{2}
+    srepr: Rational(9, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0027
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(4 - \frac{4}{4^{n}}\right)
+  command:
+    op: limit
+    expr: 4 - \frac{4}{4^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0028
+  topic: diziler_seriler
+  subtopic: geometrik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{15}{4} - \frac{15}{4 \cdot 5^{n}}\right)
+  command:
+    op: limit
+    expr: \frac{15}{4} - \frac{15}{4 \cdot 5^{n}}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{15}{4}
+    srepr: Rational(15, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Geometrik serinin toplamı kısmi toplamların limitidir: a/(1 - r) = ak/(k-1).'
+- id: diziler_seriler-0029
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{2} - \frac{1}{n + 2}\right)
+  command:
+    op: limit
+    expr: \frac{1}{2} - \frac{1}{n + 2}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0030
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{3} - \frac{1}{n + 3}\right)
+  command:
+    op: limit
+    expr: \frac{1}{3} - \frac{1}{n + 3}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0031
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{4} - \frac{1}{n + 4}\right)
+  command:
+    op: limit
+    expr: \frac{1}{4} - \frac{1}{n + 4}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0032
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{5} - \frac{1}{n + 5}\right)
+  command:
+    op: limit
+    expr: \frac{1}{5} - \frac{1}{n + 5}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{5}
+    srepr: Rational(1, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0033
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{6} - \frac{1}{n + 6}\right)
+  command:
+    op: limit
+    expr: \frac{1}{6} - \frac{1}{n + 6}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0034
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\lim_{n \to \infty} \left(\frac{1}{7} - \frac{1}{n + 7}\right)$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{1}{7} - \frac{1}{n + 7}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{7}
+    srepr: Rational(1, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0035
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{8} - \frac{1}{n + 8}\right)
+  command:
+    op: limit
+    expr: \frac{1}{8} - \frac{1}{n + 8}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{8}
+    srepr: Rational(1, 8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0036
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{9} - \frac{1}{n + 9}\right)
+  command:
+    op: limit
+    expr: \frac{1}{9} - \frac{1}{n + 9}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{9}
+    srepr: Rational(1, 9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0037
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{10} - \frac{1}{n + 10}\right)
+  command:
+    op: limit
+    expr: \frac{1}{10} - \frac{1}{n + 10}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{10}
+    srepr: Rational(1, 10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0038
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{11} - \frac{1}{n + 11}\right)
+  command:
+    op: limit
+    expr: \frac{1}{11} - \frac{1}{n + 11}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{11}
+    srepr: Rational(1, 11)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0039
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{12} - \frac{1}{n + 12}\right)
+  command:
+    op: limit
+    expr: \frac{1}{12} - \frac{1}{n + 12}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{12}
+    srepr: Rational(1, 12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0040
+  topic: diziler_seriler
+  subtopic: teleskopik_seri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \left(\frac{1}{13} - \frac{1}{n + 13}\right)
+  command:
+    op: limit
+    expr: \frac{1}{13} - \frac{1}{n + 13}
+    var: n
+    to: \infty
+  expected:
+    latex: \frac{1}{13}
+    srepr: Rational(1, 13)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/teleskopik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Teleskopik serinin kısmi toplamı S_n = 1/a - 1/(n+a); limiti 1/a'dır.
+- id: diziler_seriler-0041
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '2'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0042
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '3'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0043
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '4'
+  expected:
+    latex: '10'
+    srepr: Integer(10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0044
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '5'
+  expected:
+    latex: '15'
+    srepr: Integer(15)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0045
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '6'
+  expected:
+    latex: '21'
+    srepr: Integer(21)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0046
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)}{2}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)}{2}
+    subs:
+      n: '7'
+  expected:
+    latex: '28'
+    srepr: Integer(28)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/gauss_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1 + 2 + ... + n = n(n+1)/2 (Gauss formülü).
+- id: diziler_seriler-0047
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)(2n + 1)}{6}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '2'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0048
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)(2n + 1)}{6}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '3'
+  expected:
+    latex: '14'
+    srepr: Integer(14)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0049
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)(2n + 1)}{6}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '4'
+  expected:
+    latex: '30'
+    srepr: Integer(30)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0050
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)(2n + 1)}{6}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '5'
+  expected:
+    latex: '55'
+    srepr: Integer(55)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0051
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{n(n + 1)(2n + 1)}{6}$ ifadesinin değerini hesapla
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '6'
+  expected:
+    latex: '91'
+    srepr: Integer(91)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0052
+  topic: diziler_seriler
+  subtopic: kuvvet_toplamlari
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{n(n + 1)(2n + 1)}{6}
+  command:
+    op: evaluate
+    expr: \frac{n(n + 1)(2n + 1)}{6}
+    subs:
+      n: '7'
+  expected:
+    latex: '140'
+    srepr: Integer(140)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/kare_toplami
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6.
+- id: diziler_seriler-0053
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{x}
+  command:
+    op: series
+    expr: e^{x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Symbol('x', real=True), Mul(Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 6), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x', real=True),
+      Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0054
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{x}
+  command:
+    op: series
+    expr: e^{x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Symbol('x', real=True), Mul(Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 6), Pow(Symbol('x', real=True), Integer(3))), Mul(Rational(1, 24), Pow(Symbol('x',
+      real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0055
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{2x}
+  command:
+    op: series
+    expr: e^{2x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 2 \cdot x + 2 \cdot x^{2} + \frac{4 \cdot x^{3}}{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(2), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(4, 3), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0056
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{2x}
+  command:
+    op: series
+    expr: e^{2x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 2 \cdot x + 2 \cdot x^{2} + \frac{4 \cdot x^{3}}{3} + \frac{2 \cdot x^{4}}{3} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(2), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(4, 3), Pow(Symbol('x', real=True), Integer(3))), Mul(Rational(2, 3),
+      Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0057
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{3x}
+  command:
+    op: series
+    expr: e^{3x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 3 \cdot x + \frac{9 \cdot x^{2}}{2} + \frac{9 \cdot x^{3}}{2} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(3), Symbol('x', real=True)), Mul(Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(2))), Mul(Rational(9, 2), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0058
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{3x}
+  command:
+    op: series
+    expr: e^{3x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 3 \cdot x + \frac{9 \cdot x^{2}}{2} + \frac{9 \cdot x^{3}}{2} + \frac{27 \cdot x^{4}}{8}
+      + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(3), Symbol('x', real=True)), Mul(Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(2))), Mul(Rational(9, 2), Pow(Symbol('x', real=True), Integer(3))), Mul(Rational(27,
+      8), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0059
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{4x}
+  command:
+    op: series
+    expr: e^{4x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 4 \cdot x + 8 \cdot x^{2} + \frac{32 \cdot x^{3}}{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(8), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(32, 3), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0060
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: e^{4x}
+  command:
+    op: series
+    expr: e^{4x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 4 \cdot x + 8 \cdot x^{2} + \frac{32 \cdot x^{3}}{3} + \frac{32 \cdot x^{4}}{3} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(8), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(32, 3), Pow(Symbol('x', real=True), Integer(3))), Mul(Rational(32, 3),
+      Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: e^{ax} = sum_{k>=0} (ax)^k/k! Maclaurin serisi.
+- id: diziler_seriler-0061
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(x)
+  command:
+    op: series
+    expr: \sin(x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: x - \frac{x^{3}}{6} + O\left(x^{5}\right)
+    srepr: Add(Symbol('x', real=True), Mul(Integer(-1), Rational(1, 6), Pow(Symbol('x', real=True), Integer(3))),
+      Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0062
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(x)
+  command:
+    op: series
+    expr: \sin(x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)
+    srepr: Add(Symbol('x', real=True), Mul(Integer(-1), Rational(1, 6), Pow(Symbol('x', real=True), Integer(3))),
+      Mul(Rational(1, 120), Pow(Symbol('x', real=True), Integer(5))), Order(Pow(Symbol('x', real=True),
+      Integer(6)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0063
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(2x)
+  command:
+    op: series
+    expr: \sin(2x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 2 \cdot x - \frac{4 \cdot x^{3}}{3} + O\left(x^{5}\right)
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(-1), Rational(4, 3), Pow(Symbol('x',
+      real=True), Integer(3))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0064
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(2x)
+  command:
+    op: series
+    expr: \sin(2x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: 2 \cdot x - \frac{4 \cdot x^{3}}{3} + \frac{4 \cdot x^{5}}{15} + O\left(x^{6}\right)
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(-1), Rational(4, 3), Pow(Symbol('x',
+      real=True), Integer(3))), Mul(Rational(4, 15), Pow(Symbol('x', real=True), Integer(5))), Order(Pow(Symbol('x',
+      real=True), Integer(6)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0065
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(3x)
+  command:
+    op: series
+    expr: \sin(3x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 3 \cdot x - \frac{9 \cdot x^{3}}{2} + O\left(x^{5}\right)
+    srepr: Add(Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(3))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0066
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \sin(3x)
+  command:
+    op: series
+    expr: \sin(3x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: 3 \cdot x - \frac{9 \cdot x^{3}}{2} + \frac{81 \cdot x^{5}}{40} + O\left(x^{6}\right)
+    srepr: Add(Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(3))), Mul(Rational(81, 40), Pow(Symbol('x', real=True), Integer(5))), Order(Pow(Symbol('x',
+      real=True), Integer(6)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) = sum_{j>=0} (-1)^j (ax)^{2j+1}/(2j+1)! Maclaurin serisi.
+- id: diziler_seriler-0067
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \cos(x)
+  command:
+    op: series
+    expr: \cos(x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 - \frac{x^{2}}{2} + \frac{x^{4}}{24} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 24), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True),
+      Integer(5)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0068
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\cos(x)$ ifadesinin Maclaurin serisini yaz
+  command:
+    op: series
+    expr: \cos(x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: 1 - \frac{x^{2}}{2} + \frac{x^{4}}{24} + O\left(x^{6}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 24), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True),
+      Integer(6)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0069
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \cos(2x)
+  command:
+    op: series
+    expr: \cos(2x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 - 2 \cdot x^{2} + \frac{2 \cdot x^{4}}{3} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Integer(2), Pow(Symbol('x', real=True), Integer(2))), Mul(Rational(2,
+      3), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0070
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \cos(2x)
+  command:
+    op: series
+    expr: \cos(2x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: 1 - 2 \cdot x^{2} + \frac{2 \cdot x^{4}}{3} + O\left(x^{6}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Integer(2), Pow(Symbol('x', real=True), Integer(2))), Mul(Rational(2,
+      3), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(6)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0071
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \cos(3x)
+  command:
+    op: series
+    expr: \cos(3x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 - \frac{9 \cdot x^{2}}{2} + \frac{27 \cdot x^{4}}{8} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(27, 8), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True),
+      Integer(5)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0072
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \cos(3x)
+  command:
+    op: series
+    expr: \cos(3x)
+    var: x
+    point: '0'
+    order: 6
+  expected:
+    latex: 1 - \frac{9 \cdot x^{2}}{2} + \frac{27 \cdot x^{4}}{8} + O\left(x^{6}\right)
+    srepr: Add(Integer(1), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(27, 8), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True),
+      Integer(6)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos(ax) = sum_{j>=0} (-1)^j (ax)^{2j}/(2j)! Maclaurin serisi.
+- id: diziler_seriler-0073
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + x)
+  command:
+    op: series
+    expr: \ln(1 + x)
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: x - \frac{x^{2}}{2} + \frac{x^{3}}{3} + O\left(x^{4}\right)
+    srepr: Add(Symbol('x', real=True), Mul(Integer(-1), Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 3), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x', real=True),
+      Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0074
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + x)
+  command:
+    op: series
+    expr: \ln(1 + x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4}}{4} + O\left(x^{5}\right)
+    srepr: Add(Symbol('x', real=True), Mul(Integer(-1), Rational(1, 2), Pow(Symbol('x', real=True), Integer(2))),
+      Mul(Rational(1, 3), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(-1), Rational(1, 4), Pow(Symbol('x',
+      real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0075
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 2x)
+  command:
+    op: series
+    expr: \ln(1 + 2x)
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 2 \cdot x - 2 \cdot x^{2} + \frac{8 \cdot x^{3}}{3} + O\left(x^{4}\right)
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(-1), Integer(2), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(8, 3), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0076
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 2x)
+  command:
+    op: series
+    expr: \ln(1 + 2x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 2 \cdot x - 2 \cdot x^{2} + \frac{8 \cdot x^{3}}{3} - 4 \cdot x^{4} + O\left(x^{5}\right)
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(-1), Integer(2), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(8, 3), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(-1), Integer(4),
+      Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0077
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 3x)
+  command:
+    op: series
+    expr: \ln(1 + 3x)
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 3 \cdot x - \frac{9 \cdot x^{2}}{2} + 9 \cdot x^{3} + O\left(x^{4}\right)
+    srepr: Add(Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(2))), Mul(Integer(9), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0078
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 3x)
+  command:
+    op: series
+    expr: \ln(1 + 3x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 3 \cdot x - \frac{9 \cdot x^{2}}{2} + 9 \cdot x^{3} - \frac{81 \cdot x^{4}}{4} + O\left(x^{5}\right)
+    srepr: Add(Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(-1), Rational(9, 2), Pow(Symbol('x',
+      real=True), Integer(2))), Mul(Integer(9), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(-1),
+      Rational(81, 4), Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)),
+      Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0079
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 4x)
+  command:
+    op: series
+    expr: \ln(1 + 4x)
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 4 \cdot x - 8 \cdot x^{2} + \frac{64 \cdot x^{3}}{3} + O\left(x^{4}\right)
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(-1), Integer(8), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(64, 3), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x',
+      real=True), Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0080
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \ln(1 + 4x)
+  command:
+    op: series
+    expr: \ln(1 + 4x)
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 4 \cdot x - 8 \cdot x^{2} + \frac{64 \cdot x^{3}}{3} - 64 \cdot x^{4} + O\left(x^{5}\right)
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(-1), Integer(8), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Rational(64, 3), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(-1), Integer(64),
+      Pow(Symbol('x', real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x',
+      real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: ln(1 + ax) = sum_{k>=1} (-1)^{k+1} (ax)^k/k Maclaurin serisi.
+- id: diziler_seriler-0081
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - x}
+  command:
+    op: series
+    expr: \frac{1}{1 - x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + x + x^{2} + x^{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Symbol('x', real=True), Pow(Symbol('x', real=True), Integer(2)), Pow(Symbol('x',
+      real=True), Integer(3)), Order(Pow(Symbol('x', real=True), Integer(4)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0082
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - x}
+  command:
+    op: series
+    expr: \frac{1}{1 - x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + x + x^{2} + x^{3} + x^{4} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Symbol('x', real=True), Pow(Symbol('x', real=True), Integer(2)), Pow(Symbol('x',
+      real=True), Integer(3)), Pow(Symbol('x', real=True), Integer(4)), Order(Pow(Symbol('x', real=True),
+      Integer(5)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0083
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - 2x}
+  command:
+    op: series
+    expr: \frac{1}{1 - 2x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 2 \cdot x + 4 \cdot x^{2} + 8 \cdot x^{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(4), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(8), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x', real=True),
+      Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0084
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - 2x}
+  command:
+    op: series
+    expr: \frac{1}{1 - 2x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 2 \cdot x + 4 \cdot x^{2} + 8 \cdot x^{3} + 16 \cdot x^{4} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(2), Symbol('x', real=True)), Mul(Integer(4), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(8), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(16), Pow(Symbol('x',
+      real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0085
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\frac{1}{1 - 3x}$ ifadesinin Maclaurin serisini yaz
+  command:
+    op: series
+    expr: \frac{1}{1 - 3x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 3 \cdot x + 9 \cdot x^{2} + 27 \cdot x^{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(9), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(27), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x', real=True),
+      Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0086
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - 3x}
+  command:
+    op: series
+    expr: \frac{1}{1 - 3x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 3 \cdot x + 9 \cdot x^{2} + 27 \cdot x^{3} + 81 \cdot x^{4} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(3), Symbol('x', real=True)), Mul(Integer(9), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(27), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(81), Pow(Symbol('x',
+      real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0087
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - 4x}
+  command:
+    op: series
+    expr: \frac{1}{1 - 4x}
+    var: x
+    point: '0'
+    order: 4
+  expected:
+    latex: 1 + 4 \cdot x + 16 \cdot x^{2} + 64 \cdot x^{3} + O\left(x^{4}\right)
+    srepr: Add(Integer(1), Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(16), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(64), Pow(Symbol('x', real=True), Integer(3))), Order(Pow(Symbol('x', real=True),
+      Integer(4)), Tuple(Symbol('x', real=True), Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0088
+  topic: diziler_seriler
+  subtopic: taylor_maclaurin
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{1}{1 - 4x}
+  command:
+    op: series
+    expr: \frac{1}{1 - 4x}
+    var: x
+    point: '0'
+    order: 5
+  expected:
+    latex: 1 + 4 \cdot x + 16 \cdot x^{2} + 64 \cdot x^{3} + 256 \cdot x^{4} + O\left(x^{5}\right)
+    srepr: Add(Integer(1), Mul(Integer(4), Symbol('x', real=True)), Mul(Integer(16), Pow(Symbol('x', real=True),
+      Integer(2))), Mul(Integer(64), Pow(Symbol('x', real=True), Integer(3))), Mul(Integer(256), Pow(Symbol('x',
+      real=True), Integer(4))), Order(Pow(Symbol('x', real=True), Integer(5)), Tuple(Symbol('x', real=True),
+      Integer(0))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/maclaurin_geometrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(1 - ax) = sum_{k>=0} (ax)^k geometrik seri açılımı.
+- id: diziler_seriler-0089
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n}
+  command:
+    op: limit
+    expr: \frac{1}{n}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0090
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n^{2}}
+  command:
+    op: limit
+    expr: \frac{1}{n^{2}}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0091
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n^{3}}
+  command:
+    op: limit
+    expr: \frac{1}{n^{3}}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0092
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n^{4}}
+  command:
+    op: limit
+    expr: \frac{1}{n^{4}}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0093
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n^{5}}
+  command:
+    op: limit
+    expr: \frac{1}{n^{5}}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0094
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n^{6}}
+  command:
+    op: limit
+    expr: \frac{1}{n^{6}}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/terim_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: p-serisinin genel teriminin limiti sıfırdır; yakınsaklık için p > 1 gerekir.
+- id: diziler_seriler-0095
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{1}{n + 1}
+  command:
+    op: limit
+    expr: \frac{1}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.
+- id: diziler_seriler-0096
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{2}{n + 1}
+  command:
+    op: limit
+    expr: \frac{2}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.
+- id: diziler_seriler-0097
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{3}{n + 1}
+  command:
+    op: limit
+    expr: \frac{3}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.
+- id: diziler_seriler-0098
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{4}{n + 1}
+  command:
+    op: limit
+    expr: \frac{4}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.
+- id: diziler_seriler-0099
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{5}{n + 1}
+  command:
+    op: limit
+    expr: \frac{5}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.
+- id: diziler_seriler-0100
+  topic: diziler_seriler
+  subtopic: yakinsaklik_testleri
+  chapter_ref: aicls:bolum-6
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{n \to \infty} \frac{6}{n + 1}
+  command:
+    op: limit
+    expr: \frac{6}{n + 1}
+    var: n
+    to: \infty
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:seri/oran_testi
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sum a^n/n! serisi için oran testi limiti a/(n+1) -> 0 < 1; seri yakınsar.

@@ -1,0 +1,161 @@
+/*
+ * The teaching screen: one full-height column with a docked command bar.
+ *
+ * Layout is a three-track grid — rail | board | book — that collapses to a single column on a
+ * tablet and, in presentation mode, drops both rails so the board and the command bar own the wall.
+ * The rails are hidden with the `hidden` attribute, so the rules below re-assert `display: none`
+ * over the flex/grid declarations that would otherwise win.
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  /* The shell's header and footer take roughly 12rem; the board fills whatever is left. */
+  min-height: calc(100vh - 12rem);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.preparing {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.offline {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-warn-bg);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  color: var(--color-warn);
+}
+
+.body {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr) minmax(240px, 340px);
+  gap: var(--space-3);
+  align-items: start;
+  min-height: 0;
+}
+
+.rail,
+.bookRail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  max-height: calc(100vh - 16rem);
+  overflow-y: auto;
+}
+
+.rail[hidden],
+.bookRail[hidden],
+.penColumn[hidden] {
+  display: none;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.boardGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.resultColumn,
+.penColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.penOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.signIn {
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--color-info-bg);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+}
+
+.dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+  padding-top: var(--space-2);
+  background: linear-gradient(to bottom, transparent, var(--color-bg) 35%);
+}
+
+/* -- presentation mode ---------------------------------------------------------------------- */
+
+/*
+ * Presentation mode collapses the layout to one column and the page *closes* both rails when it
+ * is entered (see `WorkspacePage`). It deliberately does not force them to `display: none`: the
+ * "Kitap" button and Alt + B stay live, because "türev tanımını getir" during a lecture has to put
+ * the textbook on the wall (İP-8). A rail the lecturer re-opens here takes the full width.
+ */
+.presentation .body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.presentation .rail,
+.presentation .bookRail {
+  max-height: 45vh;
+}
+
+.presentation .boardGrid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* -- narrower screens ----------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rail,
+  .bookRail {
+    max-height: none;
+  }
+
+  .boardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

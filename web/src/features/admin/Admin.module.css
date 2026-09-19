@@ -1,0 +1,320 @@
+/*
+ * The administration area.
+ *
+ * One stylesheet for the seven panels: they are the same kind of surface (a table or a list of
+ * rows inside a Card) and giving each its own module would only duplicate the same six rules.
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--layout-max);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+.lead {
+  margin: 0 0 var(--space-3);
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.muted {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* -- tabs ---------------------------------------------------------------------------------- */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.tab {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--control-padding-x);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.tabActive {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.panel:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-md);
+}
+
+/* -- shared blocks ------------------------------------------------------------------------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.notice {
+  margin: var(--space-3) 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-ok-border);
+  border-radius: var(--radius-md);
+  background: var(--color-ok-bg);
+  font-size: var(--text-base);
+}
+
+.errorText {
+  margin: var(--space-2) 0;
+  color: var(--color-critical);
+  font-size: var(--text-base);
+}
+
+.warningText,
+.warningBox {
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.warningBox {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warn-bg);
+  font-size: var(--text-base);
+}
+
+.subheading {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+/* -- metric tiles -------------------------------------------------------------------------- */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+}
+
+.metricLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.metricValue {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.metricHint {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.progressTrack {
+  height: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-muted);
+}
+
+.progressFill {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+}
+
+.breakdowns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.breakdown {
+  min-width: 0;
+}
+
+/* -- rows and tables ----------------------------------------------------------------------- */
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.rowHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.rowId {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.metaRow {
+  display: flex;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.metaRow dt {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.metaRow dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table thead th {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* -- book loader --------------------------------------------------------------------------- */
+
+.fileLabel {
+  font-weight: 600;
+}
+
+.file {
+  min-height: var(--tap-target-min);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.file:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.untagged {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warn-bg);
+}
+
+.headings {
+  margin: var(--space-3) 0 0;
+  padding-inline-start: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}

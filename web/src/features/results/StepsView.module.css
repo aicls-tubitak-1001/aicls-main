@@ -1,0 +1,73 @@
+/* The narrated derivation: numbered, generously spaced, readable from the middle of the room. */
+
+.details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+}
+
+.summary {
+  min-height: var(--tap-target-min);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.list {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.index {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.content {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow-x: auto;
+}
+
+.title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-base);
+}
+
+.detail {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.rule {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.empty {
+  margin: 0;
+  color: var(--color-text-muted);
+}

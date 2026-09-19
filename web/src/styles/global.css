@@ -1,0 +1,172 @@
+/*
+ * Global base styles: reset, typography, the shared utility classes and the few KaTeX overrides
+ * the platform needs. Component styling lives in CSS modules next to each component (no UI kit).
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 var(--space-3);
+  line-height: var(--leading-tight);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 2px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+img,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+/*
+ * One focus treatment for the whole application. It is a ring, not an outline swap, so it stays
+ * visible on a coloured button as well as on a white field — and it is never removed: a lecturer
+ * driving the board from the keyboard must always be able to see where they are.
+ */
+:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -4rem;
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  min-height: var(--tap-target-min);
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+/*
+ * Secondary chrome: navigation extras, hints, decorative captions. Presentation mode hides it so
+ * the board carries the command bar and the result and nothing else.
+ */
+:root[data-density="presentation"] .chrome-secondary {
+  display: none !important;
+}
+
+/*
+ * Secondary chrome that is *also* an accessible description (an element another control points at
+ * with `aria-describedby`). Presentation mode must take it off the wall without taking it out of
+ * the accessibility tree: a `display: none` description is not announced at all, so this variant
+ * clips it instead of removing it.
+ */
+:root[data-density="presentation"] .chrome-secondary-quiet {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mathematics: KaTeX supplies its own glyphs; STIX Two Text carries surrounding math prose. */
+.math-body {
+  font-family: var(--font-math);
+}
+
+.katex {
+  font-size: 1.08em;
+}
+
+.katex-display {
+  margin: var(--space-3) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--space-1);
+}
+
+/* Wide content (tables, code, diagrams) scrolls inside itself; the page never scrolls sideways. */
+.scroll-x {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

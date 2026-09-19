@@ -1,0 +1,282 @@
+# AI-CLS - supported LaTeX command table (ADR-0004, docs/mimari/latex-ayristirici.md 3.2).
+#
+# This file is the single source of truth for
+#   1. the strict-mode pre-check in parser.py (anything not listed is UnsupportedConstruct),
+#   2. the IP-4 technical report mapping table (commands.report_rows()),
+#   3. tests/unit/latex2sympy/test_commands_table.py, which keeps it in sync with
+#      grammar/latex_math.lark.
+#
+# Fields
+#   latex       command as written in the input
+#   kind        greek | function | structure | operator | relation | calculus | constant |
+#               set | layout
+#   terminal    the Lark terminal that consumes it (null when handled elsewhere)
+#   node        AST node produced (or "-" when the command only shapes another node)
+#   sympy       the sympy target
+#   handled_by  grammar (default) | normalize
+#   note        free text for the report
+version: "1.0"
+
+commands:
+  # --- Greek letters (GREEK terminal) -> Sym, or Const for \pi -----------------------------
+  - {latex: "\\alpha", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('alpha')"}
+  - {latex: "\\beta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('beta')"}
+  - {latex: "\\gamma", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('gamma')"}
+  - {latex: "\\delta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('delta')"}
+  - {latex: "\\epsilon", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('epsilon')"}
+  - {latex: "\\varepsilon", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('varepsilon')"}
+  - {latex: "\\zeta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('zeta')"}
+  - {latex: "\\eta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('eta')"}
+  - {latex: "\\theta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('theta')"}
+  - {latex: "\\vartheta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('vartheta')"}
+  - {latex: "\\iota", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('iota')"}
+  - {latex: "\\kappa", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('kappa')"}
+  - {latex: "\\lambda", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('lambda')"}
+  - {latex: "\\mu", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('mu')"}
+  - {latex: "\\nu", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('nu')"}
+  - {latex: "\\xi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('xi')"}
+  - {latex: "\\varpi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('varpi')"}
+  - {latex: "\\pi", kind: greek, terminal: GREEK, node: Const, sympy: "pi", note: "constant"}
+  - {latex: "\\varrho", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('varrho')"}
+  - {latex: "\\rho", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('rho')"}
+  - {latex: "\\varsigma", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('varsigma')"}
+  - {latex: "\\sigma", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('sigma')"}
+  - {latex: "\\tau", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('tau')"}
+  - {latex: "\\upsilon", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('upsilon')"}
+  - {latex: "\\varphi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('varphi')"}
+  - {latex: "\\phi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('phi')"}
+  - {latex: "\\chi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('chi')"}
+  - {latex: "\\psi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('psi')"}
+  - {latex: "\\omega", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('omega')"}
+  - {latex: "\\Gamma", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Gamma')"}
+  - {latex: "\\Delta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Delta')"}
+  - {latex: "\\Theta", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Theta')"}
+  - {latex: "\\Lambda", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Lambda')"}
+  - {latex: "\\Xi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Xi')"}
+  - {latex: "\\Pi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Pi')"}
+  - {latex: "\\Sigma", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Sigma')"}
+  - {latex: "\\Upsilon", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Upsilon')"}
+  - {latex: "\\Phi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Phi')"}
+  - {latex: "\\Psi", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Psi')"}
+  - {latex: "\\Omega", kind: greek, terminal: GREEK, node: Sym, sympy: "Symbol('Omega')"}
+
+  # --- functions (FUNC_NAME terminal) ------------------------------------------------------
+  - {latex: "\\sin", kind: function, terminal: FUNC_NAME, node: Func, sympy: "sin"}
+  - {latex: "\\cos", kind: function, terminal: FUNC_NAME, node: Func, sympy: "cos"}
+  - {latex: "\\tan", kind: function, terminal: FUNC_NAME, node: Func, sympy: "tan"}
+  - {latex: "\\cot", kind: function, terminal: FUNC_NAME, node: Func, sympy: "cot"}
+  - {latex: "\\sec", kind: function, terminal: FUNC_NAME, node: Func, sympy: "sec"}
+  - {latex: "\\csc", kind: function, terminal: FUNC_NAME, node: Func, sympy: "csc"}
+  - {latex: "\\arcsin", kind: function, terminal: FUNC_NAME, node: Func, sympy: "asin"}
+  - {latex: "\\arccos", kind: function, terminal: FUNC_NAME, node: Func, sympy: "acos"}
+  - {latex: "\\arctan", kind: function, terminal: FUNC_NAME, node: Func, sympy: "atan"}
+  - {latex: "\\arccot", kind: function, terminal: FUNC_NAME, node: Func, sympy: "acot"}
+  - {latex: "\\sinh", kind: function, terminal: FUNC_NAME, node: Func, sympy: "sinh"}
+  - {latex: "\\cosh", kind: function, terminal: FUNC_NAME, node: Func, sympy: "cosh"}
+  - {latex: "\\tanh", kind: function, terminal: FUNC_NAME, node: Func, sympy: "tanh"}
+  - {latex: "\\coth", kind: function, terminal: FUNC_NAME, node: Func, sympy: "coth"}
+  - {latex: "\\sech", kind: function, terminal: FUNC_NAME, node: Func, sympy: "sech"}
+  - {latex: "\\csch", kind: function, terminal: FUNC_NAME, node: Func, sympy: "csch"}
+  - {latex: "\\ln", kind: function, terminal: FUNC_NAME, node: Func, sympy: "log"}
+  - {latex: "\\lg", kind: function, terminal: FUNC_NAME, node: Func, sympy: "log(x, 10)"}
+  - {latex: "\\exp", kind: function, terminal: FUNC_NAME, node: Func, sympy: "exp"}
+  - {latex: "\\log", kind: function, terminal: _LOG, node: Log, sympy: "log",
+     note: "base from ParserConfig.log_base (default e); \\log_{b} is explicit"}
+  - {latex: "\\operatorname", kind: function, terminal: OPERATORNAME, node: Call,
+     sympy: "Function(name)"}
+
+  # --- structure ---------------------------------------------------------------------------
+  - {latex: "\\frac", kind: structure, terminal: _FRAC, node: Div, sympy: "Rational / Mul(a, Pow(b, -1))"}
+  - {latex: "\\dfrac", kind: structure, terminal: null, node: Div, sympy: "Rational",
+     handled_by: normalize, note: "rewritten to \\frac"}
+  - {latex: "\\tfrac", kind: structure, terminal: null, node: Div, sympy: "Rational",
+     handled_by: normalize, note: "rewritten to \\frac"}
+  - {latex: "\\cfrac", kind: structure, terminal: null, node: Div, sympy: "Rational",
+     handled_by: normalize, note: "rewritten to \\frac"}
+  - {latex: "\\sqrt", kind: structure, terminal: _SQRT, node: Root, sympy: "sqrt / root"}
+  - {latex: "\\lvert", kind: structure, terminal: _LVERT, node: Abs, sympy: "Abs"}
+  - {latex: "\\rvert", kind: structure, terminal: _RVERT, node: Abs, sympy: "Abs"}
+  - {latex: "\\begin{pmatrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix,
+     sympy: "Matrix", note: "parantezli matris"}
+  - {latex: "\\end{pmatrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\begin{matrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix,
+     sympy: "Matrix", note: "sympy.latex() bu bicimi yazar"}
+  - {latex: "\\end{matrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\begin{bmatrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\end{bmatrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\begin{vmatrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\end{vmatrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\begin{Vmatrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\end{Vmatrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\begin{Bmatrix}", kind: structure, terminal: MATRIX_BEGIN, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\end{Bmatrix}", kind: structure, terminal: MATRIX_END, node: Matrix, sympy: "Matrix"}
+  - {latex: "\\text", kind: structure, terminal: null, node: "-", sympy: "-",
+     handled_by: normalize, note: "dropped unless it names a function"}
+  - {latex: "\\mathrm", kind: structure, terminal: null, node: "-", sympy: "-",
+     handled_by: normalize, note: "\\mathrm{d} -> d (differential)"}
+
+  # --- operators ---------------------------------------------------------------------------
+  - {latex: "\\cdot", kind: operator, terminal: _CDOT, node: Mul, sympy: "Mul"}
+  - {latex: "\\times", kind: operator, terminal: _TIMES, node: Mul, sympy: "Mul"}
+  - {latex: "\\pm", kind: operator, terminal: _PM, node: PlusMinus, sympy: "FiniteSet(a+b, a-b)"}
+
+  # --- relations ---------------------------------------------------------------------------
+  - {latex: "\\le", kind: relation, terminal: LE, node: Relation, sympy: "Le"}
+  - {latex: "\\leq", kind: relation, terminal: LE, node: Relation, sympy: "Le"}
+  - {latex: "\\ge", kind: relation, terminal: GE, node: Relation, sympy: "Ge"}
+  - {latex: "\\geq", kind: relation, terminal: GE, node: Relation, sympy: "Ge"}
+  - {latex: "\\ne", kind: relation, terminal: NEQ, node: Relation, sympy: "Ne"}
+  - {latex: "\\neq", kind: relation, terminal: NEQ, node: Relation, sympy: "Ne"}
+  - {latex: "\\approx", kind: relation, terminal: APPROX, node: Relation, sympy: "Eq (approx)"}
+  - {latex: "\\in", kind: relation, terminal: IN, node: Relation, sympy: "Contains"}
+
+  # --- calculus ----------------------------------------------------------------------------
+  - {latex: "\\int", kind: calculus, terminal: _INT, node: Integral, sympy: "Integral",
+     note: "differential detected on the AST; unevaluated"}
+  - {latex: "\\sum", kind: calculus, terminal: _SUM, node: Sum, sympy: "Sum"}
+  - {latex: "\\prod", kind: calculus, terminal: _PROD, node: Product, sympy: "Product"}
+  - {latex: "\\lim", kind: calculus, terminal: _LIM, node: Limit, sympy: "Limit(dir)"}
+  - {latex: "\\to", kind: calculus, terminal: _TO, node: Limit, sympy: "Limit"}
+  - {latex: "\\rightarrow", kind: calculus, terminal: _TO, node: Limit, sympy: "Limit"}
+  - {latex: "\\longrightarrow", kind: calculus, terminal: _TO, node: Limit, sympy: "Limit"}
+  - {latex: "\\partial", kind: calculus, terminal: LEIBNIZ, node: Derivative,
+     sympy: "Derivative", note: "\\frac{\\partial}{\\partial x}"}
+
+  # --- constants and sets ------------------------------------------------------------------
+  - {latex: "\\infty", kind: constant, terminal: INFTY, node: Const, sympy: "oo"}
+  - {latex: "\\mathbb", kind: set, terminal: MATHBB, node: MathSet,
+     sympy: "S.Reals / Naturals / Integers / Rationals / Complexes"}
+
+  # --- layout (removed, never an error) ----------------------------------------------------
+  - {latex: "\\left", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\right", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\displaystyle", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\textstyle", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\limits", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\nolimits", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\big", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\Big", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\bigg", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\Bigg", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\bigl", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\bigr", kind: layout, terminal: SIZING, node: "-", sympy: "-"}
+  - {latex: "\\quad", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\qquad", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\enspace", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\thinspace", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\,", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\;", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\:", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+  - {latex: "\\!", kind: layout, terminal: SPACING, node: "-", sympy: "-"}
+
+# Commands that carry no mathematical meaning: always removed, never an error.
+decorative:
+  - "\\left"
+  - "\\right"
+  - "\\displaystyle"
+  - "\\textstyle"
+  - "\\scriptstyle"
+  - "\\limits"
+  - "\\nolimits"
+  - "\\big"
+  - "\\Big"
+  - "\\bigg"
+  - "\\Bigg"
+  - "\\bigl"
+  - "\\bigr"
+  - "\\Bigl"
+  - "\\Bigr"
+  - "\\quad"
+  - "\\qquad"
+  - "\\enspace"
+  - "\\thinspace"
+  - "\\medspace"
+  - "\\thickspace"
+  - "\\,"
+  - "\\;"
+  - "\\:"
+  - "\\!"
+  - "\\text"
+  - "\\mathrm"
+  - "\\mbox"
+
+# Deliberately out of scope in v1: rejected with UnsupportedConstruct(construct=...).
+# ``lenient_drop: true`` means parse_latex(strict=False) removes the command and keeps its
+# argument instead of raising (OCR output frequently decorates symbols).
+unsupported:
+  - {latex: "\\begin{cases}", note: "v1.1: parcali fonksiyon ortami"}
+  - {latex: "\\end{cases}", note: "v1.1: parcali fonksiyon ortami"}
+  - {latex: "\\begin{align}", note: "v1.1: hizalanmis denklem dizisi"}
+  - {latex: "\\end{align}", note: "v1.1: hizalanmis denklem dizisi"}
+  - {latex: "\\begin{aligned}", note: "v1.1: hizalanmis denklem dizisi"}
+  - {latex: "\\end{aligned}", note: "v1.1: hizalanmis denklem dizisi"}
+  - {latex: "\\begin{array}", note: "v1.1: dizi ortami"}
+  - {latex: "\\end{array}", note: "v1.1: dizi ortami"}
+  - {latex: "\\vec", note: "v1.1: vektor gosterimi", lenient_drop: true}
+  - {latex: "\\hat", note: "v1.1: sapka aksani", lenient_drop: true}
+  - {latex: "\\widehat", note: "v1.1: sapka aksani", lenient_drop: true}
+  - {latex: "\\bar", note: "v1.1: ust cizgi", lenient_drop: true}
+  - {latex: "\\overline", note: "v1.1: ust cizgi", lenient_drop: true}
+  - {latex: "\\underline", note: "v1.1: alt cizgi", lenient_drop: true}
+  - {latex: "\\tilde", note: "v1.1: tilde aksani", lenient_drop: true}
+  - {latex: "\\widetilde", note: "v1.1: tilde aksani", lenient_drop: true}
+  - {latex: "\\dot", note: "v1.1: nokta turev gosterimi", lenient_drop: true}
+  - {latex: "\\ddot", note: "v1.1: cift nokta turev gosterimi", lenient_drop: true}
+  - {latex: "\\overrightarrow", note: "v1.1: vektor oku", lenient_drop: true}
+  - {latex: "\\mathbf", note: "v1.1: kalin sembol", lenient_drop: true}
+  - {latex: "\\boldsymbol", note: "v1.1: kalin sembol", lenient_drop: true}
+  - {latex: "\\mathcal", note: "v1.1: kaligrafik sembol", lenient_drop: true}
+  - {latex: "\\mathfrak", note: "v1.1: fraktur sembol", lenient_drop: true}
+  - {latex: "\\mathsf", note: "v1.1: sans-serif sembol", lenient_drop: true}
+  - {latex: "\\mathtt", note: "v1.1: daktilo sembol", lenient_drop: true}
+  - {latex: "\\label", note: "v1.2: belge etiketi"}
+  - {latex: "\\tag", note: "v1.2: denklem etiketi"}
+  - {latex: "\\ref", note: "v1.2: capraz basvuru"}
+  - {latex: "\\iint", note: "v1.1: cift katli integral"}
+  - {latex: "\\iiint", note: "v1.1: uc katli integral"}
+  - {latex: "\\oint", note: "v1.1: kapali egri integrali"}
+  - {latex: "\\binom", note: "v1.1: binom katsayisi"}
+  - {latex: "\\dbinom", note: "v1.1: binom katsayisi"}
+  - {latex: "\\choose", note: "v1.1: binom katsayisi"}
+  - {latex: "\\cup", note: "v1.1: kume birlesimi"}
+  - {latex: "\\cap", note: "v1.1: kume kesisimi"}
+  - {latex: "\\setminus", note: "v1.1: kume farki"}
+  - {latex: "\\subset", note: "v1.1: alt kume"}
+  - {latex: "\\subseteq", note: "v1.1: alt kume"}
+  - {latex: "\\supset", note: "v1.1: ust kume"}
+  - {latex: "\\supseteq", note: "v1.1: ust kume"}
+  - {latex: "\\notin", note: "v1.1: eleman degil"}
+  - {latex: "\\emptyset", note: "v1.1: bos kume"}
+  - {latex: "\\varnothing", note: "v1.1: bos kume"}
+  - {latex: "\\mid", note: "v1.1: kume kurucu gosterimi"}
+  - {latex: "\\forall", note: "v1.1: evrensel niceleyici"}
+  - {latex: "\\exists", note: "v1.1: varlik niceleyicisi"}
+  - {latex: "\\nabla", note: "v1.1: gradyan operatoru"}
+  # Sekil olarak taninan ama v1 AST'sinde karsiligi olmayan yapi: Derivative tek degiskenlidir.
+  # parser.MIXED_PARTIAL_CONSTRUCT bu adi kullanir; tarama degil, bicim esleme ile yakalanir.
+  - {latex: "\\frac{\\partial^{2}}{\\partial x \\partial y}",
+     note: "v1.1: karma kismi turev; simdilik \\frac{\\partial}{\\partial x} \\frac{\\partial}{\\partial y} f yazimi kullanilabilir"}
+  - {latex: "\\equiv", note: "v1.1: denklik bagintisi"}
+  - {latex: "\\propto", note: "v1.1: oranti"}
+  - {latex: "\\sim", note: "v1.1: benzerlik bagintisi"}
+  - {latex: "\\cong", note: "v1.1: eslik bagintisi"}
+  - {latex: "\\perp", note: "v1.1: diklik"}
+  - {latex: "\\parallel", note: "v1.1: paralellik"}
+  - {latex: "\\angle", note: "v1.1: aci"}
+  - {latex: "\\degree", note: "v1.1: derece"}
+  - {latex: "\\circ", note: "v1.1: fonksiyon bileskesi"}
+  - {latex: "\\ldots", note: "v1.1: sureklilik noktalari"}
+  - {latex: "\\cdots", note: "v1.1: sureklilik noktalari"}
+  - {latex: "\\dots", note: "v1.1: sureklilik noktalari"}
+  - {latex: "\\substack", note: "v1.1: cok satirli indis"}
+  - {latex: "\\limsup", note: "v1.1: ust limit"}
+  - {latex: "\\liminf", note: "v1.1: alt limit"}
+  - {latex: "\\arg", note: "v1.1: argument fonksiyonu"}
+  - {latex: "\\deg", note: "v1.1: derece fonksiyonu"}
+  - {latex: "\\det", note: "v1.1: determinant"}
+  - {latex: "\\dim", note: "v1.1: boyut"}
+  - {latex: "\\gcd", note: "v1.1: en buyuk ortak bolen"}
+  - {latex: "\\max", note: "v1.1: maksimum"}
+  - {latex: "\\min", note: "v1.1: minimum"}
+  - {latex: "\\sup", note: "v1.1: supremum"}
+  - {latex: "\\inf", note: "v1.1: infimum"}

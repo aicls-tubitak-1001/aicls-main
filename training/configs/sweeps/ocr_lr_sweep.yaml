@@ -1,0 +1,33 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Öğrenme oranı taraması — referans hat offline_resnet34_tfm üzerinde tek eksen.
+# Izgara aşağıdaki makine-okunur satırda yaşar; CI her noktayı yükleyip doğrular
+# (tests/unit/ml/test_configs_validate.py::test_lr_sweep_declares_a_machine_readable_grid).
+#
+# AICLS-SWEEP: optim.lr = [1.0e-4, 2.0e-4, 3.0e-4, 5.0e-4, 1.0e-3]
+#
+# Şemada `sweep:` bloğu YOKTUR (aicls.ml.config.TrainConfig, extra="forbid"), bu yüzden tarama
+# tek bir dosya + N ezme olarak koşulur. Her nokta ayrı bir koşu dizini, ayrı bir
+# run_manifest.json ve ayrı bir config_hash üretir (optim.lr hash'e girer; run.name girmez):
+#
+#     python training/scripts/train.py --config training/configs/sweeps/ocr_lr_sweep.yaml \
+#         --set optim.lr=1.0e-4 --set run.name=ocr_lr_sweep_lr1e-4 --i-have-approval
+#
+# Tarama bütçesi kasıtlı olarak kısadır (4000 adım, erken durdurma 2): amaç en iyi modeli
+# üretmek değil, ana koşunun öğrenme oranını seçmektir. Kazanan değer sonra
+# offline_resnet34_tfm.yaml içine yazılır ve tam bütçeyle yeniden koşulur.
+_base_: ../ocr/offline_resnet34_tfm.yaml
+run:
+  name: ocr_lr_sweep
+  tags: [ocr, offline, sweep, lr]
+  notes: "LR taraması; ızgara dosya başlığındaki AICLS-SWEEP satırındadır, --set optim.lr ile koşulur."
+train:
+  epochs: null
+  max_steps: 4000
+  eval_every: 500
+  ckpt_every: 500
+  log_every: 25
+  early_stop_patience: 2
+eval: {beam: 1, max_n_val: 500, metrics: [cer, loss]} # tarama noktalarında hızlı greedy çözme
+tracking: {backend: jsonl, mlflow_uri: null, experiment: ocr_lr_sweep}
+checkpoint: {keep_last: 1, keep_best: 1, metric: val_cer, mode: min}

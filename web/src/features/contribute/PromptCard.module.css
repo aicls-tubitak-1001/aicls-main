@@ -1,0 +1,24 @@
+/* The sentence to read: the biggest type on the collection screen. */
+
+.sentence {
+  margin: 0;
+  color: var(--color-result-text);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  overflow-wrap: break-word;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+/* The sentence takes focus when it changes; the ring says where the reader now is. */
+.sentence:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}

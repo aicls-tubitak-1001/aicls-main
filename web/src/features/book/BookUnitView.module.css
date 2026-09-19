@@ -1,0 +1,73 @@
+/* One textbook unit, readable both in the rail and blown up next to the result. */
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 0;
+}
+
+.compact {
+  padding: var(--space-2);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.meta {
+  margin: 0;
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.chapter {
+  white-space: nowrap;
+}
+
+.body {
+  font-family: var(--font-math);
+  line-height: var(--leading-normal);
+  overflow-x: auto;
+}
+
+.body p {
+  margin: 0 0 var(--space-2);
+}
+
+.figure {
+  margin: 0;
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+}
+
+.figure figcaption {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

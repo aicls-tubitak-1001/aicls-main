@@ -1,0 +1,17 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Kodlayıcı ablasyonu: offline_resnet34_tfm ile TEK farkı model.encoder'dır (öneri A.2.1
+# ResNet/VGG/EfficientNet ailesini adlandırır). Bu dosya bilerek referans yapılandırmayı
+# kalıtır; böylece ablasyon tablosunun iki satırı arasında istemeden başka bir fark oluşamaz
+# (tests/unit/ml/test_configs_validate.py farkın tam olarak {run.name, run.notes, run.tags,
+# model.encoder} olduğunu doğrular).
+#
+# batch_size referans satırdan devralınır. EfficientNet-B0'ın etkinleştirme belleği ResNet34'ten
+# farklıdır; 64 değeri ölçülmüş değildir, `aicls profile` sonrası bu dosyada güncellenmelidir.
+_base_: ./offline_resnet34_tfm.yaml
+run:
+  name: ocr_offline_effnet_b0_tfm
+  tags: [ocr, offline, ablation_encoder]
+  notes: "Kodlayıcı ablasyonu: ResNet34 yerine EfficientNet-B0, geri kalan her şey referansla aynı."
+model:
+  encoder: efficientnet_b0 # torchvision, weights=None (ADR-0012)

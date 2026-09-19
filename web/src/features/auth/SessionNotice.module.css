@@ -1,0 +1,31 @@
+/* Session-expiry banner: quiet, informative, never a modal. */
+
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warn-bg);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.body {
+  margin: 0;
+  font-size: var(--text-base);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target-min);
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}

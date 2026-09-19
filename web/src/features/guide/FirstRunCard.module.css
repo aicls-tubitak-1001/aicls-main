@@ -1,0 +1,55 @@
+.card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-accent);
+  border-inline-start-width: 4px;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-accent-strong);
+}
+
+.intro {
+  margin: var(--space-2) 0 var(--space-3);
+  max-width: 68ch;
+  font-size: var(--text-sm);
+}
+
+.steps {
+  margin: 0 0 var(--space-3);
+  padding-inline-start: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target-min);
+  padding-inline: var(--space-2);
+  margin-inline-start: calc(var(--space-2) * -1);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  color: var(--color-accent-strong);
+}
+
+/* On the board the card is secondary chrome; presentation mode hides it (global.css). */
+@media print {
+  .card {
+    display: none;
+  }
+}

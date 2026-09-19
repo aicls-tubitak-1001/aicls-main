@@ -1,0 +1,396 @@
+# AI-CLS — Okuma Senaryoları Kütüphanesi (İP-3 / İP-4)
+#
+# Amaç: "Model Gelişimine Katkıda Bulun" sekmesinde katılımcıya okutulacak Türkçe cümleler
+# (`prompt_sentences` tablosunun tohumu) ve `datasets/nlu/commands_test.jsonl` altın kümesinin
+# çekirdeği. Her cümle bir senaryo etiketi, bir hedef niyet (ya da ifade okuma için `null`) ve
+# bir zorluk derecesi taşır; `aicls.collect.service.next_prompts` senaryolar arasında dengeleme
+# yapabilsin diye etiket zorunludur.
+#
+# Alanlar `aicls.db.models.audio.PromptSentence` ile birebir eşleşir:
+#   text -> text_tr, tag -> scenario_tag, intent -> intent, difficulty -> difficulty
+#
+# KAYNAK/KAPSAM UYARISI: bu sürüm proje ekibince YAZILMIŞTIR (source: authored). Öneri metnindeki
+# hedef ≥ 600 cümledir; buradaki küme o hedefin çekirdeğidir ve pilot sonrası gerçek ASR
+# çıktılarıyla (source: asr_output / pilot) genişletilecektir. Ölçüm raporlarında bu ayrım
+# açıkça belirtilmelidir (bkz. KNOWN_ISSUES.md "Metrik provenansı").
+#
+# Not: `aicls.asr.stub.STUB_SENTENCES` ve `aicls.data.audio_commands` içindeki 12 cümlelik
+# gömülü liste bu dosyayla değiştirilmelidir (kütüphane kodunda veri tutulmamalı).
+version: "1.0"
+source: authored
+language: tr
+
+scenarios:
+  - tag: turev
+    label_tr: "Türev komutları"
+    intent: differentiate
+    sentences:
+      - {text: "x karenin türevini al", difficulty: 1}
+      - {text: "x küpün türevini hesapla", difficulty: 1}
+      - {text: "iki x artı üç ifadesinin türevini al", difficulty: 1}
+      - {text: "sinüs x'in türevini bul", difficulty: 1}
+      - {text: "kosinüs x fonksiyonunun türevini al", difficulty: 1}
+      - {text: "e üzeri x fonksiyonunun türevini hesapla", difficulty: 2}
+      - {text: "ln x'in türevini al", difficulty: 2}
+      - {text: "x kare artı üç x eksi iki ifadesinin türevini hesapla", difficulty: 2}
+      - {text: "bir bölü x fonksiyonunun türevini bul", difficulty: 2}
+      - {text: "karekök x'in türevini al", difficulty: 2}
+      - {text: "x çarpı sinüs x ifadesinin türevini hesapla", difficulty: 3}
+      - {text: "x kare çarpı e üzeri x ifadesinin türevini al", difficulty: 3}
+      - {text: "sinüs x'in ikinci türevini hesapla", difficulty: 3}
+      - {text: "x küpün üçüncü türevini al", difficulty: 3}
+      - {text: "tanjant x fonksiyonunun türevini bul", difficulty: 2}
+      - {text: "x üzeri dört ifadesinin türevini al", difficulty: 1}
+      - {text: "logaritma x fonksiyonunun türevini hesapla", difficulty: 2}
+      - {text: "iki x üzeri üç ifadesinin x'e göre türevini al", difficulty: 3}
+      - {text: "iki x kare artı üç ifadesinin türevini hesapla", difficulty: 2}
+      - {text: "beş x üzeri iki ifadesinin türevini al", difficulty: 2}
+      - {text: "kosinüs x bölü x ifadesinin türevini bul", difficulty: 3}
+      - {text: "x artı bir bölü x ifadesinin türevini al", difficulty: 3}
+      - {text: "e üzeri iki x ifadesinin türevini hesapla", difficulty: 3}
+      - {text: "sinüs x çarpı kosinüs x ifadesinin türevini al", difficulty: 3}
+      - {text: "x kare eksi dört x artı dört ifadesinin türevini bul", difficulty: 3}
+      - {text: "x üzeri altı ifadesinin ikinci türevini hesapla", difficulty: 3}
+      - {text: "e üzeri x fonksiyonunun ikinci türevini al", difficulty: 3}
+      - {text: "kosinüs x fonksiyonunun türevini bul", difficulty: 1}
+  - tag: integral_belirsiz
+    label_tr: "Belirsiz integral komutları"
+    intent: integrate_indefinite
+    sentences:
+      - {text: "x karenin integralini al", difficulty: 1}
+      - {text: "sinüs x'in integralini hesapla", difficulty: 1}
+      - {text: "iki x artı bir ifadesinin integralini al", difficulty: 1}
+      - {text: "kosinüs x'in integralini bul", difficulty: 1}
+      - {text: "e üzeri x fonksiyonunun integralini hesapla", difficulty: 2}
+      - {text: "bir bölü x fonksiyonunun integralini al", difficulty: 2}
+      - {text: "x küpün belirsiz integralini hesapla", difficulty: 2}
+      - {text: "karekök x'in integralini bul", difficulty: 2}
+      - {text: "x kare artı iki x ifadesinin integralini al", difficulty: 2}
+      - {text: "ln x fonksiyonunun integralini hesapla", difficulty: 3}
+      - {text: "tanjant x'in integralini al", difficulty: 3}
+      - {text: "x üzeri beş ifadesinin belirsiz integralini bul", difficulty: 2}
+      - {text: "x çarpı e üzeri x ifadesinin integralini hesapla", difficulty: 3}
+      - {text: "üç x kare ifadesinin x'e göre integralini al", difficulty: 3}
+      - {text: "üç x kare artı iki x ifadesinin integralini hesapla", difficulty: 2}
+      - {text: "x üzeri altı ifadesinin integralini al", difficulty: 2}
+      - {text: "e üzeri iki x fonksiyonunun integralini bul", difficulty: 3}
+      - {text: "kosinüs x çarpı sinüs x ifadesinin integralini hesapla", difficulty: 3}
+      - {text: "x artı bir bölü x ifadesinin integralini hesapla", difficulty: 3}
+      - {text: "beş x üzeri dört ifadesinin integralini al", difficulty: 2}
+  - tag: integral_belirli
+    label_tr: "Belirli integral komutları"
+    intent: integrate_definite
+    sentences:
+      - {text: "sıfırdan bire kadar x karenin integralini hesapla", difficulty: 2}
+      - {text: "sıfırdan bire kadar x kare integralini al", difficulty: 2}
+      - {text: "birden üçe kadar iki x integralini hesapla", difficulty: 2}
+      - {text: "sıfırdan pi'ye kadar sinüs x integralini al", difficulty: 3}
+      - {text: "eksi birden bire kadar x küp integralini hesapla", difficulty: 3}
+      - {text: "birden ikiye kadar bir bölü x integralini bul", difficulty: 3}
+      - {text: "sıfırdan iki pi'ye kadar kosinüs x integralini hesapla", difficulty: 3}
+      - {text: "ikiden dörde kadar x kare artı bir ifadesinin integralini al", difficulty: 3}
+      - {text: "sıfırdan sonsuza kadar e üzeri eksi x integralini hesapla", difficulty: 3}
+      - {text: "birden beşe kadar x integralini al", difficulty: 2}
+      - {text: "sıfırdan üçe kadar x kare eksi bir ifadesinin integralini hesapla", difficulty: 3}
+      - {text: "eksi ikiden ikiye kadar x küp integralini bul", difficulty: 3}
+      - {text: "sıfırdan dörde kadar karekök x integralini hesapla", difficulty: 3}
+      - {text: "birden ona kadar bir bölü x integralini al", difficulty: 3}
+      - {text: "eksi üçten üçe kadar x kare integralini hesapla", difficulty: 3}
+      - {text: "sıfırdan bire kadar e üzeri x integralini bul", difficulty: 3}
+      - {text: "ikiden beşe kadar üç x integralini al", difficulty: 2}
+      - {text: "sıfırdan pi'ye kadar kosinüs x integralini hesapla", difficulty: 3}
+      - {text: "sıfırdan bire kadar x kare integralini hesapla", difficulty: 2}
+  - tag: limit
+    label_tr: "Limit komutları"
+    intent: limit
+    sentences:
+      - {text: "limit x sıfıra giderken sinüs x bölü x", difficulty: 2}
+      - {text: "x sonsuza giderken bir bölü x'in limiti", difficulty: 2}
+      - {text: "x ikiye giderken x kare artı bir ifadesinin limiti", difficulty: 2}
+      - {text: "x sıfıra sağdan yaklaşırken bir bölü x'in limitini bul", difficulty: 3}
+      - {text: "x sıfıra soldan yaklaşırken bir bölü x'in limitini hesapla", difficulty: 3}
+      - {text: "x sonsuza giderken x kare bölü x küp limitini al", difficulty: 3}
+      - {text: "x eksi sonsuza giderken e üzeri x'in limiti", difficulty: 3}
+      - {text: "x bire giderken x kare eksi bir ifadesinin limitini hesapla", difficulty: 2}
+      - {text: "x pi'ye giderken sinüs x'in limitini bul", difficulty: 3}
+      - {text: "x üçe giderken iki x artı bir ifadesinin limitini al", difficulty: 2}
+      - {text: "limit x sıfıra giderken kosinüs x", difficulty: 2}
+      - {text: "x dörde giderken karekök x'in limitini hesapla", difficulty: 3}
+      - {text: "x sıfıra giderken tanjant x bölü x limitini hesapla", difficulty: 3}
+      - {text: "x sonsuza giderken iki x artı bir bölü x limitini bul", difficulty: 3}
+      - {text: "x bire soldan yaklaşırken ln x'in limitini al", difficulty: 3}
+      - {text: "x ikiye giderken x kare eksi dört ifadesinin limitini hesapla", difficulty: 3}
+      - {text: "x sonsuza giderken e üzeri eksi x limitini bul", difficulty: 3}
+      - {text: "limit x sıfıra giderken bir eksi kosinüs x bölü x kare", difficulty: 3}
+  - tag: denklem
+    label_tr: "Denklem çözme komutları"
+    intent: solve
+    sentences:
+      - {text: "üç x artı beş eşittir on denklemini çöz", difficulty: 2}
+      - {text: "x kare eksi dört eşittir sıfır denklemini çöz", difficulty: 2}
+      - {text: "iki x eksi altı eşittir sıfır denklemini çöz", difficulty: 2}
+      - {text: "x kare artı üç x artı iki eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "x kare eksi dokuz ifadesinin köklerini bul", difficulty: 2}
+      - {text: "x kare artı iki x artı bir ifadesinin köklerini hesapla", difficulty: 3}
+      - {text: "sinüs x eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "e üzeri x eşittir bir denklemini çöz", difficulty: 3}
+      - {text: "x küp eksi x eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "x kare eşittir dokuz denklemini çöz", difficulty: 2}
+      - {text: "iki x artı yedi eşittir on beş denklemini çöz", difficulty: 2}
+      - {text: "x kare eksi beş x artı altı eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "dört x artı sekiz eşittir sıfır denklemini çöz", difficulty: 2}
+      - {text: "x kare artı dört x artı dört eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "kosinüs x eşittir bir denklemini çöz", difficulty: 3}
+      - {text: "x üzeri dört eksi on altı eşittir sıfır denklemini çöz", difficulty: 3}
+      - {text: "beş x eksi on eşittir sıfır denklemini x'e göre çöz", difficulty: 3}
+      - {text: "x kare artı üç x eksi iki fonksiyonunun kökünü bul", difficulty: 3}
+  - tag: sadelestirme
+    label_tr: "Sadeleştirme komutları"
+    intent: simplify
+    sentences:
+      - {text: "x kare artı iki x ifadesini sadeleştir", difficulty: 1}
+      - {text: "x kare bölü x ifadesini sadeleştir", difficulty: 2}
+      - {text: "üç x artı iki x ifadesini sadeleştir", difficulty: 1}
+      - {text: "sinüs x artı kosinüs x ifadesini sadeleştir", difficulty: 2}
+      - {text: "bir bölü x artı bir bölü x ifadesini sadeleştir", difficulty: 3}
+      - {text: "x kare çarpı x ifadesini sadeleştir", difficulty: 2}
+      - {text: "logaritma x artı logaritma x ifadesini sadeleştir", difficulty: 3}
+      - {text: "iki x artı üç x ifadesini sadeleştir", difficulty: 1}
+      - {text: "x kare artı x kare ifadesini sadeleştir", difficulty: 1}
+      - {text: "x küp bölü x kare ifadesini sadeleştir", difficulty: 2}
+      - {text: "x kare artı iki x artı x ifadesini sadeleştir", difficulty: 2}
+      - {text: "iki x çarpı üç x ifadesini sadeleştir", difficulty: 2}
+      - {text: "sinüs x bölü sinüs x ifadesini sadeleştir", difficulty: 3}
+      - {text: "x üzeri dört bölü x kare ifadesini sadeleştir", difficulty: 2}
+      - {text: "dört x eksi iki x ifadesini sadeleştir", difficulty: 1}
+  - tag: carpanlara_ayirma
+    label_tr: "Çarpanlara ayırma komutları"
+    intent: factor
+    sentences:
+      - {text: "x kare eksi dört ifadesini çarpanlarına ayır", difficulty: 2}
+      - {text: "x kare eksi bir ifadesini çarpanlarına ayır", difficulty: 2}
+      - {text: "x kare artı iki x artı bir ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x küp eksi x ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "iki x kare eksi sekiz ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x kare eksi beş x artı altı ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x üzeri dört eksi bir ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x kare eksi dokuz ifadesinin çarpanlarını bul", difficulty: 2}
+      - {text: "iki x kare artı dört x ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x kare artı beş x artı altı ifadesini çarpanlara ayır", difficulty: 3}
+      - {text: "x kare eksi on altı ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x kare artı altı x artı dokuz ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "üç x kare eksi üç ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x üzeri üç artı x kare ifadesini çarpanlarına ayır", difficulty: 3}
+      - {text: "x kare eksi yedi x artı on iki ifadesini çarpanlarına ayır", difficulty: 3}
+  - tag: seri
+    label_tr: "Seri açılımı komutları"
+    intent: series
+    sentences:
+      - {text: "sinüs x'in sıfır civarında seri açılımını yap", difficulty: 3}
+      - {text: "e üzeri x fonksiyonunun seri açılımını hesapla", difficulty: 2}
+      - {text: "kosinüs x'in maclaurin açılımını bul", difficulty: 3}
+      - {text: "bir bölü x fonksiyonunun bir civarında taylor açılımını yap", difficulty: 3}
+      - {text: "sinüs x'in beşinci mertebeden seri açılımını hesapla", difficulty: 3}
+      - {text: "ln x fonksiyonunun bir civarında seri açılımını bul", difficulty: 3}
+      - {text: "tanjant x'in sıfır civarında seri açılımını hesapla", difficulty: 3}
+      - {text: "e üzeri x'in sıfır civarında taylor açılımını yap", difficulty: 3}
+      - {text: "kosinüs x fonksiyonunun seri açılımını yap", difficulty: 2}
+      - {text: "x kare artı bir ifadesinin seri açılımını bul", difficulty: 2}
+      - {text: "sinüs x'in üçüncü mertebeden seri açılımını al", difficulty: 3}
+      - {text: "e üzeri iki x fonksiyonunun seri açılımını hesapla", difficulty: 3}
+      - {text: "kosinüs x'in sıfır civarında taylor açılımını yap", difficulty: 3}
+      - {text: "ln x'in iki civarında seri açılımını hesapla", difficulty: 3}
+      - {text: "x küp artı bir ifadesinin maclaurin açılımını bul", difficulty: 3}
+  - tag: deger
+    label_tr: "Nokta değeri komutları"
+    intent: evaluate_at
+    sentences:
+      - {text: "x eşittir iki için x kare artı bir ifadesinin değerini hesapla", difficulty: 2}
+      - {text: "x eşittir üç için x kare değerini bul", difficulty: 2}
+      - {text: "x eşittir sıfır için sinüs x değerini hesapla", difficulty: 2}
+      - {text: "x eşittir bir için e üzeri x ifadesinin değerini bul", difficulty: 3}
+      - {text: "x eşittir iki için üç x artı bir değerini hesapla", difficulty: 2}
+      - {text: "x eşittir dört için karekök x değerini bul", difficulty: 3}
+      - {text: "x eşittir pi için sinüs x değerini hesapla", difficulty: 3}
+      - {text: "x eşittir beş için iki x eksi üç ifadesinin değerini bul", difficulty: 2}
+      - {text: "x eşittir on için x kare değerini hesapla", difficulty: 2}
+      - {text: "x eşittir altı için x bölü iki değerini bul", difficulty: 3}
+      - {text: "x eşittir yedi için iki x artı üç değerini hesapla", difficulty: 2}
+      - {text: "x eşittir sıfır için kosinüs x değerini bul", difficulty: 2}
+      - {text: "x eşittir dokuz için karekök x ifadesinin değerini hesapla", difficulty: 3}
+      - {text: "x eşittir bir için ln x değerini bul", difficulty: 3}
+      - {text: "x eşittir üç için x küp değerini hesapla", difficulty: 2}
+  - tag: grafik
+    label_tr: "Grafik komutları"
+    intent: plot
+    sentences:
+      - {text: "x karenin grafiğini çiz", difficulty: 1}
+      - {text: "iki x üzeri üç fonksiyonunun grafiğini çiz", difficulty: 2}
+      - {text: "sinüs x'in grafiğini göster", difficulty: 1}
+      - {text: "e üzeri x fonksiyonunun grafiğini çiz", difficulty: 2}
+      - {text: "bir bölü x fonksiyonunun grafiğini çiz", difficulty: 2}
+      - {text: "x küp eksi x ifadesinin grafiğini çiz", difficulty: 3}
+      - {text: "kosinüs x'in grafiğini çizdir", difficulty: 2}
+      - {text: "logaritma x fonksiyonunun grafiğini göster", difficulty: 2}
+      - {text: "x kare artı bir ifadesinin grafiğini çiz", difficulty: 2}
+      - {text: "karekök x'in grafiğini çiz", difficulty: 2}
+      - {text: "x kare eksi dört ifadesinin grafiğini çiz", difficulty: 2}
+      - {text: "tanjant x fonksiyonunun grafiğini göster", difficulty: 2}
+      - {text: "iki x artı bir ifadesinin grafiğini çiz", difficulty: 2}
+      - {text: "e üzeri eksi x fonksiyonunun grafiğini çiz", difficulty: 3}
+      - {text: "sinüs x bölü x ifadesinin grafiğini göster", difficulty: 3}
+  - tag: kitap_getir
+    label_tr: "Kitaptan içerik getirme komutları"
+    intent: book_fetch
+    sentences:
+      - {text: "türev tanımını getir", difficulty: 1}
+      - {text: "limit tanımını göster", difficulty: 1}
+      - {text: "süreklilik tanımını getir", difficulty: 2}
+      - {text: "integral tanımını göster", difficulty: 1}
+      - {text: "ortalama değer teoremini göster", difficulty: 2}
+      - {text: "rolle teoremini getir", difficulty: 2}
+      - {text: "örnek 2.7'yi ekrana getir", difficulty: 2}
+      - {text: "alıştırma 3.1'i göster", difficulty: 2}
+      - {text: "şekil 2.3'ü ekrana getir", difficulty: 3}
+      - {text: "belirli integral tanımını getir", difficulty: 2}
+      - {text: "zincir kuralı teoremini göster", difficulty: 3}
+      - {text: "türev tanımını ekrana getir", difficulty: 1}
+      - {text: "integral tanımını ekrana getir", difficulty: 2}
+      - {text: "limit teoremini göster", difficulty: 2}
+      - {text: "örnek 1.4'ü getir", difficulty: 2}
+      - {text: "alıştırma 2.5'i ekrana getir", difficulty: 2}
+      - {text: "şekil 1.2'yi göster", difficulty: 3}
+  - tag: kitap_ara
+    label_tr: "Kitapta arama komutları"
+    intent: book_search
+    sentences:
+      - {text: "kitapta türev ara", difficulty: 1}
+      - {text: "kitapta limit ara", difficulty: 1}
+      - {text: "kitapta integral ara", difficulty: 1}
+      - {text: "kitapta süreklilik ara", difficulty: 2}
+      - {text: "kitapta ortalama değer ara", difficulty: 2}
+      - {text: "kitapta seri ara", difficulty: 2}
+      - {text: "kitapta belirli integral ara", difficulty: 2}
+      - {text: "kitapta rolle teoremini ara", difficulty: 3}
+      - {text: "kitapta maclaurin serisi ara", difficulty: 3}
+      - {text: "kitaptan türev ara", difficulty: 2}
+      - {text: "kitapta türev kuralları ara", difficulty: 2}
+      - {text: "kitapta taylor ara", difficulty: 2}
+      - {text: "kitapta çarpanlara ayırma ara", difficulty: 3}
+      - {text: "kitapta grafik ara", difficulty: 2}
+  - tag: arayuz_temizle
+    label_tr: "Arayüz: tahtayı temizleme"
+    intent: ui_clear
+    sentences:
+      - {text: "tahtayı temizle", difficulty: 1}
+      - {text: "ekranı temizle", difficulty: 1}
+      - {text: "temizle", difficulty: 1}
+      - {text: "tahtayı sil", difficulty: 1}
+      - {text: "ekranı sil", difficulty: 1}
+      - {text: "çalışmayı temizle", difficulty: 2}
+      - {text: "tahtayı boşalt", difficulty: 2}
+      - {text: "ekranı boşalt", difficulty: 2}
+      - {text: "hepsini temizle", difficulty: 2}
+      - {text: "çalışmayı sil", difficulty: 2}
+  - tag: arayuz_geri
+    label_tr: "Arayüz: geri alma"
+    intent: ui_undo
+    sentences:
+      - {text: "geri al", difficulty: 1}
+      - {text: "geri", difficulty: 1}
+      - {text: "son işlemi geri al", difficulty: 2}
+      - {text: "son komutu geri al", difficulty: 2}
+      - {text: "son adımı geri al", difficulty: 2}
+      - {text: "iptal et", difficulty: 1}
+      - {text: "son işlemi iptal et", difficulty: 2}
+      - {text: "son adımı iptal et", difficulty: 2}
+      - {text: "iptal", difficulty: 1}
+  - tag: arayuz_tekrar
+    label_tr: "Arayüz: tekrarlama"
+    intent: ui_repeat_last
+    sentences:
+      - {text: "tekrar", difficulty: 1}
+      - {text: "tekrar et", difficulty: 1}
+      - {text: "tekrarla", difficulty: 1}
+      - {text: "son komutu tekrar et", difficulty: 2}
+      - {text: "son işlemi tekrar et", difficulty: 2}
+      - {text: "aynı komutu tekrar et", difficulty: 2}
+      - {text: "tekrar çalıştır", difficulty: 2}
+      - {text: "aynı işlemi tekrar et", difficulty: 2}
+      - {text: "tekrar yap", difficulty: 2}
+  - tag: arayuz_kaydet
+    label_tr: "Arayüz: kaydetme ve dışa aktarma"
+    intent: ui_export
+    sentences:
+      - {text: "kaydet", difficulty: 1}
+      - {text: "sonucu kaydet", difficulty: 1}
+      - {text: "çalışmayı kaydet", difficulty: 2}
+      - {text: "dışa aktar", difficulty: 1}
+      - {text: "sonucu dışa aktar", difficulty: 2}
+      - {text: "indir", difficulty: 1}
+      - {text: "sonucu indir", difficulty: 2}
+      - {text: "ekranı kaydet", difficulty: 2}
+      - {text: "çalışmayı indir", difficulty: 2}
+      - {text: "tahtayı dışa aktar", difficulty: 2}
+  # Kapsam dışı istekler: sistem bunlara komut ÜRETMEMELİ, Türkçe öneriyle NoMatch
+  # dönmelidir (öneri metni İP-4 risk planı). `intent: none` bu satırların altın etiketidir.
+  - tag: kapsam_disi
+    label_tr: "Kapsam dışı istekler (NoMatch beklenir)"
+    intent: none
+    sentences:
+      - {text: "bugün hava nasıl", difficulty: 1}
+      - {text: "en yakın kafe nerede", difficulty: 1}
+      - {text: "bana bir şarkı söyle", difficulty: 2}
+      - {text: "yarınki dersin saati kaç", difficulty: 1}
+      - {text: "kim bu adam", difficulty: 1}
+      - {text: "hava sıcaklığı kaç derece", difficulty: 2}
+      - {text: "bilgisayarı kapat", difficulty: 1}
+      - {text: "müzik çal", difficulty: 1}
+      - {text: "bana şaka yap", difficulty: 2}
+      - {text: "sınav ne zaman", difficulty: 1}
+      - {text: "kantin kaçta açılıyor", difficulty: 2}
+      - {text: "ödevimi sen yap", difficulty: 2}
+      - {text: "profesörün adı ne", difficulty: 1}
+      - {text: "ders programını göster", difficulty: 2}
+      - {text: "yemekhane menüsü nedir", difficulty: 1}
+      - {text: "otobüs saatlerini söyle", difficulty: 2}
+      - {text: "bir fıkra anlat", difficulty: 2}
+      - {text: "nasılsın", difficulty: 1}
+      - {text: "beni arama", difficulty: 2}
+      - {text: "hangi filmi izleyelim", difficulty: 2}
+
+  # v1'in 17 niyeti dışında kalan MEŞRU matematik istekleri. Katman bunlara komut
+  # uydurmamalıdır; doğru davranış NoMatch (ya da kitap içeriğine yönlendirme) olmalıdır.
+  # Bu satırlar envanterin sınırını belgeler ve v1.1 için niyet adayı listesidir.
+  - tag: kapsam_disi_matematik
+    label_tr: "v1 kapsamı dışındaki matematik istekleri"
+    intent: none
+    sentences:
+      - {text: "logaritma x fonksiyonunun tanım kümesini söyle", difficulty: 3}
+      - {text: "x kare fonksiyonunun tersini bul", difficulty: 3}
+      - {text: "x kare fonksiyonunun maksimum noktasını bul", difficulty: 3}
+      - {text: "iki fonksiyonun bileşkesini yaz", difficulty: 3}
+      - {text: "x kare matrisinin determinantını hesapla", difficulty: 3}
+
+  # Komut olmayan, salt ifade okuma cümleleri: ASR için matematik telaffuzu örnekleri.
+  # `intent: null` — bu cümleler altın niyet kümesine girmez.
+  - tag: ifade_okuma
+    label_tr: "Matematiksel ifade okuma (komut değil)"
+    intent: null
+    sentences:
+      - {text: "x kare artı iki x eksi üç", difficulty: 1}
+      - {text: "bir bölü x kare artı bir", difficulty: 2}
+      - {text: "sinüs x bölü x", difficulty: 2}
+      - {text: "e üzeri eksi x kare", difficulty: 3}
+      - {text: "karekök x artı bir", difficulty: 2}
+      - {text: "iki x üzeri üç eksi beş x", difficulty: 2}
+      - {text: "kosinüs x çarpı sinüs x", difficulty: 2}
+      - {text: "logaritma x bölü x", difficulty: 3}
+      - {text: "x üzeri dört eksi on altı", difficulty: 2}
+      - {text: "mutlak değer x eksi iki", difficulty: 3}
+      - {text: "pi bölü iki", difficulty: 1}
+      - {text: "eksi sonsuzdan artı sonsuza", difficulty: 3}
+      - {text: "üç faktöriyel", difficulty: 2}
+      - {text: "küpkök sekiz", difficulty: 3}
+      - {text: "iki buçuk çarpı dört", difficulty: 2}
+      - {text: "yüz yirmi üç bölü on bir", difficulty: 3}

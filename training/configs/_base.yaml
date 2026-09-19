@@ -1,0 +1,89 @@
+# training/configs/_base.yaml — her koşunun ortak tabanı.
+#
+# Şema: aicls.ml.config.TrainConfig (pydantic v2, extra="forbid"), belge:
+# docs/ml/egitim-altyapisi.md §1, kararlar ADR-0006 / ADR-0007 / ADR-0012.
+#
+# Bu dosya KOŞULMAZ; görev yapılandırmaları `_base_: ../_base.yaml` ile kalıtır ve yalnızca
+# kendi farklarını yazar. Buradaki değerler kasıtlı olarak "en güvenli" değerlerdir: sentetik
+# veri, CPU, 2 adım. Bir görev yapılandırması bütçesini yazmayı unutursa koşu 2 adımda
+# durur — sessizce yanlış bir modeli saatlerce eğitmez.
+#
+# GATE yoktur: bu taban sentetik veri kümesine bakar (data.dataset: synthetic_ink), yani
+# kendi başına yüklendiğinde TRAINING onayı gerektirmez. Gerçek veriye bakan her çocuk
+# dosya kendi başlığında ihtiyaç duyduğu kapıları listeler.
+#
+# Yol değişkenleri (${...}) aicls.core.paths üzerinden çözülür; bu depoda hiçbir yapılandırma
+# makineye özgü mutlak yol içermez.
+schema_version: 1
+
+run:
+  name: "" # görev yapılandırması / CLI (--name) doldurur; config hash'ine girmez
+  seed: 1234
+  deterministic: true
+  tags: []
+  notes: ""
+
+paths:
+  data_root: ${AICLS_DATA_ROOT}
+  models_root: ${AICLS_MODELS_ROOT}
+  runs_root: ${AICLS_RUNS_ROOT}
+
+data:
+  dataset: synthetic_ink # synthetic_* kapısızdır (ADR-0012); mathwriting/audio_commands değildir
+  root: null # MathWriting parçalarının kökü — DATASET_DOWNLOAD sonrası
+  manifest: null # ses için JSONL manifesti (aicls contrib export-manifest çıktısı)
+  splits_path: null # konuşmacı-ayrık bölme dosyası; ASR raporu için zorunlu
+  split: train
+  mode: online # online (iz özellikleri) | offline (rasterleştirilmiş görüntü)
+  preprocess: [] # ablasyon listesi; aicls.ocr.PREPROCESS_STEPS
+  max_label_len: 160
+  batch_size: 8
+  num_workers: 0 # Windows'ta fork yok; >0 değerleri yalnızca profil ölçümünden sonra
+
+model:
+  # model.family / encoder bilerek yazılmaz: her görev yapılandırması kendi ailesini bildirir
+  # (aksi hâlde whisper çocuklarına miras kalan bir encoder şema hatası olurdu).
+  pretrained_path: null # models_root altındaki yerel kontrol noktası; asla bir hub kimliği
+  weights: null # torchvision kodlayıcıları her zaman weights=None (ADR-0012)
+
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  scheduler: cosine
+  warmup_steps: 0 # gerçek yapılandırmalar kendi ısınmalarını yazar
+
+train:
+  epochs: null
+  max_steps: 2 # duman varsayılanı; gerçek yapılandırmalar ezer
+  grad_accum: 1
+  amp: "off" # bf16 yalnızca CUDA_INSTALL kapısından sonra
+  grad_clip: 1.0
+  eval_every: 1
+  ckpt_every: 1
+  log_every: 1
+  early_stop_patience: null
+  allow_dirty: false # kirli ağaç koşuyu reddeder; --allow-dirty ile koşu citable=false olur
+
+eval:
+  beam: 1
+  max_n_val: null
+  metrics: [cer]
+
+tracking:
+  backend: jsonl # jsonl | mlflow (ADR-0007); birincil alıntı anahtarı run_manifest.json
+  mlflow_uri: null
+  experiment: default
+
+checkpoint:
+  keep_last: 2
+  keep_best: 1
+  metric: val_loss # görev yapılandırmaları val_cer / val_wer yazar
+  mode: min
+
+gates:
+  # SALT BELGE. TrainConfig.is_gate_free YALNIZCA data.dataset'e bakar; buraya yazılan bir
+  # değer hiçbir kapıyı açamaz (ADR-0012). Tabanda null bırakılır ki gerçek veriye bakan bir
+  # çocuk dosya yanlışlıkla "sentetiğim" iddiasını miras almasın.
+  synthetic: null

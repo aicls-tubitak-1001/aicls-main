@@ -1,0 +1,412 @@
+# AI-CLS — TÜBİTAK 1001 #125E748
+# Single distribution `aicls` (src layout). Tool configuration for ruff, mypy, pytest,
+# coverage and import-linter lives here; developer tasks live in poe_tasks.toml.
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aicls"
+description = "AI-CLS: AI-supported interactive Calculus teaching platform (TÜBİTAK 1001 #125E748)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary — see LICENSE (decision pending, ADR-0002)" }
+authors = [
+  { name = "Çağrı Şahin", email = "c.sahin@alparslan.edu.tr" },
+  { name = "Mehmet Murat Turhan" },
+  { name = "Şahiner Güler" },
+]
+keywords = ["calculus", "education", "sympy", "latex", "ocr", "asr", "turkish"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Education",
+  "Natural Language :: Turkish",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Private :: Do Not Upload",
+]
+dynamic = ["version"]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "pydantic>=2.12,<3",
+  "pydantic-settings>=2.6,<3",
+  "sqlalchemy>=2.0.36,<3",
+  "alembic>=1.14,<2",
+  "pymysql>=1.1,<2",
+  "cryptography>=43,<46",
+  "lark>=1.2,<2",
+  "sympy>=1.14,<2",
+  "numpy>=2.0,<3",
+  "pillow>=10,<12",
+  "matplotlib>=3.9,<4",
+  "pyjwt>=2.9,<3",
+  "argon2-cffi>=23.1,<25",
+  "python-multipart>=0.0.12,<1",
+  "defusedxml>=0.7,<1",
+  "structlog>=24,<26",
+  "typer>=0.12,<1",
+  "pyyaml>=6,<7",
+  "rdflib>=7,<8",
+]
+
+[project.optional-dependencies]
+# Pure-Python development stack (allowed without an approval gate). CPU torch/transformers are
+# listed here only for tiny synthetic-model unit tests; they are NOT the GPU stack.
+# Upper bounds widened vs. PYTHON_DEPS.json where the venv already carries a newer major
+# (pytest-cov 7, pytest-asyncio 1.x, mypy 2.x, mkdocstrings 1.x).
+dev = [
+  "pytest>=9,<10",
+  "pytest-cov>=6,<8",
+  "pytest-xdist>=3.6,<4",
+  "pytest-timeout>=2.3,<3",
+  "pytest-asyncio>=0.24,<2",
+  "hypothesis>=6.115,<7",
+  "httpx>=0.27,<1",
+  "freezegun>=1.5,<2",
+  "ruff>=0.7,<1",
+  "mypy>=1.13,<3",
+  "import-linter>=2.1,<3",
+  # grimp is import-linter's graph builder. Declared explicitly because
+  # tests/integration/test_layering_contracts.py imports it directly, so the ADR-0002 contracts
+  # are re-checked inside the normal pytest run and not only by `lint-imports`.
+  "grimp>=3.2,<4",
+  "pre-commit>=4,<5",
+  "poethepoet>=0.29,<1",
+  "pip-tools>=7.4,<8",
+  "pip-audit>=2.7,<3",
+  "mkdocs-material>=9.5,<10",
+  "mkdocstrings[python]>=0.26,<2",
+  "mkdocs-macros-plugin>=1.2,<2",
+  "jiwer>=3.0,<5",
+  "mlflow>=2.17,<4",
+  "torch>=2.11,<3",
+  "transformers>=4.57,<5",
+  "safetensors>=0.4,<1",
+]
+# GATED (approval gate 3, CUDA_INSTALL — ADR-0012). Never `pip install .[ml]` directly:
+# the CUDA wheels come from --index-url https://download.pytorch.org/whl/cu128 (RTX 5090, sm_120)
+# and are installed only by `scripts/install_ml.ps1 -IHaveApproval` after the ledger row exists.
+ml = [
+  "torch>=2.11,<3",
+  "torchvision>=0.26,<1",
+  "peft>=0.13,<1",
+  "accelerate>=1.0,<2",
+]
+
+[project.scripts]
+aicls = "aicls.cli.main:app"
+
+# --------------------------------------------------------------------------------------------
+# setuptools
+# --------------------------------------------------------------------------------------------
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aicls*"]
+
+[tool.setuptools.package-data]
+aicls = [
+  "py.typed",
+  "**/*.lark",
+  "**/*.yaml",
+  "**/*.yml",
+  "**/*.jsonld",
+  "**/*.ttl",
+  "**/*.mako",
+  "**/*.json",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "aicls.__version__" }
+
+# --------------------------------------------------------------------------------------------
+# ruff
+# --------------------------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "scripts", "tools"]
+extend-exclude = [
+  "src/aicls/db/migrations/versions",
+  "web",
+  "site",
+  "data",
+  "runs",
+  "mlruns",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "N", "RUF", "PL"]
+ignore = [
+  "B008",    # function call in argument defaults — FastAPI `Depends()` / typer `Option()` idiom
+  "PLR0913", # too many arguments — pydantic models / typer commands
+  "PLR0912", # too many branches
+  "PLR0915", # too many statements
+  "PLR0911", # too many return statements
+  "PLR2004", # magic value comparison — too noisy for numeric code; enforced by review
+  "PLC0415", # import outside top level — lazy torch/transformers imports are a design rule
+  "RUF001",  # ambiguous unicode in strings — Turkish text is expected
+  "RUF002",  # ambiguous unicode in docstrings
+  "RUF003",  # ambiguous unicode in comments
+  "RUF012",  # mutable class attributes — pydantic / SQLAlchemy declarative idiom
+  "SIM108",  # ternary preference — readability over brevity
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+  "PLR2004", # magic values are fine in assertions
+  "PLR0913",
+  "N802",    # test names may mirror proposal examples
+  "N806",    # uppercase locals (matrices, constants) in tests
+  "E501",    # long assertion lines / fixture strings
+  "RUF018",  # assignment expressions in asserts
+]
+"scripts/**/*.py" = ["PLR0913"]
+"tools/**/*.py" = ["PLR0913"]
+"experiments/**/*.py" = ["E501"]
+"src/aicls/db/migrations/**/*.py" = ["N999", "E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["aicls"]
+force-sort-within-sections = true
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = ["pydantic.field_validator", "pydantic.model_validator", "classmethod"]
+
+[tool.ruff.lint.pylint]
+max-args = 8
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+# --------------------------------------------------------------------------------------------
+# mypy — strict for the deterministic core (core, latex2sympy, mathengine, nlu, eval);
+# disallow_untyped_defs everywhere else; torch-adjacent packages ignore missing stubs.
+# --------------------------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+plugins = ["pydantic.mypy"]
+namespace_packages = true
+explicit_package_bases = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+show_error_codes = true
+pretty = false
+exclude = ["^src/aicls/db/migrations/versions/"]
+
+[[tool.mypy.overrides]]
+module = [
+  "aicls.core.*",
+  "aicls.latex2sympy.*",
+  "aicls.mathengine.*",
+  "aicls.nlu.*",
+  "aicls.eval.*",
+]
+strict = true
+disallow_any_generics = true
+disallow_untyped_decorators = true
+disallow_subclassing_any = true
+
+[[tool.mypy.overrides]]
+module = [
+  "aicls.ocr.*",
+  "aicls.asr.*",
+  "aicls.data.*",
+  "aicls.ml.*",
+]
+ignore_missing_imports = true
+warn_return_any = false
+
+[[tool.mypy.overrides]]
+module = [
+  "torch.*",
+  "torchvision.*",
+  "transformers.*",
+  "peft.*",
+  "accelerate.*",
+  "mlflow.*",
+  "jiwer.*",
+  "sympy.*",
+  "lark.*",
+  "matplotlib.*",
+  "rdflib.*",
+  "defusedxml.*",
+  "argon2.*",
+  "pymysql.*",
+  "alembic.*",
+]
+ignore_missing_imports = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+
+# --------------------------------------------------------------------------------------------
+# pytest (ADR-0010)
+# --------------------------------------------------------------------------------------------
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-p no:cacheprovider --strict-markers"
+asyncio_mode = "auto"
+timeout = 120
+xfail_strict = true
+markers = [
+  "unit: fast, pure-function tests without I/O (default; auto-applied under tests/unit)",
+  "property: hypothesis property-based tests (tests/property)",
+  "integration: API/DB/WS/book/pipeline tests with SQLite :memory: and stub models",
+  "ws: WebSocket streaming tests",
+  "e2e: end-to-end pipeline tests (text/ink/audio -> rendered result)",
+  "perf: latency budget tests (nightly and before each report)",
+  "slow: tests longer than 10 s (nightly)",
+  "gated: approval-gate refusal tests (every PR; no real download/training ever)",
+  "gpu: requires torch.cuda.is_available() — skipped unless AICLS_TEST_GPU=1",
+  "data: requires a verified real dataset under AICLS_DATA_ROOT — skipped otherwise",
+  "mysql: requires AICLS_TEST_MYSQL_URL — skipped otherwise",
+  "browser: Playwright browser tests (web/e2e); not run by pytest in CI",
+]
+filterwarnings = [
+  "error::DeprecationWarning:aicls",
+  "error::PendingDeprecationWarning:aicls",
+]
+
+# --------------------------------------------------------------------------------------------
+# coverage — tiers are enforced by scripts/coverage_gate.py (ADR-0010).
+# --------------------------------------------------------------------------------------------
+[tool.coverage.run]
+source = ["aicls"]
+branch = true
+omit = [
+  "src/aicls/db/migrations/*",
+  "src/aicls/**/__main__.py",
+]
+
+[tool.coverage.paths]
+source = ["src/aicls", "*/site-packages/aicls"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+precision = 1
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+  "raise NotImplementedError",
+  "@overload",
+  "\\.\\.\\.$",
+  # Windows-only ctypes bodies (Job Object memory cap, PrivateUsage, OpenProcess liveness).
+  # They run and are tested on the Windows job; on the ubuntu job they cannot execute at all
+  # and counted as missed lines, which put aicls.mathengine at 94.2 % against its 95 % tier on
+  # 2026-09-10. Excluding the block on both platforms keeps the tier about code that can run.
+  "if sys\\.platform == .win32.:",
+]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+# Per-package minimum line coverage (percent), see docs/gelistirme/test-stratejisi.md §3.
+# Lowering a value requires an ADR. `scripts/coverage_gate.py coverage.xml` reads this table.
+[tool.aicls.coverage]
+overall = 85
+"aicls.core" = 90
+"aicls.db" = 80
+"aicls.latex2sympy" = 95
+"aicls.mathengine" = 95
+"aicls.nlu" = 95
+"aicls.ocr" = 70
+"aicls.asr" = 70
+"aicls.book" = 85
+"aicls.collect" = 85
+"aicls.data" = 75
+"aicls.eval" = 95
+"aicls.eval.metrics" = 98
+"aicls.eval.normalizers" = 98
+"aicls.ml" = 75
+"aicls.api" = 80
+"aicls.cli" = 70
+
+# --------------------------------------------------------------------------------------------
+# import-linter (ADR-0002) — run with `poe imports` (lint-imports)
+# --------------------------------------------------------------------------------------------
+[tool.importlinter]
+root_packages = ["aicls"]
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Layered architecture (cli > api|ml > eval > data|collect|book > nlu > mathengine > latex2sympy > ocr|asr > db > core)"
+type = "layers"
+layers = [
+  "aicls.cli",
+  "aicls.api | aicls.ml",
+  "aicls.eval",
+  "aicls.data | aicls.collect | aicls.book",
+  "aicls.nlu",
+  "aicls.mathengine",
+  "aicls.latex2sympy",
+  "aicls.ocr | aicls.asr",
+  "aicls.db",
+  "aicls.core",
+]
+
+[[tool.importlinter.contracts]]
+name = "no-torch-in-core: deterministic packages never import torch/transformers/torchvision/peft"
+type = "forbidden"
+source_modules = [
+  "aicls.core",
+  "aicls.latex2sympy",
+  "aicls.mathengine",
+  "aicls.nlu",
+  "aicls.db",
+  "aicls.book",
+  "aicls.collect",
+  "aicls.api",
+]
+forbidden_modules = ["torch", "torchvision", "transformers", "peft", "accelerate"]
+
+[[tool.importlinter.contracts]]
+name = "api-no-training: api must not import ml/eval/data"
+type = "forbidden"
+source_modules = ["aicls.api"]
+forbidden_modules = ["aicls.ml", "aicls.eval", "aicls.data"]
+
+[[tool.importlinter.contracts]]
+name = "nlu-no-db: nlu must not import db/book (book intents return a BookFetch command)"
+type = "forbidden"
+source_modules = ["aicls.nlu"]
+forbidden_modules = ["aicls.db", "aicls.book"]
+
+[[tool.importlinter.contracts]]
+name = "eval-no-ml: eval must not import ml"
+type = "forbidden"
+source_modules = ["aicls.eval"]
+forbidden_modules = ["aicls.ml"]
+
+[[tool.importlinter.contracts]]
+name = "experiments-isolated: src never imports experiments"
+type = "forbidden"
+source_modules = ["aicls"]
+forbidden_modules = ["experiments"]

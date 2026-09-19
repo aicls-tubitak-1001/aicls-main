@@ -1,0 +1,5325 @@
+{
+  "components": {
+    "schemas": {
+      "ActivateIn": {
+        "additionalProperties": false,
+        "description": "``POST /admin/models/activate`` body.",
+        "properties": {
+          "component": {
+            "enum": [
+              "ocr",
+              "asr"
+            ],
+            "title": "Component",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 40,
+            "minLength": 1,
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "component",
+          "version"
+        ],
+        "title": "ActivateIn",
+        "type": "object"
+      },
+      "AsrFeedbackIn": {
+        "additionalProperties": false,
+        "description": "``POST /asr/feedback`` body.",
+        "properties": {
+          "corrected_text": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Corrected Text",
+            "type": "string"
+          },
+          "transcript_id": {
+            "maxLength": 26,
+            "minLength": 1,
+            "title": "Transcript Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "transcript_id",
+          "corrected_text"
+        ],
+        "title": "AsrFeedbackIn",
+        "type": "object"
+      },
+      "AssetOut": {
+        "additionalProperties": false,
+        "description": "A figure attached to a textbook unit.",
+        "properties": {
+          "alt_tr": {
+            "default": "",
+            "title": "Alt Tr",
+            "type": "string"
+          },
+          "caption_tr": {
+            "default": "",
+            "title": "Caption Tr",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "url"
+        ],
+        "title": "AssetOut",
+        "type": "object"
+      },
+      "AuditOut": {
+        "additionalProperties": false,
+        "description": "One audit-log row.",
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "actor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actor Id"
+          },
+          "created_at": {
+            "default": "",
+            "title": "Created At",
+            "type": "string"
+          },
+          "detail": {
+            "additionalProperties": true,
+            "title": "Detail",
+            "type": "object"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "target_id": {
+            "default": "",
+            "title": "Target Id",
+            "type": "string"
+          },
+          "target_table": {
+            "default": "",
+            "title": "Target Table",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "action"
+        ],
+        "title": "AuditOut",
+        "type": "object"
+      },
+      "Body_command_api_v1_asr_command_post": {
+        "properties": {
+          "active_var": {
+            "anyOf": [
+              {
+                "maxLength": 24,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Var"
+          },
+          "audio": {
+            "contentMediaType": "application/octet-stream",
+            "description": "PCM16 WAV, mono, <= 30 s, <= 10 MB",
+            "title": "Audio",
+            "type": "string"
+          },
+          "last_latex": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Latex"
+          },
+          "workspace_id": {
+            "anyOf": [
+              {
+                "maxLength": 26,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workspace Id"
+          }
+        },
+        "required": [
+          "audio"
+        ],
+        "title": "Body_command_api_v1_asr_command_post",
+        "type": "object"
+      },
+      "Body_post_recording_api_v1_contribute_recordings_post": {
+        "properties": {
+          "audio": {
+            "contentMediaType": "application/octet-stream",
+            "description": "PCM16 WAV, <= 30 s, <= 10 MB",
+            "title": "Audio",
+            "type": "string"
+          },
+          "prompt_id": {
+            "maxLength": 26,
+            "minLength": 1,
+            "title": "Prompt Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "audio",
+          "prompt_id"
+        ],
+        "title": "Body_post_recording_api_v1_contribute_recordings_post",
+        "type": "object"
+      },
+      "Body_transcribe_api_v1_asr_transcribe_post": {
+        "properties": {
+          "audio": {
+            "contentMediaType": "application/octet-stream",
+            "description": "PCM16 WAV, mono, <= 30 s, <= 10 MB",
+            "title": "Audio",
+            "type": "string"
+          }
+        },
+        "required": [
+          "audio"
+        ],
+        "title": "Body_transcribe_api_v1_asr_transcribe_post",
+        "type": "object"
+      },
+      "ChapterOut": {
+        "additionalProperties": false,
+        "description": "One chapter of the book tree.",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "n_units": {
+            "default": 0,
+            "title": "N Units",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ChapterOut",
+        "type": "object"
+      },
+      "ClarificationCandidateOut": {
+        "additionalProperties": false,
+        "description": "One option of a clarification question.",
+        "properties": {
+          "command": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Command"
+          },
+          "intent": {
+            "title": "Intent",
+            "type": "string"
+          },
+          "label_tr": {
+            "default": "",
+            "title": "Label Tr",
+            "type": "string"
+          },
+          "latex_preview": {
+            "default": "",
+            "title": "Latex Preview",
+            "type": "string"
+          },
+          "score": {
+            "default": 0.0,
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "intent"
+        ],
+        "title": "ClarificationCandidateOut",
+        "type": "object"
+      },
+      "ClarificationOut": {
+        "additionalProperties": false,
+        "description": "``ComputeOut.clarification`` — the Turkish question and its candidates.",
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/ClarificationCandidateOut"
+            },
+            "title": "Candidates",
+            "type": "array"
+          },
+          "missing_slot": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Missing Slot"
+          },
+          "question_tr": {
+            "title": "Question Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question_tr"
+        ],
+        "title": "ClarificationOut",
+        "type": "object"
+      },
+      "ComputeLatexIn": {
+        "additionalProperties": false,
+        "description": "``POST /compute/latex`` body: a typed CAS command, validated by the math engine.",
+        "properties": {
+          "command": {
+            "additionalProperties": true,
+            "title": "Command",
+            "type": "object"
+          },
+          "workspace_id": {
+            "anyOf": [
+              {
+                "maxLength": 26,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workspace Id"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "title": "ComputeLatexIn",
+        "type": "object"
+      },
+      "ComputeOut": {
+        "additionalProperties": false,
+        "description": "The one response shape of the command path (api.md §3.4).",
+        "properties": {
+          "book_units": {
+            "items": {
+              "$ref": "#/components/schemas/ContentUnitOut"
+            },
+            "title": "Book Units",
+            "type": "array"
+          },
+          "clarification": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClarificationOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "command": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Command"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "input_latex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Latex"
+          },
+          "kind": {
+            "enum": [
+              "result",
+              "clarification",
+              "book",
+              "ui"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "model_versions": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "title": "Model Versions",
+            "type": "object"
+          },
+          "nlu": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NluOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operation Id"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResultOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "timings": {
+            "$ref": "#/components/schemas/TimingsOut",
+            "default": {
+              "total": 0.0
+            }
+          },
+          "transcript": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transcript"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "ComputeOut",
+        "type": "object"
+      },
+      "ComputeTextIn": {
+        "additionalProperties": false,
+        "description": "``POST /compute/text`` body.",
+        "properties": {
+          "confirm_intent": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirm Intent"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ContextIn"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "text": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "workspace_id": {
+            "anyOf": [
+              {
+                "maxLength": 26,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workspace Id"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "ComputeTextIn",
+        "type": "object"
+      },
+      "ConsentIn": {
+        "additionalProperties": false,
+        "description": "``POST /contribute/consent`` body.",
+        "properties": {
+          "accepted": {
+            "const": true,
+            "title": "Accepted",
+            "type": "boolean"
+          },
+          "demographics": {
+            "$ref": "#/components/schemas/DemographicsIn",
+            "default": {
+              "age_band": "25-34",
+              "gender": "na",
+              "university": "other"
+            }
+          },
+          "version": {
+            "maxLength": 16,
+            "minLength": 1,
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "accepted"
+        ],
+        "title": "ConsentIn",
+        "type": "object"
+      },
+      "ConsentTextOut": {
+        "additionalProperties": false,
+        "description": "``GET /contribute/consent/current`` response.",
+        "properties": {
+          "effective_from": {
+            "default": "",
+            "title": "Effective From",
+            "type": "string"
+          },
+          "sha256": {
+            "title": "Sha256",
+            "type": "string"
+          },
+          "text_tr": {
+            "title": "Text Tr",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "text_tr",
+          "sha256"
+        ],
+        "title": "ConsentTextOut",
+        "type": "object"
+      },
+      "ContentUnitOut": {
+        "additionalProperties": false,
+        "description": "``ContentUnitOut`` — the JSON-LD document plus its rendered form (api.md §3.7).",
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "array"
+          },
+          "chapter": {
+            "default": "",
+            "title": "Chapter",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "jsonld": {
+            "additionalProperties": true,
+            "title": "Jsonld",
+            "type": "object"
+          },
+          "number": {
+            "default": "",
+            "title": "Number",
+            "type": "string"
+          },
+          "rendered": {
+            "$ref": "#/components/schemas/RenderedOut",
+            "default": {
+              "assets": [],
+              "body_html": "",
+              "latex_blocks": []
+            }
+          },
+          "title_tr": {
+            "default": "",
+            "title": "Title Tr",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "title": "ContentUnitOut",
+        "type": "object"
+      },
+      "ContextIn": {
+        "additionalProperties": false,
+        "description": "``ComputeTextIn.context`` — what the session already has on the board.",
+        "properties": {
+          "active_var": {
+            "anyOf": [
+              {
+                "maxLength": 24,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Var"
+          },
+          "last_latex": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Latex"
+          }
+        },
+        "title": "ContextIn",
+        "type": "object"
+      },
+      "ContribStatsOut": {
+        "additionalProperties": false,
+        "description": "``GET /contribute/stats`` response (the İP-3 dashboard).",
+        "properties": {
+          "by_age_band": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "By Age Band",
+            "type": "object"
+          },
+          "by_gender": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "By Gender",
+            "type": "object"
+          },
+          "by_university": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "By University",
+            "type": "object"
+          },
+          "hours_accepted": {
+            "default": 0.0,
+            "title": "Hours Accepted",
+            "type": "number"
+          },
+          "qc_pass_rate": {
+            "default": 0.0,
+            "title": "Qc Pass Rate",
+            "type": "number"
+          },
+          "speakers": {
+            "default": 0,
+            "title": "Speakers",
+            "type": "integer"
+          },
+          "utterances": {
+            "default": 0,
+            "title": "Utterances",
+            "type": "integer"
+          }
+        },
+        "title": "ContribStatsOut",
+        "type": "object"
+      },
+      "DemographicsIn": {
+        "additionalProperties": false,
+        "description": "Band-only demographics (KVKK data minimisation; unknown fields are rejected).",
+        "properties": {
+          "accent_region": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accent Region"
+          },
+          "age_band": {
+            "default": "25-34",
+            "enum": [
+              "18-24",
+              "25-34",
+              "35-44",
+              "45+"
+            ],
+            "title": "Age Band",
+            "type": "string"
+          },
+          "gender": {
+            "default": "na",
+            "enum": [
+              "f",
+              "m",
+              "na"
+            ],
+            "title": "Gender",
+            "type": "string"
+          },
+          "university": {
+            "default": "other",
+            "enum": [
+              "mus",
+              "mersin",
+              "amasya",
+              "other"
+            ],
+            "title": "University",
+            "type": "string"
+          }
+        },
+        "title": "DemographicsIn",
+        "type": "object"
+      },
+      "EvalRunOut": {
+        "additionalProperties": false,
+        "description": "One persisted evaluation report (``GET /admin/eval-runs``).",
+        "properties": {
+          "created_at": {
+            "default": "",
+            "title": "Created At",
+            "type": "string"
+          },
+          "dataset_fingerprint": {
+            "default": "",
+            "title": "Dataset Fingerprint",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "is_reportable": {
+            "default": false,
+            "title": "Is Reportable",
+            "type": "boolean"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "metrics": {
+            "additionalProperties": true,
+            "title": "Metrics",
+            "type": "object"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "n": {
+            "default": 0,
+            "title": "N",
+            "type": "integer"
+          },
+          "name": {
+            "default": "",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind"
+        ],
+        "title": "EvalRunOut",
+        "type": "object"
+      },
+      "ExportJobOut": {
+        "additionalProperties": false,
+        "description": "``POST /admin/contributions/export`` response.",
+        "properties": {
+          "fingerprint": {
+            "default": "",
+            "title": "Fingerprint",
+            "type": "string"
+          },
+          "hours": {
+            "default": 0.0,
+            "title": "Hours",
+            "type": "number"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "path": {
+            "default": "",
+            "title": "Path",
+            "type": "string"
+          },
+          "rows": {
+            "default": 0,
+            "title": "Rows",
+            "type": "integer"
+          },
+          "speakers": {
+            "default": 0,
+            "title": "Speakers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "title": "ExportJobOut",
+        "type": "object"
+      },
+      "FeedbackIn": {
+        "additionalProperties": false,
+        "description": "``POST /feedback`` body (İP-9).",
+        "properties": {
+          "category": {
+            "enum": [
+              "critical",
+              "usability",
+              "suggestion"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "page": {
+            "default": "",
+            "maxLength": 120,
+            "title": "Page",
+            "type": "string"
+          },
+          "screenshot": {
+            "anyOf": [
+              {
+                "maxLength": 26,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Screenshot"
+          },
+          "text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "text"
+        ],
+        "title": "FeedbackIn",
+        "type": "object"
+      },
+      "FeedbackOut": {
+        "additionalProperties": false,
+        "description": "One feedback entry with its triage state.",
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "created_at": {
+            "default": "",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "page": {
+            "default": "",
+            "title": "Page",
+            "type": "string"
+          },
+          "status": {
+            "default": "open",
+            "title": "Status",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "category",
+          "text"
+        ],
+        "title": "FeedbackOut",
+        "type": "object"
+      },
+      "FeedbackPatch": {
+        "additionalProperties": false,
+        "description": "``PATCH /admin/feedback/{id}`` body.",
+        "properties": {
+          "status": {
+            "enum": [
+              "open",
+              "triaged",
+              "fixed",
+              "deferred"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "FeedbackPatch",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HitOut": {
+        "additionalProperties": false,
+        "description": "One textbook search hit (api.md §3.7).",
+        "properties": {
+          "matched_alias": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Alias"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "stage": {
+            "default": "alias",
+            "title": "Stage",
+            "type": "string"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/ContentUnitOut"
+          }
+        },
+        "required": [
+          "unit",
+          "score"
+        ],
+        "title": "HitOut",
+        "type": "object"
+      },
+      "LatencySampleIn": {
+        "additionalProperties": false,
+        "description": "``POST /telemetry/latency`` body (ADR-0014, client-measured end-to-end time).",
+        "properties": {
+          "client_render_ts": {
+            "minimum": 0.0,
+            "title": "Client Render Ts",
+            "type": "number"
+          },
+          "client_submit_ts": {
+            "minimum": 0.0,
+            "title": "Client Submit Ts",
+            "type": "number"
+          },
+          "modality": {
+            "default": "text",
+            "enum": [
+              "text",
+              "latex",
+              "ink",
+              "audio"
+            ],
+            "title": "Modality",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 26,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operation Id"
+          },
+          "render_ms": {
+            "default": 0.0,
+            "minimum": 0.0,
+            "title": "Render Ms",
+            "type": "number"
+          }
+        },
+        "required": [
+          "client_submit_ts",
+          "client_render_ts"
+        ],
+        "title": "LatencySampleIn",
+        "type": "object"
+      },
+      "LatencyStatsOut": {
+        "additionalProperties": false,
+        "description": "``GET /admin/metrics/latency`` response (the contractual \"< 3 s\" figure).",
+        "properties": {
+          "by_modality": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "By Modality",
+            "type": "object"
+          },
+          "mean_ms": {
+            "default": 0.0,
+            "title": "Mean Ms",
+            "type": "number"
+          },
+          "n": {
+            "default": 0,
+            "title": "N",
+            "type": "integer"
+          },
+          "p50_ms": {
+            "default": 0.0,
+            "title": "P50 Ms",
+            "type": "number"
+          },
+          "p95_ms": {
+            "default": 0.0,
+            "title": "P95 Ms",
+            "type": "number"
+          }
+        },
+        "title": "LatencyStatsOut",
+        "type": "object"
+      },
+      "LiveOut": {
+        "additionalProperties": false,
+        "description": "``GET /health/live`` response.",
+        "properties": {
+          "status": {
+            "default": "ok",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "title": "LiveOut",
+        "type": "object"
+      },
+      "LoadReportOut": {
+        "additionalProperties": false,
+        "description": "``POST /admin/book/load`` response (İP-8 100 % tagging criterion).",
+        "properties": {
+          "aliases": {
+            "title": "Aliases",
+            "type": "integer"
+          },
+          "tagged_ratio": {
+            "title": "Tagged Ratio",
+            "type": "number"
+          },
+          "triples": {
+            "title": "Triples",
+            "type": "integer"
+          },
+          "units": {
+            "title": "Units",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "units",
+          "triples",
+          "aliases",
+          "tagged_ratio"
+        ],
+        "title": "LoadReportOut",
+        "type": "object"
+      },
+      "LoginIn": {
+        "additionalProperties": false,
+        "description": "``POST /auth/login`` body.",
+        "properties": {
+          "email": {
+            "maxLength": 255,
+            "minLength": 6,
+            "pattern": "^[^@\\s]{1,64}@[^@\\s.]{1,63}(?:\\.[^@\\s.]{1,63})+$",
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Password",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginIn",
+        "type": "object"
+      },
+      "ModelVersionOut": {
+        "additionalProperties": false,
+        "description": "One row of ``model_versions`` (``GET /admin/models``).",
+        "properties": {
+          "component": {
+            "title": "Component",
+            "type": "string"
+          },
+          "is_active": {
+            "default": false,
+            "title": "Is Active",
+            "type": "boolean"
+          },
+          "metrics": {
+            "additionalProperties": true,
+            "title": "Metrics",
+            "type": "object"
+          },
+          "path": {
+            "default": "",
+            "title": "Path",
+            "type": "string"
+          },
+          "promoted_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Promoted At"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          },
+          "sha256": {
+            "default": "",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "component",
+          "version"
+        ],
+        "title": "ModelVersionOut",
+        "type": "object"
+      },
+      "NluOut": {
+        "additionalProperties": false,
+        "description": "``ComputeOut.nlu`` — the \"how I understood you\" panel.",
+        "properties": {
+          "intent": {
+            "title": "Intent",
+            "type": "string"
+          },
+          "score": {
+            "default": 0.0,
+            "title": "Score",
+            "type": "number"
+          },
+          "source": {
+            "default": "rules",
+            "enum": [
+              "rules",
+              "asr+rules",
+              "llm"
+            ],
+            "title": "Source",
+            "type": "string"
+          },
+          "trace": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Trace",
+            "type": "array"
+          }
+        },
+        "required": [
+          "intent"
+        ],
+        "title": "NluOut",
+        "type": "object"
+      },
+      "OcrFeedbackIn": {
+        "additionalProperties": false,
+        "description": "``POST /ocr/feedback`` body (İP-3 correction loop).",
+        "properties": {
+          "corrected_latex": {
+            "maxLength": 2048,
+            "minLength": 1,
+            "title": "Corrected Latex",
+            "type": "string"
+          },
+          "recognition_id": {
+            "maxLength": 26,
+            "minLength": 1,
+            "title": "Recognition Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "recognition_id",
+          "corrected_latex"
+        ],
+        "title": "OcrFeedbackIn",
+        "type": "object"
+      },
+      "OperationOut": {
+        "additionalProperties": false,
+        "description": "One row of the history panel (api.md §3.3).",
+        "properties": {
+          "command": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Command"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "input_kind": {
+            "enum": [
+              "text",
+              "latex",
+              "ink",
+              "audio"
+            ],
+            "title": "Input Kind",
+            "type": "string"
+          },
+          "input_latex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Latex"
+          },
+          "input_summary": {
+            "default": "",
+            "title": "Input Summary",
+            "type": "string"
+          },
+          "plot_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plot Url"
+          },
+          "result_kind": {
+            "anyOf": [
+              {
+                "enum": [
+                  "expr",
+                  "number",
+                  "set",
+                  "bool",
+                  "plot",
+                  "steps"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Result Kind"
+          },
+          "result_latex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Result Latex"
+          },
+          "timings": {
+            "$ref": "#/components/schemas/TimingsOut",
+            "default": {
+              "total": 0.0
+            }
+          }
+        },
+        "required": [
+          "id",
+          "input_kind",
+          "created_at"
+        ],
+        "title": "OperationOut",
+        "type": "object"
+      },
+      "Page_AuditOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AuditOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Page[AuditOut]",
+        "type": "object"
+      },
+      "Page_FeedbackOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FeedbackOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Page[FeedbackOut]",
+        "type": "object"
+      },
+      "Page_OperationOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OperationOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Page[OperationOut]",
+        "type": "object"
+      },
+      "Page_UserOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/UserOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Page[UserOut]",
+        "type": "object"
+      },
+      "Page_WorkspaceOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/WorkspaceOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Page[WorkspaceOut]",
+        "type": "object"
+      },
+      "ParseIn": {
+        "additionalProperties": false,
+        "description": "``POST /compute/parse`` body.",
+        "properties": {
+          "latex": {
+            "maxLength": 2048,
+            "minLength": 1,
+            "title": "Latex",
+            "type": "string"
+          }
+        },
+        "required": [
+          "latex"
+        ],
+        "title": "ParseIn",
+        "type": "object"
+      },
+      "ParseOut": {
+        "additionalProperties": false,
+        "description": "``POST /compute/parse`` response — a diagnostic, never a computation.",
+        "properties": {
+          "ast": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ast"
+          },
+          "canonical_latex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Latex"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "repairs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Repairs",
+            "type": "array"
+          },
+          "srepr": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Srepr"
+          }
+        },
+        "required": [
+          "ok"
+        ],
+        "title": "ParseOut",
+        "type": "object"
+      },
+      "ProgressOut": {
+        "additionalProperties": false,
+        "description": "``GET /contribute/me/progress`` response.",
+        "properties": {
+          "n_accepted": {
+            "default": 0,
+            "title": "N Accepted",
+            "type": "integer"
+          },
+          "seconds_accepted": {
+            "default": 0.0,
+            "title": "Seconds Accepted",
+            "type": "number"
+          },
+          "target_seconds": {
+            "default": 0.0,
+            "title": "Target Seconds",
+            "type": "number"
+          }
+        },
+        "title": "ProgressOut",
+        "type": "object"
+      },
+      "PromptOut": {
+        "additionalProperties": false,
+        "description": "One sentence to read aloud.",
+        "properties": {
+          "difficulty": {
+            "default": 1,
+            "title": "Difficulty",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "scenario_tag": {
+            "default": "genel",
+            "title": "Scenario Tag",
+            "type": "string"
+          },
+          "text_tr": {
+            "title": "Text Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text_tr"
+        ],
+        "title": "PromptOut",
+        "type": "object"
+      },
+      "QcCheckOut": {
+        "additionalProperties": false,
+        "description": "One automatic quality measurement and its verdict.",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "passed": {
+            "title": "Passed",
+            "type": "boolean"
+          },
+          "threshold": {
+            "title": "Threshold",
+            "type": "number"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "threshold",
+          "passed"
+        ],
+        "title": "QcCheckOut",
+        "type": "object"
+      },
+      "QcOut": {
+        "additionalProperties": false,
+        "description": "The quality-control verdict of one recording.",
+        "properties": {
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/QcCheckOut"
+            },
+            "title": "Checks",
+            "type": "array"
+          },
+          "passed": {
+            "title": "Passed",
+            "type": "boolean"
+          },
+          "reasons_tr": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reasons Tr",
+            "type": "array"
+          }
+        },
+        "required": [
+          "passed"
+        ],
+        "title": "QcOut",
+        "type": "object"
+      },
+      "QcQueueItemOut": {
+        "additionalProperties": false,
+        "description": "One recording awaiting human review (``GET /admin/qc/queue``).",
+        "properties": {
+          "duration_s": {
+            "default": 0.0,
+            "title": "Duration S",
+            "type": "number"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "prompt_id": {
+            "title": "Prompt Id",
+            "type": "string"
+          },
+          "qc_passed": {
+            "default": false,
+            "title": "Qc Passed",
+            "type": "boolean"
+          },
+          "review_status": {
+            "default": "pending",
+            "title": "Review Status",
+            "type": "string"
+          },
+          "speaker_id": {
+            "title": "Speaker Id",
+            "type": "string"
+          },
+          "transcript_final": {
+            "default": "",
+            "title": "Transcript Final",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "speaker_id",
+          "prompt_id"
+        ],
+        "title": "QcQueueItemOut",
+        "type": "object"
+      },
+      "QcReviewIn": {
+        "additionalProperties": false,
+        "description": "``POST /admin/qc/{recording_id}/review`` body.",
+        "properties": {
+          "transcript_fix": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transcript Fix"
+          },
+          "verdict": {
+            "enum": [
+              "accepted",
+              "rejected",
+              "fixed"
+            ],
+            "title": "Verdict",
+            "type": "string"
+          }
+        },
+        "required": [
+          "verdict"
+        ],
+        "title": "QcReviewIn",
+        "type": "object"
+      },
+      "ReadyOut": {
+        "additionalProperties": false,
+        "description": "``GET /health/ready`` response; 503 when anything is not ready.",
+        "properties": {
+          "db": {
+            "default": "ok",
+            "title": "Db",
+            "type": "string"
+          },
+          "models": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Models",
+            "type": "object"
+          },
+          "sandbox": {
+            "$ref": "#/components/schemas/SandboxOut",
+            "default": {
+              "restarts": 0,
+              "started": false,
+              "workers": 0
+            }
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "ReadyOut",
+        "type": "object"
+      },
+      "RecognizeOut": {
+        "additionalProperties": false,
+        "description": "``POST /ocr/recognize`` response (api.md §3.5).",
+        "properties": {
+          "alternatives": {
+            "items": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            "title": "Alternatives",
+            "type": "array"
+          },
+          "confidence": {
+            "title": "Confidence",
+            "type": "number"
+          },
+          "latex": {
+            "title": "Latex",
+            "type": "string"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "recognition_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recognition Id"
+          },
+          "timings": {
+            "$ref": "#/components/schemas/TimingsOut",
+            "default": {
+              "total": 0.0
+            }
+          }
+        },
+        "required": [
+          "latex",
+          "confidence"
+        ],
+        "title": "RecognizeOut",
+        "type": "object"
+      },
+      "RecordingOut": {
+        "additionalProperties": false,
+        "description": "``POST /contribute/recordings`` response — always HTTP 200 (api.md §2).",
+        "properties": {
+          "accepted": {
+            "title": "Accepted",
+            "type": "boolean"
+          },
+          "duration_s": {
+            "default": 0.0,
+            "title": "Duration S",
+            "type": "number"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "qc": {
+            "$ref": "#/components/schemas/QcOut"
+          }
+        },
+        "required": [
+          "accepted",
+          "qc"
+        ],
+        "title": "RecordingOut",
+        "type": "object"
+      },
+      "RegisterIn": {
+        "additionalProperties": false,
+        "description": "``POST /auth/register`` body.",
+        "properties": {
+          "display_name": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Display Name",
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 255,
+            "minLength": 6,
+            "pattern": "^[^@\\s]{1,64}@[^@\\s.]{1,63}(?:\\.[^@\\s.]{1,63})+$",
+            "title": "Email",
+            "type": "string"
+          },
+          "invite_code": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Invite Code"
+          },
+          "password": {
+            "maxLength": 128,
+            "minLength": 10,
+            "title": "Password",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password",
+          "display_name"
+        ],
+        "title": "RegisterIn",
+        "type": "object"
+      },
+      "RenderedOut": {
+        "additionalProperties": false,
+        "description": "Ready-to-render form of a textbook unit.",
+        "properties": {
+          "assets": {
+            "items": {
+              "$ref": "#/components/schemas/AssetOut"
+            },
+            "title": "Assets",
+            "type": "array"
+          },
+          "body_html": {
+            "default": "",
+            "title": "Body Html",
+            "type": "string"
+          },
+          "latex_blocks": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Latex Blocks",
+            "type": "array"
+          }
+        },
+        "title": "RenderedOut",
+        "type": "object"
+      },
+      "ResolveIn": {
+        "additionalProperties": false,
+        "description": "``POST /book/resolve`` body — a Turkish fetch command.",
+        "properties": {
+          "text": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "ResolveIn",
+        "type": "object"
+      },
+      "ResultOut": {
+        "additionalProperties": false,
+        "description": "``ComputeOut.result`` — what SymPy computed.",
+        "properties": {
+          "cache_hit": {
+            "default": false,
+            "title": "Cache Hit",
+            "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "expr",
+              "number",
+              "set",
+              "bool",
+              "plot",
+              "steps"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "latex": {
+            "title": "Latex",
+            "type": "string"
+          },
+          "plain": {
+            "title": "Plain",
+            "type": "string"
+          },
+          "plot_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plot Url"
+          },
+          "srepr": {
+            "default": "",
+            "title": "Srepr",
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/StepOut"
+            },
+            "title": "Steps",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "latex",
+          "plain"
+        ],
+        "title": "ResultOut",
+        "type": "object"
+      },
+      "RoleIn": {
+        "additionalProperties": false,
+        "description": "``PATCH /admin/users/{id}/role`` body.",
+        "properties": {
+          "role": {
+            "enum": [
+              "student",
+              "instructor",
+              "contributor",
+              "admin"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role"
+        ],
+        "title": "RoleIn",
+        "type": "object"
+      },
+      "SandboxOut": {
+        "additionalProperties": false,
+        "description": "Sandbox pool health (ADR-0016).",
+        "properties": {
+          "restarts": {
+            "default": 0,
+            "title": "Restarts",
+            "type": "integer"
+          },
+          "started": {
+            "default": false,
+            "title": "Started",
+            "type": "boolean"
+          },
+          "workers": {
+            "default": 0,
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "title": "SandboxOut",
+        "type": "object"
+      },
+      "SpeakerOut": {
+        "additionalProperties": false,
+        "description": "``POST /contribute/consent`` response: the pseudonym and a participant token.",
+        "properties": {
+          "speaker_pseudonym": {
+            "title": "Speaker Pseudonym",
+            "type": "string"
+          },
+          "token": {
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "speaker_pseudonym",
+          "token"
+        ],
+        "title": "SpeakerOut",
+        "type": "object"
+      },
+      "StepOut": {
+        "additionalProperties": false,
+        "description": "One narrated solution step.",
+        "properties": {
+          "detail_tr": {
+            "default": "",
+            "title": "Detail Tr",
+            "type": "string"
+          },
+          "latex": {
+            "title": "Latex",
+            "type": "string"
+          },
+          "rule": {
+            "default": "",
+            "title": "Rule",
+            "type": "string"
+          },
+          "title_tr": {
+            "title": "Title Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title_tr",
+          "latex"
+        ],
+        "title": "StepOut",
+        "type": "object"
+      },
+      "SusIn": {
+        "additionalProperties": false,
+        "description": "``POST /feedback/sus`` body — ten answers in 1..5.",
+        "properties": {
+          "answers": {
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 10,
+            "minItems": 10,
+            "title": "Answers",
+            "type": "array"
+          },
+          "cohort": {
+            "default": "pilot",
+            "maxLength": 40,
+            "title": "Cohort",
+            "type": "string"
+          },
+          "collected_week": {
+            "anyOf": [
+              {
+                "maximum": 520.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Collected Week"
+          }
+        },
+        "required": [
+          "answers"
+        ],
+        "title": "SusIn",
+        "type": "object"
+      },
+      "SusOut": {
+        "additionalProperties": false,
+        "description": "``POST /feedback/sus`` response.",
+        "properties": {
+          "score": {
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "score"
+        ],
+        "title": "SusOut",
+        "type": "object"
+      },
+      "TimingsOut": {
+        "additionalProperties": true,
+        "description": "Per-stage durations in milliseconds (ADR-0014); unknown stages are allowed.",
+        "properties": {
+          "cas": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cas"
+          },
+          "nlu": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nlu"
+          },
+          "parse": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse"
+          },
+          "render": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Render"
+          },
+          "total": {
+            "default": 0.0,
+            "title": "Total",
+            "type": "number"
+          }
+        },
+        "title": "TimingsOut",
+        "type": "object"
+      },
+      "TokenOut": {
+        "additionalProperties": false,
+        "description": "``TokenOut`` — the bearer access token (the refresh token travels as a cookie).",
+        "properties": {
+          "access_token": {
+            "title": "Access Token",
+            "type": "string"
+          },
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "token_type": {
+            "default": "bearer",
+            "title": "Token Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "access_token",
+          "expires_in"
+        ],
+        "title": "TokenOut",
+        "type": "object"
+      },
+      "TranscribeOut": {
+        "additionalProperties": false,
+        "description": "``POST /asr/transcribe`` response (api.md §3.6).",
+        "properties": {
+          "confidence": {
+            "title": "Confidence",
+            "type": "number"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "timings": {
+            "$ref": "#/components/schemas/TimingsOut",
+            "default": {
+              "total": 0.0
+            }
+          },
+          "transcript_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transcript Id"
+          }
+        },
+        "required": [
+          "text",
+          "confidence"
+        ],
+        "title": "TranscribeOut",
+        "type": "object"
+      },
+      "UserOut": {
+        "additionalProperties": false,
+        "description": "A user as the API exposes it (never the password hash).",
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "student",
+              "instructor",
+              "contributor",
+              "admin"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "display_name",
+          "role",
+          "created_at"
+        ],
+        "title": "UserOut",
+        "type": "object"
+      },
+      "UserPatch": {
+        "additionalProperties": false,
+        "description": "``PATCH /users/me`` body; both fields optional.",
+        "properties": {
+          "display_name": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "password": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 10,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Password"
+          }
+        },
+        "title": "UserPatch",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "VersionOut": {
+        "additionalProperties": false,
+        "description": "``GET /health/version`` response.",
+        "properties": {
+          "git_sha": {
+            "default": "",
+            "title": "Git Sha",
+            "type": "string"
+          },
+          "models": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "title": "Models",
+            "type": "object"
+          },
+          "profile": {
+            "default": "full",
+            "title": "Profile",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version"
+        ],
+        "title": "VersionOut",
+        "type": "object"
+      },
+      "WorkspaceIn": {
+        "additionalProperties": false,
+        "description": "``POST /workspaces`` body.",
+        "properties": {
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "title": "WorkspaceIn",
+        "type": "object"
+      },
+      "WorkspaceOut": {
+        "additionalProperties": false,
+        "description": "A calculus workspace of one user.",
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "n_operations": {
+            "default": 0,
+            "title": "N Operations",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "WorkspaceOut",
+        "type": "object"
+      },
+      "WorkspacePatch": {
+        "additionalProperties": false,
+        "description": "``PATCH /workspaces/{id}`` body.",
+        "properties": {
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "WorkspacePatch",
+        "type": "object"
+      },
+      "WsTicketOut": {
+        "additionalProperties": false,
+        "description": "``POST /auth/ws-ticket`` response: a single-use 60 s WebSocket ticket.",
+        "properties": {
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "ticket": {
+            "title": "Ticket",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket",
+          "expires_in"
+        ],
+        "title": "WsTicketOut",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "AI-CLS — TÜBİTAK 1001 #125E748. El yazısı ve ses girdisini SymPy ile hesaplanan sonuçlara dönüştüren Temel Analiz platformunun REST ve WebSocket arayüzü.",
+    "title": "AI-CLS API",
+    "version": "0.1.0.dev0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/admin/audit": {
+      "get": {
+        "description": "One page of the audit log, newest first.",
+        "operationId": "audit_log_api_v1_admin_audit_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "action",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Action"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 26,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_AuditOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Audit Log",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/book/load": {
+      "post": {
+        "description": "Load a zipped Markdown book directory (422 when tagging is not 100 %, İP-8).",
+        "operationId": "load_book_api_v1_admin_book_load_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoadReportOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Load Book",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/contributions/export": {
+      "post": {
+        "description": "Write the speaker-disjoint ASR training manifest and return its summary.",
+        "operationId": "export_contributions_api_v1_admin_contributions_export_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJobOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Export Contributions",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/contributions/stats": {
+      "get": {
+        "description": "The İP-3 collection dashboard, from the administration side.",
+        "operationId": "contributions_stats_api_v1_admin_contributions_stats_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContribStatsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Contributions Stats",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/eval-runs": {
+      "get": {
+        "description": "Persisted evaluation reports, newest first.",
+        "operationId": "list_eval_runs_api_v1_admin_eval_runs_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 16,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Kind"
+            }
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Since"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/EvalRunOut"
+                  },
+                  "title": "Response List Eval Runs Api V1 Admin Eval Runs Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Eval Runs",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/eval-runs/{run_id}": {
+      "get": {
+        "description": "One evaluation report.",
+        "operationId": "get_eval_run_api_v1_admin_eval_runs__run_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "run_id",
+            "required": true,
+            "schema": {
+              "title": "Run Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvalRunOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Eval Run",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/feedback/{feedback_id}": {
+      "patch": {
+        "description": "Move one feedback entry through triage (audited).",
+        "operationId": "triage_feedback_api_v1_admin_feedback__feedback_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "feedback_id",
+            "required": true,
+            "schema": {
+              "title": "Feedback Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Triage Feedback",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/metrics/latency": {
+      "get": {
+        "description": "Mean/p50/p95 of the measured end-to-end time (the contractual \"< 3 s\" figure).",
+        "operationId": "latency_metrics_api_v1_admin_metrics_latency_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Since"
+            }
+          },
+          {
+            "in": "query",
+            "name": "modality",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 16,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Modality"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LatencyStatsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Latency Metrics",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/models": {
+      "get": {
+        "description": "Every registered checkpoint, newest first.",
+        "operationId": "list_models_api_v1_admin_models_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ModelVersionOut"
+                  },
+                  "title": "Response List Models Api V1 Admin Models Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Models",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/models/activate": {
+      "post": {
+        "description": "Promote one checkpoint and reload the registry (audited).\n\nRaises:\n    NotFoundError: If the version is not registered.",
+        "operationId": "activate_model_api_v1_admin_models_activate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivateIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Activate Model",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/qc/queue": {
+      "get": {
+        "description": "Recordings awaiting a human decision, oldest first.",
+        "operationId": "qc_queue_api_v1_admin_qc_queue_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "default": "pending",
+              "maxLength": 16,
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/QcQueueItemOut"
+                  },
+                  "title": "Response Qc Queue Api V1 Admin Qc Queue Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Qc Queue",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/qc/{recording_id}/review": {
+      "post": {
+        "description": "Apply a human quality decision to one recording (audited).",
+        "operationId": "qc_review_api_v1_admin_qc__recording_id__review_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recording_id",
+            "required": true,
+            "schema": {
+              "title": "Recording Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QcReviewIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Qc Review",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/users": {
+      "get": {
+        "description": "One page of accounts, newest first.",
+        "operationId": "list_users_api_v1_admin_users_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 26,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_UserOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Users",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/admin/users/{user_id}/role": {
+      "patch": {
+        "description": "Change a user's role (audited).",
+        "operationId": "set_user_role_api_v1_admin_users__user_id__role_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Set User Role",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/v1/asr/command": {
+      "post": {
+        "description": "Transcribe, understand and compute in one call (the voice path of İP-4).",
+        "operationId": "command_api_v1_asr_command_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_command_api_v1_asr_command_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComputeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Command",
+        "tags": [
+          "asr"
+        ]
+      }
+    },
+    "/api/v1/asr/feedback": {
+      "post": {
+        "description": "Record the user's corrected transcript (İP-3 correction loop).",
+        "operationId": "asr_feedback_api_v1_asr_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AsrFeedbackIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Asr Feedback",
+        "tags": [
+          "asr"
+        ]
+      }
+    },
+    "/api/v1/asr/transcribe": {
+      "post": {
+        "description": "Transcribe one recording and return the Turkish text.",
+        "operationId": "transcribe_api_v1_asr_transcribe_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_transcribe_api_v1_asr_transcribe_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranscribeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Transcribe",
+        "tags": [
+          "asr"
+        ]
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "description": "Exchange credentials for an access token plus a refresh cookie.\n\nTen consecutive failures lock the account for fifteen minutes\n(``test_api_login_lockout_after_10_failures``).\n\nRaises:\n    AuthError: On unknown address, wrong password, locked or disabled account. The Turkish\n        text is identical in every case so an attacker cannot enumerate accounts.",
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Login",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "description": "Revoke the refresh family and clear the cookie; always answers 204.",
+        "operationId": "logout_api_v1_auth_logout_post",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Logout",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/refresh": {
+      "post": {
+        "description": "Rotate the refresh cookie and mint a new access token.\n\nRaises:\n    AuthError: If the cookie is missing, unknown, expired or already rotated. A replayed\n        token additionally revokes every live token of its family.",
+        "operationId": "refresh_api_v1_auth_refresh_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Refresh",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/register": {
+      "post": {
+        "description": "Create an account (``student`` by default, ``instructor`` with a valid invite code).\n\nRaises:\n    InputValidationError: If the address is already registered.",
+        "operationId": "register_api_v1_auth_register_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Register",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/ws-ticket": {
+      "post": {
+        "description": "Mint a single-use 60 s ticket for ``/ws/v1/ink`` and ``/ws/v1/audio`` (api.md §1).",
+        "operationId": "ws_ticket_api_v1_auth_ws_ticket_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WsTicketOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Ws Ticket",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/book/assets/{asset_id}": {
+      "get": {
+        "description": "Serve a figure attached to a textbook unit.",
+        "operationId": "get_book_asset_api_v1_book_assets__asset_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "schema": {
+              "title": "Asset Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Book Asset",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/chapters": {
+      "get": {
+        "description": "The chapter tree of the loaded book.",
+        "operationId": "chapters_api_v1_book_chapters_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ChapterOut"
+                  },
+                  "title": "Response Chapters Api V1 Book Chapters Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Chapters",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/export.jsonld": {
+      "get": {
+        "description": "Export the whole graph as JSON-LD (instructor/admin).",
+        "operationId": "export_graph_jsonld_api_v1_book_export_jsonld_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Export Graph Jsonld",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/export.ttl": {
+      "get": {
+        "description": "Export the whole graph as Turtle (instructor/admin).",
+        "operationId": "export_graph_turtle_api_v1_book_export_ttl_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Export Graph Turtle",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/resolve": {
+      "post": {
+        "description": "Resolve a Turkish fetch command (``\"türev tanımını getir\"``) to units (İP-8).",
+        "operationId": "resolve_command_api_v1_book_resolve_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/HitOut"
+                  },
+                  "title": "Response Resolve Command Api V1 Book Resolve Post",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Resolve Command",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/search": {
+      "get": {
+        "description": "Search unit titles and aliases (alias → full text → fuzzy).",
+        "operationId": "search_units_api_v1_book_search_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 200,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 32,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 5,
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/HitOut"
+                  },
+                  "title": "Response Search Units Api V1 Book Search Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Search Units",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/units/{unit_id}": {
+      "get": {
+        "description": "One textbook unit by identifier (``tanim-2.4``).",
+        "operationId": "get_book_unit_api_v1_book_units__unit_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "unit_id",
+            "required": true,
+            "schema": {
+              "title": "Unit Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentUnitOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Book Unit",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/book/units/{unit_id}/related": {
+      "get": {
+        "description": "Units one hop away from ``unit_id``.",
+        "operationId": "get_related_api_v1_book_units__unit_id__related_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "unit_id",
+            "required": true,
+            "schema": {
+              "title": "Unit Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "predicate",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 32,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Predicate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ContentUnitOut"
+                  },
+                  "title": "Response Get Related Api V1 Book Units  Unit Id  Related Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Related",
+        "tags": [
+          "book"
+        ]
+      }
+    },
+    "/api/v1/compute/latex": {
+      "post": {
+        "description": "Execute a typed CAS command with no NLU in the way (the deterministic path).",
+        "operationId": "compute_latex_api_v1_compute_latex_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComputeLatexIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComputeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Compute Latex",
+        "tags": [
+          "compute"
+        ]
+      }
+    },
+    "/api/v1/compute/parse": {
+      "post": {
+        "description": "Parse a LaTeX fragment and report the diagnosis; never computes anything.",
+        "operationId": "compute_parse_api_v1_compute_parse_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParseIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Compute Parse",
+        "tags": [
+          "compute"
+        ]
+      }
+    },
+    "/api/v1/compute/plots/{asset_id}.png": {
+      "get": {
+        "description": "Serve a rendered plot to the user who produced it.",
+        "operationId": "get_plot_api_v1_compute_plots__asset_id__png_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "schema": {
+              "title": "Asset Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Plot",
+        "tags": [
+          "compute"
+        ]
+      }
+    },
+    "/api/v1/compute/text": {
+      "post": {
+        "description": "Turkish text → NLU → CAS (or the book layer, or a UI action).",
+        "operationId": "compute_text_api_v1_compute_text_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComputeTextIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComputeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Compute Text",
+        "tags": [
+          "compute"
+        ]
+      }
+    },
+    "/api/v1/contribute/consent": {
+      "post": {
+        "description": "Record an acceptance and return the pseudonym plus a participant token.",
+        "operationId": "post_consent_api_v1_contribute_consent_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeakerOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Consent",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/consent/current": {
+      "get": {
+        "description": "The consent text a participant must accept (versioned and hashed).",
+        "operationId": "consent_current_api_v1_contribute_consent_current_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentTextOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Consent Current",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/me/progress": {
+      "get": {
+        "description": "How much this participant has contributed so far.",
+        "operationId": "my_progress_api_v1_contribute_me_progress_get",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "My Progress",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/prompts/next": {
+      "get": {
+        "description": "The next sentences this participant should read (least-recorded, scenario-balanced).",
+        "operationId": "prompts_next_api_v1_contribute_prompts_next_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "n",
+            "required": false,
+            "schema": {
+              "default": 5,
+              "maximum": 20,
+              "minimum": 1,
+              "title": "N",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PromptOut"
+                  },
+                  "title": "Response Prompts Next Api V1 Contribute Prompts Next Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Prompts Next",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/recordings": {
+      "post": {
+        "description": "Upload one utterance; the quality verdict is part of the 200 payload, never an error.",
+        "operationId": "post_recording_api_v1_contribute_recordings_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_post_recording_api_v1_contribute_recordings_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordingOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Recording",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/recordings/{recording_id}": {
+      "delete": {
+        "description": "Soft-delete one of the participant's own recordings.",
+        "operationId": "delete_recording_api_v1_contribute_recordings__recording_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recording_id",
+            "required": true,
+            "schema": {
+              "title": "Recording Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Recording",
+        "tags": [
+          "contribute"
+        ]
+      },
+      "get": {
+        "description": "One of the participant's own recordings.",
+        "operationId": "get_recording_api_v1_contribute_recordings__recording_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recording_id",
+            "required": true,
+            "schema": {
+              "title": "Recording Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordingOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Recording",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/stats": {
+      "get": {
+        "description": "The İP-3 collection dashboard (instructor/admin).",
+        "operationId": "contribution_stats_api_v1_contribute_stats_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContribStatsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Contribution Stats",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/contribute/withdraw": {
+      "post": {
+        "description": "KVKK withdrawal: the audio goes, the proof of consent stays. Never gated.",
+        "operationId": "withdraw_consent_api_v1_contribute_withdraw_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Participant-Token",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Participant-Token"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Withdraw Consent",
+        "tags": [
+          "contribute"
+        ]
+      }
+    },
+    "/api/v1/feedback": {
+      "get": {
+        "description": "One page of feedback entries (instructor/admin).",
+        "operationId": "list_feedback_api_v1_feedback_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 16,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 16,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Category"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 26,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_FeedbackOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Feedback",
+        "tags": [
+          "feedback"
+        ]
+      },
+      "post": {
+        "description": "Record one feedback entry in state ``open``.",
+        "operationId": "post_feedback_api_v1_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Feedback",
+        "tags": [
+          "feedback"
+        ]
+      }
+    },
+    "/api/v1/feedback/sus": {
+      "post": {
+        "description": "Store a SUS questionnaire and return its score (contract target > 75).\n\nRaises:\n    InputValidationError: If the ten answers are not all in 1..5.",
+        "operationId": "post_sus_api_v1_feedback_sus_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SusIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SusOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Sus",
+        "tags": [
+          "feedback"
+        ]
+      }
+    },
+    "/api/v1/health/live": {
+      "get": {
+        "description": "The process is up (no dependency is touched).",
+        "operationId": "live_api_v1_health_live_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Live",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/v1/health/ready": {
+      "get": {
+        "description": "Database, models and sandbox pool; 503 when any of them is not ready.",
+        "operationId": "ready_api_v1_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadyOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Ready",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/v1/health/version": {
+      "get": {
+        "description": "Package version, git revision, profile and the active model versions.",
+        "operationId": "version_api_v1_health_version_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VersionOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Version",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/v1/ocr/feedback": {
+      "post": {
+        "description": "Record the user's corrected LaTeX for a recognition (İP-3 risk plan: extra samples).",
+        "operationId": "ocr_feedback_api_v1_ocr_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OcrFeedbackIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Ocr Feedback",
+        "tags": [
+          "ocr"
+        ]
+      }
+    },
+    "/api/v1/ocr/recognize": {
+      "post": {
+        "description": "Recognise one handwriting sample and return its LaTeX with alternatives.",
+        "operationId": "recognize_api_v1_ocr_recognize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "ink": {
+                    "description": "Canvas JSON (ADR-0013)",
+                    "type": "object"
+                  },
+                  "workspace_id": {
+                    "maxLength": 26,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ink"
+                ],
+                "type": "object"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "image": {
+                    "description": "PNG or JPEG, at most 2 MB",
+                    "format": "binary",
+                    "type": "string"
+                  },
+                  "workspace_id": {
+                    "maxLength": 26,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "image"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecognizeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Recognize",
+        "tags": [
+          "ocr"
+        ]
+      }
+    },
+    "/api/v1/telemetry/latency": {
+      "post": {
+        "description": "Store one end-to-end latency sample.\n\nRaises:\n    NotFoundError: If ``operation_id`` names an operation the caller did not produce.",
+        "operationId": "post_latency_api_v1_telemetry_latency_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LatencySampleIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Latency",
+        "tags": [
+          "telemetry"
+        ]
+      }
+    },
+    "/api/v1/users/me": {
+      "get": {
+        "description": "Return the caller's own profile.",
+        "operationId": "me_api_v1_users_me_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Me",
+        "tags": [
+          "users"
+        ]
+      },
+      "patch": {
+        "description": "Update the display name and/or the password.\n\nChanging the password revokes every live refresh token of the account, so a session opened\nwith the old credentials cannot survive the change (docs/guvenlik-gizlilik.md §1).",
+        "operationId": "patch_me_api_v1_users_me_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Me",
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/api/v1/workspaces": {
+      "get": {
+        "description": "Every workspace the caller owns or is a member of, newest first.\n\nReturned as a page for shape consistency with the rest of api.md §1, but always in one page:\n``WorkspaceRepository.list_for_user`` has no cursor, and a user's workspace list is small by\nconstruction (one per calculus session).",
+        "operationId": "list_workspaces_api_v1_workspaces_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_WorkspaceOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Workspaces",
+        "tags": [
+          "workspaces"
+        ]
+      },
+      "post": {
+        "description": "Create a workspace owned by the caller.",
+        "operationId": "create_workspace_api_v1_workspaces_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkspaceIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Workspace",
+        "tags": [
+          "workspaces"
+        ]
+      }
+    },
+    "/api/v1/workspaces/{ws_id}": {
+      "delete": {
+        "description": "Delete a workspace and its operations.",
+        "operationId": "delete_workspace_api_v1_workspaces__ws_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Workspace",
+        "tags": [
+          "workspaces"
+        ]
+      },
+      "get": {
+        "description": "One workspace of the caller.",
+        "operationId": "get_workspace_api_v1_workspaces__ws_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Workspace",
+        "tags": [
+          "workspaces"
+        ]
+      },
+      "patch": {
+        "description": "Rename a workspace.",
+        "operationId": "patch_workspace_api_v1_workspaces__ws_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkspacePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Workspace",
+        "tags": [
+          "workspaces"
+        ]
+      }
+    },
+    "/api/v1/workspaces/{ws_id}/operations": {
+      "get": {
+        "description": "One page of the workspace history, newest first.",
+        "operationId": "list_operations_api_v1_workspaces__ws_id__operations_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 26,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_OperationOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Operations",
+        "tags": [
+          "workspaces"
+        ]
+      }
+    },
+    "/api/v1/workspaces/{ws_id}/operations/{op_id}": {
+      "delete": {
+        "description": "Remove one operation from the history.",
+        "operationId": "delete_operation_api_v1_workspaces__ws_id__operations__op_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "op_id",
+            "required": true,
+            "schema": {
+              "title": "Op Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Operation",
+        "tags": [
+          "workspaces"
+        ]
+      }
+    },
+    "/api/v1/workspaces/{ws_id}/operations/{op_id}/export": {
+      "post": {
+        "description": "Export one operation as LaTeX source or a one-page PDF (A.2.2).",
+        "operationId": "export_operation_api_v1_workspaces__ws_id__operations__op_id__export_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ws_id",
+            "required": true,
+            "schema": {
+              "title": "Ws Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "op_id",
+            "required": true,
+            "schema": {
+              "title": "Op Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "tex",
+              "enum": [
+                "tex",
+                "pdf"
+              ],
+              "title": "Format",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Export Operation",
+        "tags": [
+          "workspaces"
+        ]
+      }
+    }
+  }
+}

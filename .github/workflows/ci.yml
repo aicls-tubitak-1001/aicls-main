@@ -1,0 +1,96 @@
+# CI (docs/gelistirme/is-akisi.md §4). Job order: install → lint → type → imports → gates →
+# test → coverage → docs-map → docs. CI never downloads datasets or weights and never sets
+# AICLS_GATE_* (ADR-0012); gpu/data/mysql/browser-marked tests do not run here.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUTF8: "1"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  AICLS_ENV: test
+  # Gates are deliberately unset in CI; tests assert refusal.
+  AICLS_GATE_DATASET_DOWNLOAD: ""
+  AICLS_GATE_WEIGHTS_DOWNLOAD: ""
+  AICLS_GATE_CUDA_INSTALL: ""
+  AICLS_GATE_TRAINING: ""
+  HF_HUB_OFFLINE: "1"
+  TRANSFORMERS_OFFLINE: "1"
+
+jobs:
+  python:
+    name: python (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # report-check needs ancestry
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install (dev extras, CPU torch wheel)
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --extra-index-url https://download.pytorch.org/whl/cpu -e ".[dev]"
+
+      - name: Environment report (non-blocking)
+        shell: bash
+        run: python scripts/check_env.py --ci || true
+
+      - name: Lint (ruff check + format)
+        run: poe lint
+
+      - name: Type check (mypy src)
+        run: poe type
+
+      - name: Import contracts (import-linter)
+        run: poe imports
+
+      - name: Approval-gate static scan + raw SQL lint
+        run: poe gates
+
+      - name: Test (PR selection, coverage)
+        env:
+          AICLS_DATA_ROOT: ${{ runner.temp }}/aicls-data
+        run: poe test
+
+      - name: Coverage gate (per-package tiers)
+        run: python scripts/coverage_gate.py coverage.xml
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.os }}
+          path: |
+            coverage.xml
+          if-no-files-found: ignore
+
+      - name: OpenAPI export (no-op until api exists)
+        run: python scripts/export_openapi.py
+
+      - name: Docs map (İP deliverable → artefact)
+        run: python tools/check_docs_map.py
+
+      - name: Docs (mkdocs build --strict)
+        run: python -m mkdocs build --strict
+
+      - name: Gates scan (explicit, for the job summary)
+        run: python tools/check_gates.py

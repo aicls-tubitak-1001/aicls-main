@@ -1,0 +1,101 @@
+@prefix aicls:   <https://ai-cls.example/ns#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema:  <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ai-cls.example/ns>
+    a owl:Ontology ;
+    rdfs:label "AI-CLS kitap içerik sözlüğü"@tr ;
+    rdfs:comment "TÜBİTAK 1001 #125E748 İP-8: Temel Analiz ders kitabı birimleri ve ilişkileri."@tr ;
+    dcterms:identifier "aicls-book-vocab-1" .
+
+#
+# Classes — the @type vocabulary of a content unit (UnitType).
+#
+aicls:ContentUnit a rdfs:Class ;
+    rdfs:label "İçerik birimi"@tr ;
+    rdfs:comment "Ders kitabındaki etiketlenmiş en küçük anlamlı parça."@tr .
+
+aicls:Definition a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Tanım"@tr .
+aicls:Theorem    a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Teorem"@tr .
+aicls:Lemma      a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Lemma"@tr .
+aicls:Corollary  a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Sonuç"@tr .
+aicls:Proof      a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Kanıt"@tr .
+aicls:Example    a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Örnek"@tr .
+aicls:Exercise   a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Alıştırma"@tr .
+aicls:Figure     a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Şekil"@tr .
+aicls:Table      a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Tablo"@tr .
+aicls:Remark     a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Not"@tr .
+aicls:Section    a rdfs:Class ; rdfs:subClassOf aicls:ContentUnit ; rdfs:label "Bölüm"@tr .
+
+#
+# Object properties — the Predicate vocabulary of book_triples.
+#
+aicls:partOf a rdf:Property ;
+    rdfs:label "bölümüdür"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range aicls:Section .
+
+aicls:requires a rdf:Property ;
+    rdfs:label "önkoşuludur"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range aicls:ContentUnit .
+
+aicls:illustrates a rdf:Property ;
+    rdfs:label "örneklendirir"@tr ;
+    rdfs:domain aicls:Example ;
+    rdfs:range aicls:ContentUnit .
+
+aicls:proves a rdf:Property ;
+    rdfs:label "kanıtlar"@tr ;
+    rdfs:domain aicls:Proof ;
+    rdfs:range aicls:Theorem .
+
+aicls:next a rdf:Property ;
+    rdfs:label "sonraki"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range aicls:ContentUnit .
+
+aicls:hasFigure a rdf:Property ;
+    rdfs:label "şekli"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range aicls:Figure .
+
+skos:related rdfs:label "ilgili"@tr .
+
+#
+# Datatype properties — the denormalised columns of book_units.
+#
+aicls:chapter a rdf:Property ;
+    rdfs:label "bölüm kimliği"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range xsd:string .
+
+aicls:number a rdf:Property ;
+    rdfs:label "numara"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range xsd:string .
+
+aicls:bodyMarkdown a rdf:Property ;
+    rdfs:label "Markdown gövde"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range xsd:string .
+
+aicls:latex a rdf:Property ;
+    rdfs:label "LaTeX bloğu"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range xsd:string .
+
+aicls:sourcePage a rdf:Property ;
+    rdfs:label "kaynak sayfa"@tr ;
+    rdfs:domain aicls:ContentUnit ;
+    rdfs:range xsd:integer .
+
+schema:name rdfs:label "başlık"@tr .
+skos:altLabel rdfs:label "takma ad"@tr .
+dcterms:identifier rdfs:label "kimlik"@tr .
+dcterms:source rdfs:label "kaynak"@tr .

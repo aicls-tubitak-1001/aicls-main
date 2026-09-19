@@ -1,0 +1,45 @@
+# Code owners (docs/gelistirme/is-akisi.md §3). Order matters: the last matching pattern wins.
+# Everyone owns docs/; the PR author may not merge their own PR.
+
+*                                   @csahin
+
+# Deterministic core, models, NLU, data/eval/ml, CLI, training — Çağrı Şahin
+src/aicls/core/                     @csahin
+src/aicls/nlu/                      @csahin
+src/aicls/ocr/                      @csahin
+src/aicls/asr/                      @csahin
+src/aicls/data/                     @csahin
+src/aicls/eval/                     @csahin
+src/aicls/ml/                       @csahin
+src/aicls/cli/                      @csahin
+training/                           @csahin
+datasets/nlu/                       @csahin
+datasets/latex/                     @csahin
+datasets/manifests/                 @csahin
+experiments/                        @csahin
+
+# Math engine (İP-4), book (İP-8), collection, DB, datasets — Mehmet Murat Turhan
+src/aicls/latex2sympy/              @mmturhan
+src/aicls/mathengine/               @mmturhan
+src/aicls/book/                     @mmturhan
+src/aicls/collect/                  @mmturhan
+src/aicls/db/                       @mmturhan
+datasets/                           @mmturhan
+datasets/curriculum/                @mmturhan
+datasets/book/                      @mmturhan
+alembic.ini                         @mmturhan
+
+# Web (İP-2) — Şahiner Güler; api services get a second review from csahin
+web/                                @sguler
+src/aicls/api/                      @csahin @sguler
+src/aicls/api/services/             @csahin @sguler
+
+# Shared
+docs/                               @csahin @mmturhan @sguler
+docs/adr/                           @csahin @mmturhan @sguler
+.github/                            @csahin
+pyproject.toml                      @csahin
+poe_tasks.toml                      @csahin
+scripts/                            @csahin
+tools/                              @csahin
+deploy/                             @csahin @sguler

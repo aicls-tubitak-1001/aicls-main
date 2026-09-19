@@ -1,0 +1,504 @@
+{
+  "_aciklama": "datasets/book/sample altındaki her kaynak için beklenen etiketleme sonucu (altın standart). tests/unit/book/test_sample_chapter.py bu dosyayı birebir doğrular; etiketleyici davranışı değişirse önce burası gözden geçirilir.",
+  "chapters": [
+    {
+      "source": "sample/bolum-01-limit.md",
+      "format": "markdown",
+      "chapter": "bolum-1",
+      "coverage": 1.0,
+      "units": [
+        {
+          "id": "bolum-1",
+          "type": "Section",
+          "number": "1",
+          "title_tr": "Limit ve Süreklilik",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tanim-1.1",
+          "type": "Definition",
+          "number": "1.1",
+          "title_tr": "Fonksiyonun Limiti",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "teorem-1.2",
+          "type": "Theorem",
+          "number": "1.2",
+          "title_tr": "Sıkıştırma Teoremi",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "ornek-1.3",
+          "type": "Example",
+          "number": "1.3",
+          "title_tr": "Belirsiz Oran",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tanim-1.4",
+          "type": "Definition",
+          "number": "1.4",
+          "title_tr": "Süreklilik",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "teorem-1.5",
+          "type": "Theorem",
+          "number": "1.5",
+          "title_tr": "Ara Değer Teoremi",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "sekil-1.6",
+          "type": "Figure",
+          "number": "1.6",
+          "title_tr": "Süreklilik ve Kopma Noktası",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "alistirma-1.7",
+          "type": "Exercise",
+          "number": "1.7",
+          "title_tr": "Limit Hesabı",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        }
+      ],
+      "triples": [
+        [
+          "tanim-1.1",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "teorem-1.2",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "ornek-1.3",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "tanim-1.4",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "teorem-1.5",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "sekil-1.6",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "alistirma-1.7",
+          "aicls:partOf",
+          "bolum-1"
+        ],
+        [
+          "tanim-1.1",
+          "aicls:next",
+          "teorem-1.2"
+        ],
+        [
+          "teorem-1.2",
+          "aicls:next",
+          "ornek-1.3"
+        ],
+        [
+          "ornek-1.3",
+          "aicls:next",
+          "tanim-1.4"
+        ],
+        [
+          "tanim-1.4",
+          "aicls:next",
+          "teorem-1.5"
+        ],
+        [
+          "teorem-1.5",
+          "aicls:next",
+          "sekil-1.6"
+        ],
+        [
+          "sekil-1.6",
+          "aicls:next",
+          "alistirma-1.7"
+        ]
+      ]
+    },
+    {
+      "source": "sample/bolum-02-turev.md",
+      "format": "markdown",
+      "chapter": "bolum-2",
+      "coverage": 1.0,
+      "units": [
+        {
+          "id": "bolum-2",
+          "type": "Section",
+          "number": "2",
+          "title_tr": "Türev",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tanim-2.1",
+          "type": "Definition",
+          "number": "2.1",
+          "title_tr": "Ortalama Değişim Hızı",
+          "latex_blocks": 1,
+          "source_page": 54,
+          "aliases": [
+            "ortalama hız"
+          ]
+        },
+        {
+          "id": "sekil-2.3",
+          "type": "Figure",
+          "number": "2.3",
+          "title_tr": "Teğet Doğrusu",
+          "latex_blocks": 0,
+          "source_page": 59,
+          "aliases": []
+        },
+        {
+          "id": "tanim-2.4",
+          "type": "Definition",
+          "number": "2.4",
+          "title_tr": "Türev",
+          "latex_blocks": 1,
+          "source_page": 58,
+          "aliases": [
+            "türevin tanımı",
+            "diferansiyel katsayı"
+          ]
+        },
+        {
+          "id": "teorem-2.5",
+          "type": "Theorem",
+          "number": "2.5",
+          "title_tr": "Türevlenebilirlik Teoremi",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "kanit-2.6",
+          "type": "Proof",
+          "number": "2.6",
+          "title_tr": "Türevlenebilirlik Teoremi Kanıtı",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "ornek-2.7",
+          "type": "Example",
+          "number": "2.7",
+          "title_tr": "Kuvvet Kuralı",
+          "latex_blocks": 1,
+          "source_page": 62,
+          "aliases": []
+        },
+        {
+          "id": "teorem-2.8",
+          "type": "Theorem",
+          "number": "2.8",
+          "title_tr": "Zincir Kuralı",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "sonuc-2.9",
+          "type": "Corollary",
+          "number": "2.9",
+          "title_tr": "Bileşke Fonksiyonun Türevi",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "alistirma-2.10",
+          "type": "Exercise",
+          "number": "2.10",
+          "title_tr": "Zincir Kuralı Uygulaması",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tablo-2.11",
+          "type": "Table",
+          "number": "2.11",
+          "title_tr": "Temel Türev Kuralları",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "not-2.12",
+          "type": "Remark",
+          "number": "2.12",
+          "title_tr": "Sık Yapılan Hata",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        }
+      ],
+      "triples": [
+        [
+          "tanim-2.1",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "sekil-2.3",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "tanim-2.4",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "teorem-2.5",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "kanit-2.6",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "ornek-2.7",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "teorem-2.8",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "sonuc-2.9",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "alistirma-2.10",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "tablo-2.11",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "not-2.12",
+          "aicls:partOf",
+          "bolum-2"
+        ],
+        [
+          "tanim-2.1",
+          "aicls:next",
+          "sekil-2.3"
+        ],
+        [
+          "sekil-2.3",
+          "aicls:next",
+          "tanim-2.4"
+        ],
+        [
+          "tanim-2.4",
+          "aicls:next",
+          "teorem-2.5"
+        ],
+        [
+          "teorem-2.5",
+          "aicls:next",
+          "kanit-2.6"
+        ],
+        [
+          "kanit-2.6",
+          "aicls:next",
+          "ornek-2.7"
+        ],
+        [
+          "ornek-2.7",
+          "aicls:next",
+          "teorem-2.8"
+        ],
+        [
+          "teorem-2.8",
+          "aicls:next",
+          "sonuc-2.9"
+        ],
+        [
+          "sonuc-2.9",
+          "aicls:next",
+          "alistirma-2.10"
+        ],
+        [
+          "alistirma-2.10",
+          "aicls:next",
+          "tablo-2.11"
+        ],
+        [
+          "tablo-2.11",
+          "aicls:next",
+          "not-2.12"
+        ],
+        [
+          "tanim-2.4",
+          "aicls:requires",
+          "tanim-2.1"
+        ],
+        [
+          "tanim-2.4",
+          "aicls:hasFigure",
+          "sekil-2.3"
+        ],
+        [
+          "kanit-2.6",
+          "aicls:requires",
+          "tanim-2.4"
+        ],
+        [
+          "kanit-2.6",
+          "aicls:proves",
+          "teorem-2.5"
+        ],
+        [
+          "ornek-2.7",
+          "aicls:illustrates",
+          "tanim-2.4"
+        ]
+      ]
+    },
+    {
+      "source": "sample/bolum-04-integral.tex",
+      "format": "latex",
+      "chapter": "bolum-4",
+      "coverage": 1.0,
+      "units": [
+        {
+          "id": "bolum-4",
+          "type": "Section",
+          "number": "4",
+          "title_tr": "Belirli İntegral",
+          "latex_blocks": 0,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tanim-4.1",
+          "type": "Definition",
+          "number": "4.1",
+          "title_tr": "Riemann Toplamı",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "tanim-4.2",
+          "type": "Definition",
+          "number": "4.2",
+          "title_tr": "Belirli İntegral",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "teorem-4.3",
+          "type": "Theorem",
+          "number": "4.3",
+          "title_tr": "Analizin Temel Teoremi",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        },
+        {
+          "id": "ornek-4.4",
+          "type": "Example",
+          "number": "4.4",
+          "title_tr": "Alan Hesabı",
+          "latex_blocks": 1,
+          "source_page": null,
+          "aliases": []
+        }
+      ],
+      "triples": [
+        [
+          "tanim-4.1",
+          "aicls:partOf",
+          "bolum-4"
+        ],
+        [
+          "tanim-4.2",
+          "aicls:partOf",
+          "bolum-4"
+        ],
+        [
+          "teorem-4.3",
+          "aicls:partOf",
+          "bolum-4"
+        ],
+        [
+          "ornek-4.4",
+          "aicls:partOf",
+          "bolum-4"
+        ],
+        [
+          "tanim-4.1",
+          "aicls:next",
+          "tanim-4.2"
+        ],
+        [
+          "tanim-4.2",
+          "aicls:next",
+          "teorem-4.3"
+        ],
+        [
+          "teorem-4.3",
+          "aicls:next",
+          "ornek-4.4"
+        ]
+      ]
+    }
+  ],
+  "invalid": {
+    "source": "invalid/bolum-03-etiketsiz.md",
+    "chapter": "bolum-3",
+    "coverage": 0.5,
+    "untagged_headings": [
+      "Tanım: Belirsiz İntegral",
+      "Teorem: Analizin Temel Teoremi"
+    ]
+  }
+}

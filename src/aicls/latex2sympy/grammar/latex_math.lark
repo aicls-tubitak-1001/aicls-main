@@ -1,0 +1,215 @@
+// AI-CLS - LaTeX math grammar for the Temel Analiz curriculum (ADR-0004).
+//
+// Parser: Lark LALR(1) with the contextual lexer, propagate_positions=True,
+// maybe_placeholders=False.  Input normally comes from
+// ``aicls.latex2sympy.normalize.normalize_latex`` (spacing macros, \left/\right,
+// \dfrac, unicode operators and decimal commas are handled there), but the grammar
+// stays tolerant of the most common of those so it can be exercised directly.
+//
+// Ambiguity policy (docs/mimari/latex-ayristirici.md 3.3):
+//   * implicit multiplication binds only atoms that do not start with a binary
+//     operator (``2x``, ``x \sin x``, ``2 \pi r``);
+//   * a function without parentheses binds the first ``power``
+//     (``\sin x y`` -> ``sin(x) * y``);
+//   * big operators (\int \sum \prod \lim \frac{d}{dx}) extend to the end of the
+//     current term and may carry a leading coefficient, either juxtaposed (``2 \int x dx``)
+//     or with an explicit multiplication sign (``2 \cdot \int x dx``) - the latter is how
+//     ``sympy.latex(mul_symbol="dot")`` writes a scaled calculus object, so the round trip
+//     of our own CAS output depends on it;
+//   * ``dx`` is a plain product outside \int; the trailing differential of an
+//     integral is recognised on the AST (transformer._split_differential), because
+//     an LALR state that accepts a differential terminal is shared with every other
+//     "after an atom" state and would break ``d x`` elsewhere.
+//
+// Two families of shift/reduce conflicts are resolved as *shift* (Lark's default);
+// both resolutions are the intended reading and are pinned by unit tests:
+//   1. <power : postfix> vs ^ _ ! ' - a postfix operator binds the innermost
+//      postfix, so ``\sin x^{2}`` is ``sin(x^2)`` and ``\sin x_1`` is ``sin(x_1)``.
+//   2. <bigop : _INT expr> vs + - \pm - the integral body is greedy up to its
+//      differential, so ``\int x^{2}+1\,dx`` integrates the whole sum while
+//      ``\int x\,dx + 1`` is split again on the AST by the differential position.
+//
+// Terminals whose name starts with ``_`` are filtered out of the tree.
+
+start: relation
+
+?relation: expr
+         | expr rel_op expr                                       -> relation
+
+!rel_op: EQ | LT | GT | LE | GE | NEQ | APPROX | IN
+
+// ---------------------------------------------------------------------------
+// additive / multiplicative levels
+// ---------------------------------------------------------------------------
+?expr: term
+     | expr _PLUS term                                            -> add
+     | expr _MINUS term                                           -> sub
+     | expr _PM term                                              -> plus_minus
+
+?term: mulchain
+     | bigop
+     | mulchain bigop                                             -> scaled_bigop
+     | mulchain _CDOT bigop                                       -> scaled_bigop
+     | mulchain _TIMES bigop                                      -> scaled_bigop
+
+?mulchain: factor
+         | mulchain _CDOT factor                                  -> mul
+         | mulchain _TIMES factor                                 -> mul
+         | mulchain _SLASH factor                                 -> div
+         | mulchain power                                         -> mul
+
+?factor: power
+       | _MINUS factor                                            -> neg
+       | _PLUS factor                                             -> pos
+
+?power: postfix
+      | postfix _CARET script_arg                                 -> pow
+
+?postfix: atom
+        | postfix _UNDERSCORE script_arg                          -> subscript
+        | postfix _BANG                                           -> factorial
+        | postfix PRIME                                           -> prime
+
+// ---------------------------------------------------------------------------
+// atoms
+// ---------------------------------------------------------------------------
+?atom: NUMBER                                                     -> number
+     | SYMBOL                                                     -> symbol
+     | GREEK                                                      -> greek
+     | INFTY                                                      -> infty
+     | MATHBB                                                     -> mathbb
+     | LEIBNIZ_OF                                                 -> leibniz_of
+     | group
+     | _LPAREN expr _RPAREN                                       -> paren
+     | _LBRACKET expr _RBRACKET                                   -> paren
+     | _LPAREN expr _COMMA expr _RPAREN                           -> interval_oo
+     | _LBRACKET expr _COMMA expr _RBRACKET                       -> interval_cc
+     | _LBRACKET expr _COMMA expr _RPAREN                         -> interval_co
+     | _LPAREN expr _COMMA expr _RBRACKET                         -> interval_oc
+     | frac
+     | sqrt
+     | func
+     | logf
+     | call
+     | opname_call
+     | abs_expr
+     | matrix
+
+group: _LBRACE expr _RBRACE
+
+?script_arg: group
+           | NUMBER                                               -> number
+           | SYMBOL                                               -> symbol
+           | GREEK                                                -> greek
+           | INFTY                                                -> infty
+
+frac: _FRAC group group
+
+sqrt: _SQRT group                                                 -> sqrt
+    | _SQRT _LBRACKET expr _RBRACKET group                        -> root
+
+func: FUNC_NAME power                                             -> func
+    | FUNC_NAME _CARET script_arg power                           -> func_pow
+
+logf: _LOG power                                                  -> logf
+    | _LOG _UNDERSCORE script_arg power                           -> log_base
+
+call: FUNC_APPLY _LPAREN arglist _RPAREN
+arglist: expr (_COMMA expr)*
+
+opname_call: OPERATORNAME _LPAREN arglist _RPAREN
+
+abs_expr: _LVERT expr _RVERT
+
+matrix: MATRIX_BEGIN mrow (_ROWSEP mrow)* MATRIX_END
+mrow: expr (_AMP expr)*
+
+// ---------------------------------------------------------------------------
+// big operators
+// ---------------------------------------------------------------------------
+?bigop: _INT expr                                                 -> integral
+      | _INT _UNDERSCORE script_arg _CARET script_arg expr        -> integral_bounds
+      | _SUM _UNDERSCORE _LBRACE SYMBOL EQ expr _RBRACE _CARET script_arg term  -> summation
+      | _PROD _UNDERSCORE _LBRACE SYMBOL EQ expr _RBRACE _CARET script_arg term -> production
+      | _LIM _UNDERSCORE _LBRACE lim_var _TO expr _RBRACE term    -> limit
+      | _LIM _UNDERSCORE _LBRACE lim_var _TO expr DIRECTION _RBRACE term -> limit_dir
+      | LEIBNIZ term                                              -> leibniz
+
+?lim_var: SYMBOL                                                  -> symbol
+        | GREEK                                                   -> greek
+
+// ---------------------------------------------------------------------------
+// terminals
+// ---------------------------------------------------------------------------
+// ``\frac{d}{dx}`` / ``\frac{\partial^{2}}{\partial x^{2}}`` - the derivative *operator*, whose
+// body follows it as a term.  Both spellings are accepted; the numerator decides ``partial``.
+LEIBNIZ.20: /\\frac\s*\{\s*(\\partial|d)\s*(\^\s*(\{\s*\d+\s*\}|\d+))?\s*\}\s*\{\s*(\\partial|d)\s*(\\[a-zA-Z]+|[A-Za-z])\s*(\^\s*(\{\s*\d+\s*\}|\d+))?\s*\}/
+// ``\frac{dy}{dx}`` / ``\frac{\partial f}{\partial x}`` / ``\frac{d^{2}y}{dx^{2}}`` - the same
+// derivative with its body already inside the numerator.  The numerator body must be a single
+// symbol, so ordinary fractions that merely begin with ``d`` (``\frac{d + 1}{dx}``, ``\frac{2d}{dx}``)
+// still lex as _FRAC.  The order is read from the numerator, exactly as in LEIBNIZ.
+LEIBNIZ_OF.20: /\\frac\s*\{\s*(\\partial|d)\s*(\^\s*(\{\s*\d+\s*\}|\d+))?\s*(\\[a-zA-Z]+|[A-Za-z])\s*\}\s*\{\s*(\\partial|d)\s*(\\[a-zA-Z]+|[A-Za-z])\s*(\^\s*(\{\s*\d+\s*\}|\d+))?\s*\}/
+DIRECTION.20: /\^\s*\{\s*[+-]\s*\}|\^\s*[+-](?![0-9A-Za-z])/
+
+MATRIX_BEGIN.15: /\\begin\s*\{\s*[pbvBV]?matrix\s*\}/
+MATRIX_END.15: /\\end\s*\{\s*[pbvBV]?matrix\s*\}/
+MATHBB.15: /\\mathbb\s*\{\s*[A-Z]\s*\}/
+OPERATORNAME.15: /\\operatorname\s*\*?\s*\{\s*[A-Za-z]+\s*\}/
+
+FUNC_NAME.12: /\\(arcsin|arccos|arctan|arccot|sinh|cosh|tanh|coth|sech|csch|sin|cos|tan|cot|sec|csc|ln|lg|exp)(?![A-Za-z])/
+GREEK.12: /\\(alpha|beta|gamma|delta|epsilon|varepsilon|zeta|eta|theta|vartheta|iota|kappa|lambda|mu|nu|xi|varpi|pi|varrho|rho|varsigma|sigma|tau|upsilon|varphi|phi|chi|psi|omega|Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega)(?![A-Za-z])/
+INFTY.12: /\\infty(?![A-Za-z])/
+_FRAC.12: /\\[dt]?frac(?![A-Za-z])/
+_SQRT.12: /\\sqrt(?![A-Za-z])/
+_LOG.12: /\\log(?![A-Za-z])/
+_INT.12: /\\int(?![A-Za-z])/
+_SUM.12: /\\sum(?![A-Za-z])/
+_PROD.12: /\\prod(?![A-Za-z])/
+_LIM.12: /\\lim(?![A-Za-z])/
+_TO.12: /\\(to|rightarrow|longrightarrow)(?![A-Za-z])/
+_LVERT.12: /\\lvert(?![A-Za-z])/
+_RVERT.12: /\\rvert(?![A-Za-z])/
+_CDOT.12: /\\cdot(?![A-Za-z])/
+_TIMES.12: /\\times(?![A-Za-z])/
+_PM.12: /\\pm(?![A-Za-z])/
+LE.12: /\\le(q)?(?![A-Za-z])/
+GE.12: /\\ge(q)?(?![A-Za-z])/
+NEQ.12: /\\ne(q)?(?![A-Za-z])/
+APPROX.12: /\\approx(?![A-Za-z])/
+IN.12: /\\in(?![A-Za-z])/
+
+FUNC_APPLY.8: /[fghFGH]'*(?=\s*\()/
+
+_ROWSEP.6: /\\\\/
+
+NUMBER: /\d+(\.\d+)?|\.\d+/
+SYMBOL: /[A-Za-z]/
+PRIME: /'+/
+
+EQ: "="
+LT: "<"
+GT: ">"
+_PLUS: "+"
+_MINUS: "-"
+_SLASH: "/"
+_CARET: "^"
+_UNDERSCORE: "_"
+_BANG: "!"
+_COMMA: ","
+_AMP: "&"
+_LPAREN: "("
+_RPAREN: ")"
+_LBRACKET: "["
+_RBRACKET: "]"
+_LBRACE: "{"
+_RBRACE: "}"
+
+// Layout macros that carry no mathematical meaning.  normalize_latex removes them
+// too; keeping them here makes the grammar usable on raw input as well.
+SPACING.30: /\\[,;:!>]|\\quad(?![A-Za-z])|\\qquad(?![A-Za-z])|\\enspace(?![A-Za-z])|\\thinspace(?![A-Za-z])|\\ |~/
+SIZING.30: /\\(left|right|bigl|bigr|Bigl|Bigr|biggl|biggr|Biggl|Biggr|big|Big|bigg|Bigg|displaystyle|textstyle|limits|nolimits)(?![A-Za-z])/
+
+%import common.WS
+%ignore WS
+%ignore SPACING
+%ignore SIZING

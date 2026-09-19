@@ -1,0 +1,72 @@
+{"id": "fetch-0001", "query": "türev tanımını getir", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "command"}
+{"id": "fetch-0002", "query": "türevin tanımını getir", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0003", "query": "türev tanımı", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "bare"}
+{"id": "fetch-0004", "query": "türevin tanımı", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0005", "query": "türevin tanımı nedir", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "question"}
+{"id": "fetch-0006", "query": "türev tanımını ekrana getir", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "command"}
+{"id": "fetch-0007", "query": "lütfen türev tanımını göster", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "command"}
+{"id": "fetch-0008", "query": "türev nedir", "expect_unit": "tanim-2.4", "unit_type": null, "kind": "no_type"}
+{"id": "fetch-0009", "query": "turev tanimini getir", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "ascii"}
+{"id": "fetch-0010", "query": "turevin tanimi", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "ascii"}
+{"id": "fetch-0011", "query": "diferansiyel katsayı", "expect_unit": "tanim-2.4", "unit_type": null, "kind": "authored_alias"}
+{"id": "fetch-0012", "query": "türve tanımı", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "typo"}
+{"id": "fetch-0013", "query": "türev tanımının kendisini yaz", "expect_unit": "tanim-2.4", "unit_type": "Definition", "kind": "command"}
+{"id": "fetch-0014", "query": "limit tanımını göster", "expect_unit": "tanim-1.1", "unit_type": "Definition", "kind": "command"}
+{"id": "fetch-0015", "query": "limitin tanımı", "expect_unit": "tanim-1.1", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0016", "query": "limit tanımı nedir", "expect_unit": "tanim-1.1", "unit_type": "Definition", "kind": "question"}
+{"id": "fetch-0017", "query": "fonksiyonun limiti", "expect_unit": "tanim-1.1", "unit_type": null, "kind": "title"}
+{"id": "fetch-0018", "query": "fonksiyonun limitini getir", "expect_unit": "tanim-1.1", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0019", "query": "fonksiyonun limitinin tanımı", "expect_unit": "tanim-1.1", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0020", "query": "limit tanimini goster", "expect_unit": "tanim-1.1", "unit_type": "Definition", "kind": "ascii"}
+{"id": "fetch-0021", "query": "süreklilik tanımı", "expect_unit": "tanim-1.4", "unit_type": "Definition", "kind": "bare"}
+{"id": "fetch-0022", "query": "sürekliliğin tanımını getir", "expect_unit": "tanim-1.4", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0023", "query": "süreklilik nedir", "expect_unit": "tanim-1.4", "unit_type": null, "kind": "no_type"}
+{"id": "fetch-0024", "query": "sürekliliği açıkla", "expect_unit": "tanim-1.4", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0025", "query": "sureklilik tanimi", "expect_unit": "tanim-1.4", "unit_type": "Definition", "kind": "ascii"}
+{"id": "fetch-0026", "query": "ortalama değişim hızı tanımı", "expect_unit": "tanim-2.1", "unit_type": "Definition", "kind": "bare"}
+{"id": "fetch-0027", "query": "ortalama değişim hızının tanımını getir", "expect_unit": "tanim-2.1", "unit_type": "Definition", "kind": "suffix_gen"}
+{"id": "fetch-0028", "query": "ortalama değişim hızını göster", "expect_unit": "tanim-2.1", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0029", "query": "ortalama hız", "expect_unit": "tanim-2.1", "unit_type": null, "kind": "authored_alias"}
+{"id": "fetch-0030", "query": "hız tanımı", "expect_unit": "tanim-2.1", "unit_type": "Definition", "kind": "head_noun"}
+{"id": "fetch-0031", "query": "sıkıştırma teoremi", "expect_unit": "teorem-1.2", "unit_type": "Theorem", "kind": "bare"}
+{"id": "fetch-0032", "query": "sıkıştırma teoremini göster", "expect_unit": "teorem-1.2", "unit_type": "Theorem", "kind": "suffix_acc"}
+{"id": "fetch-0033", "query": "sıkıştırma teoreminin ifadesini getir", "expect_unit": "teorem-1.2", "unit_type": "Theorem", "kind": "suffix_gen"}
+{"id": "fetch-0034", "query": "sikistirma teoremi", "expect_unit": "teorem-1.2", "unit_type": "Theorem", "kind": "ascii"}
+{"id": "fetch-0035", "query": "ara değer teoremi", "expect_unit": "teorem-1.5", "unit_type": "Theorem", "kind": "bare"}
+{"id": "fetch-0036", "query": "ara değer teoremini getir", "expect_unit": "teorem-1.5", "unit_type": "Theorem", "kind": "suffix_acc"}
+{"id": "fetch-0037", "query": "ara değer teoreminin ifadesi nedir", "expect_unit": "teorem-1.5", "unit_type": "Theorem", "kind": "question"}
+{"id": "fetch-0038", "query": "ara deger teoremi", "expect_unit": "teorem-1.5", "unit_type": "Theorem", "kind": "ascii"}
+{"id": "fetch-0039", "query": "türevlenebilirlik teoremi", "expect_unit": "teorem-2.5", "unit_type": "Theorem", "kind": "bare"}
+{"id": "fetch-0040", "query": "türevlenebilirlik teoremini göster", "expect_unit": "teorem-2.5", "unit_type": "Theorem", "kind": "suffix_acc"}
+{"id": "fetch-0041", "query": "türevlenebilirliği açıkla", "expect_unit": "teorem-2.5", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0042", "query": "zincir kuralı", "expect_unit": "teorem-2.8", "unit_type": null, "kind": "title"}
+{"id": "fetch-0043", "query": "zincir kuralı teoremi", "expect_unit": "teorem-2.8", "unit_type": "Theorem", "kind": "bare"}
+{"id": "fetch-0044", "query": "zincir kuralını göster", "expect_unit": "teorem-2.8", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0045", "query": "zincir kuralının ifadesini getir", "expect_unit": "teorem-2.8", "unit_type": null, "kind": "suffix_gen"}
+{"id": "fetch-0046", "query": "türevlenebilirlik teoremi kanıtı", "expect_unit": "kanit-2.6", "unit_type": "Proof", "kind": "bare"}
+{"id": "fetch-0047", "query": "türevlenebilirlik teoreminin kanıtını getir", "expect_unit": "kanit-2.6", "unit_type": "Proof", "kind": "suffix_gen"}
+{"id": "fetch-0048", "query": "teorem kanıtı", "expect_unit": "kanit-2.6", "unit_type": "Proof", "kind": "head_noun"}
+{"id": "fetch-0049", "query": "belirsiz oran örneği", "expect_unit": "ornek-1.3", "unit_type": "Example", "kind": "bare"}
+{"id": "fetch-0050", "query": "belirsiz oran örneğini getir", "expect_unit": "ornek-1.3", "unit_type": "Example", "kind": "suffix_acc"}
+{"id": "fetch-0051", "query": "oran örneği", "expect_unit": "ornek-1.3", "unit_type": "Example", "kind": "head_noun"}
+{"id": "fetch-0052", "query": "kuvvet kuralı örneği", "expect_unit": "ornek-2.7", "unit_type": "Example", "kind": "bare"}
+{"id": "fetch-0053", "query": "kuvvet kuralı örneğini göster", "expect_unit": "ornek-2.7", "unit_type": "Example", "kind": "suffix_acc"}
+{"id": "fetch-0054", "query": "kuvvet kuralı", "expect_unit": "ornek-2.7", "unit_type": null, "kind": "title"}
+{"id": "fetch-0055", "query": "teğet doğrusu şekli", "expect_unit": "sekil-2.3", "unit_type": "Figure", "kind": "bare"}
+{"id": "fetch-0056", "query": "teğet doğrusunu ekrana getir", "expect_unit": "sekil-2.3", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0057", "query": "teğet doğrusu grafiğini göster", "expect_unit": "sekil-2.3", "unit_type": "Figure", "kind": "synonym"}
+{"id": "fetch-0058", "query": "süreklilik ve kopma noktası şekli", "expect_unit": "sekil-1.6", "unit_type": "Figure", "kind": "bare"}
+{"id": "fetch-0059", "query": "kopma noktası şeklini getir", "expect_unit": "sekil-1.6", "unit_type": "Figure", "kind": "partial"}
+{"id": "fetch-0060", "query": "limit hesabı alıştırması", "expect_unit": "alistirma-1.7", "unit_type": "Exercise", "kind": "bare"}
+{"id": "fetch-0061", "query": "limit hesabı alıştırmasını getir", "expect_unit": "alistirma-1.7", "unit_type": "Exercise", "kind": "suffix_acc"}
+{"id": "fetch-0062", "query": "zincir kuralı uygulaması alıştırması", "expect_unit": "alistirma-2.10", "unit_type": "Exercise", "kind": "bare"}
+{"id": "fetch-0063", "query": "zincir kuralı uygulamasını göster", "expect_unit": "alistirma-2.10", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0064", "query": "temel türev kuralları tablosu", "expect_unit": "tablo-2.11", "unit_type": "Table", "kind": "bare"}
+{"id": "fetch-0065", "query": "temel türev kuralları tablosunu getir", "expect_unit": "tablo-2.11", "unit_type": "Table", "kind": "suffix_acc"}
+{"id": "fetch-0066", "query": "kural tablosu", "expect_unit": "tablo-2.11", "unit_type": "Table", "kind": "head_noun"}
+{"id": "fetch-0067", "query": "sık yapılan hata notu", "expect_unit": "not-2.12", "unit_type": "Remark", "kind": "bare"}
+{"id": "fetch-0068", "query": "sık yapılan hata notunu göster", "expect_unit": "not-2.12", "unit_type": "Remark", "kind": "suffix_acc"}
+{"id": "fetch-0069", "query": "bileşke fonksiyonun türevi sonucu", "expect_unit": "sonuc-2.9", "unit_type": "Corollary", "kind": "bare"}
+{"id": "fetch-0070", "query": "bileşke fonksiyonun türevini getir", "expect_unit": "sonuc-2.9", "unit_type": null, "kind": "suffix_acc"}
+{"id": "fetch-0071", "query": "türev bölümünü aç", "expect_unit": "bolum-2", "unit_type": "Section", "kind": "section"}
+{"id": "fetch-0072", "query": "limit ve süreklilik bölümü", "expect_unit": "bolum-1", "unit_type": "Section", "kind": "section"}

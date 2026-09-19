@@ -1,0 +1,583 @@
+# datasets/curriculum/cards/grafik.yaml
+# 24 kart. Alt konular: polinom_grafigi, rasyonel_grafik, trigonometrik_grafik, ustel_grafik.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: grafik-0001
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 4
+  command:
+    op: plot
+    expr: x^{2} - 4
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: x^{2} - 4
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Integer(-4))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0002
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x^{2} - 1
+  command:
+    op: plot
+    expr: 2x^{2} - 1
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: 2 \cdot x^{2} - 1
+    srepr: Add(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2))), Integer(-1))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0003
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 3x^{2} - 9
+  command:
+    op: plot
+    expr: 3x^{2} - 9
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: 3 \cdot x^{2} - 9
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2))), Integer(-9))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0004
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 1
+  command:
+    op: plot
+    expr: x^{2} - 1
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: x^{2} - 1
+    srepr: Add(Pow(Symbol('x', real=True), Integer(2)), Integer(-1))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0005
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x^{2} - 8
+  command:
+    op: plot
+    expr: 2x^{2} - 8
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: 2 \cdot x^{2} - 8
+    srepr: Add(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2))), Integer(-8))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0006
+  topic: grafik
+  subtopic: polinom_grafigi
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: 4x^{2} - 4
+  command:
+    op: plot
+    expr: 4x^{2} - 4
+    var: x
+    xmin: -3.0
+    xmax: 3.0
+  expected:
+    latex: 4 \cdot x^{2} - 4
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2))), Integer(-4))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Parabolün [-3, 3] aralığındaki grafiği çizilir.
+- id: grafik-0007
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \sin(x)
+  command:
+    op: plot
+    expr: \sin(x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(x \right)}
+    srepr: sin(Symbol('x', real=True))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0008
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \sin(2x)
+  command:
+    op: plot
+    expr: \sin(2x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(2 \cdot x \right)}
+    srepr: sin(Mul(Integer(2), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0009
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \sin(3x)
+  command:
+    op: plot
+    expr: \sin(3x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(3 \cdot x \right)}
+    srepr: sin(Mul(Integer(3), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0010
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\sin(4x)$ fonksiyonunun grafiğini çiz
+  command:
+    op: plot
+    expr: \sin(4x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(4 \cdot x \right)}
+    srepr: sin(Mul(Integer(4), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0011
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \sin(5x)
+  command:
+    op: plot
+    expr: \sin(5x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(5 \cdot x \right)}
+    srepr: sin(Mul(Integer(5), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0012
+  topic: grafik
+  subtopic: trigonometrik_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: \sin(6x)
+  command:
+    op: plot
+    expr: \sin(6x)
+    var: x
+    xmin: -6.0
+    xmax: 6.0
+  expected:
+    latex: \sin{\left(6 \cdot x \right)}
+    srepr: sin(Mul(Integer(6), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin(ax) fonksiyonunun periyodik grafiği çizilir.
+- id: grafik-0013
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{1}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{1}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{x}
+    srepr: exp(Symbol('x', real=True))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0014
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{2}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{2}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{\frac{x}{2}}
+    srepr: exp(Mul(Rational(1, 2), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0015
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{3}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{3}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{\frac{x}{3}}
+    srepr: exp(Mul(Rational(1, 3), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0016
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{4}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{4}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{\frac{x}{4}}
+    srepr: exp(Mul(Rational(1, 4), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0017
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{5}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{5}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{\frac{x}{5}}
+    srepr: exp(Mul(Rational(1, 5), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0018
+  topic: grafik
+  subtopic: ustel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 1
+  input:
+    kind: latex
+    value: e^{\frac{x}{6}}
+  command:
+    op: plot
+    expr: e^{\frac{x}{6}}
+    var: x
+    xmin: -2.0
+    xmax: 2.0
+  expected:
+    latex: e^{\frac{x}{6}}
+    srepr: exp(Mul(Rational(1, 6), Symbol('x', real=True)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Üstel fonksiyonun [-2, 2] aralığındaki grafiği çizilir.
+- id: grafik-0019
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{1}{x^{2} + 1}
+  command:
+    op: plot
+    expr: \frac{1}{x^{2} + 1}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{1}{x^{2} + 1}
+    srepr: Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(1)), Integer(-1))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.
+- id: grafik-0020
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{2}{x^{2} + 1}
+  command:
+    op: plot
+    expr: \frac{2}{x^{2} + 1}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{2}{x^{2} + 1}
+    srepr: Mul(Integer(2), Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(1)), Integer(-1)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.
+- id: grafik-0021
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{3}{x^{2} + 4}
+  command:
+    op: plot
+    expr: \frac{3}{x^{2} + 4}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{3}{x^{2} + 4}
+    srepr: Mul(Integer(3), Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(4)), Integer(-1)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.
+- id: grafik-0022
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{1}{x^{2} + 9}
+  command:
+    op: plot
+    expr: \frac{1}{x^{2} + 9}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{1}{x^{2} + 9}
+    srepr: Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(9)), Integer(-1))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.
+- id: grafik-0023
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{4}{x^{2} + 2}
+  command:
+    op: plot
+    expr: \frac{4}{x^{2} + 2}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{4}{x^{2} + 2}
+    srepr: Mul(Integer(4), Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(2)), Integer(-1)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.
+- id: grafik-0024
+  topic: grafik
+  subtopic: rasyonel_grafik
+  chapter_ref: aicls:bolum-0
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{5}{x^{2} + 3}
+  command:
+    op: plot
+    expr: \frac{5}{x^{2} + 3}
+    var: x
+    xmin: -4.0
+    xmax: 4.0
+  expected:
+    latex: \frac{5}{x^{2} + 3}
+    srepr: Mul(Integer(5), Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(3)), Integer(-1)))
+  checker: plot_ok
+  checker_args: {}
+  source: sablon:grafik/rasyonel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Paydası sıfır olmayan rasyonel fonksiyonun grafiği çizilir.

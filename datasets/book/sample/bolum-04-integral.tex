@@ -1,0 +1,35 @@
+\section{Bölüm 4: Belirli İntegral}
+
+Bu dosya LaTeX etiketleyicisinin (\texttt{aicls.book.ingest.latex\_tagger})
+tanıdığı ortamları gösterir. Her ortam bir \verb|\label| taşımak zorundadır.
+
+\begin{tanim}[Riemann Toplamı]\label{tanim:4.1}
+$[a, b]$ aralığının bir bölüntüsü için her alt aralıktan seçilen örnek noktalarla
+kurulan toplama Riemann toplamı denir.
+\[
+S_n = \sum_{i=1}^{n} f(x_i^*) \, \Delta x_i
+\]
+\end{tanim}
+
+\begin{tanim}[Belirli İntegral]\label{tanim:4.2}
+Bölüntü normu sıfıra giderken Riemann toplamlarının limiti varsa bu limite
+fonksiyonun belirli integrali denir.
+\[
+\int_a^b f(x)\,dx = \lim_{\|P\| \to 0} S_n
+\]
+\end{tanim}
+
+\begin{teorem}[Analizin Temel Teoremi]\label{teorem:4.3}
+$f$ fonksiyonu $[a, b]$ aralığında sürekli ve $F$ onun bir ilkeli ise belirli
+integral uç noktalardaki ilkel değerlerinin farkına eşittir.
+\[
+\int_a^b f(x)\,dx = F(b) - F(a)
+\]
+\end{teorem}
+
+\begin{ornek}[Alan Hesabı]\label{ornek:4.4}
+Parabolün altında kalan alan belirli integralle hesaplanır.
+\[
+\int_0^1 x^2 \, dx = \frac{1}{3}
+\]
+\end{ornek}

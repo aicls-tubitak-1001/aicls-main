@@ -1,0 +1,48 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-strong);
+  border-top-color: var(--color-accent);
+  animation: spin 900ms linear infinite;
+  flex: none;
+}
+
+.sm {
+  width: 1em;
+  height: 1em;
+}
+
+.md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ * Reduced motion: keep the shape (it still says "something is happening") but stop the rotation
+ * and mark it with a dashed ring instead.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-style: dashed;
+    border-top-color: var(--color-accent);
+  }
+}

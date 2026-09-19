@@ -1,0 +1,132 @@
+/* SUS questionnaire: ten statements, five big targets each, one screen. */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.intro {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.question {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.text {
+  padding: 0 var(--space-1);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+}
+
+.number {
+  color: var(--color-text-muted);
+}
+
+.scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.anchor {
+  flex: 1 1 8rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.anchor:last-child {
+  text-align: end;
+}
+
+.options {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* The whole cell is the target, never just the radio dot. */
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: var(--text-lg);
+  cursor: pointer;
+}
+
+.option:focus-within {
+  box-shadow: var(--focus-ring);
+}
+
+.optionChecked {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  font-weight: 700;
+}
+
+.option input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-accent);
+}
+
+.error {
+  margin: 0;
+  color: var(--color-critical);
+  font-size: var(--text-base);
+}
+
+.result {
+  padding: var(--space-4);
+  border: 1px solid var(--color-ok-border);
+  border-radius: var(--radius-md);
+  background: var(--color-ok-bg);
+}
+
+.score {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+
+.scoreMeta {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cohort {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

@@ -1,0 +1,43 @@
+# KAPISIZ (gate-free). Bu dosya hiçbir onay gerektirmez ve gerektirmemelidir.
+#
+# data.dataset: synthetic_audio -> TrainConfig.is_gate_free True (ADR-0012). model.base_dir
+# null olduğu için ağırlık İNDİRİLMEZ: rastgele başlatılmış küçük bir WhisperConfig kurulur
+# (docs/ml/egitim-altyapisi.md §1'in adlandırdığı CI yolu). Öznitelikler numpy log-Mel ile
+# üretilir, yani HF işlemcisine ve dolayısıyla yerel bir kontrol noktasına da gerek yoktur.
+#
+# DÜRÜSTLÜK NOTU: buradan çıkan hiçbir sayı sonuç değildir. Rastgele ağırlıklı bir modelin
+# sentetik sinüs süpürmeleri üzerindeki kaybı BAĞLANTI DENETİMİdir; WER kanıtı ancak
+# WEIGHTS_DOWNLOAD + TRAINING kapıları açıldıktan ve gerçek konuşmacı-ayrık test kümesi
+# oluştuktan sonra üretilebilir.
+_base_: ../_base.yaml
+run:
+  name: asr_smoke_synthetic
+  seed: 1234
+  deterministic: true
+  tags: [asr, smoke, synthetic]
+  notes: "CI duman koşusu; ölçüm değil bağlantı denetimi."
+data:
+  dataset: synthetic_audio
+  feature_extractor: log_mel # numpy yolu; yerel model dizini gerekmez
+  n_samples: 64
+  sample_seconds: 1.0
+  max_seconds: 2.0
+  max_label_len: 32
+  batch_size: 4
+  num_workers: 0 # Windows: fork yok
+model:
+  family: whisper
+  encoder: null
+  base_dir: null # rastgele başlatılmış küçük WhisperConfig
+  d_model: 32
+  layers: 2
+  heads: 2
+  ff_dim: 64
+  dropout: 0.0
+  max_len: 32
+  num_mel_bins: 80 # aicls.asr.log_mel varsayılanıyla aynı olmak zorunda
+train: {epochs: null, max_steps: 2, grad_accum: 1, amp: "off", grad_clip: 1.0, eval_every: 1, ckpt_every: 1, log_every: 1, early_stop_patience: null, allow_dirty: true}
+eval: {beam: 1, max_n_val: 8, metrics: [wer, loss]}
+tracking: {backend: jsonl, mlflow_uri: null, experiment: smoke}
+checkpoint: {keep_last: 1, keep_best: 1, metric: val_wer, mode: min}
+gates: {synthetic: true}

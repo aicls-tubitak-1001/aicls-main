@@ -1,0 +1,1677 @@
+# datasets/curriculum/cards/sureklilik.yaml
+# 72 kart. Alt konular: ara_deger_teoremi, deger_kontrolu, kaldirilabilir_sureksizlik, surekli_genisletme, tek_yonlu_sureklilik.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: sureklilik-0001
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 1}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 1}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x = a noktasındaki boşluk kaldırılabilirdir; f(a) := 2a tanımlanırsa fonksiyon süreklidir.
+- id: sureklilik-0002
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 2} \frac{x^{2} - 4}{x - 2}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 4}{x - 2}
+    var: x
+    to: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x = a noktasındaki boşluk kaldırılabilirdir; f(a) := 2a tanımlanırsa fonksiyon süreklidir.
+- id: sureklilik-0003
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 3} \frac{x^{2} - 9}{x - 3}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 9}{x - 3}
+    var: x
+    to: '3'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x = a noktasındaki boşluk kaldırılabilirdir; f(a) := 2a tanımlanırsa fonksiyon süreklidir.
+- id: sureklilik-0004
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 4} \frac{x^{2} - 16}{x - 4}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 16}{x - 4}
+    var: x
+    to: '4'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x = a noktasındaki boşluk kaldırılabilirdir; f(a) := 2a tanımlanırsa fonksiyon süreklidir.
+- id: sureklilik-0005
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 5} \frac{x^{2} - 25}{x - 5}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 25}{x - 5}
+    var: x
+    to: '5'
+  expected:
+    latex: '10'
+    srepr: Integer(10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x = a noktasındaki boşluk kaldırılabilirdir; f(a) := 2a tanımlanırsa fonksiyon süreklidir.
+- id: sureklilik-0006
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{3} - 1}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{3} - 1}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kup_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^3 - a^3 = (x - a)(x^2 + ax + a^2) sadeleştirmesiyle limit 3a^2 olur.
+- id: sureklilik-0007
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 2} \frac{x^{3} - 8}{x - 2}
+  command:
+    op: limit
+    expr: \frac{x^{3} - 8}{x - 2}
+    var: x
+    to: '2'
+  expected:
+    latex: '12'
+    srepr: Integer(12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kup_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^3 - a^3 = (x - a)(x^2 + ax + a^2) sadeleştirmesiyle limit 3a^2 olur.
+- id: sureklilik-0008
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 3} \frac{x^{3} - 27}{x - 3}
+  command:
+    op: limit
+    expr: \frac{x^{3} - 27}{x - 3}
+    var: x
+    to: '3'
+  expected:
+    latex: '27'
+    srepr: Integer(27)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kup_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^3 - a^3 = (x - a)(x^2 + ax + a^2) sadeleştirmesiyle limit 3a^2 olur.
+- id: sureklilik-0009
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\lim_{x \to 4} \frac{x^{3} - 64}{x - 4}$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{x^{3} - 64}{x - 4}
+    var: x
+    to: '4'
+  expected:
+    latex: '48'
+    srepr: Integer(48)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kup_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^3 - a^3 = (x - a)(x^2 + ax + a^2) sadeleştirmesiyle limit 3a^2 olur.
+- id: sureklilik-0010
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 5} \frac{x^{3} - 125}{x - 5}
+  command:
+    op: limit
+    expr: \frac{x^{3} - 125}{x - 5}
+    var: x
+    to: '5'
+  expected:
+    latex: '75'
+    srepr: Integer(75)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kup_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: x^3 - a^3 = (x - a)(x^2 + ax + a^2) sadeleştirmesiyle limit 3a^2 olur.
+- id: sureklilik-0011
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 2x + 1}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 2x + 1}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/carpanlara_ayirma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay (x - 1)(x - a) olarak ayrılır; x = 1 bosluğu kaldırılabilirdir.
+- id: sureklilik-0012
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 3x + 2}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 3x + 2}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/carpanlara_ayirma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay (x - 1)(x - a) olarak ayrılır; x = 1 bosluğu kaldırılabilirdir.
+- id: sureklilik-0013
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 4x + 3}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 4x + 3}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '-2'
+    srepr: Integer(-2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/carpanlara_ayirma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay (x - 1)(x - a) olarak ayrılır; x = 1 bosluğu kaldırılabilirdir.
+- id: sureklilik-0014
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 5x + 4}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 5x + 4}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '-3'
+    srepr: Integer(-3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/carpanlara_ayirma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay (x - 1)(x - a) olarak ayrılır; x = 1 bosluğu kaldırılabilirdir.
+- id: sureklilik-0015
+  topic: sureklilik
+  subtopic: kaldirilabilir_sureksizlik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 1} \frac{x^{2} - 6x + 5}{x - 1}
+  command:
+    op: limit
+    expr: \frac{x^{2} - 6x + 5}{x - 1}
+    var: x
+    to: '1'
+  expected:
+    latex: '-4'
+    srepr: Integer(-4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/carpanlara_ayirma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Pay (x - 1)(x - a) olarak ayrılır; x = 1 bosluğu kaldırılabilirdir.
+- id: sureklilik-0016
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{\sin(x)}{x}
+  command:
+    op: limit
+    expr: \frac{\sin(x)}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sin_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa sin(ax)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0017
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{\sin(2x)}{x}
+  command:
+    op: limit
+    expr: \frac{\sin(2x)}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sin_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa sin(ax)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0018
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{\sin(3x)}{x}
+  command:
+    op: limit
+    expr: \frac{\sin(3x)}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sin_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa sin(ax)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0019
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{\sin(4x)}{x}
+  command:
+    op: limit
+    expr: \frac{\sin(4x)}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sin_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa sin(ax)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0020
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{\sin(5x)}{x}
+  command:
+    op: limit
+    expr: \frac{\sin(5x)}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sin_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa sin(ax)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0021
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ustel_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa (e^{ax} - 1)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0022
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{2x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{2x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ustel_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa (e^{ax} - 1)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0023
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{3x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{3x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ustel_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa (e^{ax} - 1)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0024
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{4x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{4x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ustel_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa (e^{ax} - 1)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0025
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{e^{5x} - 1}{x}
+  command:
+    op: limit
+    expr: \frac{e^{5x} - 1}{x}
+    var: x
+    to: '0'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ustel_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a tanımlanırsa (e^{ax} - 1)/x fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0026
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\lim_{x \to 0} \frac{1 - \cos(x)}{x^{2}}$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{1 - \cos(x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kosinus_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a^2/2 tanımlanırsa (1 - cos(ax))/x^2 fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0027
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(2x)}{x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(2x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kosinus_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a^2/2 tanımlanırsa (1 - cos(ax))/x^2 fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0028
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(3x)}{x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(3x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{9}{2}
+    srepr: Rational(9, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kosinus_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a^2/2 tanımlanırsa (1 - cos(ax))/x^2 fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0029
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(4x)}{x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(4x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kosinus_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a^2/2 tanımlanırsa (1 - cos(ax))/x^2 fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0030
+  topic: sureklilik
+  subtopic: surekli_genisletme
+  chapter_ref: aicls:bolum-1
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{x \to 0} \frac{1 - \cos(5x)}{x^{2}}
+  command:
+    op: limit
+    expr: \frac{1 - \cos(5x)}{x^{2}}
+    var: x
+    to: '0'
+  expected:
+    latex: \frac{25}{2}
+    srepr: Rational(25, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/kosinus_genisletme
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) := a^2/2 tanımlanırsa (1 - cos(ax))/x^2 fonksiyonu 0 noktasında sürekli olur.
+- id: sureklilik-0031
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0032
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{2\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{2\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0033
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{3\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{3\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0034
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{4\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{4\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0035
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{5\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{5\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0036
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{6\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{6\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0037
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{+}} \frac{7\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{7\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: +
+  expected:
+    latex: '7'
+    srepr: Integer(7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sag
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0038
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0039
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{2\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{2\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-2'
+    srepr: Integer(-2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0040
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{3\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{3\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-3'
+    srepr: Integer(-3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0041
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{4\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{4\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-4'
+    srepr: Integer(-4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0042
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{5\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{5\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-5'
+    srepr: Integer(-5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0043
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\lim_{x \to 0^{-}} \frac{6\lvert x \rvert}{x}$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{6\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-6'
+    srepr: Integer(-6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0044
+  topic: sureklilik
+  subtopic: tek_yonlu_sureklilik
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: \lim_{x \to 0^{-}} \frac{7\lvert x \rvert}{x}
+  command:
+    op: limit
+    expr: \frac{7\lvert x \rvert}{x}
+    var: x
+    to: '0'
+    direction: '-'
+  expected:
+    latex: '-7'
+    srepr: Integer(-7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/sicrama_sol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Sağ limit a, sol limit -a olduğundan 0 noktasında sıçrama süreksizliği vardır.
+- id: sureklilik-0045
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x + 1
+  command:
+    op: evaluate
+    expr: x^{2} - 3x + 1
+    subs:
+      x: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0046
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x + 1
+  command:
+    op: evaluate
+    expr: x^{2} - 3x + 1
+    subs:
+      x: '1'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0047
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x + 1
+  command:
+    op: evaluate
+    expr: x^{2} - 3x + 1
+    subs:
+      x: '2'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0048
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x - 4
+  command:
+    op: evaluate
+    expr: x^{2} - 3x - 4
+    subs:
+      x: '0'
+  expected:
+    latex: '-4'
+    srepr: Integer(-4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0049
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x - 4
+  command:
+    op: evaluate
+    expr: x^{2} - 3x - 4
+    subs:
+      x: '1'
+  expected:
+    latex: '-6'
+    srepr: Integer(-6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0050
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} - 3x - 4
+  command:
+    op: evaluate
+    expr: x^{2} - 3x - 4
+    subs:
+      x: '2'
+  expected:
+    latex: '-6'
+    srepr: Integer(-6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0051
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x + 1
+  command:
+    op: evaluate
+    expr: x^{2} + 2x + 1
+    subs:
+      x: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0052
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x + 1
+  command:
+    op: evaluate
+    expr: x^{2} + 2x + 1
+    subs:
+      x: '1'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0053
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x + 1
+  command:
+    op: evaluate
+    expr: x^{2} + 2x + 1
+    subs:
+      x: '2'
+  expected:
+    latex: '9'
+    srepr: Integer(9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0054
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x - 4
+  command:
+    op: evaluate
+    expr: x^{2} + 2x - 4
+    subs:
+      x: '0'
+  expected:
+    latex: '-4'
+    srepr: Integer(-4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0055
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x - 4
+  command:
+    op: evaluate
+    expr: x^{2} + 2x - 4
+    subs:
+      x: '1'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0056
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: x^{2} + 2x - 4
+  command:
+    op: evaluate
+    expr: x^{2} + 2x - 4
+    subs:
+      x: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0057
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x^{2} - 3x + 1
+  command:
+    op: evaluate
+    expr: 2x^{2} - 3x + 1
+    subs:
+      x: '0'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0058
+  topic: sureklilik
+  subtopic: deger_kontrolu
+  chapter_ref: aicls:bolum-1
+  difficulty: 1
+  input:
+    kind: latex
+    value: 2x^{2} - 3x + 1
+  command:
+    op: evaluate
+    expr: 2x^{2} - 3x + 1
+    subs:
+      x: '1'
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/deger
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Polinom her yerde süreklidir; f(d) değeri doğrudan yerine koymayla bulunur.
+- id: sureklilik-0059
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 1
+  command:
+    op: evaluate
+    expr: x^{3} - 1
+    subs:
+      x: '0'
+  expected:
+    latex: '-1'
+    srepr: Integer(-1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0060
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $x^{3} - 2$ ifadesinin değerini hesapla
+  command:
+    op: evaluate
+    expr: x^{3} - 2
+    subs:
+      x: '0'
+  expected:
+    latex: '-2'
+    srepr: Integer(-2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0061
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 3
+  command:
+    op: evaluate
+    expr: x^{3} - 3
+    subs:
+      x: '0'
+  expected:
+    latex: '-3'
+    srepr: Integer(-3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0062
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 4
+  command:
+    op: evaluate
+    expr: x^{3} - 4
+    subs:
+      x: '0'
+  expected:
+    latex: '-4'
+    srepr: Integer(-4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0063
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 5
+  command:
+    op: evaluate
+    expr: x^{3} - 5
+    subs:
+      x: '0'
+  expected:
+    latex: '-5'
+    srepr: Integer(-5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0064
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 6
+  command:
+    op: evaluate
+    expr: x^{3} - 6
+    subs:
+      x: '0'
+  expected:
+    latex: '-6'
+    srepr: Integer(-6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0065
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 7
+  command:
+    op: evaluate
+    expr: x^{3} - 7
+    subs:
+      x: '0'
+  expected:
+    latex: '-7'
+    srepr: Integer(-7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_alt
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0066
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 1
+  command:
+    op: evaluate
+    expr: x^{3} - 1
+    subs:
+      x: '2'
+  expected:
+    latex: '7'
+    srepr: Integer(7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0067
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 2
+  command:
+    op: evaluate
+    expr: x^{3} - 2
+    subs:
+      x: '2'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0068
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 3
+  command:
+    op: evaluate
+    expr: x^{3} - 3
+    subs:
+      x: '2'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0069
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 4
+  command:
+    op: evaluate
+    expr: x^{3} - 4
+    subs:
+      x: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0070
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 5
+  command:
+    op: evaluate
+    expr: x^{3} - 5
+    subs:
+      x: '2'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0071
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 6
+  command:
+    op: evaluate
+    expr: x^{3} - 6
+    subs:
+      x: '2'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.
+- id: sureklilik-0072
+  topic: sureklilik
+  subtopic: ara_deger_teoremi
+  chapter_ref: aicls:bolum-1
+  difficulty: 2
+  input:
+    kind: latex
+    value: x^{3} - 7
+  command:
+    op: evaluate
+    expr: x^{3} - 7
+    subs:
+      x: '2'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:sureklilik/ara_deger_ust
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f(0) < 0 ve f(2) > 0 ise Ara Değer Teoremi gereği (0, 2) aralığında bir kök vardır.

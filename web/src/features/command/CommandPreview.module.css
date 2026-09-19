@@ -1,0 +1,106 @@
+/*
+ * The confirmation panel. It sits above the result, inline and dismissible — never a modal, so the
+ * previous answer stays readable behind it and the lecture keeps its context.
+ */
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-accent-soft);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-xl);
+  color: var(--color-accent-strong);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.transcript {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.transcriptText {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-strong);
+}
+
+.command {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.intent {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.notice {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-warn-bg);
+  border: 1px solid var(--color-warn-border);
+  border-radius: var(--radius-md);
+  color: var(--color-warn);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.skip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  min-height: var(--tap-target-min);
+  cursor: pointer;
+}
+
+.skip input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-accent);
+}
+
+.skipHint {
+  color: var(--color-text-muted);
+}

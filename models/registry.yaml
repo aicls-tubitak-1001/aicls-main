@@ -1,0 +1,19 @@
+# Model registry seed for `aicls models import` (aicls.ml.registry, ADR-0006/0007).
+# Weights are NEVER stored in git; each entry points to a directory under AICLS_MODELS_ROOT and
+# carries the sha256 of the checkpoint and the run manifest that produced it.
+#
+# Schema (one entry per model version):
+#   - id: "ocr-0.1.0"                     # <kind>-<semver>; kind in {ocr, asr}
+#     kind: ocr | asr
+#     path: "ocr-0.1.0/"                  # relative to AICLS_MODELS_ROOT
+#     checkpoint: "model.safetensors"     # file inside `path`
+#     sha256: "..."                       # of the checkpoint
+#     run_manifest: "run_manifest.json"   # aicls.ml.run_manifest output (git sha, config hash, data fingerprint)
+#     config: "training/configs/ocr/offline_resnet34_tfm.yaml"
+#     metrics_file: "reports/metrics/ocr_test_<sha>.json"
+#     normalizer: latex_v1 | tr_v1
+#     created_at: "YYYY-MM-DDTHH:MM:SSZ"
+#     gate_refs: ["WEIGHTS_DOWNLOAD:2027-01-15", "TRAINING:2027-02-01"]   # ledger rows that allowed it
+#     notes: ""
+schema_version: 1
+models: []

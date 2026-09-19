@@ -1,0 +1,47 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Çevrimiçi (iz) OCR hattı — ADR-0013. Tarayıcı Canvas'ından gelen izler rasterleştirilmez;
+# (Δx, Δy, kalem) özellikleri doğrudan stroke_transformer kodlayıcısına gider, çözücü aynıdır.
+# Bu yüzden data.preprocess boştur ve data.mode: online'dır.
+#
+# §8 bellek zarfı: iz modeli görüntü modelinden çok daha ucuzdur, batch 128 başlangıç değeridir
+# (ölçülmemiştir; `aicls profile` sonrası güncellenir).
+_base_: ../_base.yaml
+run:
+  name: ocr_online_stroke_tfm
+  seed: 1234
+  deterministic: true
+  tags: [ocr, online]
+  notes: "Çevrimiçi iz hattı (stroke_transformer + Transformer); offline hattın karşılaştırma eşi."
+data:
+  dataset: mathwriting
+  root: ${AICLS_DATA_ROOT}/mathwriting/shards
+  mode: online
+  preprocess: [] # çevrimiçi yolda hiçbir şey rasterleştirilmez
+  synthetic_ratio: 0.5
+  synthetic_warmup_epochs: 2
+  augment: {affine_jitter: 0.05, stroke_dropout: 0.02}
+  max_label_len: 160
+  batch_size: 128 # §8 başlangıç değeri
+  num_workers: 6
+model:
+  family: seq2seq_stroke
+  encoder: stroke_transformer # alternatif: stroke_bilstm
+  decoder: transformer
+  d_model: 256
+  layers: 6
+  heads: 8
+  dropout: 0.1
+  vocab_path: ${AICLS_DATA_ROOT}/mathwriting/vocab.json
+optim: {name: adamw, lr: 3.0e-4, weight_decay: 0.01, betas: [0.9, 0.98], scheduler: cosine, warmup_steps: 2000}
+# early_stop_patience: 2000 örneklik doğrulama alt kümesinde ölçülen gürültü sinyalden büyük.
+# 2026-09-09, 35 doğrulama (adım 20000-88000): ardışık CER farklarının std'si 0,0085, adım başına
+# ortalama iyileşme 0,0013. Sabır 5 iken 78000'deki şanslı rekora (eğilimin 0,007 altı) karşı
+# beş "iyileşmedi" gelince koşu adım 88000'de, kosinüs takviminin ortasında (lr 2e-4) ve eğitim
+# kaybı hâlâ düşerken durdu. 25 doğrulama = 50000 adım ≈ takvimin dörtte biri: gerçek bir
+# platoyu hâlâ yakalar, gürültünün rekorunu bekleyecek kadar da uzun.
+train: {epochs: 30, max_steps: null, grad_accum: 1, amp: bf16, grad_clip: 1.0, eval_every: 2000, ckpt_every: 2000, log_every: 50, early_stop_patience: 25, allow_dirty: false}
+eval: {beam: 4, max_n_val: 2000, metrics: [cer, ter, exprate, symeq]}
+tracking: {backend: jsonl, mlflow_uri: null, experiment: ocr}
+checkpoint: {keep_last: 2, keep_best: 1, metric: val_cer, mode: min}
+gates: {synthetic: false}

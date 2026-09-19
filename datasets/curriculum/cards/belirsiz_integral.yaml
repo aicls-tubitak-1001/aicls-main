@@ -1,0 +1,4378 @@
+# datasets/curriculum/cards/belirsiz_integral.yaml
+# 180 kart. Alt konular: basit_kesirlere_ayirma, degisken_degistirme, kismi_integrasyon, kuvvet_kurali, rasyonel_integral, ters_trigonometrik_sonuc, trigonometrik_integral, trigonometrik_teknikler, ustel_integral.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: belirsiz_integral-0001
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 1 \, dx
+  command:
+    op: integrate
+    expr: '1'
+    var: x
+  expected:
+    latex: x
+    srepr: Symbol('x', real=True)
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0002
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+  expected:
+    latex: \frac{x^{2}}{2}
+    srepr: Mul(Rational(1, 2), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0003
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int x^{2} \, dx
+  command:
+    op: integrate
+    expr: x^{2}
+    var: x
+  expected:
+    latex: \frac{x^{3}}{3}
+    srepr: Mul(Rational(1, 3), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0004
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int x^{3} \, dx
+  command:
+    op: integrate
+    expr: x^{3}
+    var: x
+  expected:
+    latex: \frac{x^{4}}{4}
+    srepr: Mul(Rational(1, 4), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0005
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int x^{4} \, dx
+  command:
+    op: integrate
+    expr: x^{4}
+    var: x
+  expected:
+    latex: \frac{x^{5}}{5}
+    srepr: Mul(Rational(1, 5), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0006
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 2 \, dx
+  command:
+    op: integrate
+    expr: '2'
+    var: x
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0007
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+  expected:
+    latex: x^{2}
+    srepr: Pow(Symbol('x', real=True), Integer(2))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0008
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 2x^{2} \, dx
+  command:
+    op: integrate
+    expr: 2x^{2}
+    var: x
+  expected:
+    latex: \frac{2 \cdot x^{3}}{3}
+    srepr: Mul(Rational(2, 3), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0009
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 2x^{3} \, dx
+  command:
+    op: integrate
+    expr: 2x^{3}
+    var: x
+  expected:
+    latex: \frac{x^{4}}{2}
+    srepr: Mul(Rational(1, 2), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0010
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 2x^{4} \, dx
+  command:
+    op: integrate
+    expr: 2x^{4}
+    var: x
+  expected:
+    latex: \frac{2 \cdot x^{5}}{5}
+    srepr: Mul(Rational(2, 5), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0011
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 3 \, dx
+  command:
+    op: integrate
+    expr: '3'
+    var: x
+  expected:
+    latex: 3 \cdot x
+    srepr: Mul(Integer(3), Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0012
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\int 3x \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+  expected:
+    latex: \frac{3 \cdot x^{2}}{2}
+    srepr: Mul(Rational(3, 2), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0013
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 3x^{2} \, dx
+  command:
+    op: integrate
+    expr: 3x^{2}
+    var: x
+  expected:
+    latex: x^{3}
+    srepr: Pow(Symbol('x', real=True), Integer(3))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0014
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 3x^{3} \, dx
+  command:
+    op: integrate
+    expr: 3x^{3}
+    var: x
+  expected:
+    latex: \frac{3 \cdot x^{4}}{4}
+    srepr: Mul(Rational(3, 4), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0015
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 3x^{4} \, dx
+  command:
+    op: integrate
+    expr: 3x^{4}
+    var: x
+  expected:
+    latex: \frac{3 \cdot x^{5}}{5}
+    srepr: Mul(Rational(3, 5), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0016
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 4 \, dx
+  command:
+    op: integrate
+    expr: '4'
+    var: x
+  expected:
+    latex: 4 \cdot x
+    srepr: Mul(Integer(4), Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0017
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 4x \, dx
+  command:
+    op: integrate
+    expr: 4x
+    var: x
+  expected:
+    latex: 2 \cdot x^{2}
+    srepr: Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0018
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 4x^{2} \, dx
+  command:
+    op: integrate
+    expr: 4x^{2}
+    var: x
+  expected:
+    latex: \frac{4 \cdot x^{3}}{3}
+    srepr: Mul(Rational(4, 3), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0019
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 4x^{3} \, dx
+  command:
+    op: integrate
+    expr: 4x^{3}
+    var: x
+  expected:
+    latex: x^{4}
+    srepr: Pow(Symbol('x', real=True), Integer(4))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0020
+  topic: belirsiz_integral
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int 4x^{4} \, dx
+  command:
+    op: integrate
+    expr: 4x^{4}
+    var: x
+  expected:
+    latex: \frac{4 \cdot x^{5}}{5}
+    srepr: Mul(Rational(4, 5), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: int a x^n dx = a x^{n+1}/(n+1) + C.'
+- id: belirsiz_integral-0021
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{x} \, dx
+  command:
+    op: integrate
+    expr: e^{x}
+    var: x
+  expected:
+    latex: e^{x}
+    srepr: exp(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0022
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{2x} \, dx
+  command:
+    op: integrate
+    expr: e^{2x}
+    var: x
+  expected:
+    latex: \frac{e^{2 \cdot x}}{2}
+    srepr: Mul(Rational(1, 2), exp(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0023
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{3x} \, dx
+  command:
+    op: integrate
+    expr: e^{3x}
+    var: x
+  expected:
+    latex: \frac{e^{3 \cdot x}}{3}
+    srepr: Mul(Rational(1, 3), exp(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0024
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{4x} \, dx
+  command:
+    op: integrate
+    expr: e^{4x}
+    var: x
+  expected:
+    latex: \frac{e^{4 \cdot x}}{4}
+    srepr: Mul(Rational(1, 4), exp(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0025
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{5x} \, dx
+  command:
+    op: integrate
+    expr: e^{5x}
+    var: x
+  expected:
+    latex: \frac{e^{5 \cdot x}}{5}
+    srepr: Mul(Rational(1, 5), exp(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0026
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{6x} \, dx
+  command:
+    op: integrate
+    expr: e^{6x}
+    var: x
+  expected:
+    latex: \frac{e^{6 \cdot x}}{6}
+    srepr: Mul(Rational(1, 6), exp(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0027
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{7x} \, dx
+  command:
+    op: integrate
+    expr: e^{7x}
+    var: x
+  expected:
+    latex: \frac{e^{7 \cdot x}}{7}
+    srepr: Mul(Rational(1, 7), exp(Mul(Integer(7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0028
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{8x} \, dx
+  command:
+    op: integrate
+    expr: e^{8x}
+    var: x
+  expected:
+    latex: \frac{e^{8 \cdot x}}{8}
+    srepr: Mul(Rational(1, 8), exp(Mul(Integer(8), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0029
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\int e^{9x} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: e^{9x}
+    var: x
+  expected:
+    latex: \frac{e^{9 \cdot x}}{9}
+    srepr: Mul(Rational(1, 9), exp(Mul(Integer(9), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0030
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int e^{10x} \, dx
+  command:
+    op: integrate
+    expr: e^{10x}
+    var: x
+  expected:
+    latex: \frac{e^{10 \cdot x}}{10}
+    srepr: Mul(Rational(1, 10), exp(Mul(Integer(10), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int e^{ax} dx = e^{ax}/a + C.
+- id: belirsiz_integral-0031
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 2^{x} \, dx
+  command:
+    op: integrate
+    expr: 2^{x}
+    var: x
+  expected:
+    latex: \frac{2^{x}}{\ln{\left(2 \right)}}
+    srepr: Mul(Pow(Integer(2), Symbol('x', real=True)), Pow(log(Integer(2)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0032
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 3^{x} \, dx
+  command:
+    op: integrate
+    expr: 3^{x}
+    var: x
+  expected:
+    latex: \frac{3^{x}}{\ln{\left(3 \right)}}
+    srepr: Mul(Pow(Integer(3), Symbol('x', real=True)), Pow(log(Integer(3)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0033
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 4^{x} \, dx
+  command:
+    op: integrate
+    expr: 4^{x}
+    var: x
+  expected:
+    latex: \frac{4^{x}}{\ln{\left(4 \right)}}
+    srepr: Mul(Pow(Integer(4), Symbol('x', real=True)), Pow(log(Integer(4)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0034
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 5^{x} \, dx
+  command:
+    op: integrate
+    expr: 5^{x}
+    var: x
+  expected:
+    latex: \frac{5^{x}}{\ln{\left(5 \right)}}
+    srepr: Mul(Pow(Integer(5), Symbol('x', real=True)), Pow(log(Integer(5)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0035
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 6^{x} \, dx
+  command:
+    op: integrate
+    expr: 6^{x}
+    var: x
+  expected:
+    latex: \frac{6^{x}}{\ln{\left(6 \right)}}
+    srepr: Mul(Pow(Integer(6), Symbol('x', real=True)), Pow(log(Integer(6)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0036
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 7^{x} \, dx
+  command:
+    op: integrate
+    expr: 7^{x}
+    var: x
+  expected:
+    latex: \frac{7^{x}}{\ln{\left(7 \right)}}
+    srepr: Mul(Pow(Integer(7), Symbol('x', real=True)), Pow(log(Integer(7)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0037
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 8^{x} \, dx
+  command:
+    op: integrate
+    expr: 8^{x}
+    var: x
+  expected:
+    latex: \frac{8^{x}}{\ln{\left(8 \right)}}
+    srepr: Mul(Pow(Integer(8), Symbol('x', real=True)), Pow(log(Integer(8)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0038
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 9^{x} \, dx
+  command:
+    op: integrate
+    expr: 9^{x}
+    var: x
+  expected:
+    latex: \frac{9^{x}}{\ln{\left(9 \right)}}
+    srepr: Mul(Pow(Integer(9), Symbol('x', real=True)), Pow(log(Integer(9)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0039
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 10^{x} \, dx
+  command:
+    op: integrate
+    expr: 10^{x}
+    var: x
+  expected:
+    latex: \frac{10^{x}}{\ln{\left(10 \right)}}
+    srepr: Mul(Pow(Integer(10), Symbol('x', real=True)), Pow(log(Integer(10)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0040
+  topic: belirsiz_integral
+  subtopic: ustel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int 11^{x} \, dx
+  command:
+    op: integrate
+    expr: 11^{x}
+    var: x
+  expected:
+    latex: \frac{11^{x}}{\ln{\left(11 \right)}}
+    srepr: Mul(Pow(Integer(11), Symbol('x', real=True)), Pow(log(Integer(11)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a^x dx = a^x/ln a + C.
+- id: belirsiz_integral-0041
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(x) \, dx
+  command:
+    op: integrate
+    expr: \sin(x)
+    var: x
+  expected:
+    latex: '- \cos{\left(x \right)}'
+    srepr: Mul(Integer(-1), cos(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0042
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(2x) \, dx
+  command:
+    op: integrate
+    expr: \sin(2x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(2 \cdot x \right)}}{2}'
+    srepr: Mul(Integer(-1), Rational(1, 2), cos(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0043
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(3x) \, dx
+  command:
+    op: integrate
+    expr: \sin(3x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(3 \cdot x \right)}}{3}'
+    srepr: Mul(Integer(-1), Rational(1, 3), cos(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0044
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(4x) \, dx
+  command:
+    op: integrate
+    expr: \sin(4x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(4 \cdot x \right)}}{4}'
+    srepr: Mul(Integer(-1), Rational(1, 4), cos(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0045
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(5x) \, dx
+  command:
+    op: integrate
+    expr: \sin(5x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(5 \cdot x \right)}}{5}'
+    srepr: Mul(Integer(-1), Rational(1, 5), cos(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0046
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\int \sin(6x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \sin(6x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(6 \cdot x \right)}}{6}'
+    srepr: Mul(Integer(-1), Rational(1, 6), cos(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0047
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \sin(7x) \, dx
+  command:
+    op: integrate
+    expr: \sin(7x)
+    var: x
+  expected:
+    latex: '- \frac{\cos{\left(7 \cdot x \right)}}{7}'
+    srepr: Mul(Integer(-1), Rational(1, 7), cos(Mul(Integer(7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sin(ax) dx = -cos(ax)/a + C.
+- id: belirsiz_integral-0048
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \cos(x)
+    var: x
+  expected:
+    latex: \sin{\left(x \right)}
+    srepr: sin(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0049
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(2x) \, dx
+  command:
+    op: integrate
+    expr: \cos(2x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(2 \cdot x \right)}}{2}
+    srepr: Mul(Rational(1, 2), sin(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0050
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(3x) \, dx
+  command:
+    op: integrate
+    expr: \cos(3x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(3 \cdot x \right)}}{3}
+    srepr: Mul(Rational(1, 3), sin(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0051
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(4x) \, dx
+  command:
+    op: integrate
+    expr: \cos(4x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(4 \cdot x \right)}}{4}
+    srepr: Mul(Rational(1, 4), sin(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0052
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(5x) \, dx
+  command:
+    op: integrate
+    expr: \cos(5x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(5 \cdot x \right)}}{5}
+    srepr: Mul(Rational(1, 5), sin(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0053
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(6x) \, dx
+  command:
+    op: integrate
+    expr: \cos(6x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(6 \cdot x \right)}}{6}
+    srepr: Mul(Rational(1, 6), sin(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0054
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \cos(7x) \, dx
+  command:
+    op: integrate
+    expr: \cos(7x)
+    var: x
+  expected:
+    latex: \frac{\sin{\left(7 \cdot x \right)}}{7}
+    srepr: Mul(Rational(1, 7), sin(Mul(Integer(7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int cos(ax) dx = sin(ax)/a + C.
+- id: belirsiz_integral-0055
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(x)
+    var: x
+  expected:
+    latex: \tan{\left(x \right)}
+    srepr: tan(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0056
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(2x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(2x)
+    var: x
+  expected:
+    latex: \frac{\tan{\left(2 \cdot x \right)}}{2}
+    srepr: Mul(Rational(1, 2), tan(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0057
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(3x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(3x)
+    var: x
+  expected:
+    latex: \frac{\tan{\left(3 \cdot x \right)}}{3}
+    srepr: Mul(Rational(1, 3), tan(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0058
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(4x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(4x)
+    var: x
+  expected:
+    latex: \frac{\tan{\left(4 \cdot x \right)}}{4}
+    srepr: Mul(Rational(1, 4), tan(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0059
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(5x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(5x)
+    var: x
+  expected:
+    latex: \frac{\tan{\left(5 \cdot x \right)}}{5}
+    srepr: Mul(Rational(1, 5), tan(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0060
+  topic: belirsiz_integral
+  subtopic: trigonometrik_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sec^{2}(6x) \, dx
+  command:
+    op: integrate
+    expr: \sec^{2}(6x)
+    var: x
+  expected:
+    latex: \frac{\tan{\left(6 \cdot x \right)}}{6}
+    srepr: Mul(Rational(1, 6), tan(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sekant_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int sec^2(ax) dx = tan(ax)/a + C.
+- id: belirsiz_integral-0061
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+  expected:
+    latex: \ln{\left(x \right)}
+    srepr: log(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0062
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{2}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{2}{x}
+    var: x
+  expected:
+    latex: 2 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(2), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0063
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\int \frac{3}{x} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{3}{x}
+    var: x
+  expected:
+    latex: 3 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(3), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0064
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{4}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{4}{x}
+    var: x
+  expected:
+    latex: 4 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(4), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0065
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{5}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{5}{x}
+    var: x
+  expected:
+    latex: 5 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(5), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0066
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{6}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{6}{x}
+    var: x
+  expected:
+    latex: 6 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(6), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0067
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int \frac{7}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{7}{x}
+    var: x
+  expected:
+    latex: 7 \cdot \ln{\left(x \right)}
+    srepr: Mul(Integer(7), log(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/x dx = a ln|x| + C; SymPy gerçel bölgede ln(x) yazar.
+- id: belirsiz_integral-0068
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{x + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x + 1}
+    var: x
+  expected:
+    latex: \ln{\left(x + 1 \right)}
+    srepr: log(Add(Symbol('x', real=True), Integer(1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0069
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2}{x + 3} \, dx
+  command:
+    op: integrate
+    expr: \frac{2}{x + 3}
+    var: x
+  expected:
+    latex: 2 \cdot \ln{\left(x + 3 \right)}
+    srepr: Mul(Integer(2), log(Add(Symbol('x', real=True), Integer(3))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0070
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{3}{x + 5} \, dx
+  command:
+    op: integrate
+    expr: \frac{3}{x + 5}
+    var: x
+  expected:
+    latex: 3 \cdot \ln{\left(x + 5 \right)}
+    srepr: Mul(Integer(3), log(Add(Symbol('x', real=True), Integer(5))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0071
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{4}{x + 2} \, dx
+  command:
+    op: integrate
+    expr: \frac{4}{x + 2}
+    var: x
+  expected:
+    latex: 4 \cdot \ln{\left(x + 2 \right)}
+    srepr: Mul(Integer(4), log(Add(Symbol('x', real=True), Integer(2))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0072
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{5}{x + 7} \, dx
+  command:
+    op: integrate
+    expr: \frac{5}{x + 7}
+    var: x
+  expected:
+    latex: 5 \cdot \ln{\left(x + 7 \right)}
+    srepr: Mul(Integer(5), log(Add(Symbol('x', real=True), Integer(7))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0073
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{6}{x + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{6}{x + 4}
+    var: x
+  expected:
+    latex: 6 \cdot \ln{\left(x + 4 \right)}
+    srepr: Mul(Integer(6), log(Add(Symbol('x', real=True), Integer(4))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0074
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{7}{x + 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{7}{x + 9}
+    var: x
+  expected:
+    latex: 7 \cdot \ln{\left(x + 9 \right)}
+    srepr: Mul(Integer(7), log(Add(Symbol('x', real=True), Integer(9))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_x_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a/(x + b) dx = a ln|x + b| + C.
+- id: belirsiz_integral-0075
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{2x + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{2x + 1}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(2 \cdot x + 1 \right)}}{2}
+    srepr: Mul(Rational(1, 2), log(Add(Mul(Integer(2), Symbol('x', real=True)), Integer(1))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0076
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{3x + 2} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{3x + 2}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(3 \cdot x + 2 \right)}}{3}
+    srepr: Mul(Rational(1, 3), log(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0077
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{4x + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{4x + 1}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(4 \cdot x + 1 \right)}}{4}
+    srepr: Mul(Rational(1, 4), log(Add(Mul(Integer(4), Symbol('x', real=True)), Integer(1))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0078
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{5x + 3} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{5x + 3}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(5 \cdot x + 3 \right)}}{5}
+    srepr: Mul(Rational(1, 5), log(Add(Mul(Integer(5), Symbol('x', real=True)), Integer(3))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0079
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{6x + 5} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{6x + 5}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(6 \cdot x + 5 \right)}}{6}
+    srepr: Mul(Rational(1, 6), log(Add(Mul(Integer(6), Symbol('x', real=True)), Integer(5))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0080
+  topic: belirsiz_integral
+  subtopic: rasyonel_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int \frac{1}{7x + 2} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{1}{7x + 2}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(7 \cdot x + 2 \right)}}{7}
+    srepr: Mul(Rational(1, 7), log(Add(Mul(Integer(7), Symbol('x', real=True)), Integer(2))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/bir_bolu_ax_arti_b
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = ax + b değişken değiştirmesi ile int dx/(ax+b) = ln|ax+b|/a + C.
+- id: belirsiz_integral-0081
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 1}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 1 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0082
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 2} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 2}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 2 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(2)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0083
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 3} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 3}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 3 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(3)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0084
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 4}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 4 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(4)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0085
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 5} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 5}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 5 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0086
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 6} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 6}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 6 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(6)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0087
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2x}{x^{2} + 7} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 7}
+    var: x
+  expected:
+    latex: \ln{\left(x^{2} + 7 \right)}
+    srepr: log(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(7)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/u_turevi_bolu_u
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a alınırsa int du/u = ln|u| + C.
+- id: belirsiz_integral-0088
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{x^{2}}}{2}
+    srepr: Mul(Rational(1, 2), exp(Pow(Symbol('x', real=True), Integer(2))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0089
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{2x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{2x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{2 \cdot x^{2}}}{4}
+    srepr: Mul(Rational(1, 4), exp(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0090
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{3x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{3x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{3 \cdot x^{2}}}{6}
+    srepr: Mul(Rational(1, 6), exp(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0091
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{4x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{4x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{4 \cdot x^{2}}}{8}
+    srepr: Mul(Rational(1, 8), exp(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0092
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{5x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{5x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{5 \cdot x^{2}}}{10}
+    srepr: Mul(Rational(1, 10), exp(Mul(Integer(5), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0093
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{6x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{6x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{6 \cdot x^{2}}}{12}
+    srepr: Mul(Rational(1, 12), exp(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0094
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int x e^{7x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{7x^{2}}
+    var: x
+  expected:
+    latex: \frac{e^{7 \cdot x^{2}}}{14}
+    srepr: Mul(Rational(1, 14), exp(Mul(Integer(7), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/x_e_ax2
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2, du = 2ax dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0095
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sin^{1}(x) \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{1}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{2}{\left(x \right)}}{2}
+    srepr: Mul(Rational(1, 2), Pow(sin(Symbol('x', real=True)), Integer(2)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0096
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sin^{2}(x) \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{3}{\left(x \right)}}{3}
+    srepr: Mul(Rational(1, 3), Pow(sin(Symbol('x', real=True)), Integer(3)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0097
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int \sin^{3}(x) \cos(x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \sin^{3}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{4}{\left(x \right)}}{4}
+    srepr: Mul(Rational(1, 4), Pow(sin(Symbol('x', real=True)), Integer(4)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0098
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sin^{4}(x) \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{4}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{5}{\left(x \right)}}{5}
+    srepr: Mul(Rational(1, 5), Pow(sin(Symbol('x', real=True)), Integer(5)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0099
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sin^{5}(x) \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{5}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{6}{\left(x \right)}}{6}
+    srepr: Mul(Rational(1, 6), Pow(sin(Symbol('x', real=True)), Integer(6)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0100
+  topic: belirsiz_integral
+  subtopic: degisken_degistirme
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \sin^{6}(x) \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{6}(x) \cos(x)
+    var: x
+  expected:
+    latex: \frac{\sin^{7}{\left(x \right)}}{7}
+    srepr: Mul(Rational(1, 7), Pow(sin(Symbol('x', real=True)), Integer(7)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sin_us_cos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = sin x, du = cos x dx değişken değiştirmesi kullanılır.
+- id: belirsiz_integral-0101
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x e^{x} \, dx
+  command:
+    op: integrate
+    expr: x e^{x}
+    var: x
+  expected:
+    latex: \left(x - 1\right) \cdot e^{x}
+    srepr: Mul(Add(Symbol('x', real=True), Integer(-1)), exp(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = x, dv = e^{ax} dx kısmi integrasyonu: e^{ax}(ax - 1)/a^2 + C.'
+- id: belirsiz_integral-0102
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x e^{2x} \, dx
+  command:
+    op: integrate
+    expr: x e^{2x}
+    var: x
+  expected:
+    latex: \frac{\left(2 \cdot x - 1\right) \cdot e^{2 \cdot x}}{4}
+    srepr: Mul(Rational(1, 4), Add(Mul(Integer(2), Symbol('x', real=True)), Integer(-1)), exp(Mul(Integer(2),
+      Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = x, dv = e^{ax} dx kısmi integrasyonu: e^{ax}(ax - 1)/a^2 + C.'
+- id: belirsiz_integral-0103
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x e^{3x} \, dx
+  command:
+    op: integrate
+    expr: x e^{3x}
+    var: x
+  expected:
+    latex: \frac{\left(3 \cdot x - 1\right) \cdot e^{3 \cdot x}}{9}
+    srepr: Mul(Rational(1, 9), Add(Mul(Integer(3), Symbol('x', real=True)), Integer(-1)), exp(Mul(Integer(3),
+      Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = x, dv = e^{ax} dx kısmi integrasyonu: e^{ax}(ax - 1)/a^2 + C.'
+- id: belirsiz_integral-0104
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x e^{4x} \, dx
+  command:
+    op: integrate
+    expr: x e^{4x}
+    var: x
+  expected:
+    latex: \frac{\left(4 \cdot x - 1\right) \cdot e^{4 \cdot x}}{16}
+    srepr: Mul(Rational(1, 16), Add(Mul(Integer(4), Symbol('x', real=True)), Integer(-1)), exp(Mul(Integer(4),
+      Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = x, dv = e^{ax} dx kısmi integrasyonu: e^{ax}(ax - 1)/a^2 + C.'
+- id: belirsiz_integral-0105
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x e^{5x} \, dx
+  command:
+    op: integrate
+    expr: x e^{5x}
+    var: x
+  expected:
+    latex: \frac{\left(5 \cdot x - 1\right) \cdot e^{5 \cdot x}}{25}
+    srepr: Mul(Rational(1, 25), Add(Mul(Integer(5), Symbol('x', real=True)), Integer(-1)), exp(Mul(Integer(5),
+      Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = x, dv = e^{ax} dx kısmi integrasyonu: e^{ax}(ax - 1)/a^2 + C.'
+- id: belirsiz_integral-0106
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \sin(x) \, dx
+  command:
+    op: integrate
+    expr: x \sin(x)
+    var: x
+  expected:
+    latex: '- x \cdot \cos{\left(x \right)} + \sin{\left(x \right)}'
+    srepr: Add(Mul(Integer(-1), Symbol('x', real=True), cos(Symbol('x', real=True))), sin(Symbol('x',
+      real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = sin(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0107
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \sin(2x) \, dx
+  command:
+    op: integrate
+    expr: x \sin(2x)
+    var: x
+  expected:
+    latex: '- \frac{x \cdot \cos{\left(2 \cdot x \right)}}{2} + \frac{\sin{\left(2 \cdot x \right)}}{4}'
+    srepr: Add(Mul(Integer(-1), Rational(1, 2), Symbol('x', real=True), cos(Mul(Integer(2), Symbol('x',
+      real=True)))), Mul(Rational(1, 4), sin(Mul(Integer(2), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = sin(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0108
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \sin(3x) \, dx
+  command:
+    op: integrate
+    expr: x \sin(3x)
+    var: x
+  expected:
+    latex: '- \frac{x \cdot \cos{\left(3 \cdot x \right)}}{3} + \frac{\sin{\left(3 \cdot x \right)}}{9}'
+    srepr: Add(Mul(Integer(-1), Rational(1, 3), Symbol('x', real=True), cos(Mul(Integer(3), Symbol('x',
+      real=True)))), Mul(Rational(1, 9), sin(Mul(Integer(3), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = sin(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0109
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \sin(4x) \, dx
+  command:
+    op: integrate
+    expr: x \sin(4x)
+    var: x
+  expected:
+    latex: '- \frac{x \cdot \cos{\left(4 \cdot x \right)}}{4} + \frac{\sin{\left(4 \cdot x \right)}}{16}'
+    srepr: Add(Mul(Integer(-1), Rational(1, 4), Symbol('x', real=True), cos(Mul(Integer(4), Symbol('x',
+      real=True)))), Mul(Rational(1, 16), sin(Mul(Integer(4), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = sin(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0110
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \sin(5x) \, dx
+  command:
+    op: integrate
+    expr: x \sin(5x)
+    var: x
+  expected:
+    latex: '- \frac{x \cdot \cos{\left(5 \cdot x \right)}}{5} + \frac{\sin{\left(5 \cdot x \right)}}{25}'
+    srepr: Add(Mul(Integer(-1), Rational(1, 5), Symbol('x', real=True), cos(Mul(Integer(5), Symbol('x',
+      real=True)))), Mul(Rational(1, 25), sin(Mul(Integer(5), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = sin(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0111
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \cos(x) \, dx
+  command:
+    op: integrate
+    expr: x \cos(x)
+    var: x
+  expected:
+    latex: x \cdot \sin{\left(x \right)} + \cos{\left(x \right)}
+    srepr: Add(Mul(Symbol('x', real=True), sin(Symbol('x', real=True))), cos(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = cos(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0112
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \cos(2x) \, dx
+  command:
+    op: integrate
+    expr: x \cos(2x)
+    var: x
+  expected:
+    latex: \frac{x \cdot \sin{\left(2 \cdot x \right)}}{2} + \frac{\cos{\left(2 \cdot x \right)}}{4}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True), sin(Mul(Integer(2), Symbol('x', real=True)))),
+      Mul(Rational(1, 4), cos(Mul(Integer(2), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = cos(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0113
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \cos(3x) \, dx
+  command:
+    op: integrate
+    expr: x \cos(3x)
+    var: x
+  expected:
+    latex: \frac{x \cdot \sin{\left(3 \cdot x \right)}}{3} + \frac{\cos{\left(3 \cdot x \right)}}{9}
+    srepr: Add(Mul(Rational(1, 3), Symbol('x', real=True), sin(Mul(Integer(3), Symbol('x', real=True)))),
+      Mul(Rational(1, 9), cos(Mul(Integer(3), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = cos(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0114
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int x \cos(4x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: x \cos(4x)
+    var: x
+  expected:
+    latex: \frac{x \cdot \sin{\left(4 \cdot x \right)}}{4} + \frac{\cos{\left(4 \cdot x \right)}}{16}
+    srepr: Add(Mul(Rational(1, 4), Symbol('x', real=True), sin(Mul(Integer(4), Symbol('x', real=True)))),
+      Mul(Rational(1, 16), cos(Mul(Integer(4), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = cos(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0115
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \cos(5x) \, dx
+  command:
+    op: integrate
+    expr: x \cos(5x)
+    var: x
+  expected:
+    latex: \frac{x \cdot \sin{\left(5 \cdot x \right)}}{5} + \frac{\cos{\left(5 \cdot x \right)}}{25}
+    srepr: Add(Mul(Rational(1, 5), Symbol('x', real=True), sin(Mul(Integer(5), Symbol('x', real=True)))),
+      Mul(Rational(1, 25), cos(Mul(Integer(5), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x, dv = cos(ax) dx kısmi integrasyonu uygulanır.
+- id: belirsiz_integral-0116
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \ln(x) \, dx
+  command:
+    op: integrate
+    expr: \ln(x)
+    var: x
+  expected:
+    latex: x \cdot \left(\ln{\left(x \right)} - 1\right)
+    srepr: Mul(Symbol('x', real=True), Add(log(Symbol('x', real=True)), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = ln x, dv = x^n dx kısmi integrasyonu: x^{n+1}((n+1)ln x - 1)/(n+1)^2 + C.'
+- id: belirsiz_integral-0117
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: x \ln(x)
+    var: x
+  expected:
+    latex: \frac{x^{2} \cdot \left(2 \cdot \ln{\left(x \right)} - 1\right)}{4}
+    srepr: Mul(Rational(1, 4), Pow(Symbol('x', real=True), Integer(2)), Add(Mul(Integer(2), log(Symbol('x',
+      real=True))), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = ln x, dv = x^n dx kısmi integrasyonu: x^{n+1}((n+1)ln x - 1)/(n+1)^2 + C.'
+- id: belirsiz_integral-0118
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x^{2} \ln(x) \, dx
+  command:
+    op: integrate
+    expr: x^{2} \ln(x)
+    var: x
+  expected:
+    latex: \frac{x^{3} \cdot \left(3 \cdot \ln{\left(x \right)} - 1\right)}{9}
+    srepr: Mul(Rational(1, 9), Pow(Symbol('x', real=True), Integer(3)), Add(Mul(Integer(3), log(Symbol('x',
+      real=True))), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = ln x, dv = x^n dx kısmi integrasyonu: x^{n+1}((n+1)ln x - 1)/(n+1)^2 + C.'
+- id: belirsiz_integral-0119
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x^{3} \ln(x) \, dx
+  command:
+    op: integrate
+    expr: x^{3} \ln(x)
+    var: x
+  expected:
+    latex: \frac{x^{4} \cdot \left(4 \cdot \ln{\left(x \right)} - 1\right)}{16}
+    srepr: Mul(Rational(1, 16), Pow(Symbol('x', real=True), Integer(4)), Add(Mul(Integer(4), log(Symbol('x',
+      real=True))), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = ln x, dv = x^n dx kısmi integrasyonu: x^{n+1}((n+1)ln x - 1)/(n+1)^2 + C.'
+- id: belirsiz_integral-0120
+  topic: belirsiz_integral
+  subtopic: kismi_integrasyon
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int x^{4} \ln(x) \, dx
+  command:
+    op: integrate
+    expr: x^{4} \ln(x)
+    var: x
+  expected:
+    latex: \frac{x^{5} \cdot \left(5 \cdot \ln{\left(x \right)} - 1\right)}{25}
+    srepr: Mul(Rational(1, 25), Pow(Symbol('x', real=True), Integer(5)), Add(Mul(Integer(5), log(Symbol('x',
+      real=True))), Integer(-1)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'u = ln x, dv = x^n dx kısmi integrasyonu: x^{n+1}((n+1)ln x - 1)/(n+1)^2 + C.'
+- id: belirsiz_integral-0121
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 1)(x - 2)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 1)(x - 2)}
+    var: x
+  expected:
+    latex: \ln{\left(x - 2 \right)} - \ln{\left(x - 1 \right)}
+    srepr: Add(log(Add(Symbol('x', real=True), Integer(-2))), Mul(Integer(-1), log(Add(Symbol('x', real=True),
+      Integer(-1)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0122
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 1)(x - 3)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 1)(x - 3)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 3 \right)}}{2} - \frac{\ln{\left(x - 1 \right)}}{2}
+    srepr: Add(Mul(Rational(1, 2), log(Add(Symbol('x', real=True), Integer(-3)))), Mul(Integer(-1), Rational(1,
+      2), log(Add(Symbol('x', real=True), Integer(-1)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0123
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 2)(x - 5)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 2)(x - 5)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 5 \right)}}{3} - \frac{\ln{\left(x - 2 \right)}}{3}
+    srepr: Add(Mul(Rational(1, 3), log(Add(Symbol('x', real=True), Integer(-5)))), Mul(Integer(-1), Rational(1,
+      3), log(Add(Symbol('x', real=True), Integer(-2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0124
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 1)(x - 4)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 1)(x - 4)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 4 \right)}}{3} - \frac{\ln{\left(x - 1 \right)}}{3}
+    srepr: Add(Mul(Rational(1, 3), log(Add(Symbol('x', real=True), Integer(-4)))), Mul(Integer(-1), Rational(1,
+      3), log(Add(Symbol('x', real=True), Integer(-1)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0125
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 3)(x - 7)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 3)(x - 7)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 7 \right)}}{4} - \frac{\ln{\left(x - 3 \right)}}{4}
+    srepr: Add(Mul(Rational(1, 4), log(Add(Symbol('x', real=True), Integer(-7)))), Mul(Integer(-1), Rational(1,
+      4), log(Add(Symbol('x', real=True), Integer(-3)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0126
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 2)(x - 6)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 2)(x - 6)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 6 \right)}}{4} - \frac{\ln{\left(x - 2 \right)}}{4}
+    srepr: Add(Mul(Rational(1, 4), log(Add(Symbol('x', real=True), Integer(-6)))), Mul(Integer(-1), Rational(1,
+      4), log(Add(Symbol('x', real=True), Integer(-2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0127
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 1)(x - 5)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 1)(x - 5)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 5 \right)}}{4} - \frac{\ln{\left(x - 1 \right)}}{4}
+    srepr: Add(Mul(Rational(1, 4), log(Add(Symbol('x', real=True), Integer(-5)))), Mul(Integer(-1), Rational(1,
+      4), log(Add(Symbol('x', real=True), Integer(-1)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0128
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 4)(x - 9)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 4)(x - 9)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 9 \right)}}{5} - \frac{\ln{\left(x - 4 \right)}}{5}
+    srepr: Add(Mul(Rational(1, 5), log(Add(Symbol('x', real=True), Integer(-9)))), Mul(Integer(-1), Rational(1,
+      5), log(Add(Symbol('x', real=True), Integer(-4)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0129
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 2)(x - 3)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 2)(x - 3)}
+    var: x
+  expected:
+    latex: \ln{\left(x - 3 \right)} - \ln{\left(x - 2 \right)}
+    srepr: Add(log(Add(Symbol('x', real=True), Integer(-3))), Mul(Integer(-1), log(Add(Symbol('x', real=True),
+      Integer(-2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0130
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{(x - 3)(x - 8)} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{(x - 3)(x - 8)}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 8 \right)}}{5} - \frac{\ln{\left(x - 3 \right)}}{5}
+    srepr: Add(Mul(Rational(1, 5), log(Add(Symbol('x', real=True), Integer(-8)))), Mul(Integer(-1), Rational(1,
+      5), log(Add(Symbol('x', real=True), Integer(-3)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_iki_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/((x-a)(x-b)) = [1/(a-b)][1/(x-a) - 1/(x-b)] ayrışımı kullanılır.
+- id: belirsiz_integral-0131
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int \frac{1}{x^{2} - 1} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 1}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 1 \right)}}{2} - \frac{\ln{\left(x + 1 \right)}}{2}
+    srepr: Add(Mul(Rational(1, 2), log(Add(Symbol('x', real=True), Integer(-1)))), Mul(Integer(-1), Rational(1,
+      2), log(Add(Symbol('x', real=True), Integer(1)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0132
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 4}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 2 \right)}}{4} - \frac{\ln{\left(x + 2 \right)}}{4}
+    srepr: Add(Mul(Rational(1, 4), log(Add(Symbol('x', real=True), Integer(-2)))), Mul(Integer(-1), Rational(1,
+      4), log(Add(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0133
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 9}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 3 \right)}}{6} - \frac{\ln{\left(x + 3 \right)}}{6}
+    srepr: Add(Mul(Rational(1, 6), log(Add(Symbol('x', real=True), Integer(-3)))), Mul(Integer(-1), Rational(1,
+      6), log(Add(Symbol('x', real=True), Integer(3)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0134
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 16} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 16}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 4 \right)}}{8} - \frac{\ln{\left(x + 4 \right)}}{8}
+    srepr: Add(Mul(Rational(1, 8), log(Add(Symbol('x', real=True), Integer(-4)))), Mul(Integer(-1), Rational(1,
+      8), log(Add(Symbol('x', real=True), Integer(4)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0135
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 25} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 25}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 5 \right)}}{10} - \frac{\ln{\left(x + 5 \right)}}{10}
+    srepr: Add(Mul(Rational(1, 10), log(Add(Symbol('x', real=True), Integer(-5)))), Mul(Integer(-1), Rational(1,
+      10), log(Add(Symbol('x', real=True), Integer(5)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0136
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 36} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 36}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 6 \right)}}{12} - \frac{\ln{\left(x + 6 \right)}}{12}
+    srepr: Add(Mul(Rational(1, 12), log(Add(Symbol('x', real=True), Integer(-6)))), Mul(Integer(-1), Rational(1,
+      12), log(Add(Symbol('x', real=True), Integer(6)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0137
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 49} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 49}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 7 \right)}}{14} - \frac{\ln{\left(x + 7 \right)}}{14}
+    srepr: Add(Mul(Rational(1, 14), log(Add(Symbol('x', real=True), Integer(-7)))), Mul(Integer(-1), Rational(1,
+      14), log(Add(Symbol('x', real=True), Integer(7)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0138
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 64} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 64}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 8 \right)}}{16} - \frac{\ln{\left(x + 8 \right)}}{16}
+    srepr: Add(Mul(Rational(1, 16), log(Add(Symbol('x', real=True), Integer(-8)))), Mul(Integer(-1), Rational(1,
+      16), log(Add(Symbol('x', real=True), Integer(8)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0139
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 81} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 81}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 9 \right)}}{18} - \frac{\ln{\left(x + 9 \right)}}{18}
+    srepr: Add(Mul(Rational(1, 18), log(Add(Symbol('x', real=True), Integer(-9)))), Mul(Integer(-1), Rational(1,
+      18), log(Add(Symbol('x', real=True), Integer(9)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0140
+  topic: belirsiz_integral
+  subtopic: basit_kesirlere_ayirma
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} - 100} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} - 100}
+    var: x
+  expected:
+    latex: \frac{\ln{\left(x - 10 \right)}}{20} - \frac{\ln{\left(x + 10 \right)}}{20}
+    srepr: Add(Mul(Rational(1, 20), log(Add(Symbol('x', real=True), Integer(-10)))), Mul(Integer(-1),
+      Rational(1, 20), log(Add(Symbol('x', real=True), Integer(10)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/basit_kesir_kare_farki
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 1/(x^2 - a^2) = [1/(2a)][1/(x-a) - 1/(x+a)] ayrışımı kullanılır.
+- id: belirsiz_integral-0141
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(2 \cdot x \right)}}{4}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 4), sin(Mul(Integer(2),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0142
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(2x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(2x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(4 \cdot x \right)}}{8}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 8), sin(Mul(Integer(4),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0143
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(3x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(3x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(6 \cdot x \right)}}{12}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 12), sin(Mul(Integer(6),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0144
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(4x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(4x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(8 \cdot x \right)}}{16}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 16), sin(Mul(Integer(8),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0145
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(5x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(5x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(10 \cdot x \right)}}{20}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 20), sin(Mul(Integer(10),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0146
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(6x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(6x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(12 \cdot x \right)}}{24}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 24), sin(Mul(Integer(12),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0147
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \sin^{2}(7x) \, dx
+  command:
+    op: integrate
+    expr: \sin^{2}(7x)
+    var: x
+  expected:
+    latex: \frac{x}{2} - \frac{\sin{\left(14 \cdot x \right)}}{28}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Integer(-1), Rational(1, 28), sin(Mul(Integer(14),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/sinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: sin^2(ax) = (1 - cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0148
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int \cos^{2}(x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \cos^{2}(x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(2 \cdot x \right)}}{4}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 4), sin(Mul(Integer(2), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0149
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(2x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(2x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(4 \cdot x \right)}}{8}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 8), sin(Mul(Integer(4), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0150
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(3x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(3x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(6 \cdot x \right)}}{12}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 12), sin(Mul(Integer(6), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0151
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(4x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(4x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(8 \cdot x \right)}}{16}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 16), sin(Mul(Integer(8), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0152
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(5x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(5x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(10 \cdot x \right)}}{20}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 20), sin(Mul(Integer(10),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0153
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(6x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(6x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(12 \cdot x \right)}}{24}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 24), sin(Mul(Integer(12),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0154
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \cos^{2}(7x) \, dx
+  command:
+    op: integrate
+    expr: \cos^{2}(7x)
+    var: x
+  expected:
+    latex: \frac{x}{2} + \frac{\sin{\left(14 \cdot x \right)}}{28}
+    srepr: Add(Mul(Rational(1, 2), Symbol('x', real=True)), Mul(Rational(1, 28), sin(Mul(Integer(14),
+      Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/kosinus_kare
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: cos^2(ax) = (1 + cos(2ax))/2 yarım açı formülü kullanılır.
+- id: belirsiz_integral-0155
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(x) \, dx
+  command:
+    op: integrate
+    expr: \tan(x)
+    var: x
+  expected:
+    latex: '- \ln{\left(\cos{\left(x \right)} \right)}'
+    srepr: Mul(Integer(-1), log(cos(Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0156
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(2x) \, dx
+  command:
+    op: integrate
+    expr: \tan(2x)
+    var: x
+  expected:
+    latex: '- \frac{\ln{\left(\cos{\left(2 \cdot x \right)} \right)}}{2}'
+    srepr: Mul(Integer(-1), Rational(1, 2), log(cos(Mul(Integer(2), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0157
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(3x) \, dx
+  command:
+    op: integrate
+    expr: \tan(3x)
+    var: x
+  expected:
+    latex: '- \frac{\ln{\left(\cos{\left(3 \cdot x \right)} \right)}}{3}'
+    srepr: Mul(Integer(-1), Rational(1, 3), log(cos(Mul(Integer(3), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0158
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(4x) \, dx
+  command:
+    op: integrate
+    expr: \tan(4x)
+    var: x
+  expected:
+    latex: '- \frac{\ln{\left(\cos{\left(4 \cdot x \right)} \right)}}{4}'
+    srepr: Mul(Integer(-1), Rational(1, 4), log(cos(Mul(Integer(4), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0159
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(5x) \, dx
+  command:
+    op: integrate
+    expr: \tan(5x)
+    var: x
+  expected:
+    latex: '- \frac{\ln{\left(\cos{\left(5 \cdot x \right)} \right)}}{5}'
+    srepr: Mul(Integer(-1), Rational(1, 5), log(cos(Mul(Integer(5), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0160
+  topic: belirsiz_integral
+  subtopic: trigonometrik_teknikler
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \tan(6x) \, dx
+  command:
+    op: integrate
+    expr: \tan(6x)
+    var: x
+  expected:
+    latex: '- \frac{\ln{\left(\cos{\left(6 \cdot x \right)} \right)}}{6}'
+    srepr: Mul(Integer(-1), Rational(1, 6), log(cos(Mul(Integer(6), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int tan(ax) dx = -ln|cos(ax)|/a + C.
+- id: belirsiz_integral-0161
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 1}
+    var: x
+  expected:
+    latex: \arctan{\left(x \right)}
+    srepr: atan(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0162
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 4}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{2} \right)}}{2}
+    srepr: Mul(Rational(1, 2), atan(Mul(Rational(1, 2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0163
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 9}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{3} \right)}}{3}
+    srepr: Mul(Rational(1, 3), atan(Mul(Rational(1, 3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0164
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 16} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 16}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{4} \right)}}{4}
+    srepr: Mul(Rational(1, 4), atan(Mul(Rational(1, 4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0165
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int \frac{1}{x^{2} + 25} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 25}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{5} \right)}}{5}
+    srepr: Mul(Rational(1, 5), atan(Mul(Rational(1, 5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0166
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 36} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 36}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{6} \right)}}{6}
+    srepr: Mul(Rational(1, 6), atan(Mul(Rational(1, 6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0167
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{x^{2} + 49} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 49}
+    var: x
+  expected:
+    latex: \frac{\arctan{\left(\frac{x}{7} \right)}}{7}
+    srepr: Mul(Rational(1, 7), atan(Mul(Rational(1, 7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/(x^2 + a^2) = arctan(x/a)/a + C.
+- id: belirsiz_integral-0168
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{1 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{1 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(x \right)}
+    srepr: asin(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0169
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{4 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{4 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{2} \right)}
+    srepr: asin(Mul(Rational(1, 2), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0170
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{9 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{9 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{3} \right)}
+    srepr: asin(Mul(Rational(1, 3), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0171
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{16 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{16 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{4} \right)}
+    srepr: asin(Mul(Rational(1, 4), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0172
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{25 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{25 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{5} \right)}
+    srepr: asin(Mul(Rational(1, 5), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0173
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{36 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{36 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{6} \right)}
+    srepr: asin(Mul(Rational(1, 6), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0174
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int \frac{1}{\sqrt{49 - x^{2}}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{\sqrt{49 - x^{2}}}
+    var: x
+  expected:
+    latex: \arcsin{\left(\frac{x}{7} \right)}
+    srepr: asin(Mul(Rational(1, 7), Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arcsin_sonucu
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int dx/sqrt(a^2 - x^2) = arcsin(x/a) + C.
+- id: belirsiz_integral-0175
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{1}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{1 + x^{2}}
+    var: x
+  expected:
+    latex: \arctan{\left(x \right)}
+    srepr: atan(Symbol('x', real=True))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.
+- id: belirsiz_integral-0176
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{2}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{2}{1 + x^{2}}
+    var: x
+  expected:
+    latex: 2 \cdot \arctan{\left(x \right)}
+    srepr: Mul(Integer(2), atan(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.
+- id: belirsiz_integral-0177
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{3}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{3}{1 + x^{2}}
+    var: x
+  expected:
+    latex: 3 \cdot \arctan{\left(x \right)}
+    srepr: Mul(Integer(3), atan(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.
+- id: belirsiz_integral-0178
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{4}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{4}{1 + x^{2}}
+    var: x
+  expected:
+    latex: 4 \cdot \arctan{\left(x \right)}
+    srepr: Mul(Integer(4), atan(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.
+- id: belirsiz_integral-0179
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{5}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{5}{1 + x^{2}}
+    var: x
+  expected:
+    latex: 5 \cdot \arctan{\left(x \right)}
+    srepr: Mul(Integer(5), atan(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.
+- id: belirsiz_integral-0180
+  topic: belirsiz_integral
+  subtopic: ters_trigonometrik_sonuc
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int \frac{6}{1 + x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{6}{1 + x^{2}}
+    var: x
+  expected:
+    latex: 6 \cdot \arctan{\left(x \right)}
+    srepr: Mul(Integer(6), atan(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args:
+    up_to_constant: true
+    var: x
+  source: sablon:integral/arctan_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int a dx/(1 + x^2) = a arctan(x) + C.

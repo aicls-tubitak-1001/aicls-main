@@ -1,0 +1,85 @@
+# ---- virtual environments (the real venv lives outside OneDrive: C:\Users\cagri\.venvs\ai-cls)
+/.venv*/
+/venv*/
+/env/
+
+# ---- data, models, runs (must live under AICLS_DATA_ROOT, outside OneDrive — ADR-0008/0011)
+/data/
+/runs/
+/mlruns/
+/models/**/*.pt
+/models/**/*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.db
+*.sqlite
+*.sqlite3
+gate_invocations.log
+
+# ---- single-GPU training lock (aicls.ml.queue). It exists only while a job runs; a tracked lock
+# would dirty the tree during the run and record it citable=false (ADR-0007). The committed
+# training/queue.txt next to it is documentation and is never written.
+/training/queue.lock
+
+# ---- secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- build / packaging
+/build/
+/dist/
+/site/
+*.egg-info/
+*.egg
+__pycache__/
+*.py[cod]
+*$py.class
+*.whl
+
+# ---- test / lint caches and reports
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.import_linter_cache/
+.hypothesis/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+junit*.xml
+/reports/tmp/
+
+# ---- web (npm project under web/)
+# Both spellings on purpose: `web/node_modules` is a Windows junction. Windows git sees a
+# directory and `node_modules/` matches it; Linux git sees a symlink, the trailing slash does
+# NOT match, and `git status` reports it untracked -- which made every containerised run
+# `dirty` and therefore `citable=false` (measured 2026-09-08, ADR-0007/ADR-0020).
+node_modules/
+node_modules
+web/dist/
+web/coverage/
+web/playwright-report/
+web/test-results/
+web/.vite/
+
+# ---- editors / OS
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# ---- OneDrive / Windows artefacts
+*.tmp
+*.lnk

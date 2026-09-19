@@ -1,0 +1,67 @@
+.section {
+  /* `scroll-margin-top` keeps a deep-linked heading clear of the sticky page header. */
+  scroll-margin-top: calc(var(--space-7) + var(--space-5));
+  padding-block-end: var(--space-5);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-block-end: none;
+  padding-block-end: 0;
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-block: var(--space-6) var(--space-4);
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+}
+
+.headingText {
+  min-width: 0;
+}
+
+/*
+ * The permalink is visible at all times — a hover-only affordance is unusable with a pen and
+ * invisible on a projector — but it stays quiet until it is focused or pointed at.
+ */
+.anchor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  margin-inline-start: calc(var(--space-2) * -1);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  flex: none;
+}
+
+.anchor:hover,
+.anchor:focus-visible {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.body > :last-child {
+  margin-block-end: 0;
+}
+
+@media print {
+  .section {
+    break-inside: avoid;
+    border-block-end: none;
+  }
+
+  .anchor {
+    display: none;
+  }
+
+  .heading {
+    margin-block-start: var(--space-5);
+  }
+}

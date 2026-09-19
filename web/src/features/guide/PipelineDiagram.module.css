@@ -1,0 +1,142 @@
+.figure {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.canvas {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-3);
+}
+
+/*
+ * A minimum width keeps the labels legible instead of letting the drawing shrink to nothing on a
+ * phone; the wrapper scrolls horizontally when the screen is narrower than that. Label sizes are
+ * fixed pixels rather than the type ramp: the geometry is hand-placed, so a 1.35x presentation
+ * scale would push the text out of its boxes. On the board the ordered list below carries the same
+ * information at the presentation size.
+ */
+.svg {
+  display: block;
+  width: 100%;
+  min-width: 1000px;
+  height: auto;
+}
+
+/* A scrollable region needs to be reachable from the keyboard to be scrollable at all. */
+.canvas:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.box {
+  fill: var(--color-surface-muted);
+  stroke: var(--color-border-strong);
+  stroke-width: 1.5;
+}
+
+.boxCore {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+
+.boxTitle,
+.boxTitleCore {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.boxTitle {
+  fill: var(--color-text);
+}
+
+.boxTitleCore {
+  fill: var(--color-accent-strong);
+}
+
+.boxSub {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  fill: var(--color-text-muted);
+}
+
+.edge {
+  fill: none;
+  stroke: var(--color-border-strong);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.edgeCore {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.arrowHead {
+  fill: var(--color-border-strong);
+}
+
+.arrowHeadCore {
+  fill: var(--color-accent);
+}
+
+.edgeLabel {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  fill: var(--color-text-muted);
+}
+
+.caption {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.textAlt {
+  margin-block-start: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-inline-start: 3px solid var(--color-border);
+  background: var(--color-surface-muted);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.textAltTitle {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.steps {
+  margin: 0;
+  padding-inline-start: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+@media print {
+  .figure {
+    break-inside: avoid;
+  }
+
+  .canvas {
+    overflow: visible;
+    padding: 0;
+    border: none;
+  }
+
+  .svg {
+    min-width: 0;
+  }
+
+  .textAlt {
+    background: none;
+  }
+}

@@ -1,0 +1,10 @@
+AI-CLS — TÜBİTAK 1001 #125E748
+
+Lisans kararı proje yürütücüsündedir — bkz. ADR-0002 (docs/adr/0002-monorepo-katmanli-paketler.md).
+
+Bu dosya bir yer tutucudur. Lisans metni, proje yürütücüsünün yazılı kararı ve TÜBİTAK sözleşme
+hükümleri doğrultusunda belirlenene kadar tüm hakları saklıdır (all rights reserved). Açık kaynak
+bileşenlerin (SymPy, FastAPI, PyTorch, Whisper, MathWriting veri seti vb.) kendi lisansları
+geçerlidir; üçüncü taraf lisans bildirimleri docs/ml/veri-yonetimi.md altında tutulur.
+
+License decision pending (project PI). Placeholder — all rights reserved until decided; see ADR-0002.

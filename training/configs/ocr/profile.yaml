@@ -1,0 +1,35 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Ölçüm koşusu — docs/ml/egitim-altyapisi.md §8: "Önce profil, sonra bütçe."
+# Kapı açıldıktan sonra bu ailenin İLK kapılı eylemi budur:
+#
+#     aicls profile --config training/configs/ocr/profile.yaml --steps 200 --i-have-approval
+#
+# 200 adımda steps_per_s, tepe VRAM ve dataloader bekleme yüzdesi ölçülür; sonuç
+# run_manifest.steps_per_s'e ve reports/metrics/profile_*.json'a yazılır. Epoch ve bütçe
+# tahminleri YALNIZCA bu ölçümden türetilir; hiçbir belgede elle yazılmış süre yoktur.
+#
+# Ölçülen şey referans hattın gerçek iş yüküdür: bu yüzden dosya offline_resnet34_tfm'i
+# kalıtır ve yalnızca döngü uzunluğunu kısaltır. Değerlendirme ve kontrol noktası cadansı
+# 200 adımın dışına itilir; profil koşusu verimi ölçer, kaliteyi değil.
+_base_: ./offline_resnet34_tfm.yaml
+run:
+  name: ocr_profile
+  tags: [ocr, offline, profile]
+  notes: "200 adımlık verim/VRAM ölçümü; bu koşudan CER raporlanmaz."
+train:
+  epochs: null
+  max_steps: 200
+  eval_every: 100000
+  ckpt_every: 100000
+  log_every: 10
+  early_stop_patience: null
+# recalibrate_norm_samples KAPALI: profil bir verim ölçümüdür, yeniden kalibrasyonun ~20 s'i
+# adım/s sayısını kirletirdi. Bu koşunun doğrulama sayıları zaten raporlanabilir değildir.
+eval: {beam: 1, max_n_val: 1, metrics: [loss], recalibrate_norm_samples: null} # profilde çözme yapılmaz
+tracking: {backend: jsonl, mlflow_uri: null, experiment: profile}
+# Ölçüm koşusu düzenli kontrol noktası yazmaz; ancak `fit()` son adımda her hâlükârda bir tane
+# yazdığı için "hiç tutma" (keep_last: 0) ifade edilebilir bir şey değildir — CheckpointSaver de
+# bunu reddeder, ki bu doğrudur: saatlerce eğitip hiçbir şey saklamamak önlenmesi gereken bir hata.
+# Bu yüzden burada gerçekte olan yazılıdır: tek bir son kontrol noktası kalır.
+checkpoint: {keep_last: 1, keep_best: 0, metric: val_loss, mode: min}

@@ -1,0 +1,42 @@
+# KAPISIZ (gate-free). Bu dosya hiçbir onay gerektirmez ve gerektirmemelidir.
+#
+# data.dataset: synthetic_ink -> TrainConfig.is_gate_free True (ADR-0012); veri indirilmez,
+# ağırlık indirilmez, CUDA gerekmez. CPU'da 64 sentetik iz üzerinde 2 adım koşar ve CI ile
+# birim testlerinin (tiny_ocr_cfg) kullandığı yapılandırmadır.
+#
+# DÜRÜSTLÜK NOTU: bu koşudan çıkan hiçbir sayı sonuç değildir. Rastgele başlatılmış küçük bir
+# ağın sentetik fikstür üzerindeki kaybı yalnızca BAĞLANTI DENETİMİdir (wiring check); CER
+# kanıtı ancak DATASET_DOWNLOAD + TRAINING kapıları açıldıktan sonra üretilebilir.
+_base_: ../_base.yaml
+run:
+  name: ocr_smoke_synthetic
+  seed: 1234
+  deterministic: true
+  tags: [ocr, smoke, synthetic]
+  notes: "CI duman koşusu; ölçüm değil bağlantı denetimi."
+data:
+  dataset: synthetic_ink
+  mode: offline
+  image_size: [32, 128] # CPU'da hızlı kalsın diye küçültülmüş raster
+  preprocess: [grayscale, normalize01, resize_pad]
+  n_samples: 64
+  max_label_len: 32
+  batch_size: 4
+  num_workers: 0 # Windows: fork yok
+model:
+  family: seq2seq_image
+  encoder: cnn_small # torchvision gerektirmeyen küçük kodlayıcı
+  decoder: transformer
+  d_model: 32
+  layers: 2
+  heads: 2
+  ff_dim: 64
+  dropout: 0.0
+  max_len: 32
+train: {epochs: null, max_steps: 2, grad_accum: 1, amp: "off", grad_clip: 1.0, eval_every: 1, ckpt_every: 1, log_every: 1, early_stop_patience: null, allow_dirty: true}
+# recalibrate_norm_samples burada doğruluk için değil, KAPSAM için: cnn_small da BatchNorm
+# taşır, ve bu duman koşusu yeniden kalibrasyon yolunun gerçek veriyle koşan tek testidir.
+eval: {beam: 1, max_n_val: 8, metrics: [cer, loss], recalibrate_norm_samples: 16}
+tracking: {backend: jsonl, mlflow_uri: null, experiment: smoke}
+checkpoint: {keep_last: 1, keep_best: 1, metric: val_cer, mode: min}
+gates: {synthetic: true} # data.dataset ile tutarlı; yine de kararı veren data.dataset'tir

@@ -1,0 +1,101 @@
+/*
+ * A question, not a failure: the accent colour of the brand rather than the critical palette, and
+ * candidate buttons that are comfortably larger than the 44 px floor because they are tapped on a
+ * wall-mounted board with a whole class watching.
+ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-strong);
+}
+
+.question {
+  margin: 0;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+.transcript {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.slot,
+.hint,
+.empty {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: calc(var(--tap-target-min) * 1.6);
+  padding: var(--space-3) var(--space-4);
+  text-align: start;
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.option:hover,
+.option:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.option:active {
+  transform: translateY(1px);
+}
+
+.optionLabel {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.optionMath {
+  font-size: var(--text-lg);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.optionScore {
+  margin-top: auto;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}

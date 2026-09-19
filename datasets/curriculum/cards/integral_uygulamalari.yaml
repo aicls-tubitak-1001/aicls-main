@@ -1,0 +1,2311 @@
+# datasets/curriculum/cards/integral_uygulamalari.yaml
+# 96 kart. Alt konular: donel_cisim_hacmi, egri_alti_alan, iki_egri_arasi_alan, is_ve_kuvvet, ortalama_deger, yay_uzunlugu.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: integral_uygulamalari-0001
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} x + 0 \, dx
+  command:
+    op: integrate
+    expr: x + 0
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0002
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} x + 0 \, dx
+  command:
+    op: integrate
+    expr: x + 0
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0003
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} x + 1 \, dx
+  command:
+    op: integrate
+    expr: x + 1
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0004
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} x + 1 \, dx
+  command:
+    op: integrate
+    expr: x + 1
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0005
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} + 0 \, dx
+  command:
+    op: integrate
+    expr: x^{2} + 0
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0006
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} x^{2} + 0 \, dx
+  command:
+    op: integrate
+    expr: x^{2} + 0
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{8}{3}
+    srepr: Rational(8, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0007
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} + 1 \, dx
+  command:
+    op: integrate
+    expr: x^{2} + 1
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{4}{3}
+    srepr: Rational(4, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0008
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} x^{2} + 1 \, dx
+  command:
+    op: integrate
+    expr: x^{2} + 1
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{14}{3}
+    srepr: Rational(14, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0009
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x + 0 \, dx
+  command:
+    op: integrate
+    expr: 2x + 0
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0010
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x + 0 \, dx
+  command:
+    op: integrate
+    expr: 2x + 0
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0011
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} 2x + 1 \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: 2x + 1
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0012
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x + 1 \, dx
+  command:
+    op: integrate
+    expr: 2x + 1
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0013
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x^{2} + 0 \, dx
+  command:
+    op: integrate
+    expr: 2x^{2} + 0
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{2}{3}
+    srepr: Rational(2, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0014
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x^{2} + 0 \, dx
+  command:
+    op: integrate
+    expr: 2x^{2} + 0
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{16}{3}
+    srepr: Rational(16, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0015
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x^{2} + 1 \, dx
+  command:
+    op: integrate
+    expr: 2x^{2} + 1
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{5}{3}
+    srepr: Rational(5, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0016
+  topic: integral_uygulamalari
+  subtopic: egri_alti_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x^{2} + 1 \, dx
+  command:
+    op: integrate
+    expr: 2x^{2} + 1
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{22}{3}
+    srepr: Rational(22, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/alan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, b] aralığında eğri altında kalan alan belirli integralle bulunur.'
+- id: integral_uygulamalari-0017
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: x - x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0018
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 2x - x^{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{4}{3}
+    srepr: Rational(4, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0019
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} 3x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 3x - x^{2}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{9}{2}
+    srepr: Rational(9, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0020
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} 4x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 4x - x^{2}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{32}{3}
+    srepr: Rational(32, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0021
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{5} 5x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 5x - x^{2}
+    var: x
+    lower: '0'
+    upper: '5'
+  expected:
+    latex: \frac{125}{6}
+    srepr: Rational(125, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0022
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{6} 6x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 6x - x^{2}
+    var: x
+    lower: '0'
+    upper: '6'
+  expected:
+    latex: '36'
+    srepr: Integer(36)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0023
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{7} 7x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 7x - x^{2}
+    var: x
+    lower: '0'
+    upper: '7'
+  expected:
+    latex: \frac{343}{6}
+    srepr: Rational(343, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0024
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{8} 8x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: 8x - x^{2}
+    var: x
+    lower: '0'
+    upper: '8'
+  expected:
+    latex: \frac{256}{3}
+    srepr: Rational(256, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_parabol
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax ile y = x^2 eğrileri arasındaki alan a^3/6'dır.
+- id: integral_uygulamalari-0025
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x - x^{2} \, dx
+  command:
+    op: integrate
+    expr: x - x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0026
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x - x^{3} \, dx
+  command:
+    op: integrate
+    expr: x - x^{3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0027
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} - x^{3} \, dx
+  command:
+    op: integrate
+    expr: x^{2} - x^{3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{12}
+    srepr: Rational(1, 12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0028
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} x - x^{4} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: x - x^{4}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{3}{10}
+    srepr: Rational(3, 10)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0029
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} - x^{5} \, dx
+  command:
+    op: integrate
+    expr: x^{2} - x^{5}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0030
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{3} - x^{4} \, dx
+  command:
+    op: integrate
+    expr: x^{3} - x^{4}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{20}
+    srepr: Rational(1, 20)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0031
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x - x^{5} \, dx
+  command:
+    op: integrate
+    expr: x - x^{5}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0032
+  topic: integral_uygulamalari
+  subtopic: iki_egri_arasi_alan
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} - x^{7} \, dx
+  command:
+    op: integrate
+    expr: x^{2} - x^{7}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{5}{24}
+    srepr: Rational(5, 24)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/iki_egri_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: '[0, 1] aralığında y = x^m ve y = x^n eğrileri arasındaki alan.'
+- id: integral_uygulamalari-0033
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \pi x^{2} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{3}
+    srepr: Mul(Rational(1, 3), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0034
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \pi x^{2} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{8 \cdot \pi}{3}
+    srepr: Mul(Rational(8, 3), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0035
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \pi x^{2} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{2}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: 9 \cdot \pi
+    srepr: Mul(Integer(9), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0036
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \pi x^{2} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{2}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{64 \cdot \pi}{3}
+    srepr: Mul(Rational(64, 3), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0037
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \pi x^{4} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{4}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{5}
+    srepr: Mul(Rational(1, 5), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0038
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \pi x^{4} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{4}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{32 \cdot \pi}{5}
+    srepr: Mul(Rational(32, 5), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0039
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \pi x^{4} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{4}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{243 \cdot \pi}{5}
+    srepr: Mul(Rational(243, 5), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0040
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \pi x^{4} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{4}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{1024 \cdot \pi}{5}
+    srepr: Mul(Rational(1024, 5), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0041
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \pi x^{6} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{6}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{7}
+    srepr: Mul(Rational(1, 7), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0042
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \pi x^{6} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{6}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{128 \cdot \pi}{7}
+    srepr: Mul(Rational(128, 7), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0043
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \pi x^{6} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{6}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{2187 \cdot \pi}{7}
+    srepr: Mul(Rational(2187, 7), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0044
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \pi x^{6} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{6}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{16384 \cdot \pi}{7}
+    srepr: Mul(Rational(16384, 7), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0045
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} \pi x^{8} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \pi x^{8}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{9}
+    srepr: Mul(Rational(1, 9), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0046
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \pi x^{8} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{8}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{512 \cdot \pi}{9}
+    srepr: Mul(Rational(512, 9), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0047
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \pi x^{8} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{8}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: 2187 \cdot \pi
+    srepr: Mul(Integer(2187), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0048
+  topic: integral_uygulamalari
+  subtopic: donel_cisim_hacmi
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \pi x^{8} \, dx
+  command:
+    op: integrate
+    expr: \pi x^{8}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{262144 \cdot \pi}{9}
+    srepr: Mul(Rational(262144, 9), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/hacim_disk
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = x^n eğrisinin x ekseni etrafında dönmesiyle V = pi int_0^b x^{2n} dx.
+- id: integral_uygulamalari-0049
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{2}{3} + \frac{4 \cdot \sqrt{2}}{3}'
+    srepr: Add(Rational(-2, 3), Mul(Rational(4, 3), Pow(Integer(2), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0050
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '- \frac{2}{3} + 2 \cdot \sqrt{3}'
+    srepr: Add(Rational(-2, 3), Mul(Integer(2), Pow(Integer(3), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0051
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{14}{3}
+    srepr: Rational(14, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0052
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '- \frac{2}{3} + \frac{10 \cdot \sqrt{5}}{3}'
+    srepr: Add(Rational(-2, 3), Mul(Rational(10, 3), Pow(Integer(5), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0053
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{5} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '5'
+  expected:
+    latex: '- \frac{2}{3} + 4 \cdot \sqrt{6}'
+    srepr: Add(Rational(-2, 3), Mul(Integer(4), Pow(Integer(6), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0054
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{6} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '6'
+  expected:
+    latex: '- \frac{2}{3} + \frac{14 \cdot \sqrt{7}}{3}'
+    srepr: Add(Rational(-2, 3), Mul(Rational(14, 3), Pow(Integer(7), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0055
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{7} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '7'
+  expected:
+    latex: '- \frac{2}{3} + \frac{32 \cdot \sqrt{2}}{3}'
+    srepr: Add(Rational(-2, 3), Mul(Rational(32, 3), Pow(Integer(2), Rational(1, 2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0056
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{8} \sqrt{1 + x} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + x}
+    var: x
+    lower: '0'
+    upper: '8'
+  expected:
+    latex: \frac{52}{3}
+    srepr: Rational(52, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_kok
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = (2/3) x^{3/2} eğrisinin yay uzunluğu int_0^b sqrt(1 + x) dx'tir.
+- id: integral_uygulamalari-0057
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 1} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{2}
+    srepr: Pow(Integer(2), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0058
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 4} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 4}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{5}
+    srepr: Pow(Integer(5), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0059
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 9} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 9}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{10}
+    srepr: Pow(Integer(10), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0060
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 16} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 16}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{17}
+    srepr: Pow(Integer(17), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0061
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 25} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 25}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{26}
+    srepr: Pow(Integer(26), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0062
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} \sqrt{1 + 36} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \sqrt{1 + 36}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{37}
+    srepr: Pow(Integer(37), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0063
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 49} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 49}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: 5 \cdot \sqrt{2}
+    srepr: Mul(Integer(5), Pow(Integer(2), Rational(1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0064
+  topic: integral_uygulamalari
+  subtopic: yay_uzunlugu
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} \sqrt{1 + 64} \, dx
+  command:
+    op: integrate
+    expr: \sqrt{1 + 64}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \sqrt{65}
+    srepr: Pow(Integer(65), Rational(1, 2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/yay_dogru
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: y = ax doğrusunun [0, 1] aralığındaki yay uzunluğu sqrt(1 + a^2)'dir.
+- id: integral_uygulamalari-0065
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{x}{1} \, dx
+  command:
+    op: integrate
+    expr: \frac{x}{1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0066
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \frac{x}{2} \, dx
+  command:
+    op: integrate
+    expr: \frac{x}{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0067
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \frac{x}{3} \, dx
+  command:
+    op: integrate
+    expr: \frac{x}{3}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0068
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \frac{x}{4} \, dx
+  command:
+    op: integrate
+    expr: \frac{x}{4}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0069
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{x^{2}}{1} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{2}}{1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0070
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \frac{x^{2}}{2} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{2}}{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{4}{3}
+    srepr: Rational(4, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0071
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \frac{x^{2}}{3} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{2}}{3}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0072
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \frac{x^{2}}{4} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{2}}{4}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{16}{3}
+    srepr: Rational(16, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0073
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{x^{3}}{1} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{3}}{1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0074
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \frac{x^{3}}{2} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{3}}{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0075
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \frac{x^{3}}{3} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{3}}{3}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{27}{4}
+    srepr: Rational(27, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0076
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \frac{x^{3}}{4} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{3}}{4}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '16'
+    srepr: Integer(16)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0077
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{x^{4}}{1} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{4}}{1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{5}
+    srepr: Rational(1, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0078
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \frac{x^{4}}{2} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{4}}{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{16}{5}
+    srepr: Rational(16, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0079
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{0}^{3} \frac{x^{4}}{3} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{x^{4}}{3}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{81}{5}
+    srepr: Rational(81, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0080
+  topic: integral_uygulamalari
+  subtopic: ortalama_deger
+  chapter_ref: aicls:bolum-5
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \frac{x^{4}}{4} \, dx
+  command:
+    op: integrate
+    expr: \frac{x^{4}}{4}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{256}{5}
+    srepr: Rational(256, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/ortalama
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: f'nin [0, b] ortalama değeri (1/b) int_0^b x^n dx = b^n/(n+1).
+- id: integral_uygulamalari-0081
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0082
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0083
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{9}{2}
+    srepr: Rational(9, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0084
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{4} x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0085
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0086
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0087
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: '9'
+    srepr: Integer(9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0088
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{4} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '16'
+    srepr: Integer(16)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0089
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0090
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0091
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{27}{2}
+    srepr: Rational(27, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0092
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{4} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '24'
+    srepr: Integer(24)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0093
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} 4x \, dx
+  command:
+    op: integrate
+    expr: 4x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0094
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} 4x \, dx
+  command:
+    op: integrate
+    expr: 4x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0095
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} 4x \, dx
+  command:
+    op: integrate
+    expr: 4x
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: '18'
+    srepr: Integer(18)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.
+- id: integral_uygulamalari-0096
+  topic: integral_uygulamalari
+  subtopic: is_ve_kuvvet
+  chapter_ref: aicls:bolum-5
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{4} 4x \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: 4x
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: '32'
+    srepr: Integer(32)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:uygulama_integral/is
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: F(x) = kx kuvvetinin [0, b] aralığında yaptığı is W = k b^2/2'dir.

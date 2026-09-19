@@ -1,0 +1,52 @@
+# AI-CLS — "Model Gelişimine Katkıda Bulun" katılım onamı (KVKK / etik kurul)
+#
+# Bu dosya sürümlü ve DEĞİŞMEZ bir kaynaktır: yayımlanmış bir sürümün metni asla düzenlenmez,
+# yalnızca yeni bir sürüm eklenir (aksi hâlde `consent_versions.sha256` denetim izi bozulur).
+# Metin, katılımcının gördüğü kelimelerin kendisidir; SHA-256 özeti yükleme sırasında hesaplanır
+# ve kabul kaydıyla birlikte veritabanına yazılır (docs/ml/veri-yonetimi.md §4).
+#
+# Sürümler `effective_from` alanına göre artan sırada tutulur.
+version: 1
+consents:
+  - version: "1.0"
+    effective_from: 2026-05-01
+    text_tr: |
+      AI-CLS Ses Verisi Katılım Onamı (Sürüm 1.0)
+
+      Bu form, TÜBİTAK 1001 destekli 125E748 numaralı "AI-CLS" projesi kapsamında geliştirilen
+      Türkçe sesli komut tanıma modeli için ses kaydı katkısı vermek isteyen gönüllüler içindir.
+
+      1. Amaç. Ekranda gösterilen matematik cümlelerini sesli okumanız istenir. Kayıtlarınız
+         yalnızca projenin ses tanıma (ASR) modelinin eğitilmesi, sınanması ve bilimsel olarak
+         raporlanması amacıyla kullanılır. Ticari bir amaçla kullanılmaz ve üçüncü kişilere
+         satılmaz.
+
+      2. Toplanan veriler. Ses kaydınız; okuduğunuz cümlenin metni; isteğe bağlı olarak yalnızca
+         bant düzeyinde demografi (yaş bandı, cinsiyet, üniversite, aksan bölgesi); kaydın
+         teknik nitelikleri (süre, örnekleme hızı, gürültü ölçümleri). Ad, soyad, doğum tarihi,
+         e-posta veya telefon numarası ses kayıtlarıyla birlikte saklanmaz. IP adresiniz ve
+         tarayıcı bilginiz yalnızca kötüye kullanımı önlemek için tuzlanmış özet (hash) hâlinde
+         tutulur ve en geç 90 gün içinde silinir.
+
+      3. Takma ad. Kayıtlarınız "P00001" biçiminde bir takma ada bağlanır. Araştırma
+         paylaşımlarında, eğitim veri kümelerinde ve yayınlarda yalnızca bu takma ad kullanılır;
+         kimliğinizi doğrudan gösteren hiçbir alan dışa aktarılmaz.
+
+      4. Saklama ve güvenlik. Ses dosyaları proje sunucusunda erişim izinleri kısıtlanmış bir
+         dizinde tutulur, şifreli olarak yedeklenir ve kamuya açık biçimde yayımlanmaz.
+
+      5. Gönüllülük ve geri çekme. Katılım tamamen gönüllüdür. Onamınızı dilediğiniz anda,
+         gerekçe göstermeden geri çekebilirsiniz. Geri çekme talebiniz üzerine ses
+         kayıtlarınız ve bunlardan üretilmiş öznitelikler silinir; yalnızca onam verdiğinize ve
+         geri çektiğinize dair içerik barındırmayan denetim kaydı 6698 sayılı Kişisel Verilerin
+         Korunması Kanunu (KVKK) gereği saklanır. Geri çekme tarihinden önce eğitilmiş modeller
+         geriye dönük olarak değiştirilemez; bu durum model kartlarında açıkça belirtilir.
+
+      6. Haklarınız. KVKK 11. madde uyarınca kişisel verilerinize erişme, düzeltme, silme ve
+         işlemeye itiraz etme haklarına sahipsiniz. Talepleriniz için proje yürütücüsüne
+         başvurabilirsiniz.
+
+      7. Riskler ve yarar. Katılımın bilinen bir riski yoktur; katkınız Türkçe matematik dili
+         için açık, akademik bir ses veri kümesinin oluşmasına yardımcı olur.
+
+      Bu metni okudum, anladım ve ses kaydı katkısı vermeyi kabul ediyorum.

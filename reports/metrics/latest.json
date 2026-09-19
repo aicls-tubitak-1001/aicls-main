@@ -1,0 +1,243 @@
+{
+  "asr": {
+    "cer": null,
+    "ci95": {},
+    "citable": false,
+    "command_exact": null,
+    "command_intent_accuracy": null,
+    "dataset_fingerprint": "sha256:83edf842c3dbde2b1d96a7704c5ec91fea90cf66469e0d7d2061466b2f0c0579",
+    "dataset_version": "synthetic-command-audio-v1",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "generated_at": "2026-09-08T02:46:15Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "mean_ms": null,
+    "measurement": "wiring_check",
+    "model_version": "asr-stub-1",
+    "n": 25,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "WIRING CHECK, NOT A RESULT: the stub transcriber picks a sentence by hashing the waveform (the runner hands it the waveform and nothing else), so its WER is the WER of a random draw from the sentence pool. It proves the speaker-disjoint split, the two WER columns and the command-intent path are wired; it is NOT evidence for the < 10 % WER target, and the promoted latest.json therefore publishes null for it.",
+    "p95_ms": null,
+    "source_file": "asr_test_60aad42.json",
+    "stub": true,
+    "wer_raw": null,
+    "wer_tr_v1": null,
+    "wiring_check": {
+      "ci95": {
+        "wer_tr_v1": [
+          1.0,
+          1.2618084851390219
+        ]
+      },
+      "metrics": {
+        "cer": 0.8922363847045192,
+        "command_exact": 0.0,
+        "command_intent_accuracy": 0.0,
+        "mean_ms": 0.08374800556339324,
+        "p95_ms": 0.15055999974720172,
+        "wer_raw": 1.111764705882353,
+        "wer_tr_v1": 1.111764705882353
+      },
+      "model_version": "asr-stub-1",
+      "reason": "WIRING CHECK, NOT A MEASUREMENT: this run used a stub backend, so the metric describes the evaluation plumbing and not a model. The headline value is null on purpose — a stub may never publish a number that could be quoted against a contractual target. What the stub actually scored is kept under 'wiring_check' and in the per-run report file."
+    }
+  },
+  "book": {
+    "ci95": {
+      "fetch_top1": [
+        1.0,
+        1.0
+      ]
+    },
+    "citable": false,
+    "dataset_fingerprint": "sha256:168e60b283d99255e758a03fa59d61d40457a44636e8b7daca34e87b098076d9",
+    "dataset_version": "book-fetch-2026.09",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "fetch_top1": 1.0,
+    "fetch_top3": 1.0,
+    "generated_at": "2026-09-08T02:46:16Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "measurement": "measured",
+    "model_version": null,
+    "n": 72,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "",
+    "source_file": "book_fetch_60aad42.json",
+    "stub": false,
+    "tagging_coverage": 1.0
+  },
+  "cas": {
+    "ci95": {
+      "correct_rate": [
+        1.0,
+        1.0
+      ]
+    },
+    "citable": false,
+    "correct_rate": 1.0,
+    "dataset_fingerprint": "sha256:a84a2e1ee92baf12a534f5a69e293164e7955f0c283e5fba0405c740872e20e5",
+    "dataset_version": "curriculum-2026.09-v1",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "error_rate": 0.0,
+    "generated_at": "2026-09-08T02:46:11Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "mean_ms": 5.585906146179402,
+    "measurement": "measured",
+    "model_version": null,
+    "n": 1204,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "PROVENANCE: this curriculum set was authored inside the project (machine-expanded from hand-written templates). It is not an independent test set and no row is copied from a textbook. Expected answers come from the curriculum rule, not from the CAS; the compiler compares the engine against them. Any number measured here must be reported with this sentence.",
+    "p50_ms": 2.3840000000000003,
+    "p95_ms": 17.465899999999987,
+    "parse_n": 1134.0,
+    "parse_success_rate": 1.0,
+    "source_file": "cas_curriculum_60aad42.json",
+    "stub": false,
+    "unsupported_rate": 0.0
+  },
+  "latency": {
+    "ci95": {
+      "mean_ms": [
+        3.436292163132748,
+        6.956459990011353
+      ]
+    },
+    "citable": false,
+    "dataset_fingerprint": "sha256:bc4a60ac1665c0044f751a03cf56406ca3b61c0fac54cf034896c39b31d81a74",
+    "dataset_version": "nlu-commands-2026.09",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "generated_at": "2026-09-08T02:46:17Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "mean_ms": 5.238195501733571,
+    "measurement": "measured",
+    "model_version": null,
+    "n": 200,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "",
+    "p50_ms": 1.855549999163486,
+    "p95_ms": 41.561800026101984,
+    "source_file": "latency_local_60aad42.json",
+    "stub": true
+  },
+  "nlu": {
+    "ci95": {
+      "intent_accuracy": [
+        0.9914529914529915,
+        1.0
+      ]
+    },
+    "citable": false,
+    "clarification_rate": 0.0,
+    "command_exact": 0.9971509971509972,
+    "dataset_fingerprint": "sha256:bc4a60ac1665c0044f751a03cf56406ca3b61c0fac54cf034896c39b31d81a74",
+    "dataset_version": "nlu-commands-2026.09",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "generated_at": "2026-09-08T02:46:12Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "intent_accuracy": 0.9971509971509972,
+    "measurement": "measured",
+    "model_version": null,
+    "n": 351,
+    "no_match_rate": 0.06837606837606838,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "",
+    "slot_f1": 0.7064305684995341,
+    "slot_f1_declared_only": 1.0,
+    "source_file": "nlu_commands_60aad42.json",
+    "stub": false
+  },
+  "ocr": {
+    "cer": null,
+    "ci95": {},
+    "citable": false,
+    "dataset_fingerprint": "sha256:6317985ce7728e72f609ff63eb436dea1bd68af73c87f71a51e44630295133bb",
+    "dataset_version": "synthetic-curriculum-ink-v1",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "exprate": null,
+    "generated_at": "2026-09-08T02:46:15Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "mean_ms": null,
+    "measurement": "wiring_check",
+    "model_version": "stub-0.1.0",
+    "n": 128,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "WIRING CHECK, NOT A RESULT: the stub recogniser guesses from a fixed curriculum table and every sample is blinded before it reaches the backend, so this CER is the score of a lookup and NOT evidence for the < 10 % CER target (that needs MathWriting and the training gate). The promoted latest.json therefore publishes null for it.",
+    "p95_ms": null,
+    "source_file": "ocr_test_60aad42.json",
+    "stub": true,
+    "symeq_different": null,
+    "symeq_equal": null,
+    "symeq_unparsable": null,
+    "ter": null,
+    "wiring_check": {
+      "ci95": {
+        "cer": [
+          0.900100411946447,
+          1.0383456344474167
+        ]
+      },
+      "metrics": {
+        "cer": 0.967948717948718,
+        "exprate": 0.015625,
+        "mean_ms": 0.1146695326497138,
+        "p95_ms": 0.17590498318895684,
+        "symeq_different": 0.6953125,
+        "symeq_equal": 0.015625,
+        "symeq_unparsable": 0.2890625,
+        "ter": 1.023094688221709
+      },
+      "model_version": "stub-0.1.0",
+      "reason": "WIRING CHECK, NOT A MEASUREMENT: this run used a stub backend, so the metric describes the evaluation plumbing and not a model. The headline value is null on purpose — a stub may never publish a number that could be quoted against a contractual target. What the stub actually scored is kept under 'wiring_check' and in the per-run report file."
+    }
+  },
+  "parser": {
+    "ci95": {
+      "success_rate": [
+        1.0,
+        1.0
+      ]
+    },
+    "citable": false,
+    "dataset_fingerprint": "sha256:9ff283b2c0d163194867f05716d73078c899b95cbda41e5574f3b6707c152ed0",
+    "dataset_version": "latex-valid-inputs-2026.09",
+    "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+    "dirty": true,
+    "failures": 0.0,
+    "generated_at": "2026-09-08T02:46:01Z",
+    "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+    "measurement": "measured",
+    "model_version": null,
+    "n": 3709,
+    "normalizer_versions": {
+      "latex": "v1",
+      "tr": "v1"
+    },
+    "notes": "",
+    "source_file": "parser_valid_60aad42.json",
+    "stub": false,
+    "success_rate": 1.0
+  }
+}

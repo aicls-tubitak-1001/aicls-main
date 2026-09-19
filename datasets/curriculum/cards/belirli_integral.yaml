@@ -1,0 +1,3463 @@
+# datasets/curriculum/cards/belirli_integral.yaml
+# 144 kart. Alt konular: degisken_degistirme_belirli, has_olmayan_integral, kismi_integrasyon_belirli, kuvvet_belirli, rasyonel_belirli, ters_trigonometrik_belirli, trigonometrik_belirli, ustel_belirli.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: belirli_integral-0001
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} x \, dx
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0002
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\int_{0}^{2} x \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0003
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{2} \, dx
+  command:
+    op: integrate
+    expr: x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0004
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} x^{2} \, dx
+  command:
+    op: integrate
+    expr: x^{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{8}{3}
+    srepr: Rational(8, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0005
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} x^{3} \, dx
+  command:
+    op: integrate
+    expr: x^{3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0006
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} x^{3} \, dx
+  command:
+    op: integrate
+    expr: x^{3}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0007
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0008
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x \, dx
+  command:
+    op: integrate
+    expr: 2x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0009
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x^{2} \, dx
+  command:
+    op: integrate
+    expr: 2x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{2}{3}
+    srepr: Rational(2, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0010
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x^{2} \, dx
+  command:
+    op: integrate
+    expr: 2x^{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{16}{3}
+    srepr: Rational(16, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0011
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x^{3} \, dx
+  command:
+    op: integrate
+    expr: 2x^{3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0012
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 2x^{3} \, dx
+  command:
+    op: integrate
+    expr: 2x^{3}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0013
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{3}{2}
+    srepr: Rational(3, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0014
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 3x \, dx
+  command:
+    op: integrate
+    expr: 3x
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0015
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 3x^{2} \, dx
+  command:
+    op: integrate
+    expr: 3x^{2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0016
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 3x^{2} \, dx
+  command:
+    op: integrate
+    expr: 3x^{2}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0017
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{1} 3x^{3} \, dx
+  command:
+    op: integrate
+    expr: 3x^{3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{3}{4}
+    srepr: Rational(3, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0018
+  topic: belirli_integral
+  subtopic: kuvvet_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 1
+  input:
+    kind: latex
+    value: \int_{0}^{2} 3x^{3} \, dx
+  command:
+    op: integrate
+    expr: 3x^{3}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '12'
+    srepr: Integer(12)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Analizin temel teoremi: int_0^b a x^n dx = a b^{n+1}/(n+1).'
+- id: belirli_integral-0019
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{\pi} \sin(x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \sin(x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0020
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(2x) \, dx
+  command:
+    op: integrate
+    expr: \sin(2x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0021
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(3x) \, dx
+  command:
+    op: integrate
+    expr: \sin(3x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: \frac{2}{3}
+    srepr: Rational(2, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0022
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(4x) \, dx
+  command:
+    op: integrate
+    expr: \sin(4x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0023
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(5x) \, dx
+  command:
+    op: integrate
+    expr: \sin(5x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: \frac{2}{5}
+    srepr: Rational(2, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0024
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(6x) \, dx
+  command:
+    op: integrate
+    expr: \sin(6x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0025
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(7x) \, dx
+  command:
+    op: integrate
+    expr: \sin(7x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: \frac{2}{7}
+    srepr: Rational(2, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0026
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(8x) \, dx
+  command:
+    op: integrate
+    expr: \sin(8x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0027
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \sin(9x) \, dx
+  command:
+    op: integrate
+    expr: \sin(9x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: \frac{2}{9}
+    srepr: Rational(2, 9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi sin(ax) dx = (1 - cos(a pi))/a.
+- id: belirli_integral-0028
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(x) \, dx
+  command:
+    op: integrate
+    expr: \cos(x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0029
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(2x) \, dx
+  command:
+    op: integrate
+    expr: \cos(2x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0030
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(3x) \, dx
+  command:
+    op: integrate
+    expr: \cos(3x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0031
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(4x) \, dx
+  command:
+    op: integrate
+    expr: \cos(4x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0032
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(5x) \, dx
+  command:
+    op: integrate
+    expr: \cos(5x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0033
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(6x) \, dx
+  command:
+    op: integrate
+    expr: \cos(6x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0034
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(7x) \, dx
+  command:
+    op: integrate
+    expr: \cos(7x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0035
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{\pi} \cos(8x) \, dx
+  command:
+    op: integrate
+    expr: \cos(8x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0036
+  topic: belirli_integral
+  subtopic: trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{\pi} \cos(9x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \cos(9x)
+    var: x
+    lower: '0'
+    upper: \pi
+  expected:
+    latex: '0'
+    srepr: Integer(0)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^pi cos(ax) dx = sin(a pi)/a = 0 (a tam sayı için).
+- id: belirli_integral-0037
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{x} \, dx
+  command:
+    op: integrate
+    expr: e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: -1 + e
+    srepr: Add(Integer(-1), E)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0038
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} e^{x} \, dx
+  command:
+    op: integrate
+    expr: e^{x}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: -1 + e^{2}
+    srepr: Add(Integer(-1), exp(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0039
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} e^{x} \, dx
+  command:
+    op: integrate
+    expr: e^{x}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: -1 + e^{3}
+    srepr: Add(Integer(-1), exp(Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0040
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{2x} \, dx
+  command:
+    op: integrate
+    expr: e^{2x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{2} + \frac{e^{2}}{2}'
+    srepr: Add(Rational(-1, 2), Mul(Rational(1, 2), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0041
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} e^{2x} \, dx
+  command:
+    op: integrate
+    expr: e^{2x}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '- \frac{1}{2} + \frac{e^{4}}{2}'
+    srepr: Add(Rational(-1, 2), Mul(Rational(1, 2), exp(Integer(4))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0042
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} e^{2x} \, dx
+  command:
+    op: integrate
+    expr: e^{2x}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: '- \frac{1}{2} + \frac{e^{6}}{2}'
+    srepr: Add(Rational(-1, 2), Mul(Rational(1, 2), exp(Integer(6))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0043
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{3x} \, dx
+  command:
+    op: integrate
+    expr: e^{3x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{3} + \frac{e^{3}}{3}'
+    srepr: Add(Rational(-1, 3), Mul(Rational(1, 3), exp(Integer(3))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0044
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{2} e^{3x} \, dx
+  command:
+    op: integrate
+    expr: e^{3x}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: '- \frac{1}{3} + \frac{e^{6}}{3}'
+    srepr: Add(Rational(-1, 3), Mul(Rational(1, 3), exp(Integer(6))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0045
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{3} e^{3x} \, dx
+  command:
+    op: integrate
+    expr: e^{3x}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: '- \frac{1}{3} + \frac{e^{9}}{3}'
+    srepr: Add(Rational(-1, 3), Mul(Rational(1, 3), exp(Integer(9))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^b e^{ax} dx = (e^{ab} - 1)/a.
+- id: belirli_integral-0046
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-x} \, dx
+  command:
+    op: integrate
+    expr: e^{-x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{e} + 1'
+    srepr: Add(Integer(1), Mul(Integer(-1), exp(Integer(-1))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0047
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-2x} \, dx
+  command:
+    op: integrate
+    expr: e^{-2x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{2 \cdot e^{2}} + \frac{1}{2}'
+    srepr: Add(Rational(1, 2), Mul(Integer(-1), Rational(1, 2), exp(Integer(-2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0048
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-3x} \, dx
+  command:
+    op: integrate
+    expr: e^{-3x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{3 \cdot e^{3}} + \frac{1}{3}'
+    srepr: Add(Rational(1, 3), Mul(Integer(-1), Rational(1, 3), exp(Integer(-3))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0049
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-4x} \, dx
+  command:
+    op: integrate
+    expr: e^{-4x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{4 \cdot e^{4}} + \frac{1}{4}'
+    srepr: Add(Rational(1, 4), Mul(Integer(-1), Rational(1, 4), exp(Integer(-4))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0050
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-5x} \, dx
+  command:
+    op: integrate
+    expr: e^{-5x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{5 \cdot e^{5}} + \frac{1}{5}'
+    srepr: Add(Rational(1, 5), Mul(Integer(-1), Rational(1, 5), exp(Integer(-5))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0051
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-6x} \, dx
+  command:
+    op: integrate
+    expr: e^{-6x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{6 \cdot e^{6}} + \frac{1}{6}'
+    srepr: Add(Rational(1, 6), Mul(Integer(-1), Rational(1, 6), exp(Integer(-6))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0052
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-7x} \, dx
+  command:
+    op: integrate
+    expr: e^{-7x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{7 \cdot e^{7}} + \frac{1}{7}'
+    srepr: Add(Rational(1, 7), Mul(Integer(-1), Rational(1, 7), exp(Integer(-7))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0053
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} e^{-8x} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: e^{-8x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{8 \cdot e^{8}} + \frac{1}{8}'
+    srepr: Add(Rational(1, 8), Mul(Integer(-1), Rational(1, 8), exp(Integer(-8))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0054
+  topic: belirli_integral
+  subtopic: ustel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{0}^{1} e^{-9x} \, dx
+  command:
+    op: integrate
+    expr: e^{-9x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{9 \cdot e^{9}} + \frac{1}{9}'
+    srepr: Add(Rational(1, 9), Mul(Integer(-1), Rational(1, 9), exp(Integer(-9))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/ustel_negatif
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 e^{-ax} dx = (1 - e^{-a})/a.
+- id: belirli_integral-0055
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: \ln{\left(2 \right)}
+    srepr: log(Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0056
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{3} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '3'
+  expected:
+    latex: \ln{\left(3 \right)}
+    srepr: log(Integer(3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0057
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{4} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '4'
+  expected:
+    latex: \ln{\left(4 \right)}
+    srepr: log(Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0058
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{5} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '5'
+  expected:
+    latex: \ln{\left(5 \right)}
+    srepr: log(Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0059
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{6} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '6'
+  expected:
+    latex: \ln{\left(6 \right)}
+    srepr: log(Integer(6))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0060
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{7} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '7'
+  expected:
+    latex: \ln{\left(7 \right)}
+    srepr: log(Integer(7))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0061
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{8} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '8'
+  expected:
+    latex: \ln{\left(8 \right)}
+    srepr: log(Integer(8))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0062
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{9} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '9'
+  expected:
+    latex: \ln{\left(9 \right)}
+    srepr: log(Integer(9))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0063
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{10} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '10'
+  expected:
+    latex: \ln{\left(10 \right)}
+    srepr: log(Integer(10))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^b dx/x = ln b.
+- id: belirli_integral-0064
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{1}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: \ln{\left(2 \right)}
+    srepr: log(Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0065
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{2}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{2}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 2 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(2), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0066
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{3}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{3}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 3 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(3), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0067
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{4}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{4}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 4 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(4), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0068
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{5}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{5}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 5 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(5), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0069
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{6}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{6}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 6 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(6), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0070
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\int_{1}^{2} \frac{7}{x} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{7}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 7 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(7), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0071
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{8}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{8}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 8 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(8), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0072
+  topic: belirli_integral
+  subtopic: rasyonel_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 2
+  input:
+    kind: latex
+    value: \int_{1}^{2} \frac{9}{x} \, dx
+  command:
+    op: integrate
+    expr: \frac{9}{x}
+    var: x
+    lower: '1'
+    upper: '2'
+  expected:
+    latex: 9 \cdot \ln{\left(2 \right)}
+    srepr: Mul(Integer(9), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/logaritma_katsayili
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^2 a dx/x = a ln 2.
+- id: belirli_integral-0073
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{1}{x^{2} + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{4}
+    srepr: Mul(Rational(1, 4), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0074
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{2} \frac{1}{x^{2} + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 4}
+    var: x
+    lower: '0'
+    upper: '2'
+  expected:
+    latex: \frac{\pi}{8}
+    srepr: Mul(Rational(1, 8), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0075
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{3} \frac{1}{x^{2} + 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 9}
+    var: x
+    lower: '0'
+    upper: '3'
+  expected:
+    latex: \frac{\pi}{12}
+    srepr: Mul(Rational(1, 12), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0076
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{4} \frac{1}{x^{2} + 16} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 16}
+    var: x
+    lower: '0'
+    upper: '4'
+  expected:
+    latex: \frac{\pi}{16}
+    srepr: Mul(Rational(1, 16), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0077
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{5} \frac{1}{x^{2} + 25} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 25}
+    var: x
+    lower: '0'
+    upper: '5'
+  expected:
+    latex: \frac{\pi}{20}
+    srepr: Mul(Rational(1, 20), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0078
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{6} \frac{1}{x^{2} + 36} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 36}
+    var: x
+    lower: '0'
+    upper: '6'
+  expected:
+    latex: \frac{\pi}{24}
+    srepr: Mul(Rational(1, 24), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0079
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{7} \frac{1}{x^{2} + 49} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 49}
+    var: x
+    lower: '0'
+    upper: '7'
+  expected:
+    latex: \frac{\pi}{28}
+    srepr: Mul(Rational(1, 28), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0080
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{8} \frac{1}{x^{2} + 64} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 64}
+    var: x
+    lower: '0'
+    upper: '8'
+  expected:
+    latex: \frac{\pi}{32}
+    srepr: Mul(Rational(1, 32), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0081
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{9} \frac{1}{x^{2} + 81} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 81}
+    var: x
+    lower: '0'
+    upper: '9'
+  expected:
+    latex: \frac{\pi}{36}
+    srepr: Mul(Rational(1, 36), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^a dx/(x^2 + a^2) = arctan(1)/a = pi/(4a).
+- id: belirli_integral-0082
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-1}^{1} \frac{1}{x^{2} + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 1}
+    var: x
+    lower: '-1'
+    upper: '1'
+  expected:
+    latex: \frac{\pi}{2}
+    srepr: Mul(Rational(1, 2), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0083
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-2}^{2} \frac{1}{x^{2} + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 4}
+    var: x
+    lower: '-2'
+    upper: '2'
+  expected:
+    latex: \frac{\pi}{4}
+    srepr: Mul(Rational(1, 4), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0084
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-3}^{3} \frac{1}{x^{2} + 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 9}
+    var: x
+    lower: '-3'
+    upper: '3'
+  expected:
+    latex: \frac{\pi}{6}
+    srepr: Mul(Rational(1, 6), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0085
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-4}^{4} \frac{1}{x^{2} + 16} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 16}
+    var: x
+    lower: '-4'
+    upper: '4'
+  expected:
+    latex: \frac{\pi}{8}
+    srepr: Mul(Rational(1, 8), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0086
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-5}^{5} \frac{1}{x^{2} + 25} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 25}
+    var: x
+    lower: '-5'
+    upper: '5'
+  expected:
+    latex: \frac{\pi}{10}
+    srepr: Mul(Rational(1, 10), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0087
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{-6}^{6} \frac{1}{x^{2} + 36} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 36}
+    var: x
+    lower: '-6'
+    upper: '6'
+  expected:
+    latex: \frac{\pi}{12}
+    srepr: Mul(Rational(1, 12), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0088
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-7}^{7} \frac{1}{x^{2} + 49} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 49}
+    var: x
+    lower: '-7'
+    upper: '7'
+  expected:
+    latex: \frac{\pi}{14}
+    srepr: Mul(Rational(1, 14), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0089
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-8}^{8} \frac{1}{x^{2} + 64} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 64}
+    var: x
+    lower: '-8'
+    upper: '8'
+  expected:
+    latex: \frac{\pi}{16}
+    srepr: Mul(Rational(1, 16), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0090
+  topic: belirli_integral
+  subtopic: ters_trigonometrik_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{-9}^{9} \frac{1}{x^{2} + 81} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2} + 81}
+    var: x
+    lower: '-9'
+    upper: '9'
+  expected:
+    latex: \frac{\pi}{18}
+    srepr: Mul(Rational(1, 18), pi)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/arctan_simetrik
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çift fonksiyonun simetrik aralıkta integrali iki katıdır: pi/(2a).'
+- id: belirli_integral-0091
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{2} + \frac{e}{2}'
+    srepr: Add(Rational(-1, 2), Mul(Rational(1, 2), E))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0092
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{2x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{2x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{4} + \frac{e^{2}}{4}'
+    srepr: Add(Rational(-1, 4), Mul(Rational(1, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0093
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{3x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{3x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{6} + \frac{e^{3}}{6}'
+    srepr: Add(Rational(-1, 6), Mul(Rational(1, 6), exp(Integer(3))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0094
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{4x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{4x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{8} + \frac{e^{4}}{8}'
+    srepr: Add(Rational(-1, 8), Mul(Rational(1, 8), exp(Integer(4))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0095
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{5x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{5x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{10} + \frac{e^{5}}{10}'
+    srepr: Add(Rational(-1, 10), Mul(Rational(1, 10), exp(Integer(5))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0096
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{6x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{6x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{12} + \frac{e^{6}}{12}'
+    srepr: Add(Rational(-1, 12), Mul(Rational(1, 12), exp(Integer(6))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0097
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{7x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{7x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{14} + \frac{e^{7}}{14}'
+    srepr: Add(Rational(-1, 14), Mul(Rational(1, 14), exp(Integer(7))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0098
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{8x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{8x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{16} + \frac{e^{8}}{16}'
+    srepr: Add(Rational(-1, 16), Mul(Rational(1, 16), exp(Integer(8))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0099
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{9x^{2}} \, dx
+  command:
+    op: integrate
+    expr: x e^{9x^{2}}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \frac{1}{18} + \frac{e^{9}}{18}'
+    srepr: Add(Rational(-1, 18), Mul(Rational(1, 18), exp(Integer(9))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = a x^2 değişken değiştirmesiyle sınırlar 0 ve a olur.
+- id: belirli_integral-0100
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 1} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 1}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: \ln{\left(2 \right)}
+    srepr: log(Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0101
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 2} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 2}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(2 \right)} + \ln{\left(3 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(2))), log(Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0102
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 3} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 3}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(3 \right)} + \ln{\left(4 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(3))), log(Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0103
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 4} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 4}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(4 \right)} + \ln{\left(5 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(4))), log(Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0104
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{0}^{1} \frac{2x}{x^{2} + 5} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 5}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(5 \right)} + \ln{\left(6 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(5))), log(Integer(6)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0105
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 6} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 6}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(6 \right)} + \ln{\left(7 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(6))), log(Integer(7)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0106
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 7} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 7}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(7 \right)} + \ln{\left(8 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(7))), log(Integer(8)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0107
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 8} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 8}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(8 \right)} + \ln{\left(9 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(8))), log(Integer(9)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0108
+  topic: belirli_integral
+  subtopic: degisken_degistirme_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} \frac{2x}{x^{2} + 9} \, dx
+  command:
+    op: integrate
+    expr: \frac{2x}{x^{2} + 9}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '- \ln{\left(9 \right)} + \ln{\left(10 \right)}'
+    srepr: Add(Mul(Integer(-1), log(Integer(9))), log(Integer(10)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/degisken_degistirme_log
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: u = x^2 + a değişken değiştirmesiyle ln((1+a)/a) elde edilir.
+- id: belirli_integral-0109
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} x e^{x} \, dx
+  command:
+    op: integrate
+    expr: x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0110
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 2x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 2x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0111
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 3x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 3x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '3'
+    srepr: Integer(3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0112
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 4x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 4x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '4'
+    srepr: Integer(4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0113
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 5x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 5x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '5'
+    srepr: Integer(5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0114
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 6x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 6x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0115
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 7x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 7x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '7'
+    srepr: Integer(7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0116
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 8x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 8x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '8'
+    srepr: Integer(8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0117
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{1} 9x e^{x} \, dx
+  command:
+    op: integrate
+    expr: 9x e^{x}
+    var: x
+    lower: '0'
+    upper: '1'
+  expected:
+    latex: '9'
+    srepr: Integer(9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^1 x e^x dx = 1 olduğundan katsayılı integral a olur.
+- id: belirli_integral-0118
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{1}{4} + \frac{e^{2}}{4}
+    srepr: Add(Rational(1, 4), Mul(Rational(1, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0119
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 2x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 2x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{1}{2} + \frac{e^{2}}{2}
+    srepr: Add(Rational(1, 2), Mul(Rational(1, 2), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0120
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 3x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 3x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{3}{4} + \frac{3 \cdot e^{2}}{4}
+    srepr: Add(Rational(3, 4), Mul(Rational(3, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0121
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{1}^{e} 4x \ln(x) \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: 4x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: 1 + e^{2}
+    srepr: Add(Integer(1), exp(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0122
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 5x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 5x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{5}{4} + \frac{5 \cdot e^{2}}{4}
+    srepr: Add(Rational(5, 4), Mul(Rational(5, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0123
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 6x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 6x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{3}{2} + \frac{3 \cdot e^{2}}{2}
+    srepr: Add(Rational(3, 2), Mul(Rational(3, 2), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0124
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 7x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 7x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{7}{4} + \frac{7 \cdot e^{2}}{4}
+    srepr: Add(Rational(7, 4), Mul(Rational(7, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0125
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 8x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 8x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: 2 + 2 \cdot e^{2}
+    srepr: Add(Integer(2), Mul(Integer(2), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0126
+  topic: belirli_integral
+  subtopic: kismi_integrasyon_belirli
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{e} 9x \ln(x) \, dx
+  command:
+    op: integrate
+    expr: 9x \ln(x)
+    var: x
+    lower: '1'
+    upper: e
+  expected:
+    latex: \frac{9}{4} + \frac{9 \cdot e^{2}}{4}
+    srepr: Add(Rational(9, 4), Mul(Rational(9, 4), exp(Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/kismi_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^e x ln x dx = (e^2 + 1)/4; katsayılı hali a(e^2 + 1)/4.
+- id: belirli_integral-0127
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{2}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{2}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0128
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{3}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{3}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0129
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{4}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{4}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0130
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{5}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{5}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0131
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{6}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{6}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{5}
+    srepr: Rational(1, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0132
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{7}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{7}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0133
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{8}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{8}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{7}
+    srepr: Rational(1, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0134
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{9}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{9}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{8}
+    srepr: Rational(1, 8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0135
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{1}^{\infty} \frac{1}{x^{10}} \, dx
+  command:
+    op: integrate
+    expr: \frac{1}{x^{10}}
+    var: x
+    lower: '1'
+    upper: \infty
+  expected:
+    latex: \frac{1}{9}
+    srepr: Rational(1, 9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_p
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_1^oo dx/x^p = 1/(p-1) (p > 1 için yakınsar).
+- id: belirli_integral-0136
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-x} \, dx
+  command:
+    op: integrate
+    expr: e^{-x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: '1'
+    srepr: Integer(1)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0137
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-2x} \, dx
+  command:
+    op: integrate
+    expr: e^{-2x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{2}
+    srepr: Rational(1, 2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0138
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\int_{0}^{\infty} e^{-3x} \, dx$ integralini hesapla
+  command:
+    op: integrate
+    expr: e^{-3x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{3}
+    srepr: Rational(1, 3)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0139
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-4x} \, dx
+  command:
+    op: integrate
+    expr: e^{-4x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{4}
+    srepr: Rational(1, 4)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0140
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-5x} \, dx
+  command:
+    op: integrate
+    expr: e^{-5x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{5}
+    srepr: Rational(1, 5)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0141
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-6x} \, dx
+  command:
+    op: integrate
+    expr: e^{-6x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{6}
+    srepr: Rational(1, 6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0142
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-7x} \, dx
+  command:
+    op: integrate
+    expr: e^{-7x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{7}
+    srepr: Rational(1, 7)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0143
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-8x} \, dx
+  command:
+    op: integrate
+    expr: e^{-8x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{8}
+    srepr: Rational(1, 8)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).
+- id: belirli_integral-0144
+  topic: belirli_integral
+  subtopic: has_olmayan_integral
+  chapter_ref: aicls:bolum-4
+  difficulty: 3
+  input:
+    kind: latex
+    value: \int_{0}^{\infty} e^{-9x} \, dx
+  command:
+    op: integrate
+    expr: e^{-9x}
+    var: x
+    lower: '0'
+    upper: \infty
+  expected:
+    latex: \frac{1}{9}
+    srepr: Rational(1, 9)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:belirli/has_olmayan_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: int_0^oo e^{-ax} dx = 1/a (a > 0 için yakınsar).

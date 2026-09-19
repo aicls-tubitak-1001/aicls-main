@@ -1,0 +1,100 @@
+{"cer": 5.6, "hyp": "\\int_{a}^{b}f(x)dx=F(b)-F(a)", "id": "123", "ref": "2\\pi r"}
+{"cer": 5.2, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "110", "ref": "\\left[a,b\\right]"}
+{"cer": 5.0, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "27", "ref": "2\\pi r"}
+{"cer": 5.0, "hyp": "\\lim_{x\\to\\infty}\\frac{1}{x}=0", "id": "78", "ref": "\\left[a,b\\right]"}
+{"cer": 3.4, "hyp": "\\forall\\varepsilon>0", "id": "91", "ref": "2\\pi r"}
+{"cer": 3.2, "hyp": "y=\\sqrt{x^{2}+1}", "id": "14", "ref": "\\left[a,b\\right]"}
+{"cer": 3.0, "hyp": "\\lim_{x\\to0^{+}}\\ln x=-\\infty", "id": "89", "ref": "\\binom{n}{k}"}
+{"cer": 2.8, "hyp": "y=\\sqrt{x^{2}+1}", "id": "59", "ref": "2\\pi r"}
+{"cer": 2.75, "hyp": "\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}", "id": "41", "ref": "e^{x}\\cos(x)"}
+{"cer": 2.5, "hyp": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1", "id": "11", "ref": "f'(x)=2x+3"}
+{"cer": 2.5, "hyp": "\\frac{d}{dx}\\ln x=\\frac{1}{x}", "id": "57", "ref": "\\binom{n}{k}"}
+{"cer": 2.4375, "hyp": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}", "id": "71", "ref": "y=\\sqrt{x^{2}+1}"}
+{"cer": 2.4, "hyp": "e^{x}\\cos(x)", "id": "46", "ref": "\\left[a,b\\right]"}
+{"cer": 2.263157894736842, "hyp": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}", "id": "104", "ref": "\\ln(x)+\\log_{10}(x)"}
+{"cer": 2.2, "hyp": "\\int_{0}^{\\pi}\\sin x\\,dx=2", "id": "43", "ref": "f'(x)=2x+3"}
+{"cer": 2.0, "hyp": "\\forall\\varepsilon>0", "id": "85", "ref": "\\sqrt[3]{x}"}
+{"cer": 1.631578947368421, "hyp": "\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}", "id": "26", "ref": "\\frac{x^{2}-1}{x-1}"}
+{"cer": 1.5, "hyp": "\\forall\\varepsilon>0", "id": "9", "ref": "e^{x}\\cos(x)"}
+{"cer": 1.5, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "54", "ref": "\\arctan(x)"}
+{"cer": 1.5, "hyp": "\\frac{x^{2}-1}{x-1}", "id": "86", "ref": "\\arctan(x)"}
+{"cer": 1.5, "hyp": "\\forall\\varepsilon>0", "id": "105", "ref": "e^{x}\\cos(x)"}
+{"cer": 1.48, "hyp": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}", "id": "80", "ref": "\\sin^{2}(x)+\\cos^{2}(x)=1"}
+{"cer": 1.45, "hyp": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e", "id": "34", "ref": "\\frac{d}{dx}\\left(x^{2}\\right)=2x"}
+{"cer": 1.4, "hyp": "y=\\sqrt{x^{2}+1}", "id": "22", "ref": "\\arctan(x)"}
+{"cer": 1.368421052631579, "hyp": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e", "id": "116", "ref": "\\int e^{x}dx=e^{x}+C"}
+{"cer": 1.3, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "24", "ref": "\\forall\\varepsilon>0"}
+{"cer": 1.3, "hyp": "y=\\sqrt{x^{2}+1}", "id": "107", "ref": "f'(x)=2x+3"}
+{"cer": 1.3, "hyp": "\\int_{a}^{b}f(x)dx=F(b)-F(a)", "id": "120", "ref": "\\forall\\varepsilon>0"}
+{"cer": 1.263157894736842, "hyp": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}", "id": "122", "ref": "\\frac{x^{2}-1}{x-1}"}
+{"cer": 1.25, "hyp": "f'(x)=2x+3", "id": "25", "ref": "\\binom{n}{k}"}
+{"cer": 1.25, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "39", "ref": "y=\\sqrt{x^{2}+1}"}
+{"cer": 1.2222222222222223, "hyp": "e^{x}\\cos(x)", "id": "53", "ref": "\\sqrt[3]{x}"}
+{"cer": 1.1904761904761905, "hyp": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}", "id": "115", "ref": "\\frac{d}{dx}e^{x}=e^{x}"}
+{"cer": 1.1875, "hyp": "\\sin^{2}(x)+\\cos^{2}(x)=1", "id": "103", "ref": "y=\\sqrt{x^{2}+1}"}
+{"cer": 1.1578947368421053, "hyp": "\\lim_{x\\to\\infty}\\frac{1}{x}=0", "id": "84", "ref": "\\int e^{x}dx=e^{x}+C"}
+{"cer": 1.1304347826086956, "hyp": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e", "id": "92", "ref": "\\int_{0}^{\\pi}\\sin x\\,dx=2"}
+{"cer": 1.105263157894737, "hyp": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e", "id": "30", "ref": "a_{n}=\\frac{1}{n^{2}}"}
+{"cer": 1.0909090909090908, "hyp": "\\int x^{2}\\,dx=\\frac{x^{3}}{3}+C", "id": "87", "ref": "|x-a|<\\delta"}
+{"cer": 1.0909090909090908, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "119", "ref": "|x-a|<\\delta"}
+{"cer": 1.0869565217391304, "hyp": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}", "id": "28", "ref": "\\int_{0}^{\\pi}\\sin x\\,dx=2"}
+{"cer": 1.0476190476190477, "hyp": "\\int\\frac{1}{x}dx=\\ln|x|+C", "id": "19", "ref": "\\frac{d}{dx}e^{x}=e^{x}"}
+{"cer": 1.0384615384615385, "hyp": "\\int\\frac{1}{x}dx=\\ln|x|+C", "id": "77", "ref": "\\lim_{x\\to\\infty}\\frac{1}{x}=0"}
+{"cer": 1.0384615384615385, "hyp": "\\int\\frac{1}{x}dx=\\ln|x|+C", "id": "109", "ref": "\\lim_{x\\to\\infty}\\frac{1}{x}=0"}
+{"cer": 1.0, "hyp": "\\left[a,b\\right]", "id": "8", "ref": "\\ln(x)+\\log_{10}(x)"}
+{"cer": 1.0, "hyp": "\\left[a,b\\right]", "id": "20", "ref": "\\int e^{x}dx=e^{x}+C"}
+{"cer": 1.0, "hyp": "2\\pi r", "id": "52", "ref": "\\int e^{x}dx=e^{x}+C"}
+{"cer": 1.0, "hyp": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1", "id": "62", "ref": "a_{n}=\\frac{1}{n^{2}}"}
+{"cer": 1.0, "hyp": "\\binom{n}{k}", "id": "75", "ref": "f'(x)=2x+3"}
+{"cer": 1.0, "hyp": "\\sin^{2}(x)+\\cos^{2}(x)=1", "id": "125", "ref": "\\frac{d}{dx}\\ln x=\\frac{1}{x}"}
+{"cer": 0.9642857142857143, "hyp": "\\int\\frac{1}{x}dx=\\ln|x|+C", "id": "95", "ref": "\\lim_{x\\to0^{+}}\\ln x=-\\infty"}
+{"cer": 0.9565217391304348, "hyp": "|x-a|<\\delta", "id": "111", "ref": "\\frac{dy}{dx}=3x^{2}-2x"}
+{"cer": 0.9545454545454546, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "23", "ref": "|x-a|<\\delta"}
+{"cer": 0.95, "hyp": "\\binom{n}{k}", "id": "66", "ref": "\\frac{d}{dx}\\left(x^{2}\\right)=2x"}
+{"cer": 0.9473684210526315, "hyp": "2\\pi r", "id": "40", "ref": "\\ln(x)+\\log_{10}(x)"}
+{"cer": 0.9473684210526315, "hyp": "\\frac{d}{dx}\\ln x=\\frac{1}{x}", "id": "94", "ref": "a_{n}=\\frac{1}{n^{2}}"}
+{"cer": 0.9375, "hyp": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}", "id": "44", "ref": "\\int\\frac{1}{x}dx=\\ln|x|+C"}
+{"cer": 0.9285714285714286, "hyp": "\\binom{n}{k}", "id": "113", "ref": "\\int_{a}^{b}f(x)dx=F(b)-F(a)"}
+{"cer": 0.9259259259259259, "hyp": "2\\pi r", "id": "1", "ref": "\\int x^{2}\\,dx=\\frac{x^{3}}{3}+C"}
+{"cer": 0.9259259259259259, "hyp": "\\binom{n}{k}", "id": "37", "ref": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}"}
+{"cer": 0.9259259259259259, "hyp": "f'(x)=2x+3", "id": "64", "ref": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1"}
+{"cer": 0.9166666666666666, "hyp": "\\binom{n}{k}", "id": "73", "ref": "e^{x}\\cos(x)"}
+{"cer": 0.9047619047619048, "hyp": "\\sqrt[3]{x}", "id": "51", "ref": "\\frac{d}{dx}e^{x}=e^{x}"}
+{"cer": 0.9, "hyp": "\\sqrt[3]{x}", "id": "2", "ref": "\\frac{d}{dx}\\left(x^{2}\\right)=2x"}
+{"cer": 0.9, "hyp": "e^{x}\\cos(x)", "id": "88", "ref": "\\forall\\varepsilon>0"}
+{"cer": 0.8947368421052632, "hyp": "\\frac{x^{2}-1}{x-1}", "id": "72", "ref": "\\ln(x)+\\log_{10}(x)"}
+{"cer": 0.8947368421052632, "hyp": "\\binom{n}{k}", "id": "126", "ref": "a_{n}=\\frac{1}{n^{2}}"}
+{"cer": 0.8928571428571429, "hyp": "\\lim_{x\\to\\infty}\\frac{1}{x}=0", "id": "17", "ref": "\\int_{a}^{b}f(x)dx=F(b)-F(a)"}
+{"cer": 0.8928571428571429, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "31", "ref": "\\lim_{x\\to0^{+}}\\ln x=-\\infty"}
+{"cer": 0.8928571428571429, "hyp": "\\sqrt[3]{x}", "id": "63", "ref": "\\lim_{x\\to0^{+}}\\ln x=-\\infty"}
+{"cer": 0.8888888888888888, "hyp": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}", "id": "102", "ref": "\\frac{\\partial f}{\\partial x}"}
+{"cer": 0.8888888888888888, "hyp": "\\binom{n}{k}", "id": "117", "ref": "\\sqrt[3]{x}"}
+{"cer": 0.8846153846153846, "hyp": "\\forall\\varepsilon>0", "id": "13", "ref": "\\lim_{x\\to\\infty}\\frac{1}{x}=0"}
+{"cer": 0.8823529411764706, "hyp": "e^{x}\\cos(x)", "id": "50", "ref": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e"}
+{"cer": 0.875, "hyp": "2\\pi r", "id": "121", "ref": "\\binom{n}{k}"}
+{"cer": 0.8695652173913043, "hyp": "2\\pi r", "id": "124", "ref": "\\int_{0}^{\\pi}\\sin x\\,dx=2"}
+{"cer": 0.8636363636363636, "hyp": "e^{x}\\cos(x)", "id": "55", "ref": "|x-a|<\\delta"}
+{"cer": 0.8636363636363636, "hyp": "f'(x)=2x+3", "id": "93", "ref": "\\frac{d}{dx}\\ln x=\\frac{1}{x}"}
+{"cer": 0.8571428571428571, "hyp": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1", "id": "49", "ref": "\\int_{a}^{b}f(x)dx=F(b)-F(a)"}
+{"cer": 0.8518518518518519, "hyp": "2\\pi r", "id": "70", "ref": "\\frac{\\partial f}{\\partial x}"}
+{"cer": 0.85, "hyp": "\\binom{n}{k}", "id": "56", "ref": "\\forall\\varepsilon>0"}
+{"cer": 0.85, "hyp": "\\frac{d}{dx}\\left(x^{2}\\right)=2x", "id": "106", "ref": "\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}"}
+{"cer": 0.8461538461538461, "hyp": "\\arctan(x)", "id": "45", "ref": "\\lim_{x\\to\\infty}\\frac{1}{x}=0"}
+{"cer": 0.8421052631578947, "hyp": "e^{x}\\cos(x)", "id": "90", "ref": "\\frac{x^{2}-1}{x-1}"}
+{"cer": 0.8387096774193549, "hyp": "|x-a|<\\delta", "id": "68", "ref": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}"}
+{"cer": 0.8260869565217391, "hyp": "f'(x)=2x+3", "id": "47", "ref": "\\frac{dy}{dx}=3x^{2}-2x"}
+{"cer": 0.8260869565217391, "hyp": "\\frac{d}{dx}e^{x}=e^{x}", "id": "60", "ref": "\\int_{0}^{\\pi}\\sin x\\,dx=2"}
+{"cer": 0.8214285714285714, "hyp": "\\frac{dy}{dx}=3x^{2}-2x", "id": "81", "ref": "\\int_{a}^{b}f(x)dx=F(b)-F(a)"}
+{"cer": 0.8181818181818182, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "61", "ref": "\\frac{d}{dx}\\ln x=\\frac{1}{x}"}
+{"cer": 0.8148148148148148, "hyp": "\\forall\\varepsilon>0", "id": "0", "ref": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1"}
+{"cer": 0.8148148148148148, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "101", "ref": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}"}
+{"cer": 0.8125, "hyp": "\\int_{0}^{\\pi}\\sin x\\,dx=2", "id": "108", "ref": "\\int\\frac{1}{x}dx=\\ln|x|+C"}
+{"cer": 0.8064516129032258, "hyp": "\\arctan(x)", "id": "36", "ref": "\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}"}
+{"cer": 0.8, "hyp": "\\lim_{x\\to\\infty}\\frac{1}{x}=0", "id": "10", "ref": "\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}"}
+{"cer": 0.8, "hyp": "f'(x)=2x+3", "id": "16", "ref": "\\sin^{2}(x)+\\cos^{2}(x)=1"}
+{"cer": 0.8, "hyp": "f'(x)=2x+3", "id": "112", "ref": "\\sin^{2}(x)+\\cos^{2}(x)=1"}
+{"cer": 0.7941176470588235, "hyp": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}", "id": "114", "ref": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e"}
+{"cer": 0.7916666666666666, "hyp": "\\int e^{x}dx=e^{x}+C", "id": "3", "ref": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}"}
+{"cer": 0.7894736842105263, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "58", "ref": "\\frac{x^{2}-1}{x-1}"}
+{"cer": 0.782608695652174, "hyp": "a_{n}=\\frac{1}{n^{2}}", "id": "15", "ref": "\\frac{dy}{dx}=3x^{2}-2x"}
+{"cer": 0.7777777777777778, "hyp": "\\frac{dy}{dx}=3x^{2}-2x", "id": "5", "ref": "\\int_{0}^{1}x^{2}dx=\\frac{1}{3}"}

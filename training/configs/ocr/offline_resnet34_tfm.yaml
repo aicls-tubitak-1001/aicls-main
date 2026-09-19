@@ -1,0 +1,59 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Çevrimdışı OCR ana hattı: MathWriting rasterleri -> ResNet34 kodlayıcı -> Transformer çözücü.
+# docs/ml/egitim-altyapisi.md §1'de basılı işlenmiş örneğin ta kendisidir; değerler oradan
+# birebir alınmıştır (tests/unit/ml/test_configs_validate.py bunu satır satır doğrular).
+#
+# - DATASET_DOWNLOAD: data.root altındaki parçalar training/scripts/prepare_mathwriting.py
+#   çıktısıdır ve ham veri indirilmeden var olmaz.
+# - CUDA_INSTALL: train.amp=bf16 GPU ister; CPU'da koşacaksa train.amp="off" ezmesi gerekir.
+# - TRAINING: gerçek veriyle her koşu onaya bağlıdır (ADR-0012).
+#
+# Epoch bütçesi ELDE TAHMİN EDİLMEZ: `aicls profile --config training/configs/ocr/profile.yaml
+# --steps 200` ölçümünden türetilir (docs/ml/egitim-altyapisi.md §8). Buradaki epochs: 30
+# bir üst sınır niyetidir, ölçülmüş bir süre değildir.
+_base_: ../_base.yaml
+run:
+  name: ocr_offline_resnet34_tfm
+  seed: 1234
+  deterministic: true
+  tags: [ocr, offline]
+  notes: "Çevrimdışı OCR ana hattı (ResNet34 + Transformer); ablasyon tablosunun referans satırı."
+data:
+  dataset: mathwriting
+  root: ${AICLS_DATA_ROOT}/mathwriting/shards
+  mode: offline
+  image_size: [96, 384]
+  preprocess: [grayscale, normalize01, resize_pad] # ablasyon: + gaussian_blur, laplacian_sharpen
+  synthetic_ratio: 0.5 # müfredat: önce yalnız sentetik ısınma, sonra 0.5 karışım
+  synthetic_warmup_epochs: 2
+  augment: {affine_jitter: 0.05, stroke_dropout: 0.02}
+  max_label_len: 160
+  batch_size: 64 # §8 bellek zarfı başlangıç değeri; profil ölçümünden sonra güncellenir
+  num_workers: 6 # bugünkü makine 8 mantıksal çekirdek; satın alınan iş istasyonunda 12
+model:
+  family: seq2seq_image
+  encoder: resnet34 # torchvision, weights=None (ADR-0012)
+  decoder: transformer
+  d_model: 256
+  layers: 6
+  heads: 8
+  dropout: 0.1
+  vocab_path: ${AICLS_DATA_ROOT}/mathwriting/vocab.json
+optim: {name: adamw, lr: 3.0e-4, weight_decay: 0.01, betas: [0.9, 0.98], scheduler: cosine, warmup_steps: 2000}
+# early_stop_patience: 2000 örneklik doğrulama alt kümesinde ölçülen gürültü sinyalden büyük.
+# 2026-09-09, 35 doğrulama (adım 20000-88000): ardışık CER farklarının std'si 0,0085, adım başına
+# ortalama iyileşme 0,0013. Sabır 5 iken 78000'deki şanslı rekora (eğilimin 0,007 altı) karşı
+# beş "iyileşmedi" gelince koşu adım 88000'de, kosinüs takviminin ortasında (lr 2e-4) ve eğitim
+# kaybı hâlâ düşerken durdu. 25 doğrulama = 50000 adım ≈ takvimin dörtte biri: gerçek bir
+# platoyu hâlâ yakalar, gürültünün rekorunu bekleyecek kadar da uzun.
+train: {epochs: 30, max_steps: null, grad_accum: 1, amp: bf16, grad_clip: 1.0, eval_every: 2000, ckpt_every: 2000, log_every: 50, early_stop_patience: 25, allow_dirty: false}
+# recalibrate_norm_samples: ResNet34 36 BatchNorm katmanı taşır ve biriken çalışan
+# istatistikler ağırlıkları tarif etmeyi bırakabiliyor. 2026-09-08, adım 18000: aynı
+# ağırlıklar batch istatistikleriyle 0,32, birikmiş istatistiklerle 8,52 kayıp; CER 7,34'ten
+# 0,152'ye. Tahmin EĞİTİM bölmesinden alınır (doğrulama bölmesinden alınsaydı ölçüme sızıntı
+# olurdu); ölçülen maliyet ~20 s.
+eval: {beam: 4, max_n_val: 2000, metrics: [cer, ter, exprate, symeq], recalibrate_norm_samples: 4096}
+tracking: {backend: jsonl, mlflow_uri: null, experiment: ocr}
+checkpoint: {keep_last: 2, keep_best: 1, metric: val_cer, mode: min} # §4.1: en iyi = en düşük CER
+gates: {synthetic: false} # salt belge; kapı kararı data.dataset'ten gelir

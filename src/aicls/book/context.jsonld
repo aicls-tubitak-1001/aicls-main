@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "aicls": "https://ai-cls.example/ns#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "inLanguage": "schema:inLanguage",
+    "identifier": "dcterms:identifier",
+    "source": "dcterms:source",
+    "altLabel": {"@id": "skos:altLabel", "@container": "@set"},
+    "related": {"@id": "skos:related", "@type": "@id", "@container": "@set"},
+    "chapter": "aicls:chapter",
+    "number": "aicls:number",
+    "bodyMarkdown": "aicls:bodyMarkdown",
+    "latex": {"@id": "aicls:latex", "@container": "@list"},
+    "figure": {"@id": "aicls:hasFigure", "@type": "@id", "@container": "@set"},
+    "partOf": {"@id": "aicls:partOf", "@type": "@id"},
+    "requires": {"@id": "aicls:requires", "@type": "@id", "@container": "@set"},
+    "illustrates": {"@id": "aicls:illustrates", "@type": "@id", "@container": "@set"},
+    "proves": {"@id": "aicls:proves", "@type": "@id"},
+    "next": {"@id": "aicls:next", "@type": "@id"}
+  }
+}

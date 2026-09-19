@@ -1,0 +1,99 @@
+{
+  "breakdown": {
+    "by_topic": {
+      "belirli_integral": {
+        "correct": 144.0,
+        "n": 144.0,
+        "rate": 1.0
+      },
+      "belirsiz_integral": {
+        "correct": 180.0,
+        "n": 180.0,
+        "rate": 1.0
+      },
+      "denklem_esitsizlik": {
+        "correct": 60.0,
+        "n": 60.0,
+        "rate": 1.0
+      },
+      "diziler_seriler": {
+        "correct": 100.0,
+        "n": 100.0,
+        "rate": 1.0
+      },
+      "grafik": {
+        "correct": 24.0,
+        "n": 24.0,
+        "rate": 1.0
+      },
+      "integral_uygulamalari": {
+        "correct": 96.0,
+        "n": 96.0,
+        "rate": 1.0
+      },
+      "limit": {
+        "correct": 144.0,
+        "n": 144.0,
+        "rate": 1.0
+      },
+      "sureklilik": {
+        "correct": 72.0,
+        "n": 72.0,
+        "rate": 1.0
+      },
+      "turev": {
+        "correct": 240.0,
+        "n": 240.0,
+        "rate": 1.0
+      },
+      "turev_uygulamalari": {
+        "correct": 144.0,
+        "n": 144.0,
+        "rate": 1.0
+      }
+    },
+    "counts": {
+      "correct": 1204,
+      "error": 0,
+      "unsupported": 0,
+      "wrong": 0
+    },
+    "failures": [],
+    "notes": "PROVENANCE: this curriculum set was authored inside the project (machine-expanded from hand-written templates). It is not an independent test set and no row is copied from a textbook. Expected answers come from the curriculum rule, not from the CAS; the compiler compares the engine against them. Any number measured here must be reported with this sentence.",
+    "parse_failures": []
+  },
+  "ci95": {
+    "correct_rate": [
+      1.0,
+      1.0
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:a84a2e1ee92baf12a534f5a69e293164e7955f0c283e5fba0405c740872e20e5",
+  "dataset_version": "curriculum-2026.09-v1",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": null,
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "cas",
+  "metrics": {
+    "correct_rate": 1.0,
+    "error_rate": 0.0,
+    "mean_ms": 5.585906146179402,
+    "p50_ms": 2.3840000000000003,
+    "p95_ms": 17.465899999999987,
+    "parse_n": 1134.0,
+    "parse_success_rate": 1.0,
+    "unsupported_rate": 0.0
+  },
+  "model_sha256": null,
+  "model_version": null,
+  "n": 1204,
+  "name": "cas_curriculum",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:11Z"
+}

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. License decision pending (see LICENSE)."
+type: software
+title: "AI-CLS: AI-supported interactive platform for teaching Calculus (Temel Analiz)"
+abstract: >-
+  Web platform combining handwriting recognition (OCR to LaTeX), Turkish speech recognition
+  (ASR), a rule-based Turkish text-to-command layer, a LaTeX-to-SymPy parser and a deterministic
+  computer algebra core (SymPy) with textbook knowledge-graph integration, developed under
+  TÜBİTAK 1001 project 125E748.
+version: 0.1.0.dev0
+date-released: "2026-09-07"
+authors:
+  - family-names: Şahin
+    given-names: Çağrı
+    email: c.sahin@alparslan.edu.tr
+    affiliation: "Muş Alparslan Üniversitesi"
+  - family-names: Turhan
+    given-names: Mehmet Murat
+  - family-names: Güler
+    given-names: Şahiner
+keywords:
+  - calculus education
+  - computer algebra
+  - handwritten mathematics recognition
+  - Turkish speech recognition
+  - SymPy
+  - LaTeX
+identifiers:
+  - type: other
+    value: "TÜBİTAK 1001 125E748"
+    description: "Funding project number"
+repository-code: "https://github.com/ai-cls/ai-cls"

@@ -1,0 +1,23 @@
+# AI-CLS eğitim kuyruğu — tek iş kilidi (docs/ml/egitim-altyapisi.md §8, aicls.ml.queue).
+#
+# Bu dosya AÇIKLAMA METNİDİR; kilidin kendisi DEĞİLDİR ve hiçbir kod bu dosyaya yazmaz.
+# Gerçek kilit `training/queue.lock` dosyasıdır ve `.gitignore` içindedir:
+#
+#   {"pid": 12345, "host": "WORKSTATION", "started_at": "2027-01-15T09:00:00Z",
+#    "job": "ocr_offline_resnet34_tfm", "user": "csahin"}
+#
+# Neden ayrı bir dosya: kilit, koşu SÜRERKEN duruyor ve `RunManifest` tam o sırada git durumunu
+# kaydediyor. Kilit izlenen bir dosya olsaydı her kuyruklu koşu kirli ağaç yüzünden
+# `citable=false` damgası yerdi (ADR-0007) — yani TÜBİTAK raporuna alınamazdı. Dalga 5'te
+# kuyruk bu dosyayı "okunamayan kilit" sayıp SİLİYORDU; artık `TrainingQueue` hiçbir dosyayı
+# silmiyor, yalnızca `queue.lock` üzerine yazıyor (`ml.queue.unreadable_lock_ignored`).
+#
+# Kurallar:
+#   * Aynı anda tek eğitim işi koşar: 32 GB VRAM'i iki iş paylaşamaz.
+#   * `nvidia-smi` başka bir sürecin GPU belleğini tuttuğunu gösterirse kuyruk yine reddeder
+#     (`TrainingQueueBusyError`, `ErrorCode.TRAINING_BUSY`, çıkış kodu 1).
+#   * `queue.lock` dosyasını elle silmek, koşan bir işin üzerine ikinci bir iş başlatmak demektir;
+#     PID canlıysa (`aicls.ml.queue.process_is_alive`) dokunmayın. Ölü bir PID zaten otomatik
+#     devralınır ve kilidin üzerine yazılır.
+#   * Kuyruk sırası tutmak için değil, kilit için vardır; ne bu dosyayı ne de `queue.lock`
+#     dosyasını elle DOLDURMAYIN.

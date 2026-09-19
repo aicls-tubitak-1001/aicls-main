@@ -1,0 +1,15 @@
+# GATE: DATASET_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Ön işleme ablasyonu: öneri A.2.1'in adlandırdığı Gauss bulanıklaştırma ve Laplace
+# keskinleştirme adımları referans hattın grayscale/normalize01/resize_pad zincirinin ÖNÜNE
+# eklenir. Tek fark data.preprocess'tir (ADR-0013'ün 6. hafta deneyinde CER karşılaştırması
+# için kullanılacak satır); geri kalan her şey offline_resnet34_tfm'den kalıtılır.
+#
+# Adım sırası aicls.ocr.PREPROCESS_STEPS'in kanonik sırasıdır: filtreler önce, renk/ölçek sonra.
+_base_: ./offline_resnet34_tfm.yaml
+run:
+  name: ocr_ablation_preproc
+  tags: [ocr, offline, ablation_preprocess]
+  notes: "Ön işleme ablasyonu: gaussian_blur + laplacian_sharpen açık; referansla tek fark budur."
+data:
+  preprocess: [gaussian_blur, laplacian_sharpen, grayscale, normalize01, resize_pad]

@@ -1,0 +1,106 @@
+{"construct": "\\begin{cases}", "expect_error": "unsupported", "id": "unsupported-0001", "latex": "\\begin{cases} x & x > 0 \\\\ -x & x \\le 0 \\end{cases}"}
+{"construct": "\\begin{align}", "expect_error": "unsupported", "id": "unsupported-0002", "latex": "\\begin{align} x &= 1 \\end{align}"}
+{"construct": "\\begin{aligned}", "expect_error": "unsupported", "id": "unsupported-0003", "latex": "\\begin{aligned} y &= 2x \\end{aligned}"}
+{"construct": "\\begin{array}", "expect_error": "unsupported", "id": "unsupported-0004", "latex": "\\begin{array}{cc} 1 & 2 \\end{array}"}
+{"construct": "\\vec", "expect_error": "unsupported", "id": "unsupported-0005", "latex": "\\vec{v} + \\vec{w}"}
+{"construct": "\\hat", "expect_error": "unsupported", "id": "unsupported-0006", "latex": "\\hat{x} \\cdot \\hat{y}"}
+{"construct": "\\widehat", "expect_error": "unsupported", "id": "unsupported-0007", "latex": "\\widehat{ABC}"}
+{"construct": "\\bar", "expect_error": "unsupported", "id": "unsupported-0008", "latex": "\\bar{z} + 1"}
+{"construct": "\\overline", "expect_error": "unsupported", "id": "unsupported-0009", "latex": "\\overline{z} \\cdot z"}
+{"construct": "\\underline", "expect_error": "unsupported", "id": "unsupported-0010", "latex": "\\underline{x}"}
+{"construct": "\\tilde", "expect_error": "unsupported", "id": "unsupported-0011", "latex": "\\tilde{f}(x)"}
+{"construct": "\\widetilde", "expect_error": "unsupported", "id": "unsupported-0012", "latex": "\\widetilde{g}(x)"}
+{"construct": "\\dot", "expect_error": "unsupported", "id": "unsupported-0013", "latex": "\\dot{x} + \\dot{y}"}
+{"construct": "\\ddot", "expect_error": "unsupported", "id": "unsupported-0014", "latex": "\\ddot{x}"}
+{"construct": "\\overrightarrow", "expect_error": "unsupported", "id": "unsupported-0015", "latex": "\\overrightarrow{AB}"}
+{"construct": "\\mathbf", "expect_error": "unsupported", "id": "unsupported-0016", "latex": "\\mathbf{v}"}
+{"construct": "\\boldsymbol", "expect_error": "unsupported", "id": "unsupported-0017", "latex": "\\boldsymbol{\\alpha}"}
+{"construct": "\\mathcal", "expect_error": "unsupported", "id": "unsupported-0018", "latex": "\\mathcal{L}(f)"}
+{"construct": "\\mathfrak", "expect_error": "unsupported", "id": "unsupported-0019", "latex": "\\mathfrak{g}"}
+{"construct": "\\mathsf", "expect_error": "unsupported", "id": "unsupported-0020", "latex": "\\mathsf{A}"}
+{"construct": "\\mathtt", "expect_error": "unsupported", "id": "unsupported-0021", "latex": "\\mathtt{B}"}
+{"construct": "\\label", "expect_error": "unsupported", "id": "unsupported-0022", "latex": "\\label{eq:1} x = 1"}
+{"construct": "\\tag", "expect_error": "unsupported", "id": "unsupported-0023", "latex": "x = 1 \\tag{1}"}
+{"construct": "\\ref", "expect_error": "unsupported", "id": "unsupported-0024", "latex": "\\ref{eq:1}"}
+{"construct": "\\iint", "expect_error": "unsupported", "id": "unsupported-0025", "latex": "\\iint f(x, y) \\, dx"}
+{"construct": "\\iiint", "expect_error": "unsupported", "id": "unsupported-0026", "latex": "\\iiint f \\, dx"}
+{"construct": "\\oint", "expect_error": "unsupported", "id": "unsupported-0027", "latex": "\\oint_{C} f \\, dx"}
+{"construct": "\\binom", "expect_error": "unsupported", "id": "unsupported-0028", "latex": "\\binom{n}{k}"}
+{"construct": "\\dbinom", "expect_error": "unsupported", "id": "unsupported-0029", "latex": "\\dbinom{n}{2}"}
+{"construct": "\\cup", "expect_error": "unsupported", "id": "unsupported-0030", "latex": "A \\cup B"}
+{"construct": "\\cap", "expect_error": "unsupported", "id": "unsupported-0031", "latex": "A \\cap B"}
+{"construct": "\\setminus", "expect_error": "unsupported", "id": "unsupported-0032", "latex": "A \\setminus B"}
+{"construct": "\\subset", "expect_error": "unsupported", "id": "unsupported-0033", "latex": "A \\subset B"}
+{"construct": "\\subseteq", "expect_error": "unsupported", "id": "unsupported-0034", "latex": "A \\subseteq B"}
+{"construct": "\\supset", "expect_error": "unsupported", "id": "unsupported-0035", "latex": "A \\supset B"}
+{"construct": "\\supseteq", "expect_error": "unsupported", "id": "unsupported-0036", "latex": "A \\supseteq B"}
+{"construct": "\\notin", "expect_error": "unsupported", "id": "unsupported-0037", "latex": "x \\notin A"}
+{"construct": "\\emptyset", "expect_error": "unsupported", "id": "unsupported-0038", "latex": "A = \\emptyset"}
+{"construct": "\\varnothing", "expect_error": "unsupported", "id": "unsupported-0039", "latex": "A = \\varnothing"}
+{"construct": "\\mid", "expect_error": "unsupported", "id": "unsupported-0040", "latex": "\\{x \\mid x > 0\\}"}
+{"construct": "\\forall", "expect_error": "unsupported", "id": "unsupported-0041", "latex": "\\forall x > 0"}
+{"construct": "\\exists", "expect_error": "unsupported", "id": "unsupported-0042", "latex": "\\exists x > 0"}
+{"construct": "\\nabla", "expect_error": "unsupported", "id": "unsupported-0043", "latex": "\\nabla f"}
+{"construct": "\\equiv", "expect_error": "unsupported", "id": "unsupported-0044", "latex": "a \\equiv b"}
+{"construct": "\\propto", "expect_error": "unsupported", "id": "unsupported-0045", "latex": "y \\propto x"}
+{"construct": "\\sim", "expect_error": "unsupported", "id": "unsupported-0046", "latex": "f \\sim g"}
+{"construct": "\\cong", "expect_error": "unsupported", "id": "unsupported-0047", "latex": "A \\cong B"}
+{"construct": "\\perp", "expect_error": "unsupported", "id": "unsupported-0048", "latex": "a \\perp b"}
+{"construct": "\\parallel", "expect_error": "unsupported", "id": "unsupported-0049", "latex": "a \\parallel b"}
+{"construct": "\\angle", "expect_error": "unsupported", "id": "unsupported-0050", "latex": "\\angle ABC"}
+{"construct": "\\degree", "expect_error": "unsupported", "id": "unsupported-0051", "latex": "90 \\degree"}
+{"construct": "\\circ", "expect_error": "unsupported", "id": "unsupported-0052", "latex": "f \\circ g"}
+{"construct": "\\ldots", "expect_error": "unsupported", "id": "unsupported-0053", "latex": "1, 2, \\ldots, n"}
+{"construct": "\\cdots", "expect_error": "unsupported", "id": "unsupported-0054", "latex": "1 + 2 + \\cdots + n"}
+{"construct": "\\dots", "expect_error": "unsupported", "id": "unsupported-0055", "latex": "1, 2, \\dots"}
+{"construct": "\\limsup", "expect_error": "unsupported", "id": "unsupported-0056", "latex": "\\limsup_{n} a_n"}
+{"construct": "\\liminf", "expect_error": "unsupported", "id": "unsupported-0057", "latex": "\\liminf_{n} a_n"}
+{"construct": "\\arg", "expect_error": "unsupported", "id": "unsupported-0058", "latex": "\\arg(z)"}
+{"construct": "\\deg", "expect_error": "unsupported", "id": "unsupported-0059", "latex": "\\deg(p)"}
+{"construct": "\\det", "expect_error": "unsupported", "id": "unsupported-0060", "latex": "\\det(A)"}
+{"construct": "\\dim", "expect_error": "unsupported", "id": "unsupported-0061", "latex": "\\dim(V)"}
+{"construct": "\\gcd", "expect_error": "unsupported", "id": "unsupported-0062", "latex": "\\gcd(a, b)"}
+{"construct": "\\max", "expect_error": "unsupported", "id": "unsupported-0063", "latex": "\\max(a, b)"}
+{"construct": "\\min", "expect_error": "unsupported", "id": "unsupported-0064", "latex": "\\min(a, b)"}
+{"construct": "\\sup", "expect_error": "unsupported", "id": "unsupported-0065", "latex": "\\sup(A)"}
+{"construct": "\\inf", "expect_error": "unsupported", "id": "unsupported-0066", "latex": "\\inf(A)"}
+{"construct": "\\substack", "expect_error": "unsupported", "id": "unsupported-0067", "latex": "\\substack{i < j}"}
+{"construct": "\\frac{\\partial^{2}}{\\partial x \\partial y}", "expect_error": "unsupported", "id": "unsupported-0068", "latex": "\\frac{\\partial^{2} f}{\\partial x \\partial y}"}
+{"construct": "\\frac{\\partial^{2}}{\\partial x \\partial y}", "expect_error": "unsupported", "id": "unsupported-0069", "latex": "\\frac{\\partial^{2} u}{\\partial x \\partial t}"}
+{"construct": "\\frac{\\partial^{2}}{\\partial x \\partial y}", "expect_error": "unsupported", "id": "unsupported-0070", "latex": "\\frac{\\partial^{3} f}{\\partial x^{2} \\partial y}"}
+{"construct": "\\foo", "expect_error": "unsupported", "id": "unsupported-0071", "latex": "\\foo{x}"}
+{"construct": "\\bazqux", "expect_error": "unsupported", "id": "unsupported-0072", "latex": "\\bazqux"}
+{"construct": "\\Coloneqq", "expect_error": "unsupported", "id": "unsupported-0073", "latex": "\\Coloneqq"}
+{"construct": "\\varoiint", "expect_error": "unsupported", "id": "unsupported-0074", "latex": "\\varoiint"}
+{"construct": "\\bigstar", "expect_error": "unsupported", "id": "unsupported-0075", "latex": "\\bigstar"}
+{"construct": "\\clubsuit", "expect_error": "unsupported", "id": "unsupported-0076", "latex": "\\clubsuit"}
+{"construct": "\\heartsuit", "expect_error": "unsupported", "id": "unsupported-0077", "latex": "\\heartsuit"}
+{"construct": "\\lightning", "expect_error": "unsupported", "id": "unsupported-0078", "latex": "\\lightning"}
+{"construct": "\\smiley", "expect_error": "unsupported", "id": "unsupported-0079", "latex": "\\smiley"}
+{"construct": "\\notacommand", "expect_error": "unsupported", "id": "unsupported-0080", "latex": "\\notacommand{1}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0081", "latex": "\\frac{1}{2}}}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0082", "latex": "{{{x"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0083", "latex": "}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0084", "latex": "x @ y"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0085", "latex": "x^"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0086", "latex": "\\frac{}{}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0087", "latex": "\\sqrt[]{}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0088", "latex": "\\lim_{}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0089", "latex": "\\sum_{}^{}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0090", "latex": "\\int_"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0091", "latex": "f("}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0092", "latex": "2 +"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0093", "latex": "* 3"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0094", "latex": "\\frac"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0095", "latex": "\\left("}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0096", "latex": "x_"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0097", "latex": "\\log_"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0098", "latex": "\\begin{pmatrix} 1 & 2 \\end{pmatrix} \\end{pmatrix}"}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0099", "latex": "==="}
+{"construct": "", "expect_error": "parse_error", "id": "unsupported-0100", "latex": "((()))"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0101", "latex": "\\int x^{2}"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0102", "latex": "\\int_{0}^{1} x^{2}"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0103", "latex": "2_{3}"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0104", "latex": "1_{x}"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0105", "latex": "\\int (x + 1)"}
+{"construct": "", "expect_error": "semantic", "id": "unsupported-0106", "latex": "\\frac{1 \\pm 2}{3}"}

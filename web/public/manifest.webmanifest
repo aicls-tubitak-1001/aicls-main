@@ -1,0 +1,11 @@
+{
+    "name": "AI-CLS — Temel Analiz Asistanı",
+    "short_name": "AI-CLS",
+    "lang": "tr",
+    "dir": "ltr",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FBFAF8",
+    "theme_color": "#1E6B72",
+    "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

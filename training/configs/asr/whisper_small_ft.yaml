@@ -1,0 +1,56 @@
+# GATE: WEIGHTS_DOWNLOAD, CUDA_INSTALL, TRAINING
+#
+# Türkçe matematik komutları için whisper-small TAM ince ayarı (öneri A.2.3, İP-3).
+# İlk ASR hattı budur; whisper-large-v3-turbo + LoRA raporlanan model adayıdır.
+#
+# - WEIGHTS_DOWNLOAD: model.base_dir YEREL bir dizindir. Oraya kopyayı yalnızca
+#   training/scripts/download_weights.py (kapılı) koyar. Bu ağaçta hiçbir yapılandırma hub
+#   kimliği yazmaz; check_gates bunu statik olarak arar.
+# - CUDA_INSTALL: train.amp=bf16.
+# - TRAINING: gerçek ses verisiyle koşu.
+#
+# data.manifest, `aicls contrib export-manifest` çıktısıdır (İP-9 gönüllü ses toplama).
+# data.splits_path KONUŞMACI-AYRIK bölmedir ve zorunludur: görülmüş bir konuşmacı üzerindeki
+# WER, WER değildir (aicls.data bölme dosyası olmadan yüklemeyi reddeder). Bölme dosyası
+# manifestin YANINDA durur (aicls.data `out.parent/audio_commands_splits.json` arar), yani
+# ses kayıtlarıyla birlikte AICLS_DATA_ROOT altındadır. egitim-altyapisi.md §2 bu dosyayı
+# depo içindeki `datasets/manifests/` altında gösterir; oradaki depoya giren şey özet JSON'dur
+# (veri-yonetimi.md §3). Bölme dosyasının SHA'sı her ASR raporuna yazılır.
+#
+# optim/train değerleri literatür varsayılanıdır, ölçüm değildir; epoch/adım bütçesi
+# `aicls profile --config training/configs/asr/profile.yaml --steps 200` sonrası güncellenir.
+_base_: ../_base.yaml
+run:
+  name: asr_whisper_small_ft
+  seed: 1234
+  deterministic: true
+  tags: [asr, whisper_small, full_ft]
+  notes: "whisper-small tam ince ayarı; WER < %10 hedefinin ilk hattı."
+data:
+  dataset: audio_commands
+  manifest: ${AICLS_DATA_ROOT}/manifests/audio_commands.jsonl
+  splits_path: ${AICLS_DATA_ROOT}/manifests/audio_commands_splits.json
+  split: train
+  feature_extractor: whisper # HF WhisperFeatureExtractor, model.base_dir'den yerel olarak
+  max_seconds: 30.0 # Whisper'ın 30 s penceresi
+  batch_size: 32 # §8 bellek zarfı: batch 32 x 30 s bf16
+  num_workers: 6
+  augment:
+    spec_augment: {time_masks: 2, freq_masks: 2, time_mask_width: 10, freq_mask_width: 8}
+    pitch_semitones: [-2.0, 2.0]
+    noise_snr_db: [10.0, 25.0]
+    speed: [0.9, 1.1]
+    tts_ratio: 0.0 # TTS artırımı ayrı bir ablasyonda açılır
+model:
+  family: whisper
+  encoder: null # HF aileleri için zorunlu olarak null
+  base_dir: ${AICLS_MODELS_ROOT}/pretrained/whisper-small # yerel dizin; asla hub kimliği
+  lora: {enabled: false, r: 16, alpha: 32, dropout: 0.0, targets: [q_proj, v_proj]}
+  freeze_encoder: false # tam ince ayar
+  num_mel_bins: 80
+optim: {name: adamw, lr: 1.0e-5, weight_decay: 0.01, betas: [0.9, 0.999], scheduler: linear, warmup_steps: 500}
+train: {epochs: null, max_steps: 4000, grad_accum: 1, amp: bf16, grad_clip: 1.0, eval_every: 500, ckpt_every: 500, log_every: 25, early_stop_patience: 4, allow_dirty: false}
+eval: {beam: 1, max_n_val: 1000, metrics: [wer, cer]}
+tracking: {backend: jsonl, mlflow_uri: null, experiment: asr}
+checkpoint: {keep_last: 2, keep_best: 1, metric: val_wer, mode: min}
+gates: {synthetic: false}

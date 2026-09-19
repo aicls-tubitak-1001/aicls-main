@@ -1,0 +1,11 @@
+# Experiment config template. Keep it flat and small; the run manifest records its hash.
+name: <slug>
+question: "<tek cümle>"
+seed: 1234
+data:
+  source: synthetic # synthetic | fixture | datasets/<path>
+  fingerprint: null # sha256 of the dataset file(s) when not synthetic
+model:
+  kind: stub # stub | tiny | <registry id>
+hardware: cpu # gates: no GPU before CUDA_INSTALL approval
+metrics: [] # names from aicls.eval.metrics

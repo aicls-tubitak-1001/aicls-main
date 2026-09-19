@@ -1,0 +1,173 @@
+"""SQLAlchemy 2.0 models, engine/session factories, repositories and Alembic migrations.
+
+Public contract (``modules/db.json``, docs/mimari/moduller.md#aiclsdb, schema in
+docs/mimari/veri-modeli.md). The package depends only on :mod:`aicls.core` (ADR-0002) and never
+imports torch or transformers.
+
+Typical use::
+
+    from aicls.db import UserRepository, make_engine, session_scope, upgrade_head
+
+    engine = make_engine("sqlite+pysqlite:///:memory:")
+    upgrade_head(engine)  # schema always comes from the migrations
+    with session_scope(engine) as session:
+        user = UserRepository(session).create("a@b.c", "hash", "Ada")
+"""
+
+from __future__ import annotations
+
+from aicls.db.base import (
+    MYSQL_TABLE_KWARGS,
+    NAMING_CONVENTION,
+    Base,
+    TimestampMixin,
+    utcnow,
+)
+from aicls.db.engine import (
+    dispose_engines,
+    get_engine,
+    get_session,
+    make_engine,
+    session_scope,
+    set_default_engine,
+)
+from aicls.db.enums import (
+    AgeBand,
+    AssetKind,
+    EvalKind,
+    FeedbackCategory,
+    FeedbackStatus,
+    Gender,
+    InputKind,
+    Modality,
+    ModelComponent,
+    NluSource,
+    ResultKind,
+    ReviewStatus,
+    Role,
+    Split,
+    TagStatus,
+    UnitType,
+    University,
+    WorkspaceRole,
+)
+from aicls.db.migrate import current_revision, diff_metadata, downgrade, head_revision, upgrade_head
+from aicls.db.models import (
+    TABLE_NAMES,
+    Asset,
+    AuditLog,
+    BookAlias,
+    BookAsset,
+    BookTriple,
+    BookUnit,
+    ConsentVersion,
+    EvalRun,
+    Feedback,
+    LatencySample,
+    ModelVersion,
+    Operation,
+    PromptSentence,
+    Recognition,
+    Recording,
+    RefreshToken,
+    Speaker,
+    SusResponse,
+    Transcript,
+    User,
+    Workspace,
+    WorkspaceMember,
+)
+from aicls.db.repositories import (
+    AssetRepository,
+    AuditRepository,
+    BookRepository,
+    EvalRunRepository,
+    FeedbackRepository,
+    LatencyRepository,
+    ModelVersionRepository,
+    OperationRepository,
+    RecognitionRepository,
+    RecordingRepository,
+    Repository,
+    UserRepository,
+    WorkspaceRepository,
+)
+from aicls.db.results import ContribStats, LatencyStats, LoadReport, OperationCreate, Page
+
+__all__ = [
+    "MYSQL_TABLE_KWARGS",
+    "NAMING_CONVENTION",
+    "TABLE_NAMES",
+    "AgeBand",
+    "Asset",
+    "AssetKind",
+    "AssetRepository",
+    "AuditLog",
+    "AuditRepository",
+    "Base",
+    "BookAlias",
+    "BookAsset",
+    "BookRepository",
+    "BookTriple",
+    "BookUnit",
+    "ConsentVersion",
+    "ContribStats",
+    "EvalKind",
+    "EvalRun",
+    "EvalRunRepository",
+    "Feedback",
+    "FeedbackCategory",
+    "FeedbackRepository",
+    "FeedbackStatus",
+    "Gender",
+    "InputKind",
+    "LatencyRepository",
+    "LatencySample",
+    "LatencyStats",
+    "LoadReport",
+    "Modality",
+    "ModelComponent",
+    "ModelVersion",
+    "ModelVersionRepository",
+    "NluSource",
+    "Operation",
+    "OperationCreate",
+    "OperationRepository",
+    "Page",
+    "PromptSentence",
+    "Recognition",
+    "RecognitionRepository",
+    "Recording",
+    "RecordingRepository",
+    "RefreshToken",
+    "Repository",
+    "ResultKind",
+    "ReviewStatus",
+    "Role",
+    "Speaker",
+    "Split",
+    "SusResponse",
+    "TagStatus",
+    "TimestampMixin",
+    "Transcript",
+    "UnitType",
+    "University",
+    "User",
+    "UserRepository",
+    "Workspace",
+    "WorkspaceMember",
+    "WorkspaceRepository",
+    "WorkspaceRole",
+    "current_revision",
+    "diff_metadata",
+    "dispose_engines",
+    "downgrade",
+    "get_engine",
+    "get_session",
+    "head_revision",
+    "make_engine",
+    "session_scope",
+    "set_default_engine",
+    "upgrade_head",
+    "utcnow",
+]

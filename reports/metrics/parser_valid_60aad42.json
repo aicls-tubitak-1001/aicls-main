@@ -1,0 +1,55 @@
+{
+  "breakdown": {
+    "by_source": {
+      "curriculum": {
+        "n": 2315.0,
+        "ok": 2315.0,
+        "rate": 1.0
+      },
+      "mathwriting_label": {
+        "n": 150.0,
+        "ok": 150.0,
+        "rate": 1.0
+      },
+      "ocr_output": {
+        "n": 972.0,
+        "ok": 972.0,
+        "rate": 1.0
+      },
+      "sympy_latex": {
+        "n": 272.0,
+        "ok": 272.0,
+        "rate": 1.0
+      }
+    },
+    "failures": []
+  },
+  "ci95": {
+    "success_rate": [
+      1.0,
+      1.0
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:9ff283b2c0d163194867f05716d73078c899b95cbda41e5574f3b6707c152ed0",
+  "dataset_version": "latex-valid-inputs-2026.09",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": null,
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "parser",
+  "metrics": {
+    "failures": 0.0,
+    "success_rate": 1.0
+  },
+  "model_sha256": null,
+  "model_version": null,
+  "n": 3709,
+  "name": "parser_valid",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:01Z"
+}

@@ -1,0 +1,5583 @@
+# datasets/curriculum/cards/turev.yaml
+# 240 kart. Alt konular: bolum_kurali, carpim_kurali, hiperbolik_turev, kapali_turev, kuvvet_kurali, ters_trigonometrik_turev, toplam_kurali, trigonometrik_turev, turev_tanimi, ustel_logaritmik_turev, yuksek_mertebeden_turev, zincir_kurali.
+# KÖKEN: Bu kartlar proje içinde yazılmıştır (şablonlardan makine ile üretilmiştir);
+#        bağımsız bir derlemden ÖRNEKLENMEMİŞTİR ve bir ders kitabından alıntı değildir.
+#        Beklenen yanıtlar müfredat kuralından türetilmiştir, CAS'a sorulmamıştır.
+# Üretici: datasets/curriculum/generate_cards.py -- elle düzenlemeyin, yeniden üretin.
+# Derleyici: scripts/build_curriculum_testset.py
+- id: turev-0001
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2}\right)
+  command:
+    op: diff
+    expr: x^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0002
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3}\right)
+  command:
+    op: diff
+    expr: x^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2}
+    srepr: Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0003
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4}\right)
+  command:
+    op: diff
+    expr: x^{4}
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3}
+    srepr: Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0004
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{5}\right)
+  command:
+    op: diff
+    expr: x^{5}
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot x^{4}
+    srepr: Mul(Integer(5), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0005
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(x^{6}\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: x^{6}
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{5}
+    srepr: Mul(Integer(6), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0006
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{2}\right)
+  command:
+    op: diff
+    expr: 2x^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x
+    srepr: Mul(Integer(4), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0007
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{3}\right)
+  command:
+    op: diff
+    expr: 2x^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2}
+    srepr: Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0008
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{4}\right)
+  command:
+    op: diff
+    expr: 2x^{4}
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x^{3}
+    srepr: Mul(Integer(8), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0009
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{5}\right)
+  command:
+    op: diff
+    expr: 2x^{5}
+    var: x
+    order: 1
+  expected:
+    latex: 10 \cdot x^{4}
+    srepr: Mul(Integer(10), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0010
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{6}\right)
+  command:
+    op: diff
+    expr: 2x^{6}
+    var: x
+    order: 1
+  expected:
+    latex: 12 \cdot x^{5}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0011
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x^{2}\right)
+  command:
+    op: diff
+    expr: 3x^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x
+    srepr: Mul(Integer(6), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0012
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x^{3}\right)
+  command:
+    op: diff
+    expr: 3x^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 9 \cdot x^{2}
+    srepr: Mul(Integer(9), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0013
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x^{4}\right)
+  command:
+    op: diff
+    expr: 3x^{4}
+    var: x
+    order: 1
+  expected:
+    latex: 12 \cdot x^{3}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0014
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x^{5}\right)
+  command:
+    op: diff
+    expr: 3x^{5}
+    var: x
+    order: 1
+  expected:
+    latex: 15 \cdot x^{4}
+    srepr: Mul(Integer(15), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0015
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x^{6}\right)
+  command:
+    op: diff
+    expr: 3x^{6}
+    var: x
+    order: 1
+  expected:
+    latex: 18 \cdot x^{5}
+    srepr: Mul(Integer(18), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0016
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x^{2}\right)
+  command:
+    op: diff
+    expr: 4x^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x
+    srepr: Mul(Integer(8), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0017
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x^{3}\right)
+  command:
+    op: diff
+    expr: 4x^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 12 \cdot x^{2}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0018
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x^{4}\right)
+  command:
+    op: diff
+    expr: 4x^{4}
+    var: x
+    order: 1
+  expected:
+    latex: 16 \cdot x^{3}
+    srepr: Mul(Integer(16), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0019
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x^{5}\right)
+  command:
+    op: diff
+    expr: 4x^{5}
+    var: x
+    order: 1
+  expected:
+    latex: 20 \cdot x^{4}
+    srepr: Mul(Integer(20), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0020
+  topic: turev
+  subtopic: kuvvet_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x^{6}\right)
+  command:
+    op: diff
+    expr: 4x^{6}
+    var: x
+    order: 1
+  expected:
+    latex: 24 \cdot x^{5}
+    srepr: Mul(Integer(24), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kuvvet kuralı: (a x^n)'' = a n x^{n-1}.'
+- id: turev-0021
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} - 2x + 0\right)
+  command:
+    op: diff
+    expr: x^{2} - 2x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x - 2
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0022
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(x^{2} - 2x + 7\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: x^{2} - 2x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x - 2
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0023
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} + 5x + 0\right)
+  command:
+    op: diff
+    expr: x^{2} + 5x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x + 5
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0024
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} + 5x + 7\right)
+  command:
+    op: diff
+    expr: x^{2} + 5x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x + 5
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True)), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0025
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} - 2x + 0\right)
+  command:
+    op: diff
+    expr: x^{3} - 2x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} - 2
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0026
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} - 2x + 7\right)
+  command:
+    op: diff
+    expr: x^{3} - 2x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} - 2
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0027
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} + 5x + 0\right)
+  command:
+    op: diff
+    expr: x^{3} + 5x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} + 5
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0028
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} + 5x + 7\right)
+  command:
+    op: diff
+    expr: x^{3} + 5x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} + 5
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0029
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} - 2x + 0\right)
+  command:
+    op: diff
+    expr: x^{4} - 2x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3} - 2
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0030
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} - 2x + 7\right)
+  command:
+    op: diff
+    expr: x^{4} - 2x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3} - 2
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0031
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} + 5x + 0\right)
+  command:
+    op: diff
+    expr: x^{4} + 5x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3} + 5
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0032
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} + 5x + 7\right)
+  command:
+    op: diff
+    expr: x^{4} + 5x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3} + 5
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0033
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{2} - 2x + 0\right)
+  command:
+    op: diff
+    expr: 2x^{2} - 2x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x - 2
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0034
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{2} - 2x + 7\right)
+  command:
+    op: diff
+    expr: 2x^{2} - 2x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x - 2
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0035
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{2} + 5x + 0\right)
+  command:
+    op: diff
+    expr: 2x^{2} + 5x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x + 5
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0036
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{2} + 5x + 7\right)
+  command:
+    op: diff
+    expr: 2x^{2} + 5x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x + 5
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True)), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0037
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{3} - 2x + 0\right)
+  command:
+    op: diff
+    expr: 2x^{3} - 2x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2} - 2
+    srepr: Add(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0038
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{3} - 2x + 7\right)
+  command:
+    op: diff
+    expr: 2x^{3} - 2x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2} - 2
+    srepr: Add(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2))), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0039
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(2x^{3} + 5x + 0\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: 2x^{3} + 5x + 0
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2} + 5
+    srepr: Add(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0040
+  topic: turev
+  subtopic: toplam_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x^{3} + 5x + 7\right)
+  command:
+    op: diff
+    expr: 2x^{3} + 5x + 7
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2} + 5
+    srepr: Add(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/toplam
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: Toplamın türevi türevlerin toplamıdır; sabitin türevi sıfırdır.
+- id: turev-0041
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \sin(x)\right)
+  command:
+    op: diff
+    expr: x \sin(x)
+    var: x
+    order: 1
+  expected:
+    latex: x \cdot \cos{\left(x \right)} + \sin{\left(x \right)}
+    srepr: Add(Mul(Symbol('x', real=True), cos(Symbol('x', real=True))), sin(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0042
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \sin(2x)\right)
+  command:
+    op: diff
+    expr: x \sin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x \cdot \cos{\left(2 \cdot x \right)} + \sin{\left(2 \cdot x \right)}
+    srepr: Add(Mul(Integer(2), Symbol('x', real=True), cos(Mul(Integer(2), Symbol('x', real=True)))),
+      sin(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0043
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \sin(3x)\right)
+  command:
+    op: diff
+    expr: x \sin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x \cdot \cos{\left(3 \cdot x \right)} + \sin{\left(3 \cdot x \right)}
+    srepr: Add(Mul(Integer(3), Symbol('x', real=True), cos(Mul(Integer(3), Symbol('x', real=True)))),
+      sin(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0044
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \sin(4x)\right)
+  command:
+    op: diff
+    expr: x \sin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x \cdot \cos{\left(4 \cdot x \right)} + \sin{\left(4 \cdot x \right)}
+    srepr: Add(Mul(Integer(4), Symbol('x', real=True), cos(Mul(Integer(4), Symbol('x', real=True)))),
+      sin(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0045
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \sin(5x)\right)
+  command:
+    op: diff
+    expr: x \sin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot x \cdot \cos{\left(5 \cdot x \right)} + \sin{\left(5 \cdot x \right)}
+    srepr: Add(Mul(Integer(5), Symbol('x', real=True), cos(Mul(Integer(5), Symbol('x', real=True)))),
+      sin(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0046
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} \sin(x)\right)
+  command:
+    op: diff
+    expr: x^{2} \sin(x)
+    var: x
+    order: 1
+  expected:
+    latex: x^{2} \cdot \cos{\left(x \right)} + 2 \cdot x \cdot \sin{\left(x \right)}
+    srepr: Add(Mul(Pow(Symbol('x', real=True), Integer(2)), cos(Symbol('x', real=True))), Mul(Integer(2),
+      Symbol('x', real=True), sin(Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0047
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} \sin(2x)\right)
+  command:
+    op: diff
+    expr: x^{2} \sin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x^{2} \cdot \cos{\left(2 \cdot x \right)} + 2 \cdot x \cdot \sin{\left(2 \cdot x \right)}
+    srepr: Add(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(2), Symbol('x',
+      real=True)))), Mul(Integer(2), Symbol('x', real=True), sin(Mul(Integer(2), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0048
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} \sin(3x)\right)
+  command:
+    op: diff
+    expr: x^{2} \sin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} \cdot \cos{\left(3 \cdot x \right)} + 2 \cdot x \cdot \sin{\left(3 \cdot x \right)}
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(3), Symbol('x',
+      real=True)))), Mul(Integer(2), Symbol('x', real=True), sin(Mul(Integer(3), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0049
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} \sin(4x)\right)
+  command:
+    op: diff
+    expr: x^{2} \sin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{2} \cdot \cos{\left(4 \cdot x \right)} + 2 \cdot x \cdot \sin{\left(4 \cdot x \right)}
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(4), Symbol('x',
+      real=True)))), Mul(Integer(2), Symbol('x', real=True), sin(Mul(Integer(4), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0050
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{2} \sin(5x)\right)
+  command:
+    op: diff
+    expr: x^{2} \sin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot x^{2} \cdot \cos{\left(5 \cdot x \right)} + 2 \cdot x \cdot \sin{\left(5 \cdot x \right)}
+    srepr: Add(Mul(Integer(5), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(5), Symbol('x',
+      real=True)))), Mul(Integer(2), Symbol('x', real=True), sin(Mul(Integer(5), Symbol('x', real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0051
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} \sin(x)\right)
+  command:
+    op: diff
+    expr: x^{3} \sin(x)
+    var: x
+    order: 1
+  expected:
+    latex: x^{3} \cdot \cos{\left(x \right)} + 3 \cdot x^{2} \cdot \sin{\left(x \right)}
+    srepr: Add(Mul(Pow(Symbol('x', real=True), Integer(3)), cos(Symbol('x', real=True))), Mul(Integer(3),
+      Pow(Symbol('x', real=True), Integer(2)), sin(Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0052
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} \sin(2x)\right)
+  command:
+    op: diff
+    expr: x^{3} \sin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x^{3} \cdot \cos{\left(2 \cdot x \right)} + 3 \cdot x^{2} \cdot \sin{\left(2 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(3)), cos(Mul(Integer(2), Symbol('x',
+      real=True)))), Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), sin(Mul(Integer(2), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0053
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} \sin(3x)\right)
+  command:
+    op: diff
+    expr: x^{3} \sin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{3} \cdot \cos{\left(3 \cdot x \right)} + 3 \cdot x^{2} \cdot \sin{\left(3 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(3)), cos(Mul(Integer(3), Symbol('x',
+      real=True)))), Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), sin(Mul(Integer(3), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0054
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} \sin(4x)\right)
+  command:
+    op: diff
+    expr: x^{3} \sin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{3} \cdot \cos{\left(4 \cdot x \right)} + 3 \cdot x^{2} \cdot \sin{\left(4 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)), cos(Mul(Integer(4), Symbol('x',
+      real=True)))), Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), sin(Mul(Integer(4), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0055
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{3} \sin(5x)\right)
+  command:
+    op: diff
+    expr: x^{3} \sin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot x^{3} \cdot \cos{\left(5 \cdot x \right)} + 3 \cdot x^{2} \cdot \sin{\left(5 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(5), Pow(Symbol('x', real=True), Integer(3)), cos(Mul(Integer(5), Symbol('x',
+      real=True)))), Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), sin(Mul(Integer(5), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0056
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(x^{4} \sin(x)\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: x^{4} \sin(x)
+    var: x
+    order: 1
+  expected:
+    latex: x^{4} \cdot \cos{\left(x \right)} + 4 \cdot x^{3} \cdot \sin{\left(x \right)}
+    srepr: Add(Mul(Pow(Symbol('x', real=True), Integer(4)), cos(Symbol('x', real=True))), Mul(Integer(4),
+      Pow(Symbol('x', real=True), Integer(3)), sin(Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0057
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} \sin(2x)\right)
+  command:
+    op: diff
+    expr: x^{4} \sin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x^{4} \cdot \cos{\left(2 \cdot x \right)} + 4 \cdot x^{3} \cdot \sin{\left(2 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(4)), cos(Mul(Integer(2), Symbol('x',
+      real=True)))), Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)), sin(Mul(Integer(2), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0058
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} \sin(3x)\right)
+  command:
+    op: diff
+    expr: x^{4} \sin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{4} \cdot \cos{\left(3 \cdot x \right)} + 4 \cdot x^{3} \cdot \sin{\left(3 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(4)), cos(Mul(Integer(3), Symbol('x',
+      real=True)))), Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)), sin(Mul(Integer(3), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0059
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} \sin(4x)\right)
+  command:
+    op: diff
+    expr: x^{4} \sin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x^{4} \cdot \cos{\left(4 \cdot x \right)} + 4 \cdot x^{3} \cdot \sin{\left(4 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(4)), cos(Mul(Integer(4), Symbol('x',
+      real=True)))), Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)), sin(Mul(Integer(4), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0060
+  topic: turev
+  subtopic: carpim_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x^{4} \sin(5x)\right)
+  command:
+    op: diff
+    expr: x^{4} \sin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot x^{4} \cdot \cos{\left(5 \cdot x \right)} + 4 \cdot x^{3} \cdot \sin{\left(5 \cdot
+      x \right)}
+    srepr: Add(Mul(Integer(5), Pow(Symbol('x', real=True), Integer(4)), cos(Mul(Integer(5), Symbol('x',
+      real=True)))), Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)), sin(Mul(Integer(5), Symbol('x',
+      real=True)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Çarpım kuralı: (uv)'' = u''v + uv''.'
+- id: turev-0061
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x + 1}{x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{x + 1}{x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{\left(x + 2\right)^{2}}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(2)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0062
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x + 1}{x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{x + 1}{x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{\left(x + 4\right)^{2}}
+    srepr: Mul(Integer(3), Pow(Add(Symbol('x', real=True), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0063
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x + 1}{3x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{x + 1}{3x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{1}{\left(3 \cdot x + 2\right)^{2}}'
+    srepr: Mul(Integer(-1), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0064
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x + 1}{3x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{x + 1}{3x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{\left(3 \cdot x + 4\right)^{2}}
+    srepr: Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(4)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0065
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x - 2}{x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{x - 2}{x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{4}{\left(x + 2\right)^{2}}
+    srepr: Mul(Integer(4), Pow(Add(Symbol('x', real=True), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0066
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x - 2}{x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{x - 2}{x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{6}{\left(x + 4\right)^{2}}
+    srepr: Mul(Integer(6), Pow(Add(Symbol('x', real=True), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0067
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x - 2}{3x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{x - 2}{3x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{8}{\left(3 \cdot x + 2\right)^{2}}
+    srepr: Mul(Integer(8), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0068
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{x - 2}{3x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{x - 2}{3x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{10}{\left(3 \cdot x + 4\right)^{2}}
+    srepr: Mul(Integer(10), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0069
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x + 1}{x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{2x + 1}{x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{\left(x + 2\right)^{2}}
+    srepr: Mul(Integer(3), Pow(Add(Symbol('x', real=True), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0070
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x + 1}{x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{2x + 1}{x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{7}{\left(x + 4\right)^{2}}
+    srepr: Mul(Integer(7), Pow(Add(Symbol('x', real=True), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0071
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x + 1}{3x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{2x + 1}{3x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{\left(3 \cdot x + 2\right)^{2}}
+    srepr: Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0072
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x + 1}{3x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{2x + 1}{3x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{5}{\left(3 \cdot x + 4\right)^{2}}
+    srepr: Mul(Integer(5), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0073
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(\frac{2x - 2}{x + 2}\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: \frac{2x - 2}{x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{6}{\left(x + 2\right)^{2}}
+    srepr: Mul(Integer(6), Pow(Add(Symbol('x', real=True), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0074
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x - 2}{x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{2x - 2}{x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{10}{\left(x + 4\right)^{2}}
+    srepr: Mul(Integer(10), Pow(Add(Symbol('x', real=True), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0075
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x - 2}{3x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{2x - 2}{3x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{10}{\left(3 \cdot x + 2\right)^{2}}
+    srepr: Mul(Integer(10), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0076
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{2x - 2}{3x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{2x - 2}{3x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{14}{\left(3 \cdot x + 4\right)^{2}}
+    srepr: Mul(Integer(14), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0077
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{3x + 1}{x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{3x + 1}{x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{5}{\left(x + 2\right)^{2}}
+    srepr: Mul(Integer(5), Pow(Add(Symbol('x', real=True), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0078
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{3x + 1}{x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{3x + 1}{x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{11}{\left(x + 4\right)^{2}}
+    srepr: Mul(Integer(11), Pow(Add(Symbol('x', real=True), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0079
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{3x + 1}{3x + 2}\right)
+  command:
+    op: diff
+    expr: \frac{3x + 1}{3x + 2}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{\left(3 \cdot x + 2\right)^{2}}
+    srepr: Mul(Integer(3), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0080
+  topic: turev
+  subtopic: bolum_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\frac{3x + 1}{3x + 4}\right)
+  command:
+    op: diff
+    expr: \frac{3x + 1}{3x + 4}
+    var: x
+    order: 1
+  expected:
+    latex: \frac{9}{\left(3 \cdot x + 4\right)^{2}}
+    srepr: Mul(Integer(9), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(4)), Integer(-2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/bolum
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Bölüm kuralı: ((ax+b)/(cx+d))'' = (ad - bc)/(cx + d)^2.'
+- id: turev-0081
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(x^{2})\right)
+  command:
+    op: diff
+    expr: \sin(x^{2})
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x \cdot \cos{\left(x^{2} \right)}
+    srepr: Mul(Integer(2), Symbol('x', real=True), cos(Pow(Symbol('x', real=True), Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0082
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(x^{3})\right)
+  command:
+    op: diff
+    expr: \sin(x^{3})
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot x^{2} \cdot \cos{\left(x^{3} \right)}
+    srepr: Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)), cos(Pow(Symbol('x', real=True), Integer(3))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0083
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(2x^{2})\right)
+  command:
+    op: diff
+    expr: \sin(2x^{2})
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x \cdot \cos{\left(2 \cdot x^{2} \right)}
+    srepr: Mul(Integer(4), Symbol('x', real=True), cos(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0084
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(2x^{3})\right)
+  command:
+    op: diff
+    expr: \sin(2x^{3})
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x^{2} \cdot \cos{\left(2 \cdot x^{3} \right)}
+    srepr: Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(2), Pow(Symbol('x',
+      real=True), Integer(3)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0085
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(3x^{2})\right)
+  command:
+    op: diff
+    expr: \sin(3x^{2})
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x \cdot \cos{\left(3 \cdot x^{2} \right)}
+    srepr: Mul(Integer(6), Symbol('x', real=True), cos(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0086
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(3x^{3})\right)
+  command:
+    op: diff
+    expr: \sin(3x^{3})
+    var: x
+    order: 1
+  expected:
+    latex: 9 \cdot x^{2} \cdot \cos{\left(3 \cdot x^{3} \right)}
+    srepr: Mul(Integer(9), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(3), Pow(Symbol('x',
+      real=True), Integer(3)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0087
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(4x^{2})\right)
+  command:
+    op: diff
+    expr: \sin(4x^{2})
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x \cdot \cos{\left(4 \cdot x^{2} \right)}
+    srepr: Mul(Integer(8), Symbol('x', real=True), cos(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0088
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(4x^{3})\right)
+  command:
+    op: diff
+    expr: \sin(4x^{3})
+    var: x
+    order: 1
+  expected:
+    latex: 12 \cdot x^{2} \cdot \cos{\left(4 \cdot x^{3} \right)}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(2)), cos(Mul(Integer(4), Pow(Symbol('x',
+      real=True), Integer(3)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (sin(u))'' = u'' cos(u), burada u = a x^n.'
+- id: turev-0089
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\left(x + 1\right)^{3}\right)
+  command:
+    op: diff
+    expr: \left(x + 1\right)^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \left(x + 1\right)^{2}
+    srepr: Mul(Integer(3), Pow(Add(Symbol('x', real=True), Integer(1)), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0090
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(\left(2x + 1\right)^{2}\right)$ ifadesinin x değişkenine göre türevini
+      al
+  command:
+    op: diff
+    expr: \left(2x + 1\right)^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x + 4
+    srepr: Add(Mul(Integer(8), Symbol('x', real=True)), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0091
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\left(3x - 1\right)^{2}\right)
+  command:
+    op: diff
+    expr: \left(3x - 1\right)^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 18 \cdot x - 6
+    srepr: Add(Mul(Integer(18), Symbol('x', real=True)), Integer(-6))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0092
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\left(x + 2\right)^{4}\right)
+  command:
+    op: diff
+    expr: \left(x + 2\right)^{4}
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \left(x + 2\right)^{3}
+    srepr: Mul(Integer(4), Pow(Add(Symbol('x', real=True), Integer(2)), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0093
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\left(2x + 3\right)^{3}\right)
+  command:
+    op: diff
+    expr: \left(2x + 3\right)^{3}
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot \left(2 \cdot x + 3\right)^{2}
+    srepr: Mul(Integer(6), Pow(Add(Mul(Integer(2), Symbol('x', real=True)), Integer(3)), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0094
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\left(5x + 1\right)^{2}\right)
+  command:
+    op: diff
+    expr: \left(5x + 1\right)^{2}
+    var: x
+    order: 1
+  expected:
+    latex: 50 \cdot x + 10
+    srepr: Add(Mul(Integer(50), Symbol('x', real=True)), Integer(10))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_kuvvet
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: ((ax+b)^n)'' = n a (ax+b)^{n-1}.'
+- id: turev-0095
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x \cdot e^{x^{2}}
+    srepr: Mul(Integer(2), Symbol('x', real=True), exp(Pow(Symbol('x', real=True), Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0096
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{2x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{2x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x \cdot e^{2 \cdot x^{2}}
+    srepr: Mul(Integer(4), Symbol('x', real=True), exp(Mul(Integer(2), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0097
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{3x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{3x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x \cdot e^{3 \cdot x^{2}}
+    srepr: Mul(Integer(6), Symbol('x', real=True), exp(Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0098
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{4x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{4x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x \cdot e^{4 \cdot x^{2}}
+    srepr: Mul(Integer(8), Symbol('x', real=True), exp(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0099
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{5x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{5x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 10 \cdot x \cdot e^{5 \cdot x^{2}}
+    srepr: Mul(Integer(10), Symbol('x', real=True), exp(Mul(Integer(5), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0100
+  topic: turev
+  subtopic: zincir_kurali
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{6x^{2}}\right)
+  command:
+    op: diff
+    expr: e^{6x^{2}}
+    var: x
+    order: 1
+  expected:
+    latex: 12 \cdot x \cdot e^{6 \cdot x^{2}}
+    srepr: Mul(Integer(12), Symbol('x', real=True), exp(Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2)))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/zincir_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Zincir kuralı: (e^{u})'' = u'' e^{u}, burada u = a x^2.'
+- id: turev-0101
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(x)\right)
+  command:
+    op: diff
+    expr: \sin(x)
+    var: x
+    order: 1
+  expected:
+    latex: \cos{\left(x \right)}
+    srepr: cos(Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))' = a cos(ax).
+- id: turev-0102
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(2x)\right)
+  command:
+    op: diff
+    expr: \sin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \cos{\left(2 \cdot x \right)}
+    srepr: Mul(Integer(2), cos(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))' = a cos(ax).
+- id: turev-0103
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(3x)\right)
+  command:
+    op: diff
+    expr: \sin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \cos{\left(3 \cdot x \right)}
+    srepr: Mul(Integer(3), cos(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))' = a cos(ax).
+- id: turev-0104
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(4x)\right)
+  command:
+    op: diff
+    expr: \sin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \cos{\left(4 \cdot x \right)}
+    srepr: Mul(Integer(4), cos(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))' = a cos(ax).
+- id: turev-0105
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sin(5x)\right)
+  command:
+    op: diff
+    expr: \sin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \cos{\left(5 \cdot x \right)}
+    srepr: Mul(Integer(5), cos(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))' = a cos(ax).
+- id: turev-0106
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cos(x)\right)
+  command:
+    op: diff
+    expr: \cos(x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \sin{\left(x \right)}'
+    srepr: Mul(Integer(-1), sin(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cos(ax))' = -a sin(ax).
+- id: turev-0107
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(\cos(2x)\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: \cos(2x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 2 \cdot \sin{\left(2 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(2), sin(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cos(ax))' = -a sin(ax).
+- id: turev-0108
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cos(3x)\right)
+  command:
+    op: diff
+    expr: \cos(3x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 3 \cdot \sin{\left(3 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(3), sin(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cos(ax))' = -a sin(ax).
+- id: turev-0109
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cos(4x)\right)
+  command:
+    op: diff
+    expr: \cos(4x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 4 \cdot \sin{\left(4 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(4), sin(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cos(ax))' = -a sin(ax).
+- id: turev-0110
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cos(5x)\right)
+  command:
+    op: diff
+    expr: \cos(5x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 5 \cdot \sin{\left(5 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(5), sin(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kosinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cos(ax))' = -a sin(ax).
+- id: turev-0111
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tan(x)\right)
+  command:
+    op: diff
+    expr: \tan(x)
+    var: x
+    order: 1
+  expected:
+    latex: \sec^{2}{\left(x \right)}
+    srepr: Pow(sec(Symbol('x', real=True)), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tan(ax))' = a sec^2(ax) = a (1 + tan^2(ax)).
+- id: turev-0112
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tan(2x)\right)
+  command:
+    op: diff
+    expr: \tan(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \sec^{2}{\left(2 \cdot x \right)}
+    srepr: Mul(Integer(2), Pow(sec(Mul(Integer(2), Symbol('x', real=True))), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tan(ax))' = a sec^2(ax) = a (1 + tan^2(ax)).
+- id: turev-0113
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tan(3x)\right)
+  command:
+    op: diff
+    expr: \tan(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \sec^{2}{\left(3 \cdot x \right)}
+    srepr: Mul(Integer(3), Pow(sec(Mul(Integer(3), Symbol('x', real=True))), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tan(ax))' = a sec^2(ax) = a (1 + tan^2(ax)).
+- id: turev-0114
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tan(4x)\right)
+  command:
+    op: diff
+    expr: \tan(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \sec^{2}{\left(4 \cdot x \right)}
+    srepr: Mul(Integer(4), Pow(sec(Mul(Integer(4), Symbol('x', real=True))), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tan(ax))' = a sec^2(ax) = a (1 + tan^2(ax)).
+- id: turev-0115
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tan(5x)\right)
+  command:
+    op: diff
+    expr: \tan(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \sec^{2}{\left(5 \cdot x \right)}
+    srepr: Mul(Integer(5), Pow(sec(Mul(Integer(5), Symbol('x', real=True))), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanjant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tan(ax))' = a sec^2(ax) = a (1 + tan^2(ax)).
+- id: turev-0116
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sec(x)\right)
+  command:
+    op: diff
+    expr: \sec(x)
+    var: x
+    order: 1
+  expected:
+    latex: \tan{\left(x \right)} \cdot \sec{\left(x \right)}
+    srepr: Mul(tan(Symbol('x', real=True)), sec(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sekant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sec(ax))' = a sec(ax) tan(ax).
+- id: turev-0117
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sec(2x)\right)
+  command:
+    op: diff
+    expr: \sec(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \tan{\left(2 \cdot x \right)} \cdot \sec{\left(2 \cdot x \right)}
+    srepr: Mul(Integer(2), tan(Mul(Integer(2), Symbol('x', real=True))), sec(Mul(Integer(2), Symbol('x',
+      real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sekant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sec(ax))' = a sec(ax) tan(ax).
+- id: turev-0118
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sec(3x)\right)
+  command:
+    op: diff
+    expr: \sec(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \tan{\left(3 \cdot x \right)} \cdot \sec{\left(3 \cdot x \right)}
+    srepr: Mul(Integer(3), tan(Mul(Integer(3), Symbol('x', real=True))), sec(Mul(Integer(3), Symbol('x',
+      real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sekant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sec(ax))' = a sec(ax) tan(ax).
+- id: turev-0119
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sec(4x)\right)
+  command:
+    op: diff
+    expr: \sec(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \tan{\left(4 \cdot x \right)} \cdot \sec{\left(4 \cdot x \right)}
+    srepr: Mul(Integer(4), tan(Mul(Integer(4), Symbol('x', real=True))), sec(Mul(Integer(4), Symbol('x',
+      real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sekant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sec(ax))' = a sec(ax) tan(ax).
+- id: turev-0120
+  topic: turev
+  subtopic: trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sec(5x)\right)
+  command:
+    op: diff
+    expr: \sec(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \tan{\left(5 \cdot x \right)} \cdot \sec{\left(5 \cdot x \right)}
+    srepr: Mul(Integer(5), tan(Mul(Integer(5), Symbol('x', real=True))), sec(Mul(Integer(5), Symbol('x',
+      real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sekant
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sec(ax))' = a sec(ax) tan(ax).
+- id: turev-0121
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{x}\right)
+  command:
+    op: diff
+    expr: e^{x}
+    var: x
+    order: 1
+  expected:
+    latex: e^{x}
+    srepr: exp(Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (e^{ax})' = a e^{ax}.
+- id: turev-0122
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{2x}\right)
+  command:
+    op: diff
+    expr: e^{2x}
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot e^{2 \cdot x}
+    srepr: Mul(Integer(2), exp(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (e^{ax})' = a e^{ax}.
+- id: turev-0123
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{3x}\right)
+  command:
+    op: diff
+    expr: e^{3x}
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot e^{3 \cdot x}
+    srepr: Mul(Integer(3), exp(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (e^{ax})' = a e^{ax}.
+- id: turev-0124
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(e^{4x}\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: e^{4x}
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot e^{4 \cdot x}
+    srepr: Mul(Integer(4), exp(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (e^{ax})' = a e^{ax}.
+- id: turev-0125
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 1
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(e^{5x}\right)
+  command:
+    op: diff
+    expr: e^{5x}
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot e^{5 \cdot x}
+    srepr: Mul(Integer(5), exp(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (e^{ax})' = a e^{ax}.
+- id: turev-0126
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\ln(x + 1)\right)
+  command:
+    op: diff
+    expr: \ln(x + 1)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{x + 1}
+    srepr: Pow(Add(Symbol('x', real=True), Integer(1)), Integer(-1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (ln(ax + b))' = a/(ax + b).
+- id: turev-0127
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\ln(2x + 1)\right)
+  command:
+    op: diff
+    expr: \ln(2x + 1)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{2}{2 \cdot x + 1}
+    srepr: Mul(Integer(2), Pow(Add(Mul(Integer(2), Symbol('x', real=True)), Integer(1)), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (ln(ax + b))' = a/(ax + b).
+- id: turev-0128
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\ln(3x + 2)\right)
+  command:
+    op: diff
+    expr: \ln(3x + 2)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{3 \cdot x + 2}
+    srepr: Mul(Integer(3), Pow(Add(Mul(Integer(3), Symbol('x', real=True)), Integer(2)), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (ln(ax + b))' = a/(ax + b).
+- id: turev-0129
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\ln(4x + 5)\right)
+  command:
+    op: diff
+    expr: \ln(4x + 5)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{4}{4 \cdot x + 5}
+    srepr: Mul(Integer(4), Pow(Add(Mul(Integer(4), Symbol('x', real=True)), Integer(5)), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (ln(ax + b))' = a/(ax + b).
+- id: turev-0130
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\ln(5x + 3)\right)
+  command:
+    op: diff
+    expr: \ln(5x + 3)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{5}{5 \cdot x + 3}
+    srepr: Mul(Integer(5), Pow(Add(Mul(Integer(5), Symbol('x', real=True)), Integer(3)), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (ln(ax + b))' = a/(ax + b).
+- id: turev-0131
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2^{x}\right)
+  command:
+    op: diff
+    expr: 2^{x}
+    var: x
+    order: 1
+  expected:
+    latex: 2^{x} \cdot \ln{\left(2 \right)}
+    srepr: Mul(Pow(Integer(2), Symbol('x', real=True)), log(Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a^x)' = a^x ln a.
+- id: turev-0132
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3^{x}\right)
+  command:
+    op: diff
+    expr: 3^{x}
+    var: x
+    order: 1
+  expected:
+    latex: 3^{x} \cdot \ln{\left(3 \right)}
+    srepr: Mul(Pow(Integer(3), Symbol('x', real=True)), log(Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a^x)' = a^x ln a.
+- id: turev-0133
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4^{x}\right)
+  command:
+    op: diff
+    expr: 4^{x}
+    var: x
+    order: 1
+  expected:
+    latex: 4^{x} \cdot \ln{\left(4 \right)}
+    srepr: Mul(Pow(Integer(4), Symbol('x', real=True)), log(Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a^x)' = a^x ln a.
+- id: turev-0134
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(5^{x}\right)
+  command:
+    op: diff
+    expr: 5^{x}
+    var: x
+    order: 1
+  expected:
+    latex: 5^{x} \cdot \ln{\left(5 \right)}
+    srepr: Mul(Pow(Integer(5), Symbol('x', real=True)), log(Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a^x)' = a^x ln a.
+- id: turev-0135
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(6^{x}\right)
+  command:
+    op: diff
+    expr: 6^{x}
+    var: x
+    order: 1
+  expected:
+    latex: 6^{x} \cdot \ln{\left(6 \right)}
+    srepr: Mul(Pow(Integer(6), Symbol('x', real=True)), log(Integer(6)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/genel_ustel
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a^x)' = a^x ln a.
+- id: turev-0136
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(x \ln(x)\right)
+  command:
+    op: diff
+    expr: x \ln(x)
+    var: x
+    order: 1
+  expected:
+    latex: \ln{\left(x \right)} + 1
+    srepr: Add(log(Symbol('x', real=True)), Integer(1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a x ln x)' = a ln x + a (çarpım kuralı).
+- id: turev-0137
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(2x \ln(x)\right)
+  command:
+    op: diff
+    expr: 2x \ln(x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \ln{\left(x \right)} + 2
+    srepr: Add(Mul(Integer(2), log(Symbol('x', real=True))), Integer(2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a x ln x)' = a ln x + a (çarpım kuralı).
+- id: turev-0138
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(3x \ln(x)\right)
+  command:
+    op: diff
+    expr: 3x \ln(x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \ln{\left(x \right)} + 3
+    srepr: Add(Mul(Integer(3), log(Symbol('x', real=True))), Integer(3))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a x ln x)' = a ln x + a (çarpım kuralı).
+- id: turev-0139
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(4x \ln(x)\right)
+  command:
+    op: diff
+    expr: 4x \ln(x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \ln{\left(x \right)} + 4
+    srepr: Add(Mul(Integer(4), log(Symbol('x', real=True))), Integer(4))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a x ln x)' = a ln x + a (çarpım kuralı).
+- id: turev-0140
+  topic: turev
+  subtopic: ustel_logaritmik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(5x \ln(x)\right)
+  command:
+    op: diff
+    expr: 5x \ln(x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \ln{\left(x \right)} + 5
+    srepr: Add(Mul(Integer(5), log(Symbol('x', real=True))), Integer(5))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/carpim_logaritma
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (a x ln x)' = a ln x + a (çarpım kuralı).
+- id: turev-0141
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\frac{\partial}{\partial x} \left(x^{2} + y^{2} - 25\right)$ ifadesinin x değişkenine göre
+      türevini al
+  command:
+    op: diff
+    expr: x^{2} + y^{2} - 25
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0142
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(x^{2} + 4y^{2} - 16\right)
+  command:
+    op: diff
+    expr: x^{2} + 4y^{2} - 16
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0143
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(4x^{2} + 9y^{2} - 36\right)
+  command:
+    op: diff
+    expr: 4x^{2} + 9y^{2} - 36
+    var: x
+    order: 1
+  expected:
+    latex: 8 \cdot x
+    srepr: Mul(Integer(8), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0144
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(x^{2} + y^{2} - 9\right)
+  command:
+    op: diff
+    expr: x^{2} + y^{2} - 9
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0145
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(2x^{2} + 3y^{2} - 12\right)
+  command:
+    op: diff
+    expr: 2x^{2} + 3y^{2} - 12
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot x
+    srepr: Mul(Integer(4), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0146
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(x^{2} + 2y^{2} - 8\right)
+  command:
+    op: diff
+    expr: x^{2} + 2y^{2} - 8
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0147
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial x} \left(3x^{2} + y^{2} - 27\right)
+  command:
+    op: diff
+    expr: 3x^{2} + y^{2} - 27
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot x
+    srepr: Mul(Integer(6), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ilk adımı: F(x,y) = 0 eşitliğinin x''e göre kısmi türevi F_x.'
+- id: turev-0148
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(x^{2} + y^{2} - 25\right)
+  command:
+    op: diff
+    expr: x^{2} + y^{2} - 25
+    var: y
+    order: 1
+  expected:
+    latex: 2 \cdot y
+    srepr: Mul(Integer(2), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0149
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(x^{2} + 4y^{2} - 16\right)
+  command:
+    op: diff
+    expr: x^{2} + 4y^{2} - 16
+    var: y
+    order: 1
+  expected:
+    latex: 8 \cdot y
+    srepr: Mul(Integer(8), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0150
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(4x^{2} + 9y^{2} - 36\right)
+  command:
+    op: diff
+    expr: 4x^{2} + 9y^{2} - 36
+    var: y
+    order: 1
+  expected:
+    latex: 18 \cdot y
+    srepr: Mul(Integer(18), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0151
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(x^{2} + y^{2} - 9\right)
+  command:
+    op: diff
+    expr: x^{2} + y^{2} - 9
+    var: y
+    order: 1
+  expected:
+    latex: 2 \cdot y
+    srepr: Mul(Integer(2), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0152
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(2x^{2} + 3y^{2} - 12\right)
+  command:
+    op: diff
+    expr: 2x^{2} + 3y^{2} - 12
+    var: y
+    order: 1
+  expected:
+    latex: 6 \cdot y
+    srepr: Mul(Integer(6), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0153
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(x^{2} + 2y^{2} - 8\right)
+  command:
+    op: diff
+    expr: x^{2} + 2y^{2} - 8
+    var: y
+    order: 1
+  expected:
+    latex: 4 \cdot y
+    srepr: Mul(Integer(4), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0154
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \frac{\partial}{\partial y} \left(3x^{2} + y^{2} - 27\right)
+  command:
+    op: diff
+    expr: 3x^{2} + y^{2} - 27
+    var: y
+    order: 1
+  expected:
+    latex: 2 \cdot y
+    srepr: Mul(Integer(2), Symbol('y', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_fy
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin ikinci adımı: aynı eşitliğin y''ye göre kısmi türevi F_y.'
+- id: turev-0155
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: -\frac{2x}{2y}
+  command:
+    op: simplify
+    expr: -\frac{2x}{2y}
+  expected:
+    latex: '- \frac{x}{y}'
+    srepr: Mul(Integer(-1), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0156
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: -\frac{2x}{8y}
+  command:
+    op: simplify
+    expr: -\frac{2x}{8y}
+  expected:
+    latex: '- \frac{x}{4 \cdot y}'
+    srepr: Mul(Integer(-1), Rational(1, 4), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0157
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: -\frac{8x}{18y}
+  command:
+    op: simplify
+    expr: -\frac{8x}{18y}
+  expected:
+    latex: '- \frac{4 \cdot x}{9 \cdot y}'
+    srepr: Mul(Integer(-1), Rational(4, 9), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0158
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $-\frac{2x}{2y}$ ifadesini sadeleştir
+  command:
+    op: simplify
+    expr: -\frac{2x}{2y}
+  expected:
+    latex: '- \frac{x}{y}'
+    srepr: Mul(Integer(-1), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0159
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: -\frac{4x}{6y}
+  command:
+    op: simplify
+    expr: -\frac{4x}{6y}
+  expected:
+    latex: '- \frac{2 \cdot x}{3 \cdot y}'
+    srepr: Mul(Integer(-1), Rational(2, 3), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0160
+  topic: turev
+  subtopic: kapali_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: -\frac{2x}{4y}
+  command:
+    op: simplify
+    expr: -\frac{2x}{4y}
+  expected:
+    latex: '- \frac{x}{2 \cdot y}'
+    srepr: Mul(Integer(-1), Rational(1, 2), Symbol('x', real=True), Pow(Symbol('y', real=True), Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/kapali_dydx
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Kapalı türevin son adımı: dy/dx = -F_x/F_y sadeleştirilir.'
+- id: turev-0161
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{2}\right)
+  command:
+    op: diff
+    expr: x^{2}
+    var: x
+    order: 2
+  expected:
+    latex: '2'
+    srepr: Integer(2)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0162
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{3}\right)
+  command:
+    op: diff
+    expr: x^{3}
+    var: x
+    order: 2
+  expected:
+    latex: 6 \cdot x
+    srepr: Mul(Integer(6), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0163
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{4}\right)
+  command:
+    op: diff
+    expr: x^{4}
+    var: x
+    order: 2
+  expected:
+    latex: 12 \cdot x^{2}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0164
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{5}\right)
+  command:
+    op: diff
+    expr: x^{5}
+    var: x
+    order: 2
+  expected:
+    latex: 20 \cdot x^{3}
+    srepr: Mul(Integer(20), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0165
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{6}\right)
+  command:
+    op: diff
+    expr: x^{6}
+    var: x
+    order: 2
+  expected:
+    latex: 30 \cdot x^{4}
+    srepr: Mul(Integer(30), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0166
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{7}\right)
+  command:
+    op: diff
+    expr: x^{7}
+    var: x
+    order: 2
+  expected:
+    latex: 42 \cdot x^{5}
+    srepr: Mul(Integer(42), Pow(Symbol('x', real=True), Integer(5)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0167
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{8}\right)
+  command:
+    op: diff
+    expr: x^{8}
+    var: x
+    order: 2
+  expected:
+    latex: 56 \cdot x^{6}
+    srepr: Mul(Integer(56), Pow(Symbol('x', real=True), Integer(6)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0168
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{9}\right)
+  command:
+    op: diff
+    expr: x^{9}
+    var: x
+    order: 2
+  expected:
+    latex: 72 \cdot x^{7}
+    srepr: Mul(Integer(72), Pow(Symbol('x', real=True), Integer(7)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0169
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{10}\right)
+  command:
+    op: diff
+    expr: x^{10}
+    var: x
+    order: 2
+  expected:
+    latex: 90 \cdot x^{8}
+    srepr: Mul(Integer(90), Pow(Symbol('x', real=True), Integer(8)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0170
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(x^{11}\right)
+  command:
+    op: diff
+    expr: x^{11}
+    var: x
+    order: 2
+  expected:
+    latex: 110 \cdot x^{9}
+    srepr: Mul(Integer(110), Pow(Symbol('x', real=True), Integer(9)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)'' = n(n-1) x^{n-2}.
+- id: turev-0171
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{3}}{dx^{3}} \left(x^{3}\right)
+  command:
+    op: diff
+    expr: x^{3}
+    var: x
+    order: 3
+  expected:
+    latex: '6'
+    srepr: Integer(6)
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ucuncu_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)''' = n(n-1)(n-2) x^{n-3}.
+- id: turev-0172
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{3}}{dx^{3}} \left(x^{4}\right)
+  command:
+    op: diff
+    expr: x^{4}
+    var: x
+    order: 3
+  expected:
+    latex: 24 \cdot x
+    srepr: Mul(Integer(24), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ucuncu_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)''' = n(n-1)(n-2) x^{n-3}.
+- id: turev-0173
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{3}}{dx^{3}} \left(x^{5}\right)
+  command:
+    op: diff
+    expr: x^{5}
+    var: x
+    order: 3
+  expected:
+    latex: 60 \cdot x^{2}
+    srepr: Mul(Integer(60), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ucuncu_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)''' = n(n-1)(n-2) x^{n-3}.
+- id: turev-0174
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{3}}{dx^{3}} \left(x^{6}\right)
+  command:
+    op: diff
+    expr: x^{6}
+    var: x
+    order: 3
+  expected:
+    latex: 120 \cdot x^{3}
+    srepr: Mul(Integer(120), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ucuncu_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)''' = n(n-1)(n-2) x^{n-3}.
+- id: turev-0175
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d^{3}}{dx^{3}} \left(x^{7}\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: x^{7}
+    var: x
+    order: 3
+  expected:
+    latex: 210 \cdot x^{4}
+    srepr: Mul(Integer(210), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ucuncu_mertebe
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (x^n)''' = n(n-1)(n-2) x^{n-3}.
+- id: turev-0176
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(\sin(x)\right)
+  command:
+    op: diff
+    expr: \sin(x)
+    var: x
+    order: 2
+  expected:
+    latex: '- \sin{\left(x \right)}'
+    srepr: Mul(Integer(-1), sin(Symbol('x', real=True)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))'' = -a^2 sin(ax).
+- id: turev-0177
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(\sin(2x)\right)
+  command:
+    op: diff
+    expr: \sin(2x)
+    var: x
+    order: 2
+  expected:
+    latex: '- 4 \cdot \sin{\left(2 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(4), sin(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))'' = -a^2 sin(ax).
+- id: turev-0178
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(\sin(3x)\right)
+  command:
+    op: diff
+    expr: \sin(3x)
+    var: x
+    order: 2
+  expected:
+    latex: '- 9 \cdot \sin{\left(3 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(9), sin(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))'' = -a^2 sin(ax).
+- id: turev-0179
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(\sin(4x)\right)
+  command:
+    op: diff
+    expr: \sin(4x)
+    var: x
+    order: 2
+  expected:
+    latex: '- 16 \cdot \sin{\left(4 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(16), sin(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))'' = -a^2 sin(ax).
+- id: turev-0180
+  topic: turev
+  subtopic: yuksek_mertebeden_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d^{2}}{dx^{2}} \left(\sin(5x)\right)
+  command:
+    op: diff
+    expr: \sin(5x)
+    var: x
+    order: 2
+  expected:
+    latex: '- 25 \cdot \sin{\left(5 \cdot x \right)}'
+    srepr: Mul(Integer(-1), Integer(25), sin(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/ikinci_mertebe_sinus
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sin(ax))'' = -a^2 sin(ax).
+- id: turev-0181
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(x)\right)
+  command:
+    op: diff
+    expr: \arctan(x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{x^{2} + 1}
+    srepr: Pow(Add(Pow(Symbol('x', real=True), Integer(2)), Integer(1)), Integer(-1))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0182
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(2x)\right)
+  command:
+    op: diff
+    expr: \arctan(2x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{2}{4 \cdot x^{2} + 1}
+    srepr: Mul(Integer(2), Pow(Add(Mul(Integer(4), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0183
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(3x)\right)
+  command:
+    op: diff
+    expr: \arctan(3x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{9 \cdot x^{2} + 1}
+    srepr: Mul(Integer(3), Pow(Add(Mul(Integer(9), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0184
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(4x)\right)
+  command:
+    op: diff
+    expr: \arctan(4x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{4}{16 \cdot x^{2} + 1}
+    srepr: Mul(Integer(4), Pow(Add(Mul(Integer(16), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0185
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(5x)\right)
+  command:
+    op: diff
+    expr: \arctan(5x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{5}{25 \cdot x^{2} + 1}
+    srepr: Mul(Integer(5), Pow(Add(Mul(Integer(25), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0186
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(6x)\right)
+  command:
+    op: diff
+    expr: \arctan(6x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{6}{36 \cdot x^{2} + 1}
+    srepr: Mul(Integer(6), Pow(Add(Mul(Integer(36), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0187
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arctan(7x)\right)
+  command:
+    op: diff
+    expr: \arctan(7x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{7}{49 \cdot x^{2} + 1}
+    srepr: Mul(Integer(7), Pow(Add(Mul(Integer(49), Pow(Symbol('x', real=True), Integer(2))), Integer(1)),
+      Integer(-1)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arctan
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arctan(ax))' = a/(1 + a^2 x^2).
+- id: turev-0188
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(x)\right)
+  command:
+    op: diff
+    expr: \arcsin(x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{1}{\sqrt{- x^{2} + 1}}
+    srepr: Pow(Add(Integer(1), Mul(Integer(-1), Pow(Symbol('x', real=True), Integer(2)))), Rational(-1,
+      2))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0189
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(2x)\right)
+  command:
+    op: diff
+    expr: \arcsin(2x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{2}{\sqrt{- 4 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(2), Pow(Add(Integer(1), Mul(Integer(-1), Integer(4), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0190
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(3x)\right)
+  command:
+    op: diff
+    expr: \arcsin(3x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{3}{\sqrt{- 9 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(3), Pow(Add(Integer(1), Mul(Integer(-1), Integer(9), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0191
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(4x)\right)
+  command:
+    op: diff
+    expr: \arcsin(4x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{4}{\sqrt{- 16 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(4), Pow(Add(Integer(1), Mul(Integer(-1), Integer(16), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0192
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(\arcsin(5x)\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: \arcsin(5x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{5}{\sqrt{- 25 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(5), Pow(Add(Integer(1), Mul(Integer(-1), Integer(25), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0193
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(6x)\right)
+  command:
+    op: diff
+    expr: \arcsin(6x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{6}{\sqrt{- 36 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(6), Pow(Add(Integer(1), Mul(Integer(-1), Integer(36), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0194
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arcsin(7x)\right)
+  command:
+    op: diff
+    expr: \arcsin(7x)
+    var: x
+    order: 1
+  expected:
+    latex: \frac{7}{\sqrt{- 49 \cdot x^{2} + 1}}
+    srepr: Mul(Integer(7), Pow(Add(Integer(1), Mul(Integer(-1), Integer(49), Pow(Symbol('x', real=True),
+      Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arcsin
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arcsin(ax))' = a/sqrt(1 - a^2 x^2).
+- id: turev-0195
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(x)\right)
+  command:
+    op: diff
+    expr: \arccos(x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{1}{\sqrt{- x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Pow(Add(Integer(1), Mul(Integer(-1), Pow(Symbol('x', real=True), Integer(2)))),
+      Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0196
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(2x)\right)
+  command:
+    op: diff
+    expr: \arccos(2x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{2}{\sqrt{- 4 \cdot x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Integer(2), Pow(Add(Integer(1), Mul(Integer(-1), Integer(4), Pow(Symbol('x',
+      real=True), Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0197
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(3x)\right)
+  command:
+    op: diff
+    expr: \arccos(3x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{3}{\sqrt{- 9 \cdot x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Integer(3), Pow(Add(Integer(1), Mul(Integer(-1), Integer(9), Pow(Symbol('x',
+      real=True), Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0198
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(4x)\right)
+  command:
+    op: diff
+    expr: \arccos(4x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{4}{\sqrt{- 16 \cdot x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Integer(4), Pow(Add(Integer(1), Mul(Integer(-1), Integer(16), Pow(Symbol('x',
+      real=True), Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0199
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(5x)\right)
+  command:
+    op: diff
+    expr: \arccos(5x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{5}{\sqrt{- 25 \cdot x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Integer(5), Pow(Add(Integer(1), Mul(Integer(-1), Integer(25), Pow(Symbol('x',
+      real=True), Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0200
+  topic: turev
+  subtopic: ters_trigonometrik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\arccos(6x)\right)
+  command:
+    op: diff
+    expr: \arccos(6x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \frac{6}{\sqrt{- 36 \cdot x^{2} + 1}}'
+    srepr: Mul(Integer(-1), Integer(6), Pow(Add(Integer(1), Mul(Integer(-1), Integer(36), Pow(Symbol('x',
+      real=True), Integer(2)))), Rational(-1, 2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/arccos
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (arccos(ax))' = -a/sqrt(1 - a^2 x^2).
+- id: turev-0201
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(x)\right)
+  command:
+    op: diff
+    expr: \sinh(x)
+    var: x
+    order: 1
+  expected:
+    latex: \cosh{\left(x \right)}
+    srepr: cosh(Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0202
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(2x)\right)
+  command:
+    op: diff
+    expr: \sinh(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \cosh{\left(2 \cdot x \right)}
+    srepr: Mul(Integer(2), cosh(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0203
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(3x)\right)
+  command:
+    op: diff
+    expr: \sinh(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \cosh{\left(3 \cdot x \right)}
+    srepr: Mul(Integer(3), cosh(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0204
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(4x)\right)
+  command:
+    op: diff
+    expr: \sinh(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \cosh{\left(4 \cdot x \right)}
+    srepr: Mul(Integer(4), cosh(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0205
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(5x)\right)
+  command:
+    op: diff
+    expr: \sinh(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \cosh{\left(5 \cdot x \right)}
+    srepr: Mul(Integer(5), cosh(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0206
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(6x)\right)
+  command:
+    op: diff
+    expr: \sinh(6x)
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot \cosh{\left(6 \cdot x \right)}
+    srepr: Mul(Integer(6), cosh(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0207
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\sinh(7x)\right)
+  command:
+    op: diff
+    expr: \sinh(7x)
+    var: x
+    order: 1
+  expected:
+    latex: 7 \cdot \cosh{\left(7 \cdot x \right)}
+    srepr: Mul(Integer(7), cosh(Mul(Integer(7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/sinh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (sinh(ax))' = a cosh(ax).
+- id: turev-0208
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(x)\right)
+  command:
+    op: diff
+    expr: \cosh(x)
+    var: x
+    order: 1
+  expected:
+    latex: \sinh{\left(x \right)}
+    srepr: sinh(Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0209
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: text_tr
+    value: $\frac{d}{dx} \left(\cosh(2x)\right)$ ifadesinin x değişkenine göre türevini al
+  command:
+    op: diff
+    expr: \cosh(2x)
+    var: x
+    order: 1
+  expected:
+    latex: 2 \cdot \sinh{\left(2 \cdot x \right)}
+    srepr: Mul(Integer(2), sinh(Mul(Integer(2), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0210
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(3x)\right)
+  command:
+    op: diff
+    expr: \cosh(3x)
+    var: x
+    order: 1
+  expected:
+    latex: 3 \cdot \sinh{\left(3 \cdot x \right)}
+    srepr: Mul(Integer(3), sinh(Mul(Integer(3), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0211
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(4x)\right)
+  command:
+    op: diff
+    expr: \cosh(4x)
+    var: x
+    order: 1
+  expected:
+    latex: 4 \cdot \sinh{\left(4 \cdot x \right)}
+    srepr: Mul(Integer(4), sinh(Mul(Integer(4), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0212
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(5x)\right)
+  command:
+    op: diff
+    expr: \cosh(5x)
+    var: x
+    order: 1
+  expected:
+    latex: 5 \cdot \sinh{\left(5 \cdot x \right)}
+    srepr: Mul(Integer(5), sinh(Mul(Integer(5), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0213
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(6x)\right)
+  command:
+    op: diff
+    expr: \cosh(6x)
+    var: x
+    order: 1
+  expected:
+    latex: 6 \cdot \sinh{\left(6 \cdot x \right)}
+    srepr: Mul(Integer(6), sinh(Mul(Integer(6), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0214
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\cosh(7x)\right)
+  command:
+    op: diff
+    expr: \cosh(7x)
+    var: x
+    order: 1
+  expected:
+    latex: 7 \cdot \sinh{\left(7 \cdot x \right)}
+    srepr: Mul(Integer(7), sinh(Mul(Integer(7), Symbol('x', real=True))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/cosh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (cosh(ax))' = a sinh(ax).
+- id: turev-0215
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(x)\right)
+  command:
+    op: diff
+    expr: \tanh(x)
+    var: x
+    order: 1
+  expected:
+    latex: '- \tanh^{2}{\left(x \right)} + 1'
+    srepr: Add(Integer(1), Mul(Integer(-1), Pow(tanh(Symbol('x', real=True)), Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0216
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(2x)\right)
+  command:
+    op: diff
+    expr: \tanh(2x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 2 \cdot \tanh^{2}{\left(2 \cdot x \right)} + 2'
+    srepr: Add(Integer(2), Mul(Integer(-1), Integer(2), Pow(tanh(Mul(Integer(2), Symbol('x', real=True))),
+      Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0217
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(3x)\right)
+  command:
+    op: diff
+    expr: \tanh(3x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 3 \cdot \tanh^{2}{\left(3 \cdot x \right)} + 3'
+    srepr: Add(Integer(3), Mul(Integer(-1), Integer(3), Pow(tanh(Mul(Integer(3), Symbol('x', real=True))),
+      Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0218
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(4x)\right)
+  command:
+    op: diff
+    expr: \tanh(4x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 4 \cdot \tanh^{2}{\left(4 \cdot x \right)} + 4'
+    srepr: Add(Integer(4), Mul(Integer(-1), Integer(4), Pow(tanh(Mul(Integer(4), Symbol('x', real=True))),
+      Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0219
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(5x)\right)
+  command:
+    op: diff
+    expr: \tanh(5x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 5 \cdot \tanh^{2}{\left(5 \cdot x \right)} + 5'
+    srepr: Add(Integer(5), Mul(Integer(-1), Integer(5), Pow(tanh(Mul(Integer(5), Symbol('x', real=True))),
+      Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0220
+  topic: turev
+  subtopic: hiperbolik_turev
+  chapter_ref: aicls:bolum-2
+  difficulty: 2
+  input:
+    kind: latex
+    value: \frac{d}{dx} \left(\tanh(6x)\right)
+  command:
+    op: diff
+    expr: \tanh(6x)
+    var: x
+    order: 1
+  expected:
+    latex: '- 6 \cdot \tanh^{2}{\left(6 \cdot x \right)} + 6'
+    srepr: Add(Integer(6), Mul(Integer(-1), Integer(6), Pow(tanh(Mul(Integer(6), Symbol('x', real=True))),
+      Integer(2))))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanh
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: (tanh(ax))' = a (1 - tanh^2(ax)).
+- id: turev-0221
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{(x + h)^{2} - x^{2}}{h}
+  command:
+    op: limit
+    expr: \frac{(x + h)^{2} - x^{2}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 2 \cdot x
+    srepr: Mul(Integer(2), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0222
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{(x + h)^{3} - x^{3}}{h}
+  command:
+    op: limit
+    expr: \frac{(x + h)^{3} - x^{3}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 3 \cdot x^{2}
+    srepr: Mul(Integer(3), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0223
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{(x + h)^{4} - x^{4}}{h}
+  command:
+    op: limit
+    expr: \frac{(x + h)^{4} - x^{4}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 4 \cdot x^{3}
+    srepr: Mul(Integer(4), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0224
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{(x + h)^{5} - x^{5}}{h}
+  command:
+    op: limit
+    expr: \frac{(x + h)^{5} - x^{5}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 5 \cdot x^{4}
+    srepr: Mul(Integer(5), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0225
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{2(x + h)^{2} - 2x^{2}}{h}
+  command:
+    op: limit
+    expr: \frac{2(x + h)^{2} - 2x^{2}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 4 \cdot x
+    srepr: Mul(Integer(4), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0226
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: text_tr
+    value: $\lim_{h \to 0} \frac{2(x + h)^{3} - 2x^{3}}{h}$ limitini hesapla
+  command:
+    op: limit
+    expr: \frac{2(x + h)^{3} - 2x^{3}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 6 \cdot x^{2}
+    srepr: Mul(Integer(6), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0227
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{2(x + h)^{4} - 2x^{4}}{h}
+  command:
+    op: limit
+    expr: \frac{2(x + h)^{4} - 2x^{4}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 8 \cdot x^{3}
+    srepr: Mul(Integer(8), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0228
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{2(x + h)^{5} - 2x^{5}}{h}
+  command:
+    op: limit
+    expr: \frac{2(x + h)^{5} - 2x^{5}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 10 \cdot x^{4}
+    srepr: Mul(Integer(10), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0229
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{3(x + h)^{2} - 3x^{2}}{h}
+  command:
+    op: limit
+    expr: \frac{3(x + h)^{2} - 3x^{2}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 6 \cdot x
+    srepr: Mul(Integer(6), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0230
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{3(x + h)^{3} - 3x^{3}}{h}
+  command:
+    op: limit
+    expr: \frac{3(x + h)^{3} - 3x^{3}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 9 \cdot x^{2}
+    srepr: Mul(Integer(9), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0231
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{3(x + h)^{4} - 3x^{4}}{h}
+  command:
+    op: limit
+    expr: \frac{3(x + h)^{4} - 3x^{4}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 12 \cdot x^{3}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0232
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{3(x + h)^{5} - 3x^{5}}{h}
+  command:
+    op: limit
+    expr: \frac{3(x + h)^{5} - 3x^{5}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 15 \cdot x^{4}
+    srepr: Mul(Integer(15), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0233
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{4(x + h)^{2} - 4x^{2}}{h}
+  command:
+    op: limit
+    expr: \frac{4(x + h)^{2} - 4x^{2}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 8 \cdot x
+    srepr: Mul(Integer(8), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0234
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{4(x + h)^{3} - 4x^{3}}{h}
+  command:
+    op: limit
+    expr: \frac{4(x + h)^{3} - 4x^{3}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 12 \cdot x^{2}
+    srepr: Mul(Integer(12), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0235
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{4(x + h)^{4} - 4x^{4}}{h}
+  command:
+    op: limit
+    expr: \frac{4(x + h)^{4} - 4x^{4}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 16 \cdot x^{3}
+    srepr: Mul(Integer(16), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0236
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{4(x + h)^{5} - 4x^{5}}{h}
+  command:
+    op: limit
+    expr: \frac{4(x + h)^{5} - 4x^{5}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 20 \cdot x^{4}
+    srepr: Mul(Integer(20), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0237
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{5(x + h)^{2} - 5x^{2}}{h}
+  command:
+    op: limit
+    expr: \frac{5(x + h)^{2} - 5x^{2}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 10 \cdot x
+    srepr: Mul(Integer(10), Symbol('x', real=True))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0238
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{5(x + h)^{3} - 5x^{3}}{h}
+  command:
+    op: limit
+    expr: \frac{5(x + h)^{3} - 5x^{3}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 15 \cdot x^{2}
+    srepr: Mul(Integer(15), Pow(Symbol('x', real=True), Integer(2)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0239
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{5(x + h)^{4} - 5x^{4}}{h}
+  command:
+    op: limit
+    expr: \frac{5(x + h)^{4} - 5x^{4}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 20 \cdot x^{3}
+    srepr: Mul(Integer(20), Pow(Symbol('x', real=True), Integer(3)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'
+- id: turev-0240
+  topic: turev
+  subtopic: turev_tanimi
+  chapter_ref: aicls:bolum-2
+  difficulty: 3
+  input:
+    kind: latex
+    value: \lim_{h \to 0} \frac{5(x + h)^{5} - 5x^{5}}{h}
+  command:
+    op: limit
+    expr: \frac{5(x + h)^{5} - 5x^{5}}{h}
+    var: h
+    to: '0'
+  expected:
+    latex: 25 \cdot x^{4}
+    srepr: Mul(Integer(25), Pow(Symbol('x', real=True), Integer(4)))
+  checker: symbolic
+  checker_args: {}
+  source: sablon:turev/tanim
+  author: generator:datasets/curriculum/generate_cards.py
+  reviewed_by: ''
+  status: frozen
+  notes_tr: 'Türevin tanımı: f''(x) = lim_{h->0} (f(x+h) - f(x))/h.'

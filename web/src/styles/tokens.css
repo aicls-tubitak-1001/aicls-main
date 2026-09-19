@@ -1,0 +1,238 @@
+/*
+ * AI-CLS design tokens.
+ *
+ * The room is the design constraint. This interface is driven by a lecturer standing at a
+ * wall-mounted smart board while students read the same screen from the back row, so every token
+ * here answers one of three questions: can it be read at four metres, can it be hit with a finger
+ * or a pen, and does it stay calm when something fails.
+ *
+ * Identity: teal (#1E6B72) as the single accent on a warm paper ground, "Source Sans 3" for the
+ * interface and "STIX Two Text" for mathematics. Fonts are referenced by family name only — the
+ * platform never fetches a web font (CSP `font-src 'self'`, guvenlik-gizlilik.md §5) — with a
+ * documented fallback chain so the layout is stable on a machine that has neither installed.
+ *
+ * Three axes, all independent:
+ *   1. Colour scheme — light is the base; dark is applied twice so both paths win in the right
+ *      order: `@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`,
+ *      then `:root[data-theme="dark"]` for an explicit choice (app/theme.ts).
+ *   2. Density — `data-density="presentation"` on <html> scales the type ramp and the control
+ *      sizes up for the projector; "normal" is the desk default (app/density.ts).
+ *   3. User preferences — `prefers-reduced-motion` removes motion, `prefers-contrast: more`
+ *      raises borders and text contrast.
+ *
+ * Contrast: the result area is AAA (>= 7:1) in both schemes; every other text/background pair is
+ * at least AA (>= 4.5:1), and `--color-border-strong` — the only visible boundary of a secondary
+ * button and of a text field — clears the 3:1 that WCAG 1.4.11 asks of a control's outline.
+ * `--color-border` is decorative (panel hairlines, table rules) and is deliberately below that
+ * threshold; it must never be the sole indication of a control. Measured pairs are noted next to
+ * the token that carries them; `src/test/designSystem.test.tsx` recomputes them.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* -- Brand ------------------------------------------------------------------------------ */
+  --color-accent: #1e6b72; /* 6.1:1 on --color-surface (AA) */
+  --color-accent-strong: #14515a; /* 8.9:1 on --color-surface (AAA) */
+  --color-accent-soft: #d7e9ea;
+  --color-accent-contrast: #ffffff; /* 6.1:1 on --color-accent (AA) */
+  --color-highlight: #9c6410; /* 5.0:1 on --color-surface (AA) */
+
+  /* -- Surfaces --------------------------------------------------------------------------- */
+  --color-bg: #fbfaf8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f2efea;
+  --color-surface-raised: #ffffff;
+  --color-canvas: #ffffff;
+  --color-border: #ddd7ce;
+  --color-border-strong: #8d8375; /* 3.7:1 on --color-surface (AA non-text, WCAG 1.4.11) */
+  --color-overlay: rgb(24 32 34 / 45%);
+
+  /* -- Text ------------------------------------------------------------------------------- */
+  --color-text: #1b2023; /* 16.0:1 on --color-surface (AAA) */
+  --color-text-muted: #5c6569; /* 5.9:1 on --color-surface (AA body) */
+  --color-text-inverse: #f7f9f9;
+  --color-result-text: #12191c; /* 17.7:1 on --color-result-bg (AAA) */
+  --color-result-bg: #ffffff;
+
+  /* -- Semantic feedback ------------------------------------------------------------------ */
+  --color-ok: #2f6b3a;
+  --color-ok-bg: #e4f0e4;
+  --color-ok-border: #9dc3a3;
+  --color-warn: #8a5a12;
+  --color-warn-bg: #faf0dc;
+  --color-warn-border: #dcb975;
+  --color-critical: #a02c2c;
+  --color-critical-bg: #f8e5e3;
+  --color-critical-border: #dfa19b;
+  --color-info: #1e5f7a;
+  --color-info-bg: #e2eef4;
+  --color-ink: #12303a;
+
+  /* Legacy aliases kept so existing modules keep resolving to the same colours. */
+  --color-success: var(--color-ok);
+  --color-success-bg: var(--color-ok-bg);
+  --color-warning: var(--color-warn);
+  --color-warning-bg: var(--color-warn-bg);
+  --color-danger: var(--color-critical);
+  --color-danger-bg: var(--color-critical-bg);
+
+  /* -- Typography ------------------------------------------------------------------------- */
+  --font-ui: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-math: "STIX Two Text", "STIX Two Math", "XITS", "Cambria Math", Georgia, serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", "Consolas", ui-monospace, monospace;
+
+  /*
+   * Type ramp. `--density-scale` is the one number the presentation mode changes, so every step
+   * grows together and nothing has to be restyled per mode.
+   */
+  --density-scale: 1;
+  --text-xs: calc(0.75rem * var(--density-scale));
+  --text-sm: calc(0.875rem * var(--density-scale));
+  --text-base: calc(1rem * var(--density-scale));
+  --text-lg: calc(1.125rem * var(--density-scale));
+  --text-xl: calc(1.375rem * var(--density-scale));
+  --text-2xl: calc(1.75rem * var(--density-scale));
+  --text-3xl: calc(2.25rem * var(--density-scale));
+  --text-result: calc(2rem * var(--density-scale));
+  --leading-tight: 1.25;
+  --leading-normal: 1.55;
+
+  /* -- Space and shape -------------------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* Elevation: three steps only — surface, raised panel, overlay. */
+  --shadow-sm: 0 1px 2px rgb(27 32 35 / 8%);
+  --shadow-md: 0 6px 20px rgb(27 32 35 / 12%);
+  --shadow-lg: 0 18px 48px rgb(27 32 35 / 18%);
+
+  /* -- Controls --------------------------------------------------------------------------- */
+  /* 44 px is the floor for a finger or a pen; presentation mode lifts it to 56 px. */
+  --control-height-md: 2.75rem; /* 44px */
+  --control-height-lg: 3.25rem; /* 52px */
+  --control-padding-x: var(--space-4);
+  --tap-target-min: 2.75rem;
+
+  --focus-ring: 0 0 0 3px rgb(30 107 114 / 45%);
+  --focus-ring-offset: 0 0 0 2px var(--color-surface);
+
+  --layout-max: 1180px;
+  --transition-fast: 120ms ease-out;
+  --transition-medium: 220ms ease-out;
+}
+
+/* Presentation mode: bigger type, bigger targets, quieter chrome (see app/density.ts). */
+:root[data-density="presentation"] {
+  --density-scale: 1.35;
+  --control-height-md: 3.5rem; /* 56px */
+  --control-height-lg: 4rem; /* 64px */
+  --tap-target-min: 3.5rem;
+  --control-padding-x: var(--space-5);
+  --text-result: calc(3rem * var(--density-scale));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-accent: #62b8bd; /* 7.1:1 on --color-surface (AAA) */
+    --color-accent-strong: #8ed3d7;
+    --color-accent-soft: #16383b;
+    --color-accent-contrast: #0d1618;
+    --color-highlight: #e0aa5a;
+
+    --color-bg: #11181a;
+    --color-surface: #182123;
+    --color-surface-muted: #1f2a2c;
+    --color-surface-raised: #1d2729;
+    --color-canvas: #f7f5f1;
+    --color-border: #2c3a3d;
+    --color-border-strong: #5f777c; /* 3.5:1 on --color-surface (AA non-text) */
+    --color-overlay: rgb(6 10 11 / 65%);
+
+    --color-text: #e8ecec; /* 13.7:1 on --color-surface (AAA) */
+    --color-text-muted: #a3b0b2; /* 7.3:1 on --color-surface (AAA) */
+    --color-text-inverse: #11181a;
+    --color-result-text: #f2f6f6; /* 16.0:1 on --color-result-bg (AAA) */
+    --color-result-bg: #131b1d;
+
+    --color-ok: #7cc38a;
+    --color-ok-bg: #172a1c;
+    --color-ok-border: #35603d;
+    --color-warn: #e2b36a;
+    --color-warn-bg: #2b2113;
+    --color-warn-border: #6b5326;
+    --color-critical: #ef8f88;
+    --color-critical-bg: #2e1917;
+    --color-critical-border: #7a3d38;
+    --color-info: #8ec4dc;
+    --color-info-bg: #14262e;
+    --color-ink: #12303a;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 45%);
+    --shadow-md: 0 8px 24px rgb(0 0 0 / 55%);
+    --shadow-lg: 0 20px 52px rgb(0 0 0 / 65%);
+    --focus-ring: 0 0 0 3px rgb(142 211 215 / 55%);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-accent: #62b8bd;
+  --color-accent-strong: #8ed3d7;
+  --color-accent-soft: #16383b;
+  --color-accent-contrast: #0d1618;
+  --color-highlight: #e0aa5a;
+
+  --color-bg: #11181a;
+  --color-surface: #182123;
+  --color-surface-muted: #1f2a2c;
+  --color-surface-raised: #1d2729;
+  --color-canvas: #f7f5f1;
+  --color-border: #2c3a3d;
+  --color-border-strong: #5f777c;
+  --color-overlay: rgb(6 10 11 / 65%);
+
+  --color-text: #e8ecec;
+  --color-text-muted: #a3b0b2;
+  --color-text-inverse: #11181a;
+  --color-result-text: #f2f6f6;
+  --color-result-bg: #131b1d;
+
+  --color-ok: #7cc38a;
+  --color-ok-bg: #172a1c;
+  --color-ok-border: #35603d;
+  --color-warn: #e2b36a;
+  --color-warn-bg: #2b2113;
+  --color-warn-border: #6b5326;
+  --color-critical: #ef8f88;
+  --color-critical-bg: #2e1917;
+  --color-critical-border: #7a3d38;
+  --color-info: #8ec4dc;
+  --color-info-bg: #14262e;
+  --color-ink: #12303a;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 45%);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 55%);
+  --shadow-lg: 0 20px 52px rgb(0 0 0 / 65%);
+  --focus-ring: 0 0 0 3px rgb(142 211 215 / 55%);
+}
+
+/* A user who asks for more contrast gets harder borders and full-strength text. */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: var(--color-border-strong);
+    --color-text-muted: var(--color-text);
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --focus-ring: 0 0 0 4px currentcolor;
+  }
+}

@@ -1,0 +1,414 @@
+# AI-CLS — konuşulan matematik sözlüğü ve ASR varyant katlaması
+# (docs/mimari/metin-komut-katmani.md §3). Bu katlama YALNIZCA NLU içindir; WER hesabındaki
+# normalizasyon `aicls.eval.normalizers.tr_v1` ile ayrı ve daha dardır (ADR-0015).
+#
+# Uygulama sırası (aicls.nlu.normalize):
+#   1. `variants` — tek belirteç eşlemesi (ASR bozulmaları, yazım varyantları, işaretler)
+#   2. ek ayırma — `vocabulary` içindeki gövdeler için (türevini -> türev + ini)
+#   3. `phrases` — çok sözcüklü kalıplar (mutlak değer -> mutlakdeğer)
+#   4. `fillers` — atılan dolgu sözcükleri
+#   5. sayı sözcükleri -> rakam (numbers.yaml)
+version: "1.0"
+
+# --------------------------------------------------------------------------------------------
+# Tek belirteç eşlemeleri. Sağ taraf, dilbilgisinin ve desenlerin gördüğü kanonik biçimdir.
+# Matematik fonksiyonları LaTeX adlarına indirgenir (sinüs -> sin), böylece hem
+# spoken_math dilbilgisi hem de desenler tek bir biçimle çalışır.
+# --------------------------------------------------------------------------------------------
+variants:
+  # işaretler ve semboller
+  "+": artı
+  "-": eksi
+  "*": çarpı
+  "/": bölü
+  "=": eşittir
+  "^": üssü
+  "×": çarpı
+  "÷": bölü
+
+  # operatörler ve yazım varyantları
+  arti: artı
+  eksik: eksi
+  carpi: çarpı
+  çarpim: çarpı
+  bolu: bölü
+  bölme: bölü
+  ussu: üssü
+  üs: üssü
+  uzeri: üzeri
+  üzerine: üzeri
+  esittir: eşittir
+  eşit: eşittir
+  faktoriyel: faktöriyel
+  faktöryel: faktöriyel
+
+  # kökler ve kuvvetler
+  karekok: karekök
+  karakök: karekök
+  kupkok: küpkök
+  küpkok: küpkök
+  karesi: kare
+  küpü: küp
+  kübü: küp
+
+  # trigonometri ve diğer fonksiyonlar
+  sinüs: sin
+  sinus: sin
+  sinüsü: sin
+  kosinüs: cos
+  kosinus: cos
+  cosinüs: cos
+  kosinüsü: cos
+  tanjant: tan
+  tanjand: tan
+  tanjantı: tan
+  kotanjant: cot
+  kotanjantı: cot
+  sekant: sec
+  kosekant: csc
+  arksinüs: arcsin
+  arkkosinüs: arccos
+  arktanjant: arctan
+  arkkotanjant: arccot
+  hiperbolik: hiperbolik
+  logaritma: log
+  logaritması: log
+  lg: log
+  üstel: exp
+  eksponansiyel: exp
+
+  # sabitler
+  sonsuzluk: sonsuz
+  sonsuzu: sonsuz
+  sayısı: sayı
+
+  # yunan harfleri
+  alfa: alpha
+  beta: beta
+  gama: gamma
+  delta: delta
+  epsilon: epsilon
+  teta: theta
+  lamda: lambda
+  mü: mu
+  ro: rho
+  sigma: sigma
+  fi: phi
+  omega: omega
+
+  # ASR bozulmaları ve düzensiz gövdeler (İP-3 okuma senaryolarından beklenenler)
+  türef: türev
+  turev: türev
+  entegral: integral
+  entegrali: integral
+  integrali: integral
+  integralı: integral
+  intagral: integral
+  limitin: limit
+  denkelem: denklem
+  çarpanlarına: çarpan
+  çarpanlarını: çarpan
+  çarpanları: çarpan
+  çarpanlara: çarpan
+  sadelestir: sadeleştir
+  basitleştir: sadeleştir
+  grafiğ: grafik
+  grafiği: grafik
+  şekl: şekil
+  örneğ: örnek
+  sonuc: sonuç
+  çizdir: çiz
+  göstersene: göster
+  getirsene: getir
+
+# --------------------------------------------------------------------------------------------
+# Çok sözcüklü kalıplar (uzun olan önce uygulanır).
+# --------------------------------------------------------------------------------------------
+phrases:
+  "mutlak değer": mutlakdeğer
+  "kare kök": karekök
+  "küp kök": küpkök
+  "doğal log": ln
+  "parantez aç": "("
+  "parantez kapa": ")"
+  "parantez kapat": ")"
+  "parantezi kapa": ")"
+  "ters sin": arcsin
+  "ters cos": arccos
+  "ters tan": arctan
+
+# --------------------------------------------------------------------------------------------
+# Ek ayırıcının tanıdığı gövdeler. Bir belirteç burada yoksa ve eki atıldığında burada
+# bulunuyorsa gövde + ek olarak ikiye ayrılır ("türevini" -> "türev" + "ini").
+# Sayı sözcükleri ve envanter anahtar sözcükleri buna otomatik eklenir.
+# --------------------------------------------------------------------------------------------
+vocabulary:
+  # matematik yapı sözcükleri
+  - artı
+  - eksi
+  - çarpı
+  - bölü
+  - üssü
+  - üzeri
+  - kare
+  - küp
+  - kök
+  - karekök
+  - küpkök
+  - faktöriyel
+  - mutlak
+  - değer
+  - parantez
+  - eşittir
+  - sonsuz
+  - pi
+  - sayı
+  - hiperbolik
+  # fonksiyon adları (kanonik)
+  - sin
+  - cos
+  - tan
+  - cot
+  - sec
+  - csc
+  - arcsin
+  - arccos
+  - arctan
+  - arccot
+  - sinh
+  - cosh
+  - tanh
+  - coth
+  - log
+  - ln
+  - exp
+  # yunan harfleri
+  - alpha
+  - beta
+  - gamma
+  - delta
+  - epsilon
+  - theta
+  - lambda
+  - mu
+  - rho
+  - sigma
+  - phi
+  - omega
+  # komut sözcükleri
+  - türev
+  - diferansiyel
+  - eğim
+  - integral
+  - ilkel
+  - limit
+  - denklem
+  - çöz
+  - kök
+  - sadeleştir
+  - basit
+  - düzenle
+  - genişlet
+  - faktör
+  - koy
+  - yerine
+  - tara
+  - dağıt
+  - aç
+  - açılım
+  - çarpan
+  - ayır
+  - seri
+  - taylor
+  - maclaurin
+  - grafik
+  - çiz
+  - göster
+  - getir
+  - ara
+  - bul
+  - hesapla
+  - al
+  - yap
+  - et
+  - çalıştır
+  - söyle
+  - kitap
+  - tanım
+  - teorem
+  - lemma
+  - önerme
+  - sonuç
+  - örnek
+  - alıştırma
+  - soru
+  - şekil
+  - tablo
+  - kanıt
+  - ispat
+  - bölüm
+  # bağlam sözcükleri
+  - fonksiyon
+  - ifade
+  - denk
+  - nokta
+  - civar
+  - etraf
+  - mertebe
+  - derece
+  - kadar
+  - arası
+  - giderken
+  - yaklaşırken
+  - yaklaşan
+  - için
+  - göre
+  - belirsiz
+  - belirli
+  - sağdan
+  - soldan
+  - pozitif
+  - negatif
+  - taraf
+  - yön
+  - ekran
+  - tahta
+  - temizle
+  - sil
+  - boşalt
+  - geri
+  - iptal
+  - tekrar
+  - yine
+  - aynı
+  - son
+  - komut
+  - işlem
+  - adım
+  - kaydet
+  - indir
+  - dışa
+  - aktar
+  - çalışma
+  - eğri
+
+# --------------------------------------------------------------------------------------------
+# `aicls.core.turkish.TR_SUFFIXES` ailelerine ek olarak tanınan ek dizileri. Ek ayırma her
+# zaman sözlük güdümlüdür: gövde `vocabulary` içinde bulunmuyorsa belirteç bölünmez, dolayısıyla
+# bu liste uzun olduğunda bile aşırı ayırma yapmaz.
+# --------------------------------------------------------------------------------------------
+extra_suffixes:
+  - larını
+  - lerini
+  - larının
+  - lerinin
+  - larına
+  - lerine
+  - larında
+  - lerinde
+  - sında
+  - sinde
+  - sunda
+  - sünde
+  - ından
+  - inden
+  - undan
+  - ünden
+  - ında
+  - inde
+  - unda
+  - ünde
+  - ıyla
+  - iyle
+  - uyla
+  - üyle
+  - ile
+  - la
+  - le
+  - na
+  - ne
+  - nı
+  - ni
+  - nu
+  - nü
+
+# --------------------------------------------------------------------------------------------
+# Buyrum (emir) kipindeki komut eylemleri. Sözcük sınırı kurtarmada (`Lexicon.resegment`) tek
+# harflik bir parça ancak DEĞİŞKEN olabilir ve konuşulan matematikte değişkenden hemen sonra
+# eylem gelmez ("x integralini al" evet, "x al" hayır). Bu liste olmadan "kaç" -> "k" + "aç"
+# diye bölünür ve kapsam dışı bir soru komuta dönüşür.
+# --------------------------------------------------------------------------------------------
+command_verbs:
+  - al
+  - bul
+  - hesapla
+  - yap
+  - çıkar
+  - göster
+  - getir
+  - aç
+  - dağıt
+  - çöz
+  - çiz
+  - ara
+  - tara
+  - koy
+  - yaz
+  - ayır
+  - temizle
+  - sil
+  - boşalt
+  - kaydet
+  - indir
+  - aktar
+  - sadeleştir
+  - genişlet
+  - tekrar
+  - söyle
+
+# --------------------------------------------------------------------------------------------
+# Anlamı olmayan dolgu sözcükleri (atılır).
+# --------------------------------------------------------------------------------------------
+fillers:
+  - şey
+  - yani
+  - işte
+  - hani
+  - lütfen
+  - bakalım
+  - hadi
+  - haydi
+  - tamam
+  - acaba
+  - bana
+  - bize
+  - şimdi
+  - artık
+
+# --------------------------------------------------------------------------------------------
+# Tarama (scan) yuvaları: desende yakalanmaz, metnin tamamında aranır.
+# --------------------------------------------------------------------------------------------
+scan:
+  direction:
+    - {words: [sağdan], value: "+"}
+    - {words: [sağ, taraf], value: "+"}
+    - {words: [pozitif, taraf], value: "+"}
+    - {words: [pozitif, yön], value: "+"}
+    - {words: [soldan], value: "-"}
+    - {words: [sol, taraf], value: "-"}
+    - {words: [negatif, taraf], value: "-"}
+    - {words: [negatif, yön], value: "-"}
+  unit_type:
+    - {words: [tanım], value: Definition}
+    - {words: [teorem], value: Theorem}
+    - {words: [lemma], value: Lemma}
+    - {words: [önerme], value: Lemma}
+    - {words: [sonuç], value: Corollary}
+    - {words: [örnek], value: Example}
+    - {words: [alıştırma], value: Exercise}
+    - {words: [soru], value: Exercise}
+    - {words: [şekil], value: Figure}
+    - {words: [tablo], value: Table}
+    - {words: [kanıt], value: Proof}
+    - {words: [ispat], value: Proof}
+    - {words: [bölüm], value: Section}

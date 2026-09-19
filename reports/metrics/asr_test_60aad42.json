@@ -1,0 +1,220 @@
+{
+  "breakdown": {
+    "blinded": true,
+    "notes": "WIRING CHECK, NOT A RESULT: the stub transcriber picks a sentence by hashing the waveform (the runner hands it the waveform and nothing else), so its WER is the WER of a random draw from the sentence pool. It proves the speaker-disjoint split, the two WER columns and the command-intent path are wired; it is NOT evidence for the < 10 % WER target, and the promoted latest.json therefore publishes null for it.",
+    "speaker_disjoint": true,
+    "speakers": 1,
+    "splits_fingerprint": "sha256:205cafada645470dc036d0cbdc671fcc9df521eb363a194660df4dced9ff90c0",
+    "stub": true,
+    "worst": [
+      {
+        "hyp": "üç x artı beş eşittir on denklemini çöz",
+        "id": "synth-0193",
+        "intent_ok": false,
+        "ref": "kaydet",
+        "wer": 8.0
+      },
+      {
+        "hyp": "x üzeri dört eksi bir ifadesini çarpanlarına ayır",
+        "id": "synth-0001",
+        "intent_ok": false,
+        "ref": "sinüs x'in ikinci türevi",
+        "wer": 2.0
+      },
+      {
+        "hyp": "x kare artı iki x ifadesinin türevini hesapla",
+        "id": "synth-0145",
+        "intent_ok": false,
+        "ref": "türev tanımını ekrana getir",
+        "wer": 2.0
+      },
+      {
+        "hyp": "ln x fonksiyonunun bir civarında seri açılımını bul",
+        "id": "synth-0181",
+        "intent_ok": false,
+        "ref": "son komutu iptal et",
+        "wer": 2.0
+      },
+      {
+        "hyp": "beş x üzeri iki ifadesinin türevini al",
+        "id": "synth-0025",
+        "intent_ok": false,
+        "ref": "kosinüs x'in integralini bul",
+        "wer": 1.75
+      },
+      {
+        "hyp": "x üzeri dört bölü x kare ifadesini sadeleştir",
+        "id": "synth-0217",
+        "intent_ok": false,
+        "ref": "tanjant x fonksiyonunun türevini bul",
+        "wer": 1.4
+      },
+      {
+        "hyp": "zincir kuralı teoremini göster",
+        "id": "synth-0169",
+        "intent_ok": false,
+        "ref": "tahtayı temizle bakalım",
+        "wer": 1.3333333333333333
+      },
+      {
+        "hyp": "sinüs x artı kosinüs x ifadesini sadeleştir",
+        "id": "synth-0013",
+        "intent_ok": false,
+        "ref": "x üzeri beşin türevini al",
+        "wer": 1.2
+      },
+      {
+        "hyp": "limit tanımını göster",
+        "id": "synth-0049",
+        "intent_ok": false,
+        "ref": "x sonsuza giderken x kare bölü x küp limitini hesapla",
+        "wer": 1.0
+      },
+      {
+        "hyp": "grafiğini çiz",
+        "id": "synth-0085",
+        "intent_ok": false,
+        "ref": "parantez aç iki x artı üç parantez kapa kare ifadesini genişlet",
+        "wer": 1.0
+      },
+      {
+        "hyp": "bir bölü x artı bir bölü x ifadesini sadeleştir",
+        "id": "synth-0097",
+        "intent_ok": false,
+        "ref": "iki x kare eksi sekiz ifadesini çarpanlarına ayır",
+        "wer": 1.0
+      },
+      {
+        "hyp": "parantez aç x artı bir parantez kapa kare ifadesini genişlet",
+        "id": "synth-0109",
+        "intent_ok": false,
+        "ref": "ln x fonksiyonunun bir civarında seri açılımını bul",
+        "wer": 1.0
+      },
+      {
+        "hyp": "seri açılımını yap",
+        "id": "synth-0121",
+        "intent_ok": false,
+        "ref": "x eşittir pi için sinüs x değerini hesapla",
+        "wer": 1.0
+      },
+      {
+        "hyp": "son işlemi tekrar et",
+        "id": "synth-0133",
+        "intent_ok": false,
+        "ref": "logaritma x fonksiyonunun grafiğini göster",
+        "wer": 1.0
+      },
+      {
+        "hyp": "tahtayı kaydet",
+        "id": "synth-0157",
+        "intent_ok": false,
+        "ref": "kitapta rolle teoremini ara",
+        "wer": 1.0
+      },
+      {
+        "hyp": "çalışmayı dışa aktar",
+        "id": "synth-0205",
+        "intent_ok": false,
+        "ref": "iki x artı üç ifadesinin türevini al",
+        "wer": 1.0
+      },
+      {
+        "hyp": "belirli integral tanımını getir",
+        "id": "synth-0241",
+        "intent_ok": false,
+        "ref": "üç x kare artı iki x ifadesinin integralini hesapla",
+        "wer": 1.0
+      },
+      {
+        "hyp": "kitapta integral ara",
+        "id": "synth-0253",
+        "intent_ok": false,
+        "ref": "ikiden dörde kadar x kare artı bir ifadesinin integralini al",
+        "wer": 1.0
+      },
+      {
+        "hyp": "türev tanımını ekrana getir",
+        "id": "synth-0277",
+        "intent_ok": false,
+        "ref": "dört x artı sekiz eşittir sıfır denklemini çöz",
+        "wer": 1.0
+      },
+      {
+        "hyp": "x üzeri üçün integralini al",
+        "id": "synth-0061",
+        "intent_ok": false,
+        "ref": "x kare artı üç x artı iki eşittir sıfır denklemini çöz",
+        "wer": 0.9090909090909091
+      },
+      {
+        "hyp": "sinüs x'in beşinci mertebeden seri açılımını hesapla",
+        "id": "synth-0265",
+        "intent_ok": false,
+        "ref": "x bire giderken x kare eksi bir ifadesinin limitini hesapla",
+        "wer": 0.9
+      },
+      {
+        "hyp": "iki x çarpı üç x ifadesini sadeleştir",
+        "id": "synth-0289",
+        "intent_ok": false,
+        "ref": "x kare eksi on altı ifadesini çarpanlarına ayır",
+        "wer": 0.875
+      },
+      {
+        "hyp": "x çarpı sinüs x ifadesinin türevini hesapla",
+        "id": "synth-0073",
+        "intent_ok": false,
+        "ref": "sinüs x artı kosinüs x ifadesini sadeleştir",
+        "wer": 0.8571428571428571
+      },
+      {
+        "hyp": "iki x artı üç ifadesinin integralini al",
+        "id": "synth-0229",
+        "intent_ok": false,
+        "ref": "e üzeri x fonksiyonunun ikinci türevini al",
+        "wer": 0.8571428571428571
+      },
+      {
+        "hyp": "x üzeri üçün integralini al",
+        "id": "synth-0037",
+        "intent_ok": false,
+        "ref": "sıfırdan sonsuza kadar e üzeri eksi x integralini hesapla",
+        "wer": 0.7777777777777778
+      }
+    ]
+  },
+  "ci95": {
+    "wer_tr_v1": [
+      1.0,
+      1.2618084851390219
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:83edf842c3dbde2b1d96a7704c5ec91fea90cf66469e0d7d2061466b2f0c0579",
+  "dataset_version": "synthetic-command-audio-v1",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": "C:/Users/cagri/OneDrive/Masaüstü/fırat/PROJE/ABDULLAH_HOCA_1001/ai-cls/reports/metrics/asr_test_worst.jsonl",
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "asr",
+  "metrics": {
+    "cer": 0.8922363847045192,
+    "command_exact": 0.0,
+    "command_intent_accuracy": 0.0,
+    "mean_ms": 0.08374800556339324,
+    "p95_ms": 0.15055999974720172,
+    "wer_raw": 1.111764705882353,
+    "wer_tr_v1": 1.111764705882353
+  },
+  "model_sha256": null,
+  "model_version": "asr-stub-1",
+  "n": 25,
+  "name": "asr_test",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:15Z"
+}

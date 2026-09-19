@@ -1,0 +1,52 @@
+{
+  "breakdown": {
+    "by_stage": {
+      "cas": {
+        "mean_ms": 6.758623577112983,
+        "p50_ms": 1.2311000027693808,
+        "p95_ms": 42.82379000214859
+      },
+      "nlu": {
+        "mean_ms": 1.0725419998925645,
+        "p50_ms": 1.1364499805495143,
+        "p95_ms": 2.2264550018007863
+      },
+      "total": {
+        "mean_ms": 5.238195501733571,
+        "p50_ms": 1.855549999163486,
+        "p95_ms": 41.561800026101984
+      }
+    },
+    "commands": 351,
+    "stub": true
+  },
+  "ci95": {
+    "mean_ms": [
+      3.436292163132748,
+      6.956459990011353
+    ]
+  },
+  "citable": false,
+  "config_hash": null,
+  "dataset_fingerprint": "sha256:bc4a60ac1665c0044f751a03cf56406ca3b61c0fac54cf034896c39b31d81a74",
+  "dataset_version": "nlu-commands-2026.09",
+  "definitions_ref": "docs/ml/degerlendirme.md#2-metrikler",
+  "dirty": true,
+  "failures_path": null,
+  "git_sha": "60aad4220268f5fbe63d6aab569b296ceabc8390",
+  "kind": "latency",
+  "metrics": {
+    "mean_ms": 5.238195501733571,
+    "p50_ms": 1.855549999163486,
+    "p95_ms": 41.561800026101984
+  },
+  "model_sha256": null,
+  "model_version": null,
+  "n": 200,
+  "name": "latency_local",
+  "normalizer_versions": {
+    "latex": "v1",
+    "tr": "v1"
+  },
+  "timestamp": "2026-09-08T02:46:17Z"
+}

@@ -1,0 +1,88 @@
+// AI-CLS - spoken Turkish mathematics grammar (docs/mimari/metin-komut-katmani.md 4).
+//
+// Parser: Lark LALR(1) with the contextual lexer.  The input is ALWAYS the canonical token
+// stream produced by ``aicls.nlu.normalize.normalize_text`` with the suffix tokens removed, so
+// this grammar never has to know about Turkish inflection, ASR spelling variants or number
+// words: "sinüs"/"sinus"/"sinüsü" all arrive as ``sin`` and "yüz yirmi üç" arrives as ``123``.
+//
+// The tree is transformed into ``aicls.latex2sympy.ast`` nodes and printed with ``to_latex``,
+// so every expression this grammar accepts is by construction re-parsable by ``parse_latex`` -
+// that identity is what ``tests/integration/test_nlu_contracts.py`` pins.
+//
+// Ambiguity policy (mirrors the LaTeX grammar, ADR-0004):
+//   * implicit multiplication binds a ``power``, never a ``factor``, so "x eksi y" stays a
+//     subtraction instead of becoming ``x * (-y)``;
+//   * "bölü" joins the two neighbouring ``power``s only: "x kare bölü x artı bir" is
+//     ``x^2/x + 1``.  Say "parantez aç ... parantez kapa" for a whole denominator.  This rule
+//     is documented in the architecture page and pinned by unit tests.
+//   * a function without parentheses takes the following ``postfix``: "sin x kare" is
+//     ``sin(x^2)`` (shift/reduce resolved as shift, Lark's default).
+//
+// Terminals whose name starts with ``_`` are filtered out of the tree.
+
+start: relation
+
+?relation: expr
+         | expr _EQUALS expr                                      -> equation
+
+// ---------------------------------------------------------------------------
+// additive / multiplicative levels
+// ---------------------------------------------------------------------------
+?expr: term
+     | expr _PLUS term                                            -> add
+     | expr _MINUS term                                           -> sub
+
+?term: factor
+     | term _TIMES factor                                         -> mul
+     | term _DIV factor                                           -> div
+     | term power                                                 -> imul
+
+?factor: power
+       | _MINUS factor                                            -> neg
+
+?power: postfix
+      | postfix _POW factor                                       -> raised
+
+?postfix: atom
+        | postfix _SQUARE                                         -> square
+        | postfix _CUBE                                           -> cube
+        | postfix _FACT                                           -> factorial
+
+// ---------------------------------------------------------------------------
+// atoms
+// ---------------------------------------------------------------------------
+?atom: NUMBER                                                     -> number
+     | CONST                                                      -> const
+     | GREEK                                                      -> greek
+     | SYMBOL                                                     -> symbol
+     | FUNC postfix                                               -> func
+     | _SQRT postfix                                              -> sqrt
+     | _CBRT postfix                                              -> cbrt
+     | _ABS postfix                                               -> absolute
+     | _LPAR expr _RPAR                                           -> paren
+
+// ---------------------------------------------------------------------------
+// terminals - the trailing lookahead keeps "kare" out of "karekök" and friends
+// ---------------------------------------------------------------------------
+NUMBER: /\d+(?:\.\d+)?(?![0-9])/
+_PLUS: /artı(?![a-zçğıöşü0-9])/
+_MINUS: /eksi(?![a-zçğıöşü0-9])/
+_TIMES: /çarpı(?![a-zçğıöşü0-9])/
+_DIV: /bölü(?![a-zçğıöşü0-9])/
+_POW: /(üssü|üzeri)(?![a-zçğıöşü0-9])/
+_EQUALS: /eşittir(?![a-zçğıöşü0-9])/
+_SQUARE: /kare(?![a-zçğıöşü0-9])/
+_CUBE.3: /küp(?![a-zçğıöşü0-9])/
+_FACT: /faktöriyel(?![a-zçğıöşü0-9])/
+_CBRT.4: /küpkök(?![a-zçğıöşü0-9])/
+_SQRT.4: /(karekök|kök)(?![a-zçğıöşü0-9])/
+_ABS.4: /mutlakdeğer(?![a-zçğıöşü0-9])/
+FUNC.5: /(arcsin|arccos|arctan|arccot|sinh|cosh|tanh|coth|sin|cos|tan|cot|sec|csc|log|ln|exp)(?![a-zçğıöşü0-9])/
+CONST.5: /(pi|sonsuz)(?![a-zçğıöşü0-9])/
+GREEK.5: /(alpha|beta|gamma|delta|epsilon|theta|lambda|mu|rho|sigma|phi|omega)(?![a-zçğıöşü0-9])/
+SYMBOL: /[a-z](?![a-zçğıöşü0-9])/
+_LPAR: "("
+_RPAR: ")"
+
+%import common.WS
+%ignore WS
