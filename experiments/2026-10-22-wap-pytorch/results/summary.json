@@ -1,0 +1,33 @@
+{
+  "name": "wap-pytorch",
+  "seed": 1234,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "params": 1821968,
+  "n_train": 64,
+  "n_test": 8,
+  "epochs_run": 1,
+  "test2014": {
+    "wer": 13.860869565217392,
+    "exprate": 0.0,
+    "n": 8,
+    "decode_s": 1.570650339126587,
+    "beam": 2
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "step": 11,
+      "train_loss": 92.73870537497781,
+      "lr": 0.0002,
+      "epoch_s": 17.60604953765869,
+      "valid_wer": 13.904347826086957,
+      "valid_exprate": 0.0,
+      "valid_n": 8
+    }
+  ],
+  "paper_reference": {
+    "crohme2014_exprate": 0.4655,
+    "crohme2016_exprate": 0.4455
+  }
+}

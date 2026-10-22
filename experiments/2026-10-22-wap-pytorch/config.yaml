@@ -1,0 +1,32 @@
+# WAP (VGG watcher) orijinal train_nmt.py hiperparametreleri.
+name: wap-pytorch
+question: "WAP (2017) CROHME 2014'te PyTorch portuyla kağıttaki ExpRate'e ne kadar yaklaşır?"
+seed: 1234
+data:
+  root: datasets/crohme_wap # AICLS_DATA_ROOT altında; manifest.json sha256 taşır
+  source: "JianshuZhang/WAP data/ (CROHME 2014 train/test, 2016 test görüntüleri)"
+model:
+  kind: wap_vgg
+  dim_word: 256
+  dim_dec: 256
+  dim_attention: 128
+  dim_coverage: 128
+  kernel_coverage: 5
+  conv_blocks: [32, 64, 64, 128]
+  layers_per_block: [4, 4, 4, 4]
+  dropout: 0.2
+train:
+  optimizer: adam
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  clip: 100.0
+  batch_size: 8
+  batch_image_px: 500000
+  maxlen: 200
+  max_image_px: 500000
+  patience: 15
+  epochs: 60
+eval:
+  beam: 10
+hardware: cuda # RTX 5090, Windows-yerli venv (onay defteri CUDA_INSTALL 2026-09-15)
+metrics: [wer, exprate] # token WER (aicls.eval.metrics.edit_distance), ExpRate = tam eşleşme
