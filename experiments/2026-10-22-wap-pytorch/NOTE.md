@@ -6,7 +6,7 @@
 - **Kurulum:** veri `C:\aicls-data\datasets\crohme_wap` (JianshuZhang/WAP `data/`, commit 47cce26;
   `manifest.json` sha256: train `8ac09c99…`, test2014 `7b7c28af…`); model `wap.py` (1,82 M parametre,
   orijinal `VGG/nmt.py` birebir); `config.yaml` = orijinal `train_nmt.py` hiperparametreleri;
-  donanım RTX 5090 (Windows-yerli venv); ~1 adım/s, dönem ~17 dk.
+  donanım RTX 5090 (Windows-yerli venv); ~11 adım/s, dönem ~107 s, toplam 110 dk.
 - **Ölçüm:** token WER (`aicls.eval.metrics.edit_distance`), ExpRate (tam dizi eşleşmesi, WAP tanımı);
   n = 985 (CROHME 2014 test; 1 örnek `maxImagesize` 500 000 px sınırıyla elendi, orijinalde de öyle).
 
@@ -27,7 +27,16 @@ hiperparametreler deponun `VGG/nmt.py` + `train_nmt.py` dosyalarından, sayılar
 ## Sonuç
 | Koşul | Metrik | Değer | n |
 |---|---|---|---|
-| (eğitim sürüyor — `C:\aicls-data\runs\wap-pytorch\train_log.jsonl`) | | | |
+| 60 dönem, en iyi ağırlık (dönem 56, açgözlü WER'e göre), ışın k=10 | token WER | **0,315** | 985 |
+| aynı | ExpRate (tam eşleşme) | **25,2 %** | 985 |
+| açgözlü çözümleme, dönem 54 (eğitim sırasında en yüksek) | ExpRate | 25,6 % | 985 |
+| açgözlü, dönem 56 | token WER | 0,326 | 985 |
+| kağıt, CROHME 2014 (ensemble) | ExpRate | 46,55 % | 986 |
+
+Eğitim toplam 110 dk (60 × ~107 s), 73 560 güncelleme, lr hiç düşürülmedi (sabır 15 hiç dolmadı:
+WER küçük dalgalanmalarla sürekli iyileşti). Eğri: ExpRate dönem 9'da %10, dönem 18'de %20, sonra
+%22–26 bandında plato. Ham günlük: `C:icls-datauns\wap-pytorch	rain_log.jsonl`,
+çözümler `test2014_decode_beam10.txt`.
 
 ## Yorum
 - Port çalışıyor ve öğreniyor (ExpRate 0 → 25 %), ama kağıttaki 46,55 %'in (ensemble; tekil model
@@ -41,7 +50,7 @@ hiperparametreler deponun `VGG/nmt.py` + `train_nmt.py` dosyalarından, sayılar
 - WAP deposu CROHME 2014 train/test görüntülerini ve 2016 test görüntülerini (etiketsiz) kendi
   içinde dağıtıyor; ayrı indirme gerekmedi. CROHME 2016 için etiket yok → yalnızca 2014 ölçülür.
 - Darboğaz: çözücü adım döngüsü Python'da (T ≤ 200 adım × küçük çekirdekler) → GPU gecikme-sınırlı,
-  ~1 adım/s. Daha büyük yığın veya CUDA graph ile 5–10× hızlanır ama kağıt kurulumundan sapar.
+  ~11 adım/s, GPU kullanımı düşük. Daha büyük yığın veya CUDA graph ile hızlanır ama kağıttan sapar.
 - `aicls.ocr` ile uyum: `aicls.ocr.models.encoders` zaten `vgg16`/`cnn_small` + dikkatli çözücü
   sunuyor; WAP'tan taşınacak özgün parça **kapsama dikkati** (`CoverageAttentionGRU.step`) ve
   görüntü alanına göre kovalı yığınlama (`run.py: make_batches`).
