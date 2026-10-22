@@ -1,6 +1,6 @@
 # WAP (Watch, Attend and Parse) — Theano deposunun PyTorch'ta ayağa kaldırılması
 
-- **Tarih:** 2026-10-22   **Kişi:** csahin   **Dal:** deneme_Branch   **Git SHA:** (commit sonrası)
+- **Tarih:** 2026-10-22   **Kişi:** csahin   **Dal:** deneme_Branch   **Git SHA:** 45fecae (kod), sonuç commit'i ayrı
 - **Soru:** Zhang ve ark. (2017) WAP mimarisi, bu depodaki el yazısı→LaTeX OCR hattına (`aicls.ocr`,
   ADR-0013 `seq2seq_image`) uyarlanabilir mi; CROHME 2014 üzerinde kağıttaki ExpRate'e ne kadar yaklaşılır?
 - **Kurulum:** veri `C:\aicls-data\datasets\crohme_wap` (JianshuZhang/WAP `data/`, commit 47cce26;
@@ -30,6 +30,12 @@ hiperparametreler deponun `VGG/nmt.py` + `train_nmt.py` dosyalarından, sayılar
 | (eğitim sürüyor — `C:\aicls-data\runs\wap-pytorch\train_log.jsonl`) | | | |
 
 ## Yorum
+- Port çalışıyor ve öğreniyor (ExpRate 0 → 25 %), ama kağıttaki 46,55 %'in (ensemble; tekil model
+  ~40 %) çok altında. Olası nedenler: (1) kağıtta ağırlık gürültüsü (weight noise) ile ikinci bir
+  tavlama aşaması var (`train_weightnoise.sh`), burada yapılmadı; (2) kağıt 5 modelin ensemble'ı;
+  (3) orijinal yüzlerce dönem eğitiyor, 60 dönemde lr düşürme hiç tetiklenmedi; (4) Theano'nun
+  `dnn_batch_normalization_train` ile PyTorch BatchNorm'un momentum/eps farkı; (5) eğitim kaybı
+  0,42'ye inerken test WER 0,33'te kalıyor → küçük veri (8,8 k) ile aşırı uyum; veri artırma yok.
 - Orijinal kod Theano 0.10 + CUDA 8 + Python 2 ister; bu yığın RTX 5090 / Python 3.11'de kurulamaz.
   Bu yüzden depo "ayağa kaldırma" = aynı mimari ve hiperparametrelerle PyTorch portu (`wap.py`).
 - WAP deposu CROHME 2014 train/test görüntülerini ve 2016 test görüntülerini (etiketsiz) kendi
