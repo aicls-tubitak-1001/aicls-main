@@ -36,7 +36,6 @@ hiperparametreler deponun `VGG/nmt.py` + `train_nmt.py` dosyalarından, sayılar
 Eğitim toplam 110 dk (60 × ~107 s), 73 560 güncelleme, lr hiç düşürülmedi (sabır 15 hiç dolmadı:
 WER küçük dalgalanmalarla sürekli iyileşti). Eğri: ExpRate dönem 9'da %10, dönem 18'de %20, sonra
 %22–26 bandında plato. Ham günlük: `C:/aicls-data/runs/wap-pytorch/train_log.jsonl`,
-uns\wap-pytorch	rain_log.jsonl`,
 çözümler `test2014_decode_beam10.txt`.
 
 ## Yorum
