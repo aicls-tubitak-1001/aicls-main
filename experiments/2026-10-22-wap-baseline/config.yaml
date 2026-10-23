@@ -1,0 +1,17 @@
+# WAP feasibility probe (docs/deneme-alani.md). No training, no data extraction, no weights.
+name: wap-baseline
+question: "JianshuZhang/WAP (Theano, 2017) AI-CLS OCR için başlangıç kod tabanı olabilir mi?"
+seed: 1234
+data:
+  source: fixture # WAP repo caption/dictionary text files only; CROHME tarballs NOT extracted
+  fingerprint: null
+model:
+  kind: stub # nothing instantiated; Theano graph cannot be built on CPU (cuDNN-only BN)
+hardware: cpu # gates: no GPU before CUDA_INSTALL approval
+metrics: [] # feasibility probe; no aicls.eval metric applies
+upstream:
+  repo: https://github.com/JianshuZhang/WAP
+  commit: 47cce260994fb80031e4acb52f3e6abb6c50619e
+  commit_date: "2020-06-17"
+  license: none
+  requirements: ["CUDA 8.0", "cuDNN v7", "Theano 0.10/1.0", "libgpuarray", "Python 2.7"]

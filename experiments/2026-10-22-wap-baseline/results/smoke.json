@@ -1,0 +1,41 @@
+{
+  "experiment": "wap-baseline",
+  "date": "2026-10-22",
+  "git_sha": "7e7cebd",
+  "upstream": {
+    "repo": "https://github.com/JianshuZhang/WAP",
+    "commit": "47cce260994fb80031e4acb52f3e6abb6c50619e",
+    "commit_date": "2020-06-17",
+    "commits_total": 16,
+    "license_file": null,
+    "size_mb_excluding_git": 65,
+    "readme_requirements": ["CUDA 8.0", "cuDNN v7", "Theano 0.10.0", "libgpuarray"],
+    "python_dialect": "2.7 (cPickle, print statement, open(...,'wr'))"
+  },
+  "py_compile_python311": {"ok": 2, "fail": 13, "total": 15, "ok_files": ["VGG/optimizers.py", "DenseNet/optimizers.py"]},
+  "after_2to3_vgg_and_data": {"ok": 10, "fail": 0, "total": 10, "remaining_legacy": ["data/gen_pkl.py: scipy.misc.imread/imresize/imsave (removed in scipy>=1.3)"]},
+  "theano_install": {
+    "venv": "python 3.11.9 (throwaway, scratchpad)",
+    "packages": {"Theano": "1.0.5 (sdist, built OK)", "numpy": "1.23.5", "scipy": "1.10.1", "six": "1.17.0"},
+    "import_theano": "FAILED: AttributeError: module 'numpy.distutils.__config__' has no attribute 'blas_opt_info' (theano/configdefaults.py:1284) — Theano 1.0.5 needs numpy<=~1.21 or a patched configdefaults",
+    "cxx": "g++ not available on this Windows host (Theano warns; C-compiled ops impossible)",
+    "pygpu": "no distribution for Python 3.11 on PyPI -> theano.gpuarray backend unavailable",
+    "wap_nmt_import_cpu": "FAILED at theano import (same numpy error); even if patched, VGG/nmt.py imports theano.gpuarray.dnn (cuDNN-only batch norm) -> no CPU path"
+  },
+  "data_not_extracted": {
+    "reason": "ADR-0012: DATASET_DOWNLOAD ledger covers MathWriting only; CROHME tarballs left unopened",
+    "tarballs": {"off_image_train.tar.gz": 8835, "off_image_test.tar.gz": 986, "16.tar.gz": 1147},
+    "weights_not_loaded": ["VGG/models/attention_maxlen[200]_dimWord256_dim256.npz", "DenseNet/models/attention_maxlen[200]_dimWord256_dim256.npz", "*/models/bn_params.npz"]
+  },
+  "vocabulary": {
+    "size": 111,
+    "calculus_present": ["\\lim", "\\limits", "\\int", "\\sum", "\\frac", "\\sqrt", "\\infty", "\\rightarrow", "\\cdot", "\\times", "\\pm", "\\sin", "\\cos", "\\tan", "\\log", "\\prime", "\\pi", "\\theta", "\\alpha", "\\beta", "\\leq", "\\geq", "\\neq", "\\exists", "\\forall", "\\in", "d", "e", "|"],
+    "calculus_missing": ["\\partial", "\\ln", "\\to", "\\prod", "\\left", "\\right", "\\mathrm"]
+  },
+  "captions": {
+    "train": {"n": 8835, "mean_tokens": 15.49, "max_tokens": 96},
+    "test": {"n": 986, "mean_tokens": 16.12, "max_tokens": 204},
+    "train_expressions_containing": {"\\lim": 287, "\\int": 550, "\\sum": 552, "\\frac": 2494, "\\infty": 286, "\\rightarrow": 292}
+  },
+  "verdict": "drop as codebase; keep paper as method/citation reference (coverage attention)"
+}
